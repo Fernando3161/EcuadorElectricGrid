@@ -1,0 +1,115 @@
+tutorial: false   # must be off to use the full data pipeline
+
+countries: ["EC"] # (or keep NG/BJ if you still want them)
+logging:
+  level: INFO
+  format: "%(levelname)s:%(name)s:%(message)s"
+results_dir: results/
+summary_dir: results/
+
+enable:
+  retrieve_databundle: False
+  retrieve_databundle_sector: False
+  retrieve_cost_data: False # true: retrieves cost data from technology data and saves in resources/costs.csv, false: uses cost data in data/costs.csv
+  download_osm_data: False
+  build_natura_raster: False
+  progress_bar: False # show progress bar during downloading routines and other long-running tasks
+
+# somehow I need this: bundle_cutouts_southamerica
+load_options:
+  ssp: "ssp2-2.6"
+  weather_year: 2013
+  prediction_year: 2030
+  scale: 1
+
+crs:
+  geo_crs: EPSG:4326 # general geographic projection, not used for metric measures. "EPSG:4326" is the standard used by OSM and google maps
+  distance_crs: EPSG:3857 # projection for distance measurements only. Possible recommended values are "EPSG:3857" (used by OSM and Google Maps)
+  area_crs: ESRI:54009 # projection for area measurements only. Possible recommended values are Global Mollweide "ESRI:54009"
+
+clean_osm_data_options:
+  threshold_voltage: 35000
+
+base_network:
+  min_voltage_substation_offshore: 35000
+  min_voltage_rebase_voltage: 35000
+
+
+electricity:
+  # keep your CO₂ settings if you like
+  co2limit: 1.487e+9
+  co2base: 1.487e+9
+  automatic_emission: true
+  #powerplants_filter: True
+
+  # 1) Include ALL conventional options you asked for (incl. nuclear)
+  conventional_carriers:
+    - nuclear
+    - coal
+    - lignite
+    - oil
+    - OCGT
+    - CCGT
+    - biomass
+    - geothermal
+
+  # Use your own Ecuador cutout name everywhere
+  atlite:
+    nprocesses: 4
+    cutouts:
+            cutout-2013-era5-tutorial:
+                module: era5
+                dx: 0.3  # cutout resolution
+                dy: 0.3  # cutout resolution
+                # The cutout time is automatically set by the snapshot range.
+
+
+  snapshots:
+    start: "2013-01-01"
+    end:   "2013-01-15"
+
+  # 2) Include ALL renewables (utility-scale)
+  renewable_carriers:
+    - solar
+    - onwind
+    - offwind-ac
+    - offwind-dc
+    - hydro
+
+  # 3) (Optional) Where expansion caps for renewables should come from
+  estimate_renewable_capacities:
+    stats: "irena"    # use IRENA country stats to bound greenfield expansion
+    year: 2021        # pick a recent stat year available in the bundle
+    p_nom_min: 1 # any float, scales the minimum expansion acquired from stats, i.e. 110% of <years>'s capacities => p_nom_min: 1.1
+    p_nom_max: false # sets the expansion constraint, False to deactivate this option and use estimated renewable potentials determine by the workflow, float scales the p_nom_min factor accordingly
+    technology_mapping:
+      # Wind is the Fueltype in ppm.data.Capacity_stats, onwind, offwind-{ac,dc} the carrier in PyPSA-Earth
+      Offshore: [offwind-ac, offwind-dc]
+      Onshore: [onwind]
+      PV: [solar]
+  # 4) (Optional) Filter/augment the plant list
+  powerplants_filter: (DateOut >= 2022 or DateOut != DateOut)
+  custom_powerplants: merge   # use data/custom_powerplants.csv to add/patch units
+
+lines:
+  ac_types:
+    132.: "243-AL1/39-ST1A 20.0"
+    220.: "Al/St 240/40 2-bundle 220.0"
+    300.: "Al/St 240/40 3-bundle 300.0"
+    380.: "Al/St 240/40 4-bundle 380.0"
+    500.: "Al/St 240/40 4-bundle 380.0"
+    750.: "Al/St 560/50 4-bundle 750.0"
+  dc_types:
+    500.: "HVDC XLPE 1000"
+  s_max_pu: 0.7
+  s_nom_max: .inf
+  s_nom_max_min: -.inf
+  length_factor: 1.25
+  under_construction: "zero" # 'zero': set capacity to zero, 'remove': remove, 'keep': with full capacity
+
+
+
+solving:
+  solver:
+    name: highs
+    options: highs-default
