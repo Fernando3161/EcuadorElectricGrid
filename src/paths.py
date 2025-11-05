@@ -29,6 +29,7 @@ RAW_GENERATION_DIR : str = os.path.join(DATA_RAW_DIR, "generation")
 # Known subdirectories under data/processed
 PROC_GENERATION_DIR : str = os.path.join(DATA_PROCESSED_DIR, "generation")
 PROC_LOAD_DIR : str = os.path.join(DATA_PROCESSED_DIR, "scaled_loads")
+PROC_NETWORKS_DIR : str = os.path.join(DATA_PROCESSED_DIR, "networks")
 
 # Common directory names to ignore during traversal
 IGNORE_DIRS = {".git", "__pycache__"}
@@ -116,6 +117,7 @@ __all__ = [
     "RAW_GENERATION_DIR",
     "PROC_GENERATION_DIR",
     "PROC_LOAD_DIR",
+    "PROC_NETWORKS_DIR",
     "list_subdirs",
     "all_dirs",
     "data_dirs",
