@@ -12,6 +12,7 @@ LITERATURE_DIR: str = os.path.join(ROOT, "literature")
 NOTEBOOKS_DIR: str = os.path.join(ROOT, "notebooks")
 RESULTS_DIR: str = os.path.join(ROOT, "results")
 GRAPHS_DIR: str = os.path.join(RESULTS_DIR, "graphs")
+EXPERIMENTS_DIR: str = os.path.join(RESULTS_DIR, "experiments")
 SRC_DIR: str = os.path.join(ROOT, "src")
 
 # Known subdirectories under data
@@ -107,6 +108,7 @@ __all__ = [
     "NOTEBOOKS_DIR",
     "RESULTS_DIR",
     "GRAPHS_DIR",
+    "EXPERIMENTS_DIR",
     "SRC_DIR",
     "DATA_PROCESSED_DIR",
     "DATA_RAW_DIR",
