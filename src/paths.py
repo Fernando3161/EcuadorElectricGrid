@@ -30,7 +30,7 @@ RAW_GENERATION_DIR : str = os.path.join(DATA_RAW_DIR, "generation")
 
 # Known subdirectories under data/processed
 PROC_GENERATION_DIR : str = os.path.join(DATA_PROCESSED_DIR, "generation")
-PROC_LOAD_DIR : str = os.path.join(DATA_PROCESSED_DIR, "scaled_loads")
+PROC_DEMAND_DIR : str = os.path.join(DATA_PROCESSED_DIR, "demand")
 PROC_NETWORKS_DIR : str = os.path.join(DATA_PROCESSED_DIR, "networks")
 
 # Common directory names to ignore during traversal
@@ -120,7 +120,7 @@ __all__ = [
     "RAW_GADM_DIR",
     "RAW_GENERATION_DIR",
     "PROC_GENERATION_DIR",
-    "PROC_LOAD_DIR",
+    "PROC_DEMAND_DIR",
     "PROC_NETWORKS_DIR",
     "list_subdirs",
     "all_dirs",

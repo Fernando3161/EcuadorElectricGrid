@@ -1,10 +1,11 @@
 # src/scenarios.py  (continuation)
 from __future__ import annotations
 from typing import Dict
-from scenarios import *
+from os.path import join
+from .scenarios import *
+from .paths import all_dirs
 
-
-
+dirs = all_dirs()
 SCENARIOS: Dict[str, Scenario] = {}
 
 
@@ -13,19 +14,19 @@ def _add(s: Scenario):
 
 
 # File-name constants (adapt to your project layout)
-DEMAND_TEMPLATE = "load_template.csv"
-DEMAND_SCALING_CSV = "demand_scaling.csv"
-NUCLEAR_LAYOUT_CSV = "nuclear_layout_smrs.csv"
-CUTOUT_WIND = "cutout-2013-era5.nc"
-CUTOUT_SOLAR = "cutout-2013-era5.nc"
+DEMAND_TEMPLATE = join(dirs["data/raw/demand"], "demand_profiles_EC.csv")
+DEMAND_SCALING_CSV =join(dirs["data/processed/demand"],  "demand_projection_2018_2050_all_scenarios.csv")
+NUCLEAR_LAYOUT_CSV = join(dirs["data/processed/generation"], "nuclear_layout.csv")
+CUTOUT_WIND =join(dirs["data/raw/cutouts"],  "onwind.nc")
+CUTOUT_SOLAR =join(dirs["data/raw/cutouts"],  "solar.nc")
 
 # You can adjust network file names as needed:
-NET_2017 = "network_2017.nc"
-NET_2024 = "network_2024.nc"
-NET_2030 = "network_2030_MP.nc"
-NET_2035 = "network_2035_MP.nc"
-NET_2045 = "network_2045_MP.nc"
-NET_2050 = "network_2050_MP.nc"
+NET_2018 =join(dirs["data/processed/networks"], "network_2018.nc")
+NET_2024 =join(dirs["data/processed/networks"], "network_2024.nc")
+NET_2030 = join(dirs["data/processed/networks"],"network_2030_MP.nc")
+NET_2035 =join(dirs["data/processed/networks"], "network_2035_MP.nc")
+NET_2045 =join(dirs["data/processed/networks"], "network_2045_MP.nc")
+NET_2050 = join(dirs["data/processed/networks"],"network_2050_MP.nc")
 
 
 # -----------------------------------------------------------------------------
@@ -33,28 +34,30 @@ NET_2050 = "network_2050_MP.nc"
 # -----------------------------------------------------------------------------
 
 _add(Scenario(
-    id="CAL_2017",
-    year=2017,
+    id="CAL_2018",
+    year=2018,
     demand=DemandConfig(
-        mode="historical",                      # reproduce historical operation
+        mode="projected",                      # reproduce historical operation
+        family="base",                         # same demand as REF_2024
+        projection="lin",
         scaling_csv=DEMAND_SCALING_CSV,
         profile_template_name=DEMAND_TEMPLATE,
     ),
     hydro=HydroConfig(
         case="normal",                         # 2017-like
-        inflow_profile_name="hydro_inflows_2017.nc",
+        inflow_profile_name="hydro_inflows_2018.nc",
     ),
     network=NetworkConfig(
-        base_nc=NET_2017,
-        year=2017,
-        result_tag="cal_2017",
+        name=NET_2018,
+        year=2018,
+        result_tag="cal_2018",
     ),
     nuclear=NuclearConfig(
         wave="none",
         total_capacity_mw=0.0,
     ),
     re=REConfig(level="none"),
-    description="Calibration against 2017 historical production and ENS."
+    description="Calibration against 2018 historical production and ENS."
 ))
 
 _add(Scenario(
@@ -72,7 +75,7 @@ _add(Scenario(
         inflow_profile_name="hydro_inflows_2024.nc",
     ),
     network=NetworkConfig(
-        base_nc=NET_2024,
+        name=NET_2024,
         year=2024,
         result_tag="ref_2024",
     ),
@@ -100,7 +103,7 @@ _add(Scenario(
         inflow_scaling_factor=0.4,             # example: 40% inflows
     ),
     network=NetworkConfig(
-        base_nc=NET_2024,
+        name=NET_2024,
         year=2024,
         result_tag="crisis_2024",
     ),
@@ -132,7 +135,7 @@ _add(Scenario(
         inflow_profile_name="hydro_inflows_2030.nc",
     ),
     network=NetworkConfig(
-        base_nc=NET_2030,
+        name=NET_2030,
         year=2030,
         result_tag="ref_2030_mp",
     ),
@@ -161,7 +164,7 @@ _add(Scenario(
         inflow_profile_name="hydro_inflows_2030.nc",
     ),
     network=NetworkConfig(
-        base_nc=NET_2030,
+        name=NET_2030,
         year=2030,
         result_tag="re_2030_l",
     ),
@@ -194,7 +197,7 @@ _add(Scenario(
         inflow_profile_name="hydro_inflows_2030.nc",
     ),
     network=NetworkConfig(
-        base_nc=NET_2030,
+        name=NET_2030,
         year=2030,
         result_tag="re_2030_h",
     ),
@@ -232,7 +235,7 @@ _add(Scenario(
         inflow_profile_name="hydro_inflows_2035.nc",
     ),
     network=NetworkConfig(
-        base_nc=NET_2035,
+        name=NET_2035,
         year=2035,
         result_tag="ref_2035_mp",
     ),
@@ -259,7 +262,7 @@ _add(Scenario(
         inflow_profile_name="hydro_inflows_2035.nc",
     ),
     network=NetworkConfig(
-        base_nc=NET_2035,
+        name=NET_2035,
         year=2035,
         result_tag="nuc_2035_w1",
     ),
@@ -289,7 +292,7 @@ _add(Scenario(
         inflow_profile_name="hydro_inflows_2035.nc",
     ),
     network=NetworkConfig(
-        base_nc=NET_2035,
+        name=NET_2035,
         year=2035,
         result_tag="nuc_2035_w1_h",
     ),
@@ -319,7 +322,7 @@ _add(Scenario(
         inflow_profile_name="hydro_inflows_2035.nc",
     ),
     network=NetworkConfig(
-        base_nc=NET_2035,
+        name=NET_2035,
         year=2035,
         result_tag="re_2035_h",
     ),
@@ -352,7 +355,7 @@ _add(Scenario(
         inflow_profile_name="hydro_inflows_2035.nc",
     ),
     network=NetworkConfig(
-        base_nc=NET_2035,
+        name=NET_2035,
         year=2035,
         result_tag="mix_2035_w1_re",
     ),
@@ -393,7 +396,7 @@ _add(Scenario(
         inflow_profile_name="hydro_inflows_2045.nc",
     ),
     network=NetworkConfig(
-        base_nc=NET_2045,
+        name=NET_2045,
         year=2045,
         result_tag="ref_2045_mp",
     ),
@@ -420,7 +423,7 @@ _add(Scenario(
         inflow_profile_name="hydro_inflows_2045.nc",
     ),
     network=NetworkConfig(
-        base_nc=NET_2045,
+        name=NET_2045,
         year=2045,
         result_tag="nuc_2045_w2",
     ),
@@ -448,7 +451,7 @@ _add(Scenario(
         inflow_profile_name="hydro_inflows_2045.nc",
     ),
     network=NetworkConfig(
-        base_nc=NET_2045,
+        name=NET_2045,
         year=2045,
         result_tag="nuc_2045_w2_h",
     ),
@@ -476,7 +479,7 @@ _add(Scenario(
         inflow_profile_name="hydro_inflows_2045.nc",
     ),
     network=NetworkConfig(
-        base_nc=NET_2045,
+        name=NET_2045,
         year=2045,
         result_tag="re_2045_h",
     ),
@@ -509,7 +512,7 @@ _add(Scenario(
         inflow_profile_name="hydro_inflows_2045.nc",
     ),
     network=NetworkConfig(
-        base_nc=NET_2045,
+        name=NET_2045,
         year=2045,
         result_tag="mix_2045_w2_re",
     ),
@@ -548,7 +551,7 @@ _add(Scenario(
         inflow_profile_name="hydro_inflows_2050.nc",
     ),
     network=NetworkConfig(
-        base_nc=NET_2050,
+        name=NET_2050,
         year=2050,
         result_tag="ref_2050_no_nuc",
     ),
@@ -575,7 +578,7 @@ _add(Scenario(
         inflow_profile_name="hydro_inflows_2050.nc",
     ),
     network=NetworkConfig(
-        base_nc=NET_2050,
+        name=NET_2050,
         year=2050,
         result_tag="nuc_2050_w3",
     ),
@@ -603,7 +606,7 @@ _add(Scenario(
         inflow_profile_name="hydro_inflows_2050.nc",
     ),
     network=NetworkConfig(
-        base_nc=NET_2050,
+        name=NET_2050,
         year=2050,
         result_tag="nuc_2050_w3_h",
     ),
@@ -631,7 +634,7 @@ _add(Scenario(
         inflow_profile_name="hydro_inflows_2050.nc",
     ),
     network=NetworkConfig(
-        base_nc=NET_2050,
+        name=NET_2050,
         year=2050,
         result_tag="re_2050_xl",
     ),
@@ -664,7 +667,7 @@ _add(Scenario(
         inflow_profile_name="hydro_inflows_2050.nc",
     ),
     network=NetworkConfig(
-        base_nc=NET_2050,
+        name=NET_2050,
         year=2050,
         result_tag="mix_2050_deep",
     ),
