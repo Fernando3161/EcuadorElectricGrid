@@ -1,26 +1,28 @@
-import pandas as pd
-from os.path import join
 from __future__ import annotations
-from typing import Dict
-from scenarios import Scenario
+
 import logging
 from dataclasses import dataclass
 from pathlib import Path
-from paths import all_dirs
+from typing import Dict
 
+import pandas as pd
+from os.path import join
+
+from scenarios import Scenario
+from paths import all_dirs
 from paths import (
+    PROC_GENERATION_DIR,
     PROC_LOAD_DIR,
     PROC_NETWORKS_DIR,
+    RAW_CUTOUTS_DIR,
     RAW_DEMANDS_DIR,
+    RAW_GADM_DIR,
     RAW_GENERATION_DIR,
     RESULTS_DIR,
 )
 # =============================================================================
 # Helper accessors (optional but handy)
 # =============================================================================
-
-import pandas as pd
-from os.path import join
 
 
 def get_demand_scaling_factor(scenario: Scenario, dirs: Dict[str, str]) -> float:
@@ -105,8 +107,11 @@ class ScenarioPaths:
 
     load_dir: Path = Path(PROC_LOAD_DIR)
     network_dir: Path = Path(PROC_NETWORKS_DIR)
+    processed_generation_dir: Path = Path(PROC_GENERATION_DIR)
     raw_demand_dir: Path = Path(RAW_DEMANDS_DIR)
     raw_generation_dir: Path = Path(RAW_GENERATION_DIR)
+    raw_gadm_dir: Path = Path(RAW_GADM_DIR)
+    raw_cutouts_dir: Path = Path(RAW_CUTOUTS_DIR)
     results_dir: Path = Path(RESULTS_DIR)
 
     @classmethod
