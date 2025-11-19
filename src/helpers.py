@@ -3,7 +3,18 @@ from os.path import join
 from __future__ import annotations
 from typing import Dict
 from scenarios import Scenario
+import logging
+from dataclasses import dataclass
+from pathlib import Path
+from paths import all_dirs
 
+from paths import (
+    PROC_LOAD_DIR,
+    PROC_NETWORKS_DIR,
+    RAW_DEMANDS_DIR,
+    RAW_GENERATION_DIR,
+    RESULTS_DIR,
+)
 # =============================================================================
 # Helper accessors (optional but handy)
 # =============================================================================
@@ -63,4 +74,46 @@ def get_re_factors(scenario: Scenario) -> Dict[str, float]:
         "solar": rcfg.solar_factor,
         "other": rcfg.other_re_factor,
     }
+
+
+
+# ---------------------------------------------------------------------------
+# Helpers ------------------------------------------------------------------
+# ---------------------------------------------------------------------------
+def setup_logging(level: int = logging.INFO) -> None:
+    """Configure a simple logging handler if none exists."""
+
+    if logging.getLogger().handlers:
+        return
+
+    log_path = Path(RESULTS_DIR) / "scenario_runs.log"
+    log_path.parent.mkdir(parents=True, exist_ok=True)
+
+    logging.basicConfig(
+        level=level,
+        format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
+        handlers=[
+            logging.FileHandler(log_path, mode="a", encoding="utf-8"),
+            logging.StreamHandler(),
+        ],
+    )
+
+
+@dataclass
+class ScenarioPaths:
+    """Convenience container for frequently used directories."""
+
+    load_dir: Path = Path(PROC_LOAD_DIR)
+    network_dir: Path = Path(PROC_NETWORKS_DIR)
+    raw_demand_dir: Path = Path(RAW_DEMANDS_DIR)
+    raw_generation_dir: Path = Path(RAW_GENERATION_DIR)
+    results_dir: Path = Path(RESULTS_DIR)
+
+    @classmethod
+    def create(cls) -> "ScenarioPaths":
+        dirs = all_dirs()  # ensures directories exist when running interactively
+        _ = dirs  # intentionally unused but keeps behaviour consistent with template
+        return cls()
+
+
 

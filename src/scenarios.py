@@ -43,6 +43,7 @@ class DemandConfig:
     scaling_csv: str = "demand_scaling.csv"
     profile_template_name: str = "load_template.csv"
     year_column: str = "year"
+    total_year_demand: float = 0.0
 
 
 @dataclass

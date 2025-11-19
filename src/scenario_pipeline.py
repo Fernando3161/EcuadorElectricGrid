@@ -18,14 +18,7 @@ import numpy as np
 import pandas as pd
 import pypsa
 
-from paths import (
-    PROC_LOAD_DIR,
-    PROC_NETWORKS_DIR,
-    RAW_DEMANDS_DIR,
-    RAW_GENERATION_DIR,
-    RESULTS_DIR,
-)
-from paths import all_dirs
+from helpers import ScenarioPaths, setup_logging
 from scenarios import (
     DemandConfig,
     HydroConfig,
@@ -50,7 +43,7 @@ BASE_SCENARIO_2018 = Scenario(
         mode="projected",
         family="base",
         projection="lin",
-        scaling_csv="demand_ec_2018_2027.csv",
+        scaling_csv="demand_projection_2018_2050_all_scenarios.csv",
         profile_template_name="load_base_2030_linear.csv",
         year_column="year",
     ),
@@ -58,7 +51,7 @@ BASE_SCENARIO_2018 = Scenario(
     network=NetworkConfig(
         base_nc="network_base.nc",
         year=2018,
-        result_tag="base_2018",
+        result_tag=f"base_2018_linear",
     ),
     nuclear=NuclearConfig(wave="none", total_capacity_mw=0.0),
     re=REConfig(level="none"),
@@ -69,47 +62,6 @@ BASE_SCENARIO_2018 = Scenario(
 
 SCENARIO_REGISTRY: Dict[str, Scenario] = dict(REGISTERED_SCENARIOS)
 SCENARIO_REGISTRY.setdefault(BASE_SCENARIO_2018.id, BASE_SCENARIO_2018)
-
-
-# ---------------------------------------------------------------------------
-# Helpers ------------------------------------------------------------------
-# ---------------------------------------------------------------------------
-
-
-def setup_logging(level: int = logging.INFO) -> None:
-    """Configure a simple logging handler if none exists."""
-
-    if logging.getLogger().handlers:
-        return
-
-    log_path = Path(RESULTS_DIR) / "scenario_runs.log"
-    log_path.parent.mkdir(parents=True, exist_ok=True)
-
-    logging.basicConfig(
-        level=level,
-        format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
-        handlers=[
-            logging.FileHandler(log_path, mode="a", encoding="utf-8"),
-            logging.StreamHandler(),
-        ],
-    )
-
-
-@dataclass
-class ScenarioPaths:
-    """Convenience container for frequently used directories."""
-
-    load_dir: Path = Path(PROC_LOAD_DIR)
-    network_dir: Path = Path(PROC_NETWORKS_DIR)
-    raw_demand_dir: Path = Path(RAW_DEMANDS_DIR)
-    raw_generation_dir: Path = Path(RAW_GENERATION_DIR)
-    results_dir: Path = Path(RESULTS_DIR)
-
-    @classmethod
-    def create(cls) -> "ScenarioPaths":
-        dirs = all_dirs()  # ensures directories exist when running interactively
-        _ = dirs  # intentionally unused but keeps behaviour consistent with template
-        return cls()
 
 
 # ---------------------------------------------------------------------------
@@ -188,7 +140,9 @@ class ScenarioPipeline:
         profile.index.name = "snapshot"
         return profile
 
-    def load_scaling_factor(self) -> float:
+    def load_scaling_factor(self, ) -> float:
+        # first get the whole year demand of the loaded profile
+
         config = self.scenario.demand
         if config.mode == "historical":
             logger.info("Demand mode is historical → scaling factor = 1.0")
@@ -222,14 +176,19 @@ class ScenarioPipeline:
                     column,
                     self.scenario.year,
                 )
+
                 return factor
         raise ValueError(
             f"None of the scaling columns {column_candidates} found in {scaling_path}"
         )
 
     def scale_load_template(self, profile: pd.DataFrame) -> pd.DataFrame:
-        factor = self.load_scaling_factor()
+        total_demand_profile = profile.sum().sum()
+        scenario_year_demand = self.load_scaling_factor()
+        factor = scenario_year_demand / total_demand_profile
         logger.info("Scaling load template by factor %.3f", factor)
+        logger.info("Total year demand of loaded profile %.3f", total_demand_profile)
+        logger.info("Total year demand of scenario %.3f", total_demand_profile)
         return profile * factor
 
     # ------------------------------------------------------------------
