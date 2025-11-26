@@ -120,14 +120,14 @@ def plot_march_window(profiles: pd.DataFrame, output_dir: Path) -> None:
     plt.ylabel("Total demand (kW)")
     plt.tight_layout()
     output_dir.mkdir(parents=True, exist_ok=True)
-    plt.savefig(output_dir / "march_total_timeseries.png")
+    plt.savefig(output_dir / "march_2022_total_timeseries.png")
     plt.close()
 
 
 def plot_monthly_totals(profiles: pd.DataFrame, output_dir: Path) -> None:
     """Plot total monthly energy as a column chart."""
     bus_columns = profiles.columns[1:-1]
-    profiles["total"] = profiles[bus_columns].sum(axis=1)
+    profiles["total"] = profiles[bus_columns].sum(axis=1)/1e6
     monthly_totals = (
         profiles.groupby(profiles["timestamp"].dt.month)["total"].sum().reset_index()
     )
@@ -137,13 +137,14 @@ def plot_monthly_totals(profiles: pd.DataFrame, output_dir: Path) -> None:
 
     plt.figure(figsize=(12, 6))
     sns.barplot(data=monthly_totals, x="month_name", y="total", color="skyblue")
-    plt.title("Total monthly energy (kWh) – 2022 profiles")
+    plt.title("Total monthly energy (GWh) – 2022 profiles")
     plt.xlabel("Month")
     plt.ylabel("Energy (kWh)")
     plt.xticks(rotation=45)
     plt.tight_layout()
     output_dir.mkdir(parents=True, exist_ok=True)
-    plt.savefig(output_dir / "monthly_energy_totals.png")
+
+    plt.savefig(output_dir / "monthly_2022_energy_totals.png")
     plt.close()
 
 
@@ -155,6 +156,7 @@ def main() -> None:
     # Verify totals before writing
     expected_total = sum(monthly_targets.values())
     assert_totals(scaled_profiles, expected_total)
+
 
     write_profiles(OUTPUT_PATH, scaled_profiles)
     print(f"Wrote scaled 2022 profiles to {OUTPUT_PATH}")
