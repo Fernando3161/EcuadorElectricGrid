@@ -1,0 +1,15 @@
+Carrier,co2_emissions,color,nice_name,max_growth,max_relative_growth
+coal,0.354,#707070,Coal,inf,0.0
+natural gas,0.187,#d35050,Natural Gas,inf,0.0
+nuclear,0.000,#ff9000,Nuclear,inf,0.0
+oil,0.248,#262626,Oil,inf,0.0
+lignite,0.334,#9e5a01,Lignite,inf,0.0
+geothermal,0.026,#ba91b1,Geothermal,inf,0.0
+biomass,0.000,#0c6013,Biomass,inf,0.0
+hydro,0.000,#08ad97,Reservoir & Dam,inf,0.0
+offwind-ac,0.000,#6895dd,Offshore Wind (AC),inf,0.0
+offwind-dc,0.000,#74c6f2,Offshore Wind (DC),inf,0.0
+onwind,0.000,#235ebc,Onshore Wind,inf,0.0
+solar,0.000,#f9d002,Solar,inf,0.0
+PHS,0.000,#08ad97,Pumped Hydro Storage,inf,0.0
+ror,0.000,#4adbc8,Run of River,inf,0.0
