@@ -1,0 +1,32 @@
+Ano de entrada en operacion,Proyecto / Central,Empresa / Institucion,Tipo,Power,Energy,Provincia,Canton,Bus,Comentario
+2026,Aroma Santo Solar,Neoen S.A.,Fotovoltaico,17.6,34.346,Loja,Sozoranga,B69_LOJA_SUR,Bloque 1 ERNC Fotovoltaico _capacidad según PEG
+2026,Nariapura,Total Eren S.A.,Fotovoltaico,60,147.296,Imbabura,Ibarra,B138_NARIAPURA,Bloque 1 ERNC Fotovoltaico _capacidad según PEG
+2026,Urcuqui,Dominion Energy S.A.,Fotovoltaico,60,135.417,Imbabura,San Miguel de Urcuqui,B138_URCUQUI,Bloque 1 ERNC Fotovoltaico _capacidad según PEG
+2026,Ambi,Neoen S.A.,Fotovoltaico,60,144.637,Imbabura,Antonio Ante,B138_AMBI,Bloque 1 ERNC Fotovoltaico _capacidad según PEG
+2026,Imbabura Solar,Neoen S.A.,Fotovoltaico,60,150.492,Imbabura,Ibarra,B138_IMBABURA_SOLAR,Bloque 1 ERNC Fotovoltaico _capacidad según PEG
+2026,Intiyana Solar,Neoen S.A.,Fotovoltaico,60,150.908,Imbabura,San Miguel de Urcuqui,B138_INTIYANA,Bloque 1 ERNC Fotovoltaico _capacidad según PEG
+2026,Bloque 1 ERNC: Eolico - 45 MW,Los adjudicatorios del PPS,Eolico,45,181.3,Loja,Yanahurcu,B230_SAN_IDELFONSO,"Bloque 1 ERNC eólico _ubicado en cluster Yanahurcu (Loja), evacuación vía San Idelfonso 230 kV"
+2027,El Rosario,Consorcio El Rosario Energy (ECOENER),Hidroelectrico,49.5,313.823,Morona Santiago,El Rosario,B69_GUALAQUIZA,Bloque 1 ERNC hidro _Central El Rosario en cantón Gualaquiza (Morona Santiago)
+2027,Santa Rosa,Consorcio Santa Rosa Energy (ECOENER),Hidroelectrico,49.5,294.288,Morona Santiago,Santa Rosa,B69_GUALAQUIZA,Bloque 1 ERNC hidro _Central Santa Rosa en cantón Gualaquiza (Morona Santiago)
+2027,San Jacinto,Consorcio San Jacinto,Hidroelectrico,49.9,304.13,Santo Domingo de los Tsáchilas,San Jacinto,B69_SANTO_DOMINGO,Bloque 1 ERNC hidro _Central San Jacinto en Santo Domingo de los Tsáchilas (parroquia Alluriquín)
+2027,Aroma Santo Solar B2,Neoen S.A.,Fotovoltaico,9.421,18.155,Loja,Sozoranga,B69_LOJA_SUR,Bloque 2 ERNC Fotovoltaico _expansión proporcional de Bloque 1
+2027,Nariapura B2,Total Eren S.A.,Fotovoltaico,32.116,61.893,Imbabura,Ibarra,B138_NARIAPURA,Bloque 2 ERNC Fotovoltaico _expansión proporcional de Bloque 1
+2027,Urcuqui B2,Dominion Energy S.A.,Fotovoltaico,32.116,61.893,Imbabura,San Miguel de Urcuqui,B138_URCUQUI,Bloque 2 ERNC Fotovoltaico _expansión proporcional de Bloque 1
+2027,Ambi B2,Neoen S.A.,Fotovoltaico,32.116,61.893,Imbabura,Antonio Ante,B138_AMBI,Bloque 2 ERNC Fotovoltaico _expansión proporcional de Bloque 1
+2027,Imbabura Solar B2,Neoen S.A.,Fotovoltaico,32.116,61.893,Imbabura,Ibarra,B138_IMBABURA_SOLAR,Bloque 2 ERNC Fotovoltaico _expansión proporcional de Bloque 1
+2027,Intiyana Solar B2,Neoen S.A.,Fotovoltaico,32.116,61.893,Imbabura,San Miguel de Urcuqui,B138_INTIYANA,Bloque 2 ERNC Fotovoltaico _expansión proporcional de Bloque 1
+2028,Aroma Santo Solar B3,Neoen S.A.,Fotovoltaico,18.287,35.243,Loja,Sozoranga,B69_LOJA_SUR,Bloque 3 ERNC Fotovoltaico _expansión proporcional de Bloque 1
+2028,Nariapura B3,Total Eren S.A.,Fotovoltaico,62.343,120.147,Imbabura,Ibarra,B138_NARIAPURA,Bloque 3 ERNC Fotovoltaico _expansión proporcional de Bloque 1
+2028,Urcuqui B3,Dominion Energy S.A.,Fotovoltaico,62.343,120.147,Imbabura,San Miguel de Urcuqui,B138_URCUQUI,Bloque 3 ERNC Fotovoltaico _expansión proporcional de Bloque 1
+2028,Ambi B3,Neoen S.A.,Fotovoltaico,62.343,120.147,Imbabura,Antonio Ante,B138_AMBI,Bloque 3 ERNC Fotovoltaico _expansión proporcional de Bloque 1
+2028,Imbabura Solar B3,Neoen S.A.,Fotovoltaico,62.343,120.147,Imbabura,Ibarra,B138_IMBABURA_SOLAR,Bloque 3 ERNC Fotovoltaico _expansión proporcional de Bloque 1
+2028,Intiyana Solar B3,Neoen S.A.,Fotovoltaico,62.343,120.147,Imbabura,San Miguel de Urcuqui,B138_INTIYANA,Bloque 3 ERNC Fotovoltaico _expansión proporcional de Bloque 1
+2024,Bloque 1 de generacion firme - 400 MW,Estado,Termoelectrico,400,3000,El Oro,El Guabo,B230_SAN_IDELFONSO,Ubicado en Machala Gas / San Idelfonso 230 kV _refuerzo costa sur
+2025,Bloque 2 de generacion firme - 300 MW,Estado,Termoelectrico,300,2250,Guayas,Duran,B230_DURAN_NORTE,Ubicado en Durán Norte 230 kV _cercanía al mayor centro de carga
+2028,Bloque de Ciclo Combinado I - 400 MW,Adjudicatario del PPS,Termoelectrico,400,3000,Manabi,Manta,B230_MANTA,Ciclo combinado con gas dedicado _eje Manta–San Gregorio 230 kV
+2028,Bloque 2 ERNC: Eolico - 300 MW,Los adjudicatorios del PPS,Eolico,300,1314,Loja,Zona El Pimo,B230_SAN_IDELFONSO,Cluster eólico El Pimo–Yanahurcu _evacuación vía San Idelfonso 230 kV
+2028,Bloque 2 ERNC: Hidroelectrico - 200 MW,Los adjudicatorios del PPS,Hidroelectrico,200,1224.6,Esmeraldas,La Union,B230_LA_UNION,Hidro cuenca del Pacífico norte _nodo La Unión 230 kV
+2028,Bloque 2 ERNC: Biomasa - 30 MW,Los adjudicatorios del PPS,Biomasa,30,236.5,Los Rios,Quevedo,B69_QUEVEDO,Planta de biomasa en cinturón agroindustrial Los Ríos
+2030,Bloque 3 ERNC: Hidroelectrico - 250 MW,Estado,Hidroelectrico,250,1492.7,Pastaza,Mera,B230_ABITAGUA,Hidro en zona Abitagua _conexión Abitagua–San Francisco–Topo 230 kV
+2035,Bloque Nuclear 1 - 400 MW,Por definir,Nuclear,400,,El Oro,Pasaje,B500_PASAJE,Supuesto: 1er bloque nuclear (SMR) en nodo Pasaje 500 kV
+2040,Bloque Nuclear 2 - 400 MW,Por definir,Nuclear,400,,Tungurahua,Tisaleo,B500_TISALEO,Supuesto: 2do bloque nuclear (SMR) en nodo Tisaleo 500 kV
