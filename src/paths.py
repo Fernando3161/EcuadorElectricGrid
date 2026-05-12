@@ -12,6 +12,7 @@ LITERATURE_DIR: str = os.path.join(ROOT, "literature")
 NOTEBOOKS_DIR: str = os.path.join(ROOT, "notebooks")
 RESULTS_DIR: str = os.path.join(ROOT, "results")
 GRAPHS_DIR: str = os.path.join(RESULTS_DIR, "graphs")
+GRAPHS_GEN_DIR: str = os.path.join(GRAPHS_DIR, "generation")
 EXPERIMENTS_DIR: str = os.path.join(RESULTS_DIR, "experiments")
 NETWORKS_RES_DIR: str = os.path.join(RESULTS_DIR, "networks")
 SRC_DIR: str = os.path.join(ROOT, "src")
@@ -109,6 +110,7 @@ __all__ = [
     "NOTEBOOKS_DIR",
     "RESULTS_DIR",
     "GRAPHS_DIR",
+    "GRAPHS_GEN_DIR",
     "EXPERIMENTS_DIR",
     "NETWORKS_RES_DIR",
     "SRC_DIR",

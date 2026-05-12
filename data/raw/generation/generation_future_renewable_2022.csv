@@ -30,3 +30,4 @@ Ano de entrada en operacion,Proyecto / Central,Empresa / Institucion,Tipo,Power,
 2030,Bloque 3 ERNC: Hidroelectrico - 250 MW,Estado,Hidroelectrico,250,1492.7,Pastaza,Mera,B230_ABITAGUA,Hidro en zona Abitagua _conexión Abitagua–San Francisco–Topo 230 kV
 2035,Bloque Nuclear 1 - 400 MW,Por definir,Nuclear,400,,El Oro,Pasaje,B500_PASAJE,Supuesto: 1er bloque nuclear (SMR) en nodo Pasaje 500 kV
 2040,Bloque Nuclear 2 - 400 MW,Por definir,Nuclear,400,,Tungurahua,Tisaleo,B500_TISALEO,Supuesto: 2do bloque nuclear (SMR) en nodo Tisaleo 500 kV
+2045,Bloque Nuclear 3 - 400 MW,Por definir,Nuclear,400,,Guayas,Guayaquil,B500_GUAYAS_N,Supuesto: 3er bloque nuclear (SMR) en nodo GuayaquilNuclear 500 kV

@@ -1,0 +1,24 @@
+{
+  "registry_version": 1,
+  "scenarios": {
+    "2022_s01_base": {
+      "year": 2022,
+      "title": "Scenario 01 Base 2022",
+      "description": "First 2022 scenario. Uses placeholder input files. Later: build PyPSA network and run consistency checks.",
+      "inputs": {
+        "demand_profiles": "data/processed/demand/demand_profiles_2022.csv",
+        "demand_prognosis": "data/processed/demand/demand_prognosis_2022_2050.csv",
+        "generation": "data/processed/generation/cleaned_generation_2022.csv",
+        "network": "data/processed/networks/ec_network_2022.nc",
+        "expansion_network": "",
+        "expansion_generation": ""
+      },
+      "outputs": {
+        "pypsa_network_dir": "results/scenario_results/2022_s01_base",
+        "results_dir": "results/scenario_results/2022_s01_base"
+      },
+      "tags": ["2022", "base", "placeholder"],
+      "active": true
+    }
+  }
+}

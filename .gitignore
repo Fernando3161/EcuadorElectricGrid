@@ -3,7 +3,7 @@ __pycache__/
 *.py[codz]
 *$py.class
 
-*.csv
+#*.csv
 *.png 
 *.jpg
 *.jpeg  
@@ -16,7 +16,7 @@ __pycache__/
 *.pdf
 # C extensions
 *.so
-
+*.csv
 # Distribution / packaging
 .Python
 build/

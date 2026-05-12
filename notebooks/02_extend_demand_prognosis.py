@@ -3,7 +3,7 @@
 This script combines the 2022 observed annual demand with the Master Plan
 prognosis for 2023–2032 and linearly extends both the trend and expansion
 scenarios to 2050. A full prognosis table is written to
-``data/processed/demand_prognosis_2022_2050.csv`` and a publication-ready
+``data/processed/demand/demand_prognosis_2022_2050.csv`` and a publication-ready
 figure is saved to ``results/graphs/demand``.
 """
 from __future__ import annotations
@@ -21,12 +21,12 @@ RAW_MONTH_PATH = BASE_DIR / "data" / "raw" / "demand" / "demand_month.csv"
 RAW_YEAR_PROGNOSIS_PATH = (
     BASE_DIR / "data" / "raw" / "demand" / "demand_year_prognosis.csv"
 )
-OUTPUT_TABLE_PATH = BASE_DIR / "data" / "processed" / "demand_prognosis_2022_2050.csv"
+OUTPUT_TABLE_PATH = BASE_DIR / "data" / "processed" /"demand"/ "demand_prognosis_2022_2050.csv"
 FIGURE_PATH = BASE_DIR / "results" / "graphs" / "demand" / "demand_prognosis_extension.png"
 
 
-TREND_COLOR = "#1f77b4"  # blue tone
-EXPANSION_COLOR = "#ff7f0e"  # orange tone
+TREND_COLOR = "#194d72"  # blue tone
+EXPANSION_COLOR = "#de6e0d"  # orange tone
 
 
 def _clean_columns(columns: Iterable[str]) -> List[str]:
@@ -69,7 +69,9 @@ def build_historical_series(annual_2022: float, prognosis_df: pd.DataFrame) -> p
 
 def extend_linear_forecast(historical: pd.DataFrame, target_year: int = 2050) -> pd.DataFrame:
     """Linearly extend each scenario from the historical years to the target year."""
+    historical_o = historical.copy()
     latest_year = int(historical["Year"].max())
+    historical= historical[historical["Year"]>2025]
     if target_year <= latest_year:
         raise ValueError("Target year must be greater than historical maximum.")
 
@@ -80,7 +82,7 @@ def extend_linear_forecast(historical: pd.DataFrame, target_year: int = 2050) ->
         coeffs = np.polyfit(historical["Year"], historical[scenario], deg=1)
         forecast_df[scenario] = np.polyval(coeffs, forecast_years)
 
-    return pd.concat([historical, forecast_df], ignore_index=True)
+    return pd.concat([historical_o, forecast_df], ignore_index=True)
 
 
 def write_prognosis_table(prognosis: pd.DataFrame, path: Path) -> None:
@@ -98,10 +100,10 @@ def plot_prognosis(prognosis: pd.DataFrame, figure_path: Path) -> None:
     configure_plot_style()
     figure_path.parent.mkdir(parents=True, exist_ok=True)
 
-    fig, ax = plt.subplots(figsize=(10, 6))
+    fig, ax = plt.subplots(figsize=(12, 8))
 
     given_mask = prognosis["Year"] <= 2032
-    extension_mask = prognosis["Year"] > 2032
+    extension_mask = prognosis["Year"] >= 2032
 
     for scenario, color in [("Tendencial", TREND_COLOR), ("Expansion", EXPANSION_COLOR)]:
         # Master Plan data

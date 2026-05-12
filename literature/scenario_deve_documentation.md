@@ -1,101 +1,238 @@
-# Ecuador Power System – Scenario Framework (2024–2050)
-Version 1.0 — Nuclear, Renewable, and Mixed Pathways
+# Ecuador Power System Scenarios 2022 Baseline to 2050
+Scenario Registry Specification v1.0
 
-## Overview
-This document defines a consistent, reproducible, and fully transparent scenario matrix for Ecuador’s power system planning from 2017 to 2050, including:
+## Project overview
+This work defines a consistent and reproducible scenario registry for Ecuador power system studies in PyPSA.
 
-- Calibration (2017)
-- Current system (2024)
-- Master Plan expansion (2030)
-- Introduction of Small Modular Nuclear Reactors (SMRs) in sequential deployment waves
-- Renewable-energy pathways
-- Mixed nuclear + renewable pathways
-- Demand growth sensitivities
-- Hydrology and reliability stress tests
+Main goals
+- Validate the consistency of an as-is reference network using 2022 demand and the existing PyPSA Ecuador network dataset.
+- Define a scenario space for future years that reflects the 2022 master plan structure while acknowledging that, by 2026, most planned projects have not been realized.
+- Run all declared scenarios in batch, store results in a structured way, and later expose results through a dashboard or web API.
 
-### SMR Deployment Roadmap
-| Deployment Wave | Approx. Year | New Nuclear Capacity | Cumulative Capacity |
-|-----------------|--------------|-----------------------|---------------------|
-| Wave 1 | 2035 | 0.9 GW | 0.9 GW |
-| Wave 2 | 2045 | +1.2 GW | 2.1 GW |
-| Wave 3 | 2050 | +0.9 GW | 3.0 GW |
+Core idea
+- Use 2022 as the calibration and sanity-check baseline.
+- Re-base the 2022 master plan expansion window to start in 2030 to reflect observed delays.
+- Explore futures through a small set of orthogonal scenario axes: demand, generation, transmission, nuclear, and stress tests.
 
----
+## Data inputs and scope
+This registry is designed to be backed by these sources
+- Demand expansion chapter of the 2022 master plan, including demand hypotheses and singular loads.
+- Generation expansion chapter of the 2022 master plan, including PEG additions and firm capacity needs.
+- Transmission expansion chapter of the 2022 master plan, including PET reinforcements and methodology.
+- Additional nuclear SMR pathway assumptions as a separate explicit axis.
 
-# 1. Calibration & Current System (2017–2024)
+Up to 2032, the plan is documented in the master plan documents.
+Beyond that, the registry defines scenario assumptions, but keeps them consistent with the master plan logic.
 
-| Scenario ID | Year | Demand Case | Hydrology | Generation | Network | Purpose |
-|-------------|------|-------------|-----------|------------|---------|---------|
-| CAL_2017 | 2017 | Historical | 2017-like | Actual 2017 system | 2017 grid | Calibration against historical production and ENS. |
-| REF_2024 | 2024 | Medium | Normal | All plants in service by 2024 | 2024 grid | Reference current system. |
-| CRISIS_2024 | 2024 | Medium | Severe Dry | Same as REF_2024 | 2024 grid | Stress test representing hydro crisis. |
+## Anchor years
+Anchor years are the reference points at which scenarios are defined, built, and solved.
 
----
+Recommended anchors
+- 2022: Baseline sanity check on the as-is grid and demand
+- 2030: First wave of delayed master plan projects becomes visible
+- 2035: Midpoint plus first SMR deployment wave
+- 2040: Completion of the re-based master plan window plus second SMR wave
+- 2050: Long-run endpoint, full deep decarbonization and final SMR wave
 
-# 2. Master Plan 2030 Baseline (No Nuclear Yet)
+Note
+- The original master plan horizon is 2023 to 2032. In this registry, that window is re-based to approximately 2030 to 2039.
 
-| Scenario ID | Year | Demand Case | Hydrology | Generation | Network | Purpose |
-|-------------|------|-------------|-----------|------------|---------|---------|
-| REF_2030_MP | 2030 | Medium | Normal | Full Master Plan 2030 | MP grid | Future baseline. |
-| RE_2030_L | 2030 | Medium | Normal | REF_2030_MP + 5% RE | MP grid | Low RE sensitivity. |
-| RE_2030_H | 2030 | Medium | Normal | REF_2030_MP + 10–15% RE | MP grid | High RE sensitivity. |
+## Delay model for master plan projects
+Because the plan was published in 2022 and by 2026 most projects are delayed, the registry uses a transparent time-shift rule.
 
----
+Re-base rule
+- Define a plan re-base start year of 2030
+- Original plan start year is 2023
+- delay_years = 2030 minus 2023 = 7
+- Any project year in PEG or PET is shifted as
+  shifted_year = original_year + delay_years
 
-# 3. First SMR Wave in 2035 (0.9 GW)
+Timing sensitivities
+- Delay_M: delay_years = 5  optimistic catch-up
+- Delay_B: delay_years = 7  baseline re-base
+- Delay_S: delay_years = 9  pessimistic
 
-| Scenario ID | Year | Demand | Hydrology | Generation | Network | Purpose |
-|-------------|------|--------|-----------|------------|---------|---------|
-| REF_2035_MP | 2035 | Medium | Normal | REF_2030_MP + 2035 additions | MP grid 2035 | Baseline 2035. |
-| NUC_2035_W1 | 2035 | Medium | Normal | +0.9 GW SMR | MP grid 2035 | Nuclear Wave 1. |
-| NUC_2035_W1_H | 2035 | High | Normal | +0.9 GW SMR | MP grid 2035 | High-demand test. |
-| RE_2035_H | 2035 | Medium | Normal | +10–20% RE | MP grid 2035 | RE-only alternative. |
-| MIX_2035_W1_RE | 2035 | Medium | Normal | 0.9 GW SMR + moderate RE | MP grid 2035 | Hybrid path. |
+Coupling rule for feasibility
+- Default: transmission_delay_years equals generation_delay_years
+- Optional: allow transmission to lead by up to 2 years in high-renewable cases
+- Avoid cases where generation leads transmission unless explicitly intended as a stress test
 
----
+## Scenario axes
+The registry is designed as a cartesian product of small, interpretable axes.
+Each axis is encoded by a short token.
 
-# 4. Second SMR Wave in 2045 (2.1 GW Total)
+### Axis A: Demand
+Demand cases follow the demand chapter structure and add an explicit upside stress case.
 
-| Scenario ID | Year | Demand | Hydrology | Generation | Network | Purpose |
-|-------------|------|--------|-----------|------------|---------|---------|
-| REF_2045_MP | 2045 | Medium | Normal | REF_2035 update + MP 2040 pipeline | Grid 2045 | Baseline 2045. |
-| NUC_2045_W2 | 2045 | Medium | Normal | 2.1 GW nuclear | Grid 2045 | Nuclear Wave 2. |
-| NUC_2045_W2_H | 2045 | High | Normal | 2.1 GW nuclear | Grid 2045 | High demand adequacy. |
-| RE_2045_H | 2045 | Medium | Normal | 15–25% RE | Future grid | RE-only path. |
-| MIX_2045_W2_RE | 2045 | High | Normal | Nuclear + RE | Future grid | Hybrid path. |
+- D1: Hypothesis 1 tendential demand
+- D2: Hypothesis 2 case base, includes singular loads and planning assumptions used by PET
+- D3: Hypothesis 2 plus Industrias Basicas upside, treated as a stress or high-growth case
 
----
+Optional demand modifiers, only if parameterized
+- D2_EMOB_H: higher e-mobility uptake than the base trajectory
+- D2_EE_H: stronger energy efficiency than the base trajectory
 
-# 5. Full SMR Deployment by 2050 (3.0 GW)
+### Axis B: Generation
+Generation cases are designed to be implementable in PyPSA while remaining aligned with the master plan logic.
 
-| Scenario ID | Year | Demand | Hydrology | Generation | Network | Purpose |
-|-------------|------|--------|-----------|------------|---------|---------|
-| REF_2050_NO_NUC | 2050 | Medium | Normal | No nuclear | Grid 2050 | Alternative non-nuclear future. |
-| NUC_2050_W3 | 2050 | Medium | Normal | 3.0 GW nuclear | Grid 2050 | Full nuclear scenario. |
-| NUC_2050_W3_H | 2050 | High | Normal | 3.0 GW nuclear | Grid 2050 | High-demand nuclear. |
-| RE_2050_XL | 2050 | Medium/High | Normal | 30–40% RE | Future grid | Very high RE scenario. |
-| MIX_2050_DEEP | 2050 | High | Normal | Nuclear + strong RE | Future grid | Net-zero hybrid. |
+Base building blocks
+- G0: As-is generation fleet for the baseline year 2022
+- G_MP: Apply master plan PEG additions as written, but shifted by delay_years
+- G_FIRM: Add master plan firm capacity additions and repowering requirements, shifted by delay_years
+- G_THERM_STRESS: Reduce thermal availability or retire a share to represent aging risk
+- G_ALT_HYDRO: Replace delayed large hydro pipeline share with alternative hydro candidates if needed
+- G_REX: Extra renewables beyond PEG after the re-based window, for deep decarb pathways
 
----
+Typical combinations
+- 2030 to 2040 realistic baseline: G_MP plus G_FIRM
+- Thermal risk stress: G_MP plus G_THERM_STRESS
+- Deep decarb: G_MP plus G_REX, optionally combined with nuclear
 
-# 6. Stress-Test Suffixes
+### Axis C: Transmission
+Network cases are built from the as-is grid and the master plan PET reinforcements.
 
-| Suffix | Meaning |
-|--------|---------|
-| _DRY | Severe drought |
-| _OUT | Major outage (plant/line) |
-| _CR | Compound crisis |
-| _FUEL | Fuel price shock |
+- N0: As-is network from the PyPSA Ecuador dataset, baseline year topology
+- N_PET: Apply PET reinforcements, shifted by delay_years
+- N_PET_PART: Apply only critical reinforcements and replacements, delay the rest
+- N_NUC: N_PET plus additional reinforcements for nuclear siting and integration
 
-Example: NUC_2035_W1_H_DRY
+Notes on N_NUC
+- Nuclear reinforcements are not defined in the master plan documents and must be declared explicitly as assumptions.
+- Keep N_NUC separate so nuclear assumptions do not contaminate master plan baselines.
 
----
+### Axis D: Nuclear SMR pathway
+Nuclear is introduced as an explicit axis to provide firm low-carbon capacity beyond the re-based master plan window.
 
-# 7. Scenario Hierarchy
+Capacity waves
+- NU0: No nuclear
+- NU1: 2035 plus 0.9 GW SMR, cumulative 0.9 GW
+- NU2: 2040 plus 1.2 GW SMR, cumulative 2.1 GW
+- NU3: 2050 plus 0.9 GW SMR, cumulative 3.0 GW
 
-- Baselines: REF_2024, REF_2030_MP, REF_2035_MP, REF_2045_MP, REF_2050_NO_NUC
-- Nuclear Path: NUC_2035_W1, NUC_2045_W2, NUC_2050_W3
-- RE Path: RE_2030_L, RE_2030_H, RE_2035_H, RE_2045_H, RE_2050_XL
-- Mixed Path: MIX_2035_W1_RE, MIX_2045_W2_RE, MIX_2050_DEEP
-- Stress tests: add suffixes (_DRY, _OUT, _CR, _FUEL)
+Integration mode
+- Mode A: Additive, nuclear is additional firm capacity on top of the firm plan
+- Mode R: Replacement, nuclear replaces part of thermal firm additions and repowering after 2035
 
+Nuclear siting placeholder
+- Each nuclear wave must specify a nuclear bus or region and a connection voltage level.
+- Track this in registry fields nuclear_bus, nuclear_zone, and nuclear_grid_assumptions.
+
+### Axis E: Stress tests and suffixes
+Stress tests are applied as suffixes so the base scenario definition remains unchanged.
+
+- DRY: Severe drought hydrology or reduced hydro availability
+- OUT: Major outage of a plant or transmission corridor
+- CR: Compound crisis, multiple simultaneous stresses
+- FUEL: Fuel price shock or fuel supply constraint affecting thermal dispatch
+- N1: N minus 1 style derating of key elements, optional
+
+Example
+- NUC_2040_D3_G_MP_G_FIRM_N_NUC_NU2_A_DelayS_DRY
+
+## Recommended minimal scenario set
+To keep early work manageable, start with a small set that spans the main axes.
+
+Baseline and validation
+- REF_2022_D2_G0_N0_NU0_DelayB
+
+Delayed master plan baseline
+- MP_2030_D2_G_MP_G_FIRM_N_PET_NU0_DelayB
+- MP_2035_D2_G_MP_G_FIRM_N_PET_NU0_DelayB
+- MP_2040_D2_G_MP_G_FIRM_N_PET_NU0_DelayB
+
+Nuclear introductions
+- NUC_2035_D2_G_MP_G_FIRM_N_NUC_NU1_R_DelayB
+- NUC_2040_D2_G_MP_G_FIRM_N_NUC_NU2_R_DelayB
+- NUC_2050_D2_G_MP_G_REX_N_NUC_NU3_R_DelayB
+
+Demand growth sensitivity
+- MP_2040_D1_G_MP_G_FIRM_N_PET_NU0_DelayB
+- MP_2040_D3_G_MP_G_FIRM_N_PET_NU0_DelayB
+
+Hydrology stress
+- MP_2035_D2_G_MP_G_FIRM_N_PET_NU0_DelayB_DRY
+- NUC_2040_D2_G_MP_G_FIRM_N_NUC_NU2_R_DelayB_DRY
+
+## Scenario ID convention
+Scenario IDs should be unique, sortable, and parseable.
+
+Recommended pattern
+- FAMILY_YEAR_Dx_G..._N..._NUx_MODE_DELAY_SUFFIXES
+
+Where
+- FAMILY is one of REF, MP, NUC, RE, MIX
+- YEAR is the anchor year
+- Dx is demand case token
+- G tokens list generation building blocks
+- N token is network case
+- NU token is nuclear wave
+- MODE is A or R when NU is not NU0
+- DELAY is DelayM, DelayB, or DelayS
+- SUFFIXES are optional stress tokens
+
+Examples
+- REF_2022_D2_G0_N0_NU0_DelayB
+- MP_2030_D2_G_MP_G_FIRM_N_PET_NU0_DelayB
+- NUC_2035_D2_G_MP_G_FIRM_N_NUC_NU1_R_DelayB
+- NUC_2040_D3_G_MP_G_FIRM_N_NUC_NU2_A_DelayS_DRY
+
+## Registry schema
+Store the registry as a machine-readable table, for example CSV, Parquet, or YAML.
+Each row defines one scenario and all information needed to build PyPSA inputs.
+
+Required fields
+- scenario_id
+- anchor_year
+- delay_case  DelayM, DelayB, DelayS
+- delay_years
+- demand_case  D1, D2, D3
+- generation_case  list of tokens, eg G_MP plus G_FIRM
+- network_case  N0, N_PET, N_PET_PART, N_NUC
+- nuclear_case  NU0, NU1, NU2, NU3
+- nuclear_mode  blank if NU0, else A or R
+- stress_cases  list, can be empty
+- notes
+
+Recommended additional fields for traceability
+- created_by
+- created_on
+- source_version
+- base_dataset  dataset name or commit hash
+- nuclear_bus
+- nuclear_zone
+- nuclear_grid_assumptions
+- tags  freeform, eg baseline, realism, stress, deep_decarb
+
+Example registry rows
+| scenario_id | anchor_year | delay_case | demand_case | generation_case | network_case | nuclear_case | nuclear_mode | stress_cases |
+|---|---:|---|---|---|---|---|---|---|
+| REF_2022_D2_G0_N0_NU0_DelayB | 2022 | DelayB | D2 | G0 | N0 | NU0 |  |  |
+| MP_2030_D2_G_MP_G_FIRM_N_PET_NU0_DelayB | 2030 | DelayB | D2 | G_MP plus G_FIRM | N_PET | NU0 |  |  |
+| NUC_2035_D2_G_MP_G_FIRM_N_NUC_NU1_R_DelayB | 2035 | DelayB | D2 | G_MP plus G_FIRM | N_NUC | NU1 | R |  |
+| NUC_2040_D3_G_MP_G_FIRM_N_NUC_NU2_A_DelayS_DRY | 2040 | DelayS | D3 | G_MP plus G_FIRM | N_NUC | NU2 | A | DRY |
+
+## Output structure for batch runs
+Even though implementation comes later, define a consistent path convention now.
+
+Recommended folder structure
+- results/
+  - scenario_id/
+    - inputs/
+      - scenario_registry_row.json
+      - built_network.nc
+      - assumptions.yaml
+    - outputs/
+      - dispatch_timeseries.parquet
+      - nodal_prices.parquet
+      - line_loading.parquet
+      - summary_metrics.json
+    - logs/
+      - solve.log
+      - warnings.log
+
+This structure makes it straightforward to build a dashboard or API layer later.
+
+## Next steps
+1) Implement the scenario registry table in a repository-managed file.
+2) Implement builders that map demand_case, generation_case, network_case, nuclear_case into PyPSA modifications.
+3) Run a first batch on the minimal scenario set, validate outputs, then expand the registry.

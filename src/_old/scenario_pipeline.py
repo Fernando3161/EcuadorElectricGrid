@@ -30,7 +30,7 @@ from scenarios import (
     REConfig,
     Scenario,
 )
-from scenario_reg import SCENARIOS as REGISTERED_SCENARIOS
+from EcuadorElectricGrid.src._old.scenario_reg import SCENARIOS as REGISTERED_SCENARIOS
 logger = logging.getLogger(__name__)
 
 
