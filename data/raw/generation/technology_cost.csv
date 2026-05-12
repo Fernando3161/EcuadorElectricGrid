@@ -1,0 +1,12 @@
+carrier,marginal_cost,capital_cost,notes
+#Tech,USD/MWh, USD/kW, Sources  (used LCOE for marginal cost to refelct better investments)"
+biogas,85.0,2800,"Assumes CF=0.85, CRF=0.0944, FOM≈3%; similar to EU biogas LCOE bands."
+biomass,95.0,3000,"Assumes CF=0.80, CRF=0.0858, FOM≈4%; aligns with IRENA biomass LCOE ranges."
+hydro,45.0,2806,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+nuclear,65.0,6500,"CF=0.90, CRF=0.0755, FOM≈2%; fuel+VOM ~7 USD/MWh included."
+ncre,60.0,2000,"Assumes CF=0.45; represents small hydro / other distributed RE."
+solar,35.0,758,"CF=0.22, CRF=0.0858; consistent with IRENA 2023 PV LCOE bands."
+oil,180.0,1100,"High LCOE due to fuel cost; fuel cost dominates."
+onwind,45.0,1154,"CF=0.35, CRF=0.0858; consistent with IRENA 2023 onshore wind."
+
+

@@ -1,0 +1,248 @@
+Generator,bus,carrier,p_nom,control,type,p_nom_mod,p_nom_extendable,p_nom_min,p_nom_max,p_min_pu,p_max_pu,p_set,q_set,sign,marginal_cost_quadratic,build_year,lifetime,efficiency,committable,start_up_cost,shut_down_cost,stand_by_cost,min_up_time,min_down_time,up_time_before,down_time_before,ramp_limit_up,ramp_limit_down,ramp_limit_start_up,ramp_limit_shut_down,weight,p_nom_opt,province,marginal_cost,capital_cost,notes
+Coca_Codo_Sinclair,257,hydro,1500.0,Slack,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,1500.0,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Molino,52,hydro,1075.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,1075.0,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Sopladora,52,hydro,487.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,487.0,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Minas_San_Francisco,159,hydro,270.0,Slack,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,270.0,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Marcel_Laniado,56,hydro,213.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,213.0,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+San_Francisco,110,hydro,230.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,230.0,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Delsitanisagua,159,hydro,180.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,180.0,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Mazar,52,hydro,170.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,170.0,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Agoyan,110,hydro,160.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,160.0,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Gonzalo_Zevallos_Vapor,271,oil,146.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,146.0,,180.0,1100.0,High LCOE due to fuel cost; fuel cost dominates.
+Trinitaria,271,oil,133.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,133.0,,180.0,1100.0,High LCOE due to fuel cost; fuel cost dominates.
+Termogas_Machala_I,279,oil,138.56,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,138.56,,180.0,1100.0,High LCOE due to fuel cost; fuel cost dominates.
+Jaramijo,273,oil,149.22,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,149.22,,180.0,1100.0,High LCOE due to fuel cost; fuel cost dominates.
+Esmeraldas_I,186,oil,132.5,Slack,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,132.5,,180.0,1100.0,High LCOE due to fuel cost; fuel cost dominates.
+Termogas_Machala_II,279,oil,136.8,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,136.8,,180.0,1100.0,High LCOE due to fuel cost; fuel cost dominates.
+Victoria_II,271,oil,115.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,115.0,,180.0,1100.0,High LCOE due to fuel cost; fuel cost dominates.
+Anfbal_Santos_Gas,271,oil,113.27,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,113.27,,180.0,1100.0,High LCOE due to fuel cost; fuel cost dominates.
+Enrique_Garcfa,271,oil,102.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,102.0,,180.0,1100.0,High LCOE due to fuel cost; fuel cost dominates.
+Esmeraldas_II,186,oil,100.2,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,100.2,,180.0,1100.0,High LCOE due to fuel cost; fuel cost dominates.
+San_Carlos,158,biomass,78.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,78.0,,95.0,3000.0,"Assumes CF=0.80, CRF=0.0858, FOM≈4%; aligns with IRENA biomass LCOE ranges."
+Pucara,66,hydro,73.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,73.0,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Santa_Elena_II,146,oil,90.1,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,90.1,,180.0,1100.0,High LCOE due to fuel cost; fuel cost dominates.
+Manduriacu,256,hydro,63.36,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,63.36,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Due,161,hydro,64.3,Slack,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,64.3,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Alvaro_Tinajero,271,oil,94.8,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,94.8,,180.0,1100.0,High LCOE due to fuel cost; fuel cost dominates.
+Santa_Rosa,111,oil,71.1,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,71.1,,180.0,1100.0,High LCOE due to fuel cost; fuel cost dominates.
+Huascachaca,159,onwind,49.98,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,49.98,El Oro,45.0,1154.0,"CF=0.35, CRF=0.0858; consistent with IRENA 2023 onshore wind."
+Hidrosanbartolo,159,hydro,49.98,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,49.98,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Hidronormandfa,51,hydro,49.58,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,49.58,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Sarapullo,111,hydro,48.45,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,48.45,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Guangopolo2,111,oil,52.2,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,52.2,,180.0,1100.0,High LCOE due to fuel cost; fuel cost dominates.
+Jivino_III,161,oil,44.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,44.0,,180.0,1100.0,High LCOE due to fuel cost; fuel cost dominates.
+Baba,107,hydro,42.2,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,42.2,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Quevedo_II,56,oil,47.6,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,47.6,,180.0,1100.0,High LCOE due to fuel cost; fuel cost dominates.
+Santa_Elena_III,146,oil,41.7,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,41.7,,180.0,1100.0,High LCOE due to fuel cost; fuel cost dominates.
+Cumbaya,111,hydro,40.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,40.0,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Miraflores,273,oil,49.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,49.0,,180.0,1100.0,High LCOE due to fuel cost; fuel cost dominates.
+Pusuno,196,hydro,38.25,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,38.25,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Abanico,51,hydro,38.45,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,38.45,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Ecoelectric,277,biomass,36.5,Slack,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,36.5,,95.0,3000.0,"Assumes CF=0.80, CRF=0.0858, FOM≈4%; aligns with IRENA biomass LCOE ranges."
+Generoca,271,oil,38.12,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,38.12,,180.0,1100.0,High LCOE due to fuel cost; fuel cost dominates.
+G._Hernandez,111,oil,34.32,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,34.32,,180.0,1100.0,High LCOE due to fuel cost; fuel cost dominates.
+Sabanilla,159,hydro,36.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,36.0,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Nayon,111,hydro,29.7,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,29.7,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Ecudos_A-G,158,biomass,29.8,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,29.8,,95.0,3000.0,"Assumes CF=0.80, CRF=0.0858, FOM≈4%; aligns with IRENA biomass LCOE ranges."
+Topo,110,hydro,29.2,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,29.2,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Ocana,197,hydro,26.1,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,26.1,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Selva_Alegre,256,oil,29.28,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,29.28,,180.0,1100.0,High LCOE due to fuel cost; fuel cost dominates.
+Saucay,65,hydro,24.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,24.0,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Guangopolo_T,111,oil,22.5,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,22.5,,180.0,1100.0,High LCOE due to fuel cost; fuel cost dominates.
+Guangopolo_H,111,hydro,20.92,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,20.92,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Anfbal_Santos_Vapor,271,oil,34.5,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,34.5,,180.0,1100.0,High LCOE due to fuel cost; fuel cost dominates.
+Gonzalo_Zevallos_Gas,271,oil,26.27,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,26.27,,180.0,1100.0,High LCOE due to fuel cost; fuel cost dominates.
+Sigchos,281,hydro,18.6,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,18.6,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Manta_II,273,oil,20.4,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,20.4,,180.0,1100.0,High LCOE due to fuel cost; fuel cost dominates.
+El_Descanso,85,oil,19.2,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,19.2,,180.0,1100.0,High LCOE due to fuel cost; fuel cost dominates.
+Catamayo,159,oil,19.74,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,19.74,,180.0,1100.0,High LCOE due to fuel cost; fuel cost dominates.
+Villonaco,123,onwind,16.5,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,16.5,El Oro,45.0,1154.0,"CF=0.35, CRF=0.0858; consistent with IRENA 2023 onshore wind."
+Saymirfn,65,hydro,15.52,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,15.52,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Calope,107,hydro,16.6,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,16.6,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Recuperadora,111,hydro,14.7,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,14.7,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Sibimbe,56,hydro,15.37,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,15.37,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Alao,82,hydro,10.5,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10.5,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Palmira-_Nanegal,111,hydro,10.44,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10.44,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Rio_Verde_Chico,110,hydro,10.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10.0,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Jivino_II,161,oil,11.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,11.0,,180.0,1100.0,High LCOE due to fuel cost; fuel cost dominates.
+Victoria,111,hydro,10.32,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10.32,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+La_Propicia,186,oil,10.5,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10.5,,180.0,1100.0,High LCOE due to fuel cost; fuel cost dominates.
+El_Carmen,111,hydro,8.4,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,8.4,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Chalpi,111,hydro,8.1,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,8.1,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+San_Jose_de_Tambo,181,hydro,8.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,8.0,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Ambi,288,hydro,8.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,8.0,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Celso_Castellanos,161,oil,10.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10.0,,180.0,1100.0,High LCOE due to fuel cost; fuel cost dominates.
+Alazan,85,hydro,6.23,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,6.23,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Papallacta,111,hydro,6.63,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,6.63,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+San_Jose_de_Minas,111,hydro,6.75,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,6.75,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Vindobona,111,hydro,6.09,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,6.09,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+El_Inga,111,biomass,6.2,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,6.2,,95.0,3000.0,"Assumes CF=0.80, CRF=0.0858, FOM≈4%; aligns with IRENA biomass LCOE ranges."
+Jivino_I,161,oil,7.5,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,7.5,,180.0,1100.0,High LCOE due to fuel cost; fuel cost dominates.
+Illuchi_No.2,66,hydro,5.2,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,5.2,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Pasochoa,111,hydro,4.5,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,4.5,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Illuchi_No.1,66,hydro,4.19,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,4.19,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Macas,51,oil,4.5,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,4.5,,180.0,1100.0,High LCOE due to fuel cost; fuel cost dominates.
+Pedernales,291,oil,5.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,5.0,,180.0,1100.0,High LCOE due to fuel cost; fuel cost dominates.
+Lligua,11,oil,5.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,5.0,,180.0,1100.0,High LCOE due to fuel cost; fuel cost dominates.
+Rfo_Blanco,82,hydro,3.03,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,3.03,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Penfnsula,11,hydro,3.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,3.0,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+San_Miguel_de_Car,83,hydro,2.95,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,2.95,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Perlabf,111,hydro,2.7,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,2.7,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Carlos_Mora,159,hydro,2.4,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,2.4,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Loreto,111,hydro,2.3,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,2.3,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Salinas,288,solar,2.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,2.0,Imbabura,35.0,758.0,"CF=0.22, CRF=0.0858; consistent with IRENA 2023 PV LCOE bands."
+La_Calera,111,hydro,2.5,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,2.5,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Payamino,161,oil,2.5,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,2.5,,180.0,1100.0,High LCOE due to fuel cost; fuel cost dominates.
+Loreto1,161,oil,2.25,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,2.25,,180.0,1100.0,High LCOE due to fuel cost; fuel cost dominates.
+Dayuma,161,oil,2.25,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,2.25,,180.0,1100.0,High LCOE due to fuel cost; fuel cost dominates.
+Los_Chillos,280,hydro,1.76,Slack,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,1.76,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Pichacay,65,biomass,2.12,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,2.12,,95.0,3000.0,"Assumes CF=0.80, CRF=0.0858, FOM≈4%; aligns with IRENA biomass LCOE ranges."
+Geppert,278,hydro,1.65,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,1.65,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+La_Playa,83,hydro,1.43,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,1.43,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Ulba,110,hydro,1.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,1.0,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Tren_Salinas,288,solar,1.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,1.0,Imbabura,35.0,758.0,"CF=0.22, CRF=0.0858; consistent with IRENA 2023 PV LCOE bands."
+Brineforcorp,291,solar,1.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,1.0,Santo Domingo de los Tsachilas,35.0,758.0,"CF=0.22, CRF=0.0858; consistent with IRENA 2023 PV LCOE bands."
+Solsantros,123,solar,1.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,1.0,El Oro,35.0,758.0,"CF=0.22, CRF=0.0858; consistent with IRENA 2023 PV LCOE bands."
+Saracaysol,123,solar,1.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,1.0,El Oro,35.0,758.0,"CF=0.22, CRF=0.0858; consistent with IRENA 2023 PV LCOE bands."
+Sanersol,123,solar,1.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,1.0,El Oro,35.0,758.0,"CF=0.22, CRF=0.0858; consistent with IRENA 2023 PV LCOE bands."
+San_Pedro,159,solar,1.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,1.0,El Oro,35.0,758.0,"CF=0.22, CRF=0.0858; consistent with IRENA 2023 PV LCOE bands."
+San_Pedro1,159,solar,1.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,1.0,El Oro,35.0,758.0,"CF=0.22, CRF=0.0858; consistent with IRENA 2023 PV LCOE bands."
+San_Pedro2,159,solar,1.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,1.0,El Oro,35.0,758.0,"CF=0.22, CRF=0.0858; consistent with IRENA 2023 PV LCOE bands."
+Gonzanergy,159,solar,1.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,1.0,El Oro,35.0,758.0,"CF=0.22, CRF=0.0858; consistent with IRENA 2023 PV LCOE bands."
+Gonzanergy1,159,solar,1.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,1.0,El Oro,35.0,758.0,"CF=0.22, CRF=0.0858; consistent with IRENA 2023 PV LCOE bands."
+Gonzanergy2,159,solar,1.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,1.0,El Oro,35.0,758.0,"CF=0.22, CRF=0.0858; consistent with IRENA 2023 PV LCOE bands."
+Surenergy,159,solar,1.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,1.0,El Oro,35.0,758.0,"CF=0.22, CRF=0.0858; consistent with IRENA 2023 PV LCOE bands."
+Solsantonio,123,solar,1.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,1.0,El Oro,35.0,758.0,"CF=0.22, CRF=0.0858; consistent with IRENA 2023 PV LCOE bands."
+Solhuaqui,123,solar,1.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,1.0,El Oro,35.0,758.0,"CF=0.22, CRF=0.0858; consistent with IRENA 2023 PV LCOE bands."
+Solchacras,123,solar,1.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,1.0,El Oro,35.0,758.0,"CF=0.22, CRF=0.0858; consistent with IRENA 2023 PV LCOE bands."
+Electrisol,111,solar,1.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,1.0,Pichincha,35.0,758.0,"CF=0.22, CRF=0.0858; consistent with IRENA 2023 PV LCOE bands."
+Mulalo,66,solar,1.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,1.0,Tungurahua,35.0,758.0,"CF=0.22, CRF=0.0858; consistent with IRENA 2023 PV LCOE bands."
+Pastocalle,66,solar,1.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,1.0,Tungurahua,35.0,758.0,"CF=0.22, CRF=0.0858; consistent with IRENA 2023 PV LCOE bands."
+El_Laurel,288,hydro,1.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,1.0,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Paragachi,83,solar,1.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,1.0,Imbabura,35.0,758.0,"CF=0.22, CRF=0.0858; consistent with IRENA 2023 PV LCOE bands."
+Wildtecsa,181,solar,1.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,1.0,Bolivar,35.0,758.0,"CF=0.22, CRF=0.0858; consistent with IRENA 2023 PV LCOE bands."
+Sansau,181,solar,1.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,1.0,Bolivar,35.0,758.0,"CF=0.22, CRF=0.0858; consistent with IRENA 2023 PV LCOE bands."
+Genrenotec,271,solar,0.99,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,0.99,Guayas,35.0,758.0,"CF=0.22, CRF=0.0858; consistent with IRENA 2023 PV LCOE bands."
+Altgenotec,271,solar,0.99,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,0.99,Guayas,35.0,758.0,"CF=0.22, CRF=0.0858; consistent with IRENA 2023 PV LCOE bands."
+Uravia,111,hydro,0.99,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,0.99,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Corazon,111,hydro,0.99,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,0.99,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Gualaceo,65,hydro,0.97,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,0.97,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Buenos_Aires,288,hydro,0.98,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,0.98,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Hidrocarolina,288,hydro,0.92,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,0.92,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Sabiango_Solar,123,solar,1.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,1.0,El Oro,35.0,758.0,"CF=0.22, CRF=0.0858; consistent with IRENA 2023 PV LCOE bands."
+Renova_Loja,159,solar,1.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,1.0,El Oro,35.0,758.0,"CF=0.22, CRF=0.0858; consistent with IRENA 2023 PV LCOE bands."
+Lojaenergy,159,solar,1.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,1.0,El Oro,35.0,758.0,"CF=0.22, CRF=0.0858; consistent with IRENA 2023 PV LCOE bands."
+Fabrica_Imbabura,288,hydro,0.79,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,0.79,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Enersol,273,solar,0.5,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,0.5,Manabi,35.0,758.0,"CF=0.22, CRF=0.0858; consistent with IRENA 2023 PV LCOE bands."
+Sillunchi_I,111,hydro,0.1,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,0.1,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+Tilivi,11,hydro,0.1,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,0.1,,45.0,2806.0,"Long lifetime (50yr), CF=0.50 → low LCOE consistent with IRENA hydro."
+LS_1,1,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_3,3,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_4,4,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_5,5,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_7,7,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_8,8,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_10,10,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_11,11,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_12,12,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_14,14,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_16,16,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_17,17,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_19,19,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_21,21,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_22,22,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_24,24,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_25,25,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_26,26,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_28,28,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_30,30,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_32,32,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_33,33,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_34,34,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_36,36,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_38,38,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_40,40,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_42,42,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_43,43,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_45,45,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_47,47,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_48,48,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_50,50,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_51,51,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_52,52,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_53,53,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_55,55,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_56,56,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_58,58,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_60,60,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_62,62,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_64,64,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_65,65,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_66,66,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_68,68,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_69,69,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_71,71,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_73,73,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_75,75,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_77,77,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_78,78,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_80,80,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_81,81,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_82,82,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_83,83,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_84,84,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_85,85,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_86,86,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_87,87,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_89,89,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_91,91,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_92,92,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_93,93,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_95,95,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_97,97,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_99,99,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_100,100,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_102,102,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_103,103,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_105,105,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_106,106,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_107,107,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_108,108,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_110,110,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_111,111,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_115,115,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_120,120,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_123,123,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_125,125,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_128,128,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_131,131,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_132,132,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_142,142,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_145,145,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_146,146,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_153,153,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_158,158,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_159,159,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_161,161,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_165,165,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_166,166,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_177,177,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_181,181,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_186,186,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_196,196,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_197,197,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_217,217,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_256,256,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_257,257,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_264,264,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_271,271,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_273,273,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_277,277,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_278,278,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_279,279,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_280,280,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_281,281,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_288,288,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_291,291,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_292,292,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,
+LS_294,294,load_shedding,10000.0,PQ,,0.0,False,0.0,inf,0.0,1.0,0.0,0.0,1.0,0.0,0,inf,1.0,False,0.0,0.0,0.0,0,0,1,0,,,1.0,1.0,1.0,10000.0,,1000000.0,10000000000.0,

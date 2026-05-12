@@ -1,0 +1,9 @@
+project,Line,bus0,bus1,v_nom,year,reason
+LT_Delsitanisagua_Cumbaratza_138,806,97,97,138.0,2026,bus0_equals_bus1
+LT_Tisaleo_Totoras_230,809,12,12,230.0,2026,bus0_equals_bus1
+LT_Duran_Duran_Norte_230,814,731,731,230.0,2027,bus0_equals_bus1
+LT_Chorrillos_Lago_de_Chongon_230,819,40,40,230.0,2028,bus0_equals_bus1
+LT_Membrillo_Matala_230,821,159,159,230.0,2028,bus0_equals_bus1
+LT_Abitagua_Topo_230,825,110,110,230.0,2030,bus0_equals_bus1
+LT_La_Union_Pasaje_230,827,100,100,230.0,2030,bus0_equals_bus1
+LT_San_Francisco_Topo_230,828,110,110,230.0,2030,bus0_equals_bus1

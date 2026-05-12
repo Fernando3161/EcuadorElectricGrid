@@ -16,7 +16,7 @@ __pycache__/
 *.pdf
 # C extensions
 *.so
-*.csv
+.csv
 # Distribution / packaging
 .Python
 build/
@@ -36,6 +36,10 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+data/processed/demand/_ALT
+data/raw/generation/_alt
+data/raw/networks/_alt
+data/raw/networks/backups
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
