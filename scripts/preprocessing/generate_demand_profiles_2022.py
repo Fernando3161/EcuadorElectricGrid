@@ -19,7 +19,7 @@ import pandas as pd
 import seaborn as sns
 
 # File locations
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parents[2]
 PROFILE_PATH = BASE_DIR / "data" / "raw" / "demand" / "demand_profiles_EC.csv"
 MONTH_TOTALS_PATH = BASE_DIR / "data" / "raw" / "demand" / "demand_month.csv"
 OUTPUT_PATH = BASE_DIR / "data" / "processed" / "demand" / "demand_profiles_2022.csv"

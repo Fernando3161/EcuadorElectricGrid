@@ -1,14 +1,15 @@
 import os
+from pathlib import Path
 from typing import Dict, List
 
 
 # Resolve repository root as the parent of this file's directory (which is `src`)
-ROOT: str = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+ROOT: str = str(PROJECT_ROOT)
 
 # Top-level directories
 CONFIG_DIR: str = os.path.join(ROOT, "config")
 DATA_DIR: str = os.path.join(ROOT, "data")
-LITERATURE_DIR: str = os.path.join(ROOT, "literature")
 NOTEBOOKS_DIR: str = os.path.join(ROOT, "notebooks")
 RESULTS_DIR: str = os.path.join(ROOT, "results")
 GRAPHS_DIR: str = os.path.join(RESULTS_DIR, "graphs")
@@ -20,6 +21,8 @@ SRC_DIR: str = os.path.join(ROOT, "src")
 # Known subdirectories under data
 DATA_PROCESSED_DIR: str = os.path.join(DATA_DIR, "processed")
 DATA_RAW_DIR: str = os.path.join(DATA_DIR, "raw")
+DATA_EXTERNAL_DIR: str = os.path.join(DATA_DIR, "external")
+DATA_GENERATED_DIR: str = os.path.join(DATA_DIR, "generated")
 
 # Known subdirectories under data/raw
 RAW_CUTOUTS_DIR: str = os.path.join(DATA_RAW_DIR, "cutouts")
@@ -35,7 +38,7 @@ PROC_DEMAND_DIR : str = os.path.join(DATA_PROCESSED_DIR, "demand")
 PROC_NETWORKS_DIR : str = os.path.join(DATA_PROCESSED_DIR, "networks")
 
 # Common directory names to ignore during traversal
-IGNORE_DIRS = {".git", "__pycache__"}
+IGNORE_DIRS = {".git", ".venv", "__pycache__"}
 
 
 def list_subdirs(base_dir: str) -> List[str]:
@@ -104,9 +107,9 @@ def data_dirs() -> Dict[str, str]:
 
 __all__ = [
     "ROOT",
+    "PROJECT_ROOT",
     "CONFIG_DIR",
     "DATA_DIR",
-    "LITERATURE_DIR",
     "NOTEBOOKS_DIR",
     "RESULTS_DIR",
     "GRAPHS_DIR",
@@ -116,6 +119,8 @@ __all__ = [
     "SRC_DIR",
     "DATA_PROCESSED_DIR",
     "DATA_RAW_DIR",
+    "DATA_EXTERNAL_DIR",
+    "DATA_GENERATED_DIR",
     "RAW_CUTOUTS_DIR",
     "RAW_NETWORKS_DIR",
     "RAW_DEMANDS_DIR",

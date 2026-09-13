@@ -16,7 +16,7 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parents[2]
 RAW_MONTH_PATH = BASE_DIR / "data" / "raw" / "demand" / "demand_month.csv"
 RAW_YEAR_PROGNOSIS_PATH = (
     BASE_DIR / "data" / "raw" / "demand" / "demand_year_prognosis.csv"
