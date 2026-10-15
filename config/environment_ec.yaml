@@ -34,13 +34,13 @@ dependencies:
 - fiona>=1.10
 - xarray>=2023.11.0, <=2025.01.2
 - netcdf4
+- h5netcdf
 - libgdal-netcdf
 - networkx
 - scipy<1.16
 - pydoe2
 - shapely!=2.0.4
-- ploty=6.3.1
-- 
+- plotly>=6, <7
 - pre-commit
 - matplotlib
 - reverse-geocode
@@ -62,6 +62,13 @@ dependencies:
 - ipykernel
 - ipython
 - jupyterlab
+- nbclient
+- nbformat
+
+# Phase 2 manifest, validation, and download requirements
+- pyyaml
+- requests
+- jsonschema
 
 # GIS dependencies:
 - cartopy

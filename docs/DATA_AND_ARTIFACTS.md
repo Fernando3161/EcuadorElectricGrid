@@ -112,6 +112,10 @@ Generated CSVs must not live in `notebooks/` in the target structure.
 
 ## Preflight behavior
 
+The Phase 2 implementation is configured by `config/artifacts.yaml` and exposed
+through `python -m src.preflight`. See `docs/PREFLIGHT.md` for commands, status
+definitions, stage dependency closure, and recovery behavior.
+
 The preflight must:
 
 1. determine the selected stage and its complete dependency closure;

@@ -29,15 +29,21 @@
     },
     {
       "id": "phase_contracts",
-      "patterns": ["config/repository_inventory.json", "config/schemas/*.json"],
+      "patterns": ["config/artifacts.yaml", "config/repository_inventory.json", "config/schemas/*.json"],
       "classification": "governance",
       "disposition": "retain"
     },
     {
       "id": "legacy_runtime_configuration",
-      "patterns": ["config/config.yaml", "config/environment_ec.yaml"],
+      "patterns": ["config/config.yaml"],
       "classification": "legacy_evidence",
       "disposition": "reconcile in Phase 2 before supported use"
+    },
+    {
+      "id": "supported_environment_specification",
+      "patterns": ["config/environment_ec.yaml"],
+      "classification": "candidate_active",
+      "disposition": "reconciled against the approved environment in Phase 2; retain as an auditable specification"
     },
     {
       "id": "current_2022_notebooks",
@@ -295,6 +301,7 @@
     }
   ],
   "notebook_register": [
+    {"path": "notebooks/00_preflight_and_data_inventory.ipynb", "lineage": "supported_refactor", "role": "mandatory environment and artifact preflight", "disposition": "retain as the supported Stage 00 entry point"},
     {"path": "notebooks/03_a_process_generation.ipynb", "lineage": "2022_candidate", "role": "parse existing and future generation workbooks", "disposition": "rewrite"},
     {"path": "notebooks/03_b_generation_plots.ipynb", "lineage": "2022_candidate", "role": "generation diagnostics", "disposition": "merge into generation stage"},
     {"path": "notebooks/03_c_hydro_profiles.ipynb", "lineage": "2022_candidate", "role": "hydro plant-flow matching and hourly profiles", "disposition": "rewrite around tested functions"},
@@ -325,8 +332,12 @@
     {"path": "notebooks/02_extend_demand_prognosis.py", "classification": "candidate_active", "disposition": "move forecast logic into a planning/demand module; future projection is not a baseline dependency"},
     {"path": "notebooks/_alt/temp_demand.py", "classification": "legacy_evidence", "disposition": "compare with demand notebooks before Phase 10"},
     {"path": "src/ec_network_eval.py", "classification": "candidate_active", "disposition": "retain high-value diagnostics and split into tested topology checks"},
+    {"path": "src/artifacts.py", "classification": "candidate_active", "disposition": "supported manifest validation and artifact retrieval logic"},
+    {"path": "src/environment.py", "classification": "candidate_active", "disposition": "supported approved-environment validation logic"},
     {"path": "src/helpers.py", "classification": "candidate_active", "disposition": "extract focused functions; repair imports; do not preserve as one broad API"},
+    {"path": "src/notebook_runner.py", "classification": "candidate_active", "disposition": "supported environment-pinned notebook execution helper"},
     {"path": "src/paths.py", "classification": "candidate_active", "disposition": "retain repository-relative resolution and simplify around the target tree"},
+    {"path": "src/preflight.py", "classification": "candidate_active", "disposition": "supported command-line preflight entry point"},
     {"path": "src/repository_inventory.py", "classification": "governance", "disposition": "retain as the Phase 1 classification validator"},
     {"path": "src/scenario_registry.py", "classification": "legacy_evidence", "disposition": "quarantine until a validated baseline exists"},
     {"path": "src/_old/scenario_pipeline.py", "classification": "legacy_evidence", "disposition": "extract only reusable mechanics after baseline validation"},

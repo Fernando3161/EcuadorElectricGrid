@@ -6,13 +6,14 @@ Each project-plan phase uses its own branch and follows this sequence:
 
 1. owner creates or selects the phase branch;
 2. confirm scope and read the current diagnostic/plan;
-3. inspect relevant evidence before moving or rewriting it;
-4. implement only the active phase;
-5. run cheap automated tests in `pypsa-earth-ec`;
-6. run only the explicitly authorized scientific/manual execution;
-7. regenerate validation figures and write the phase report;
-8. audit the diff for binaries, machine paths, credentials, and lost provenance;
-9. owner reviews, commits, merges, and pushes.
+3. run `python -m src.preflight --stage 00_preflight` in the approved environment;
+4. inspect relevant evidence before moving or rewriting it;
+5. implement only the active phase;
+6. run cheap automated tests in `pypsa-earth-ec`;
+7. run only the explicitly authorized scientific/manual execution;
+8. regenerate validation figures and write the phase report;
+9. audit the diff for binaries, machine paths, credentials, and lost provenance;
+10. owner reviews, commits, merges, and pushes.
 
 Do not begin the next phase merely because it is convenient.
 
@@ -33,6 +34,8 @@ Supported notebooks use a stable numeric prefix and have:
 Notebooks should run top-to-bottom from a clean kernel. Clear stale outputs before
 release or deliberately retain only small outputs that are part of the teaching
 artifact. Execution during development must use the approved environment.
+Use `python -m src.notebook_runner <notebook-path>` for command-line execution
+when a persistent environment-specific kernelspec is unavailable.
 
 ## Testing layers
 

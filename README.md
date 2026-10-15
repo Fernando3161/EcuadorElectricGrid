@@ -6,7 +6,7 @@ system, then using the validated model as the foundation for future-grid studies
 
 ## Current status
 
-The repository is in Phase 1 of a full refactor. It contains valuable working
+The repository is in Phase 2 of a full refactor. It contains valuable working
 2017/2018 studies, a partially completed 2022 notebook chain, manually prepared
 Master Plan tables, candidate network artifacts, and solved experiments. It does
 **not** yet contain a reproducible, scientifically validated 2022 baseline.
@@ -69,6 +69,18 @@ checksums. See the
 [data contract](docs/DATA_AND_ARTIFACTS.md) and
 [Zenodo handoff](docs/ZENODO_HANDOFF.md).
 
+## Mandatory preflight
+
+Before running scientific processing, activate `pypsa-earth-ec` and run:
+
+```powershell
+python -m src.preflight --stage 00_preflight
+```
+
+The command validates the environment, obtains missing published artifacts,
+checks size/SHA-256/NetCDF structure, and fails once with a complete report if
+anything remains unresolved. See the [preflight guide](docs/PREFLIGHT.md).
+
 ## Documentation
 
 - [Project objectives](docs/PROJECT_OBJECTIVES.md)
@@ -79,6 +91,8 @@ checksums. See the
 - [Phased project plan](docs/PROJECT_PLAN.md)
 - [Data and artifact contract](docs/DATA_AND_ARTIFACTS.md)
 - [Zenodo handoff](docs/ZENODO_HANDOFF.md)
+- [Mandatory preflight](docs/PREFLIGHT.md)
+- [Approved environment](docs/ENVIRONMENT.md)
 - [Development workflow](docs/DEVELOPMENT_WORKFLOW.md)
 - [Technical report template](docs/TECHNICAL_REPORT_TEMPLATE.md)
 

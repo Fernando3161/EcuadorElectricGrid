@@ -6,7 +6,7 @@
 - Branch: `refactor/v1-phase-01-structure`
 - Starting revision: `cc6a929`
 - Author: Codex, under repository-owner direction
-- Reviewer: repository owner; final review pending
+- Reviewer: repository owner; accepted before Phase 02 began
 - Date: 2026-10-15
 - Environment: existing `pypsa-earth-ec` Conda environment
 - Heavy execution: forbidden; no notebook, download, or optimization run
@@ -28,7 +28,7 @@ and defines the structure into which it will be reconstructed.
 | Initial manifest and planning-row schemas exist | Pass | `config/schemas/` |
 | Supported documentation/code contains no machine-specific paths | Pass | automated scan |
 | Cheap Phase 1 tests pass | Pass | eleven tests, no failures |
-| Owner accepts the phase | Pending | requires review of this report and branch diff |
+| Owner accepts the phase | Pass | owner accepted Phase 01 and committed revision `6a403a3` |
 
 ## Inputs and provenance
 
@@ -219,8 +219,8 @@ provenance.
 
 ## Conclusion and next-phase recommendation
 
-Phase 01 is implementation-complete and ready for owner review. Its acceptance
-criteria pass except for owner approval. The next phase is
-`refactor/v1-phase-02-preflight`: reconcile the environment specification, create
-the executable artifact manifest, implement atomic checksum-pinned retrieval, and
-test missing/corrupt/cached behavior without running scientific notebooks.
+Phase 01 was accepted by the owner and committed at `6a403a3`. Phase 02 therefore
+began on `refactor/v1-phase-02-data-preflight` to reconcile the environment
+specification, create the executable artifact manifest, implement atomic
+checksum-pinned retrieval, and test missing/corrupt/cached behavior without
+running scientific notebooks.
