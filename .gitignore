@@ -5,6 +5,7 @@ __pycache__/
 
 #*.csv
 *.png 
+!reports/figures/**/*.png
 *.jpg
 *.jpeg  
 *.gif
@@ -14,6 +15,8 @@ __pycache__/
 *.nc 
 *.gpkg
 *.pdf
+!literature/CENACE/
+!literature/CENACE/*.pdf
 # C extensions
 *.so
 .csv
@@ -37,6 +40,7 @@ share/python-wheels/
 *.egg
 MANIFEST
 data/processed/demand/_ALT
+data/processed/demand/demand_profiles_2022_mw.csv
 data/raw/generation/_alt
 data/raw/networks/_alt
 data/raw/networks/backups

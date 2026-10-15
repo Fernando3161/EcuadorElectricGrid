@@ -86,7 +86,21 @@ class PublishedManifestTests(unittest.TestCase):
                 "renewable_profile_solar_ec",
                 "renewable_profile_onwind_ec",
             },
-            {row["id"] for row in self.manifest["artifacts"]},
+            {
+                row["id"]
+                for row in self.manifest["artifacts"]
+                if row.get("availability", "external") == "external"
+            },
+        )
+
+    def test_stage_one_checks_all_demand_and_reference_inputs(self) -> None:
+        self.assertEqual(
+            {
+                "demand_template_2013_ec",
+                "cenace_sni_2022_monthly_demand",
+                "cenace_2022_net_supply",
+            },
+            set(required_artifact_ids(self.manifest, "01_demand")),
         )
 
     def test_generated_networks_and_full_cutout_are_excluded(self) -> None:
@@ -98,15 +112,15 @@ class PublishedManifestTests(unittest.TestCase):
     def test_stage_dependency_closure(self) -> None:
         expected = {
             "00_preflight": 3,
-            "01_demand": 0,
+            "01_demand": 3,
             "02_generation": 0,
             "03_profiles": 2,
             "04_topology": 1,
-            "05_assembly": 3,
-            "06_validation": 3,
+            "05_assembly": 6,
+            "06_validation": 6,
             "07_planning": 0,
-            "08_scenario": 3,
-            "09_comparison": 3,
+            "08_scenario": 6,
+            "09_comparison": 6,
         }
         for stage, count in expected.items():
             self.assertEqual(count, len(required_artifact_ids(self.manifest, stage)), stage)
@@ -156,6 +170,25 @@ class ArtifactBehaviorTests(unittest.TestCase):
             self.assertFalse(report.ok)
             self.assertEqual("missing", report.results[0].status)
             self.assertIn("offline", report.results[0].message)
+
+    def test_missing_repository_artifact_never_attempts_download(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            manifest = make_manifest(self.payload)
+            manifest["artifacts"][0]["availability"] = "repository"
+            manifest["artifacts"][0]["role"] = "source"
+            manifest["artifacts"][0]["download_url"] = None
+            manifest_path = write_manifest(root, manifest)
+
+            def forbidden_download(*_args) -> None:
+                raise AssertionError("repository artifacts must never be downloaded")
+
+            report = run_preflight(
+                "root", manifest_path=manifest_path, root=root, downloader=forbidden_download
+            )
+            self.assertFalse(report.ok)
+            self.assertEqual("missing", report.results[0].status)
+            self.assertIn("restore", report.results[0].message)
 
     def test_checksum_failure_is_reported_offline(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:

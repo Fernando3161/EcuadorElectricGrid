@@ -76,7 +76,7 @@ flowchart TD
 
 | Current file | Inputs | Outputs/evidence | Target stage |
 |---|---|---|---|
-| `01_generate_demand_profiles_2022.py` | monthly totals, historical hourly profiles | 2022 hourly profiles and plots | `01_prepare_2022_demand.ipynb` plus demand module |
+| `01_generate_demand_profiles_2022.py` | monthly totals, historical hourly profiles | legacy kW profile and plots | replaced by `01_prepare_2022_demand.ipynb` plus `src/demand.py`; retain until Phase 10 |
 | `02_extend_demand_prognosis.py` | planning demand prognosis | extended yearly prognosis | Phase 8 planning/scenario preparation, not baseline demand |
 | `03_a_process_generation.ipynb` | source generation workbooks, canton references, renewable-future CSV | cleaned existing/future workbooks | `02_prepare_2022_generation.ipynb` |
 | `03_b_generation_plots.ipynb` | cleaned existing generation | technology-capacity plot | merge into Stage 02 validation |
@@ -131,3 +131,11 @@ earlier pruning and attachment decisions.
 
 The machine-readable notebook disposition is in
 `config/repository_inventory.json` and is checked by the Phase 1 tests.
+
+## Phase 3 migration result
+
+`notebooks/01_prepare_2022_demand.ipynb` is now the supported Stage 01 entry
+point. It uses common preflight, writes a unit-explicit MW profile, validates
+energy/peak/time/spatial invariants, saves report figures, and materializes the
+normalized CENACE supply reference. Future demand projection remains assigned to
+the planning/scenario phase and is not a baseline dependency.

@@ -32,7 +32,7 @@ EcuadorElectricGrid/
 |   |-- interim/                        # reproducible parses, matches, and audit logs
 |   `-- processed/                      # normalized model-ready tables
 |-- docs/                               # project, methods, provenance, and handover docs
-|-- literature/                         # source-document register; PDFs external if needed
+|-- literature/                         # source-document register; selected official PDFs tracked
 |-- notebooks/
 |   |-- 00_preflight_and_data_inventory.ipynb
 |   |-- 01_prepare_2022_demand.ipynb

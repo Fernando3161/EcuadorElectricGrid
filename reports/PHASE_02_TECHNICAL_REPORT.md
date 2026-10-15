@@ -6,7 +6,7 @@
 - Branch: `refactor/v1-phase-02-data-preflight`
 - Starting revision: `6a403a3`
 - Author: Codex, under repository-owner direction
-- Reviewer: repository owner; final review pending
+- Reviewer: repository owner; accepted by authorizing Phase 03
 - Date: 2026-10-15
 - Environment: existing `pypsa-earth-ec` Conda environment
 - Heavy execution: limited to the owner-authorized three-file Zenodo retrieval
@@ -31,7 +31,7 @@ obtained before scientific processing begins.
 | Approved environment is checked without installation | Pass | runtime report and environment tests |
 | Notebook 00 uses the common preflight | Pass | notebook contract test and execution |
 | One command obtains all currently published external inputs | Pass | empty-root real retrieval |
-| Owner accepts the complete phase | Pending | requires report and branch review |
+| Owner accepts the complete phase | Pass | owner proceeded to Phase 03 after reviewing the Phase 02 handoff |
 
 ## Inputs and provenance
 
@@ -229,8 +229,7 @@ local cache.
 
 ## Conclusion and next-phase recommendation
 
-Phase 02 is implementation-complete and ready for owner review. All acceptance
-criteria pass except owner approval. The next phase is
-`refactor/v1-phase-03-validation-contract`, which must select and version the
+Phase 02 is accepted. All acceptance criteria pass. The next phase is
+`refactor/v1-phase-03-demand-statistics`, which must select and version the
 authoritative 2022 statistics, define the comparison boundary and carrier
 crosswalk, and fix the 5% acceptance formula before model calibration begins.

@@ -145,6 +145,15 @@ def _validate_manifest_semantics(manifest: dict[str, Any]) -> None:
             raise ManifestError(
                 f"artifact {artifact['id']} has unsafe destination {destination}"
             )
+        availability = artifact.get("availability", "external")
+        if availability == "external" and not artifact.get("download_url"):
+            raise ManifestError(
+                f"external artifact {artifact['id']} requires a download_url"
+            )
+        if availability == "repository" and artifact.get("download_url") is not None:
+            raise ManifestError(
+                f"repository artifact {artifact['id']} must use a null download_url"
+            )
 
     for stage in stages:
         resolve_stage_dependencies(manifest, stage)
@@ -354,6 +363,17 @@ def run_preflight(
         try:
             size, digest = validate_artifact(destination, artifact)
         except ArtifactValidationError as initial_error:
+            if artifact.get("availability", "external") == "repository":
+                status = "invalid" if destination.exists() else "missing"
+                results.append(
+                    ArtifactResult(
+                        artifact["id"],
+                        artifact["destination"],
+                        status,
+                        f"{initial_error}; restore the checksum-pinned file from the repository",
+                    )
+                )
+                continue
             if offline:
                 status = "invalid" if destination.exists() else "missing"
                 results.append(

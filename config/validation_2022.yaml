@@ -1,0 +1,119 @@
+contract_version: 1
+year: 2022
+
+boundary:
+  name: Ecuador mainland Sistema Nacional Interconectado (SNI)
+  includes:
+    - generators participating in CENACE block transactions
+    - Colombia and Peru electricity imports
+    - Colombia and Peru electricity exports in the energy balance
+  excludes:
+    - Galapagos and other non-incorporated isolated systems
+    - distribution-grid topology
+  accounting_basis: Net electrical energy delivered to the SNI, plus imports.
+  time_basis: 8760 hourly snapshots in Ecuador mainland local standard time (UTC-05:00), stored as timezone-naive timestamps; Ecuador does not observe daylight saving time.
+
+sources:
+  CENACE_ANNUAL_2022:
+    organization: Operador Nacional de Electricidad CENACE
+    title: Informe Anual 2022 - Parte 1
+    edition: "2022"
+    url: https://www.cenace.gob.ec/wp-content/uploads/downloads/2023/04/Parte-1-Informe-Anual-2022.pdf
+    repository_path: literature/CENACE/cenace_informe_anual_2022_parte_1.pdf
+    sha256: 88f13f0106a190464c8954babc7529f785783d4d4017633a8d5ed8ff554fbd88
+    locator: Pages 23, 73-74; Table 2.4
+  CENACE_2023_TABLE_1_8:
+    organization: Operador Nacional de Electricidad CENACE
+    title: Informe Anual 2023 - Parte 1
+    edition: "2023"
+    url: https://www.cenace.gob.ec/wp-content/uploads/downloads/2024/04/Parte-1-Informe-Anual-CENACE-2023.pdf
+    repository_path: literature/CENACE/cenace_informe_anual_2023_parte_1.pdf
+    sha256: 194a10b71b95e65c067df88756d0dbfb52052cf4713af044fec952d662f1153f
+    locator: Page 42; Table 1.8 republishes monthly 2022 demand and peak values
+  PME_2022_CHAPTER_3:
+    organization: Ministerio de Energia y Minas
+    title: Plan Maestro de Electricidad - Capitulo 3 Demanda
+    edition: "2022"
+    locator: Tables 3-1 and 3-2
+    note: The rounded monthly energy values sum to 28180 GWh while the printed annual total is 28181 GWh; this legacy series is retained as planning evidence but is not the baseline demand control.
+
+demand:
+  monthly_targets: data/raw/demand/cenace_sni_2022_monthly_demand.csv
+  template: data/raw/demand/demand_profiles_EC.csv
+  output: data/processed/demand/demand_profiles_2022_mw.csv
+  output_unit: MW
+  annual_energy_gwh: 27561.62
+  annual_peak_mw: 4388.06
+  monthly_rounding_policy: Scale all published monthly energy values by one common factor so their sum equals the published annual total; preserve every monthly peak exactly.
+  spatial_policy: Preserve the historical template's bus shares at every hour while reshaping only the national profile.
+  template_status: PyPSA-Earth 0.7.0 modeling template exported from elec.nc loads_t.p_set; its 2013 shape and spatial allocation are not official 2022 observations.
+
+supply_reference:
+  raw_table: data/raw/statistics/cenace_2022_net_supply.csv
+  normalized_table: data/processed/statistics/ecuador_sni_2022_supply_reference.csv
+  reported_total_gwh: 28684.62
+  reported_domestic_generation_gwh: 28218.79
+  exports_gwh: 191.57
+  national_demand_gwh: 27561.62
+  raw_to_validation_carrier:
+    hydroelectric: hydro
+    wind: wind
+    biogas: bioenergy
+    biomass: bioenergy
+    solar_photovoltaic: solar
+    diesel: thermal_nonrenewable
+    fuel_oil: thermal_nonrenewable
+    natural_gas: thermal_nonrenewable
+    naphtha: thermal_nonrenewable
+    residue: thermal_nonrenewable
+    imports_colombia: imports
+    imports_peru: imports
+  validation_carriers:
+    - hydro
+    - wind
+    - bioenergy
+    - solar
+    - thermal_nonrenewable
+    - imports
+
+model_carrier_mapping:
+  hydro: hydro
+  hydroelectric: hydro
+  hidraulica: hydro
+  onwind: wind
+  wind: wind
+  eolica: wind
+  biomass: bioenergy
+  biomasa: bioenergy
+  biogas: bioenergy
+  solar: solar
+  photovoltaic: solar
+  fotovoltaica: solar
+  oil: thermal_nonrenewable
+  thermal: thermal_nonrenewable
+  termica: thermal_nonrenewable
+  diesel: thermal_nonrenewable
+  fuel_oil: thermal_nonrenewable
+  natural_gas: thermal_nonrenewable
+  residue: thermal_nonrenewable
+  residuo: thermal_nonrenewable
+  naphtha: thermal_nonrenewable
+  nafta: thermal_nonrenewable
+  import: imports
+  imports: imports
+  interconnection_import: imports
+
+acceptance:
+  positive_reference_formula: 100 * abs(simulated_gwh - reference_gwh) / reference_gwh
+  maximum_relative_error_percent: 5.0
+  zero_reference_absolute_tolerance_gwh: 0.01
+  small_positive_carrier_policy: Every positive reference, however small, uses the same 5 percent relative-error gate.
+  missing_simulated_carrier_policy: Treat as zero generation; a positive reference therefore fails.
+  source_rounding_residual_policy: Report separately and exclude from the carrier gate.
+  excluded_from_supply_carriers:
+    - storage charging and discharging
+    - curtailment
+    - load shedding
+    - exports
+    - network losses
+  load_shedding_maximum_gwh: 0.01

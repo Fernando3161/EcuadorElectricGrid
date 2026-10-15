@@ -4,14 +4,14 @@
 
 Preflight is the only supported entry point before scientific processing. It
 checks the approved runtime, resolves the selected stage's dependency closure,
-validates cached external artifacts, obtains missing published files, and refuses
+validates checksum-pinned external and repository artifacts, obtains missing
+published files, and refuses
 to continue while any required artifact is unresolved.
 
-The executable manifest is `config/artifacts.yaml`. It currently contains the
-three external NetCDF inputs established by the Phase 0/1 audit. Small inputs
-tracked by Git remain available with the clone. Any later phase that introduces
-another untracked runtime input must add it to the manifest before its notebook
-is accepted.
+The executable manifest is `config/artifacts.yaml`. It contains the three external
+NetCDF inputs established by the Phase 0/1 audit and the checksum-pinned tracked
+inputs needed by Stage 01. A later phase must add every new runtime input before
+its notebook is accepted.
 
 ## Commands
 
@@ -68,21 +68,24 @@ For each required artifact, preflight:
 6. atomically moves only the verified partial file into the authoritative path;
 7. retains an incomplete/invalid partial download for diagnosis and retry.
 
-A failed download never receives the authoritative filename.
+A failed download never receives the authoritative filename. A tracked repository
+artifact has no download URL: if it is missing or altered, preflight fails and
+asks the user to restore the reviewed repository version instead of substituting
+an upstream document or unversioned file.
 
 ## Stage dependency closure
 
-| Stage | External artifacts resolved |
+| Stage | Artifacts resolved |
 |---|---|
 | `00_preflight` | base network, solar profiles, onshore-wind profiles |
-| `01_demand` | none currently; inputs are tracked |
+| `01_demand` | tracked hourly demand template, official monthly demand controls, official net-supply table |
 | `02_generation` | none currently; Phase 4 must register any retained external source |
 | `03_profiles` | solar and onshore-wind profiles |
 | `04_topology` | base network |
-| `05_assembly` | all three through dependencies |
-| `06_validation` | all three through dependencies |
+| `05_assembly` | all three external inputs plus the three Stage 01 inputs through dependencies |
+| `06_validation` | all six through dependencies |
 | `07_planning` | none currently; Phase 8 must register any distributed source document |
-| `08_scenario`, `09_comparison` | all three through dependencies |
+| `08_scenario`, `09_comparison` | all six through dependencies |
 
 This table is generated conceptually from manifest dependencies; code uses the
 manifest rather than a hard-coded stage list.

@@ -98,6 +98,37 @@ These are not automatically canonical. Phase 1 must classify each file, identify
 its source and license, and decide whether to commit a small normalized derivative,
 publish it externally, regenerate it, archive it as evidence, or discard it.
 
+## Phase 3 demand and statistical inputs
+
+The two official CENACE annual reports supporting the extracts are committed
+under `literature/CENACE/`. Their original publication URLs, byte sizes, and
+SHA-256 checksums are recorded alongside them. They are provenance evidence, not
+runtime notebook inputs, so the stage preflight checks the extracted CSVs rather
+than repeatedly parsing the PDFs.
+
+Stage 01 adds three checksum-pinned repository inputs to the common manifest:
+
+| Artifact | Role | Runtime treatment |
+|---|---|---|
+| `data/raw/demand/demand_profiles_EC.csv` | PyPSA-Earth 0.7.0 hourly shape and bus-share template | tracked, checksum-verified, never auto-substituted |
+| `data/raw/demand/cenace_sni_2022_monthly_demand.csv` | official monthly 2022 energy and peak controls | tracked source extract with a CENACE table locator |
+| `data/raw/statistics/cenace_2022_net_supply.csv` | source-faithful CENACE net-supply rows | tracked source extract with page/table locators |
+
+The demand template is numerically identical to `loads_t.p_set` in its forensic
+PyPSA-Earth source network. It supplies only normalized chronology and spatial
+shares; official CENACE values control the 2022 energy and peak.
+
+The Stage 01 notebook generates
+`data/processed/demand/demand_profiles_2022_mw.csv`. This approximately 40 MB
+time series is ignored because it is reproducible. Its values are MW, unlike the
+legacy tracked `demand_profiles_2022.csv`, whose values are kW. The legacy file
+remains evidence until Phase 10; supported assembly must consume the MW product.
+
+The small normalized carrier table
+`data/processed/statistics/ecuador_sni_2022_supply_reference.csv` is tracked so
+the later annual validation reads an inspectable, schema-tested interface. See
+`VALIDATION_2022.md` for the boundary and formula.
+
 ## Target data zones
 
 | Zone | Meaning | Hand edited? | Git policy |

@@ -48,6 +48,7 @@ artifacts:
     stages: [00_preflight, 04_topology]
     destination: data/raw/networks/base.nc
     role: external_input
+    availability: external
     source:
       organization: EcuadorElectricGridData
       record: 10.5281/zenodo.23392049
@@ -79,6 +80,7 @@ artifacts:
     stages: [00_preflight, 03_profiles]
     destination: data/raw/cutouts/solar.nc
     role: external_input
+    availability: external
     source:
       organization: EcuadorElectricGridData
       record: 10.5281/zenodo.23392049
@@ -104,6 +106,7 @@ artifacts:
     stages: [00_preflight, 03_profiles]
     destination: data/raw/cutouts/onwind.nc
     role: external_input
+    availability: external
     source:
       organization: EcuadorElectricGridData
       record: 10.5281/zenodo.23392049
@@ -123,3 +126,67 @@ artifacts:
         bus: 24
       required_variables: [time, bus, profile, capacities]
       attributes: {}
+
+  - id: demand_template_2013_ec
+    description: Historical hourly bus-level demand shape used as a modeling template.
+    stages: [01_demand]
+    destination: data/raw/demand/demand_profiles_EC.csv
+    role: source
+    availability: repository
+    source:
+      organization: PyPSA-Earth
+      record: Exact export of elec.nc loads_t.p_set committed in EcuadorElectricGrid commit 82bbb257a3b39ffcebc3ba1ee6a8f683334b4b82
+      pypsa_earth_version: 0.7.0
+      pypsa_earth_git_commit: 4bfb13da0f24a5fc98f541babe00dfd72f7ba3f8
+      data_year: 2013
+      prediction_year: 2030
+      demand_scenario: SSP2-2.6
+      provenance_status: exact numeric identity with the local PyPSA-Earth source network verified in Phase 3
+    persistent_uri: https://github.com/Fernando3161/EcuadorElectricGrid
+    download_url: null
+    bytes: 40686112
+    sha256: 13f2268d71f8a7dd8a69e382844571a1207a8c7e1eb750acb99f8b8b1154c1a0
+    media_type: text/csv
+    license: repository-license-review-required
+    validation:
+      kind: checksum_only
+
+  - id: cenace_sni_2022_monthly_demand
+    description: Official monthly 2022 SNI demand energy and peak controls.
+    stages: [01_demand]
+    destination: data/raw/demand/cenace_sni_2022_monthly_demand.csv
+    role: source
+    availability: repository
+    source:
+      organization: Operador Nacional de Electricidad CENACE
+      record: Informe Anual 2023 - Parte 1, Table 1.8
+      data_year: 2022
+      source_page: 42
+    persistent_uri: https://www.cenace.gob.ec/wp-content/uploads/downloads/2024/04/Parte-1-Informe-Anual-CENACE-2023.pdf
+    download_url: null
+    bytes: 617
+    sha256: 4d0d8cada6ae5fa86f89d47ef5efc411b976a97d612118e89dbab31d6bde1078
+    media_type: text/csv
+    license: official-publication
+    validation:
+      kind: checksum_only
+
+  - id: cenace_2022_net_supply
+    description: Source-faithful transcription of CENACE net supply by type.
+    stages: [01_demand]
+    destination: data/raw/statistics/cenace_2022_net_supply.csv
+    role: source
+    availability: repository
+    source:
+      organization: Operador Nacional de Electricidad CENACE
+      record: Informe Anual 2022 - Parte 1, Table 2.4
+      data_year: 2022
+      source_pages: 73-74
+    persistent_uri: https://www.cenace.gob.ec/wp-content/uploads/downloads/2023/04/Parte-1-Informe-Anual-2022.pdf
+    download_url: null
+    bytes: 1094
+    sha256: 1b9b3dbe3edb9df9100deaec80303a8b4dc080363284f81731ffd7839afc7ee8
+    media_type: text/csv
+    license: official-publication
+    validation:
+      kind: checksum_only
