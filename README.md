@@ -62,8 +62,8 @@ to upstream renewable-profile regeneration in `EcuadorElectricGridData`.
 repository's cleaning and assembly notebooks and are not raw inputs. Their current
 unvalidated instances will not be published as source artifacts.
 
-The current local machine contains the required historical files, but their
-public URIs and release checksums have not yet been assigned. See
+The Phase 0 audit found the required historical files, but their public URIs and
+release checksums have not yet been assigned. See
 [`docs/DATA_AND_ARTIFACTS.md`](docs/DATA_AND_ARTIFACTS.md).
 
 ## Documentation

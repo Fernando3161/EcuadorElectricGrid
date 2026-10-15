@@ -54,25 +54,21 @@ those reproducible plots.
 ## Environment rules
 
 The approved environment is the existing Conda environment
-`pypsa-earth-ec`. On the current reference machine its interpreter is:
-
-`USER\.conda\envs\pypsa-earth-ec\python.exe`
-
-Conda itself is currently available at:
-
-`ANACONDA3\Scripts\conda.exe`
+`pypsa-earth-ec`.
 
 - Do not create a repository-local environment, `.venv`, temporary virtual
   environment, or replacement Conda environment.
 - Do not install or upgrade packages without the owner's explicit approval.
-- Invoke the environment by absolute path when `conda` is not on `PATH`.
+- Activate or invoke the environment by name through the user's existing Conda
+  installation. Do not encode workstation-specific installation locations in
+  committed documentation, configuration, notebooks, or source code.
 - Execute notebooks through this environment, never the system Python.
 - Keep `config/environment_ec.yaml` as an auditable environment specification,
   but first reconcile it against the working environment before using it to
   reproduce an installation.
 
-Machine-specific paths above describe the present workstation only. Supported
-code and notebook paths must remain repository-relative or configuration-driven.
+Supported code and notebook paths must remain repository-relative or
+configuration-driven.
 
 ## Data preflight is mandatory
 
@@ -144,3 +140,8 @@ Do not claim a phase complete until its acceptance criteria, tests, report,
 figures, provenance, and manual-run handoff are present. Record commands that were
 not run and why. When scientific meaning is ambiguous, document the question and
 stop before encoding a guess.
+
+The final pruning phase must identify and remove files and artifacts that are no
+longer needed. Its deletions must be reviewed and recorded in a dedicated commit
+so the final branch contains only supported project material and intentional
+provenance.
