@@ -22,7 +22,7 @@ stages:
     depends_on: []
   03_profiles:
     description: Prepare renewable and hydro availability profiles.
-    depends_on: []
+    depends_on: [02_generation]
   04_topology:
     description: Build and validate the 2022 transmission topology.
     depends_on: []
@@ -188,5 +188,122 @@ artifacts:
     sha256: 1b9b3dbe3edb9df9100deaec80303a8b4dc080363284f81731ffd7839afc7ee8
     media_type: text/csv
     license: official-publication
+    validation:
+      kind: checksum_only
+
+  - id: generation_existing_2022_source
+    description: Source-faithful open transcription of the 2022 existing-generation workbook.
+    stages: [02_generation]
+    destination: data/raw/generation/generation_existing_2022.csv
+    role: source
+    availability: repository
+    source:
+      organization: Ministerio de Energia y Recursos Naturales No Renovables
+      record: Plan Maestro de Electricidad 2018-2027, Chapter 4
+      data_year: 2022 planning inventory
+      source_locator: Section 4.11.1, Annex 1
+      migration_script: scripts/migrate_phase04_generation_sources.py
+    persistent_uri: https://www.recursosyenergia.gob.ec/wp-content/uploads/2020/01/4.-EXPANSION-DE-LA-GENERACION.pdf
+    download_url: null
+    bytes: 68939
+    sha256: 69d62b23d74c1981a5ec7ff57c8387d1006f89e9aa6f8b6c208e7ce66246709b
+    media_type: text/csv
+    license: official-publication
+    validation:
+      kind: checksum_only
+
+  - id: generation_location_evidence_2022
+    description: One-to-one canton and coordinate evidence for every 2022 SNI source row.
+    stages: [02_generation]
+    destination: data/interim/generation/plant_location_evidence_2022.csv
+    role: source
+    availability: repository
+    source:
+      organization: repository owner
+      record: Preserved 2017 fleet matches, manual mappings, capacity proxies, and canton lookup
+      migration_script: scripts/migrate_phase04_generation_sources.py
+    persistent_uri: https://github.com/Fernando3161/EcuadorElectricGrid
+    download_url: null
+    bytes: 28615
+    sha256: b626b83534daefe9334b2679e32f9bfe03e5dc6f32e7fd7689bba1c1ec5668b5
+    media_type: text/csv
+    license: repository-license-review-required
+    validation:
+      kind: checksum_only
+
+  - id: cenace_2022_commissioning_events
+    description: Official 2022 operating-entry events for three in-year generator additions.
+    stages: [02_generation]
+    destination: data/raw/generation/cenace_2022_commissioning_events.csv
+    role: source
+    availability: repository
+    source:
+      organization: Operador Nacional de Electricidad CENACE
+      record: Informe Anual 2022 - Parte 1, Table 3.1
+      data_year: 2022
+      provenance_status: event capacities retained separately where they differ from the Master Plan inventory
+    persistent_uri: https://www.cenace.gob.ec/wp-content/uploads/downloads/2023/04/Parte-1-Informe-Anual-2022.pdf
+    download_url: null
+    bytes: 1433
+    sha256: 77898c52319c91a80f1c6da4f0b41d00c2b3f539b36921f4acc694abd6493f59
+    media_type: text/csv
+    license: official-publication
+    validation:
+      kind: checksum_only
+
+  - id: generation_fleet_2022_normalized
+    description: Normalized, source-reconciled 2022 SNI generator fleet.
+    stages: [03_profiles]
+    destination: data/processed/generation/generators_2022.csv
+    role: generated_product
+    availability: repository
+    source:
+      organization: EcuadorElectricGrid
+      record: Deterministic output of Stage 02
+      writer: notebooks/02_prepare_2022_generation.ipynb
+    persistent_uri: https://github.com/Fernando3161/EcuadorElectricGrid
+    download_url: null
+    bytes: 42860
+    sha256: d150dfed43234789940ec31fa83e360028883b6ead19ee5b40fc0f577df94f97
+    media_type: text/csv
+    license: repository-license-review-required
+    validation:
+      kind: checksum_only
+
+  - id: generation_monthly_flows
+    description: Monthly river-flow proxy series retained from the legacy hydro method.
+    stages: [03_profiles]
+    destination: data/raw/generation/caudals.csv
+    role: source
+    availability: repository
+    source:
+      organization: repository owner
+      record: Legacy manually compiled monthly flow table; primary provenance unresolved
+      provenance_status: retained evidence, not measured plant-specific inflow for most plants
+    persistent_uri: https://github.com/Fernando3161/EcuadorElectricGrid
+    download_url: null
+    bytes: 449
+    sha256: 04f5961d2dfa95c0e3d42d531106198ea66590b1ced31a45b1de49029a0d0329
+    media_type: text/csv
+    license: repository-license-review-required
+    validation:
+      kind: checksum_only
+
+  - id: hydro_profile_assignments_2022
+    description: Reviewed mapping from all 65 SNI hydro plants to legacy flow proxies.
+    stages: [03_profiles]
+    destination: data/interim/generation/hydro_profile_assignments_2022.csv
+    role: source
+    availability: repository
+    source:
+      organization: EcuadorElectricGrid
+      record: Migrated legacy aliases with explicit assignment basis and confidence
+      migration_script: scripts/migrate_phase04_generation_sources.py
+    persistent_uri: https://github.com/Fernando3161/EcuadorElectricGrid
+    download_url: null
+    bytes: 11293
+    sha256: 34850f6484e45a1f79e4ac979bfc540d28f139d761e8cd655c9b2d09aa22a5e9
+    media_type: text/csv
+    license: repository-license-review-required
     validation:
       kind: checksum_only

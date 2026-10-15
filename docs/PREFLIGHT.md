@@ -79,8 +79,8 @@ an upstream document or unversioned file.
 |---|---|
 | `00_preflight` | base network, solar profiles, onshore-wind profiles |
 | `01_demand` | tracked hourly demand template, official monthly demand controls, official net-supply table |
-| `02_generation` | none currently; Phase 4 must register any retained external source |
-| `03_profiles` | solar and onshore-wind profiles |
+| `02_generation` | source-faithful existing fleet and one-to-one location evidence |
+| `03_profiles` | Stage 02 inputs, normalized fleet, monthly flow evidence, reviewed hydro assignments, solar and onshore-wind profiles |
 | `04_topology` | base network |
 | `05_assembly` | all three external inputs plus the three Stage 01 inputs through dependencies |
 | `06_validation` | all six through dependencies |

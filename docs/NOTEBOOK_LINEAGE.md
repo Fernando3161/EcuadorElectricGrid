@@ -139,3 +139,16 @@ point. It uses common preflight, writes a unit-explicit MW profile, validates
 energy/peak/time/spatial invariants, saves report figures, and materializes the
 normalized CENACE supply reference. Future demand projection remains assigned to
 the planning/scenario phase and is not a baseline dependency.
+
+## Phase 4 migration result
+
+`notebooks/02_prepare_2022_generation.ipynb` now replaces the supported role of
+the giant legacy generation-processing and plotting cells. It consumes tracked
+open tables, enforces a one-to-one location join, reconciles exactly to 133 SNI
+source rows, and saves capacity and location-evidence figures.
+
+`notebooks/03_prepare_renewable_and_hydro_profiles.ipynb` replaces automatic
+hydro fuzzy matching with a fixed reviewed assignment table and attaches the
+published 2013 solar/wind province profiles to the 2022 model calendar. Reusable
+logic is in `src/generation.py` and `src/availability.py`. The old notebooks and
+their generated outputs remain evidence until the Phase 10 pruning review.

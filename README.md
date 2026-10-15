@@ -6,7 +6,7 @@ system, then using the validated model as the foundation for future-grid studies
 
 ## Current status
 
-The repository is in Phase 3 of a full refactor. It contains valuable working
+The repository is in Phase 4 of a full refactor. It contains valuable working
 2017/2018 studies, a partially completed 2022 notebook chain, manually prepared
 Master Plan tables, candidate network artifacts, and solved experiments. It does
 **not** yet contain a reproducible, scientifically validated 2022 baseline.
@@ -94,6 +94,7 @@ anything remains unresolved. See the [preflight guide](docs/PREFLIGHT.md).
 - [Mandatory preflight](docs/PREFLIGHT.md)
 - [Approved environment](docs/ENVIRONMENT.md)
 - [2022 statistical validation contract](docs/VALIDATION_2022.md)
+- [2022 generation and availability methodology](docs/GENERATION_AND_PROFILES_2022.md)
 - [Development workflow](docs/DEVELOPMENT_WORKFLOW.md)
 - [Technical report template](docs/TECHNICAL_REPORT_TEMPLATE.md)
 

@@ -129,6 +129,30 @@ The small normalized carrier table
 the later annual validation reads an inspectable, schema-tested interface. See
 `VALIDATION_2022.md` for the boundary and formula.
 
+## Phase 4 generation and profile artifacts
+
+The private/local Excel files are migration evidence, not runtime dependencies.
+Their supported open interfaces are checksum-pinned repository artifacts:
+
+| Artifact | Zone | Role |
+|---|---|---|
+| `data/raw/generation/generation_existing_2022.csv` | raw | all 300 source rows with original values and row provenance |
+| `data/interim/generation/plant_location_evidence_2022.csv` | interim | one-to-one location evidence for the 133 SNI rows |
+| `data/raw/generation/cenace_2022_commissioning_events.csv` | raw | official in-year operating dates retained separately from conflicting plant capacities |
+| `data/processed/generation/generators_2022.csv` | processed | normalized and reconciled model-facing fleet |
+| `data/raw/generation/caudals.csv` | raw | eight legacy monthly flow proxy series with unresolved primary provenance |
+| `data/interim/generation/hydro_profile_assignments_2022.csv` | interim | reviewed plant-to-flow mapping with basis and confidence |
+
+The workbook migration can be audited with
+`scripts/migrate_phase04_generation_sources.py`, but ordinary notebook execution
+does not require those workbooks. Stage 03 also requires the external `solar.nc`
+and `onwind.nc` files already managed by Zenodo preflight.
+
+The hourly hydro and variable-renewable output CSVs are ignored generated
+products. They are recreated by the Stage 03 notebook and checked for 8,760-hour
+alignment, exact plant coverage, finite values, and `[0, 1]` bounds. See
+`GENERATION_AND_PROFILES_2022.md` for assumptions and evidence limitations.
+
 ## Target data zones
 
 | Zone | Meaning | Hand edited? | Git policy |

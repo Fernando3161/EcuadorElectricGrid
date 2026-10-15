@@ -71,6 +71,12 @@
       "disposition": "retain and extract tested functions incrementally"
     },
     {
+      "id": "migration_scripts",
+      "patterns": ["scripts/*.py"],
+      "classification": "manual_evidence",
+      "disposition": "retain deterministic evidence migrations until their source workbooks are formally archived"
+    },
+    {
       "id": "premature_scenario_registry",
       "patterns": ["src/scenario_registry.json"],
       "classification": "legacy_evidence",
@@ -108,9 +114,15 @@
     },
     {
       "id": "current_raw_generation_tables",
-      "patterns": ["data/raw/generation/carriers.csv", "data/raw/generation/caudals.csv", "data/raw/generation/technology_cost.csv"],
+      "patterns": ["data/raw/generation/carriers.csv", "data/raw/generation/caudals.csv", "data/raw/generation/technology_cost.csv", "data/raw/generation/generation_existing_2022.csv", "data/raw/generation/cenace_2022_commissioning_events.csv"],
       "classification": "candidate_active",
-      "disposition": "verify source, units, and baseline applicability in Phases 3 and 4"
+      "disposition": "retain the Phase 4 source transcription and supporting parameter tables with explicit provenance status"
+    },
+    {
+      "id": "generation_interim_evidence",
+      "patterns": ["data/interim/generation/*.csv"],
+      "classification": "manual_evidence",
+      "disposition": "retain selected one-to-one location and hydro assignment evidence used by the supported Phase 4 workflow"
     },
     {
       "id": "legacy_generation_mapping",
@@ -162,9 +174,9 @@
     },
     {
       "id": "processed_generation_candidates",
-      "patterns": ["data/processed/generation/powerplants_existing.csv", "data/processed/generation/renewable_energy_generation.csv"],
+      "patterns": ["data/processed/generation/powerplants_existing.csv", "data/processed/generation/renewable_energy_generation.csv", "data/processed/generation/generators_2022.csv"],
       "classification": "generated_candidate",
-      "disposition": "trace and reproduce in Phase 4"
+      "disposition": "retain the normalized Phase 4 fleet; legacy candidates remain evidence until Phase 10"
     },
     {
       "id": "mixed_processed_generation_candidates",
@@ -221,6 +233,12 @@
       "patterns": ["data/processed/demand/demand_profiles_2022_mw.csv"],
       "classification": "generated_candidate",
       "disposition": "regenerate with the supported Phase 3 notebook; do not commit the large derived profile"
+    },
+    {
+      "id": "ignored_supported_generation_profiles",
+      "patterns": ["data/processed/generation/hydro_availability_2022.csv", "data/processed/generation/renewable_availability_2022.csv"],
+      "classification": "generated_candidate",
+      "disposition": "regenerate with the supported Phase 4 profile notebook; do not commit the large derived profiles"
     },
     {
       "id": "ignored_demand_scenario_products",
@@ -334,6 +352,8 @@
   "notebook_register": [
     {"path": "notebooks/00_preflight_and_data_inventory.ipynb", "lineage": "supported_refactor", "role": "mandatory environment and artifact preflight", "disposition": "retain as the supported Stage 00 entry point"},
     {"path": "notebooks/01_prepare_2022_demand.ipynb", "lineage": "supported_refactor", "role": "prepare and validate 2022 SNI demand and statistical reference", "disposition": "retain as the supported Stage 01 entry point"},
+    {"path": "notebooks/02_prepare_2022_generation.ipynb", "lineage": "supported_refactor", "role": "normalize and reconcile the 2022 SNI existing generator fleet", "disposition": "retain as the supported Stage 02 entry point"},
+    {"path": "notebooks/03_prepare_renewable_and_hydro_profiles.ipynb", "lineage": "supported_refactor", "role": "prepare and validate hydro, solar, and onshore-wind availability", "disposition": "retain as the supported Stage 03 entry point"},
     {"path": "notebooks/03_a_process_generation.ipynb", "lineage": "2022_candidate", "role": "parse existing and future generation workbooks", "disposition": "rewrite"},
     {"path": "notebooks/03_b_generation_plots.ipynb", "lineage": "2022_candidate", "role": "generation diagnostics", "disposition": "merge into generation stage"},
     {"path": "notebooks/03_c_hydro_profiles.ipynb", "lineage": "2022_candidate", "role": "hydro plant-flow matching and hourly profiles", "disposition": "rewrite around tested functions"},
@@ -365,9 +385,11 @@
     {"path": "notebooks/_alt/temp_demand.py", "classification": "legacy_evidence", "disposition": "compare with demand notebooks before Phase 10"},
     {"path": "src/ec_network_eval.py", "classification": "candidate_active", "disposition": "retain high-value diagnostics and split into tested topology checks"},
     {"path": "src/artifacts.py", "classification": "candidate_active", "disposition": "supported manifest validation and artifact retrieval logic"},
+    {"path": "src/availability.py", "classification": "candidate_active", "disposition": "supported Phase 4 hydro and variable-renewable profile preparation logic"},
     {"path": "src/demand.py", "classification": "candidate_active", "disposition": "supported Phase 3 demand preparation and validation logic"},
     {"path": "src/environment.py", "classification": "candidate_active", "disposition": "supported approved-environment validation logic"},
     {"path": "src/helpers.py", "classification": "candidate_active", "disposition": "extract focused functions; repair imports; do not preserve as one broad API"},
+    {"path": "src/generation.py", "classification": "candidate_active", "disposition": "supported Phase 4 existing-generation normalization and validation logic"},
     {"path": "src/notebook_runner.py", "classification": "candidate_active", "disposition": "supported environment-pinned notebook execution helper"},
     {"path": "src/paths.py", "classification": "candidate_active", "disposition": "retain repository-relative resolution and simplify around the target tree"},
     {"path": "src/preflight.py", "classification": "candidate_active", "disposition": "supported command-line preflight entry point"},
@@ -380,7 +402,7 @@
     {"path": "src/_old/scenarios.py", "classification": "hypothetical_scenario", "disposition": "reconsider schema after baseline validation"}
   ],
   "source_document_register": [
-    {"path": "literature/CENACE/cenace_informe_anual_2022_parte_1.pdf", "kind": "authoritative_source", "topic": "2022 SNI demand and net supply", "sha256": "88f13f0106a190464c8954babc7529f785783d4d4017633a8d5ed8ff554fbd88"},
+    {"path": "literature/CENACE/cenace_informe_anual_2022_parte_1.pdf", "kind": "authoritative_source", "topic": "2022 SNI demand, net supply, and in-year generator additions", "sha256": "88f13f0106a190464c8954babc7529f785783d4d4017633a8d5ed8ff554fbd88"},
     {"path": "literature/CENACE/cenace_informe_anual_2023_parte_1.pdf", "kind": "authoritative_source", "topic": "republished 2022 monthly SNI demand and peaks", "sha256": "194a10b71b95e65c067df88756d0dbfb52052cf4713af044fec952d662f1153f"},
     {"path": "literature/PlanMaestroElectrifEc/cap_3_demanda.pdf", "kind": "official_source_candidate", "topic": "demand"},
     {"path": "literature/PlanMaestroElectrifEc/cap_3_demanda_tabla_1.pdf", "kind": "source_excerpt_candidate", "topic": "demand"},

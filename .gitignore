@@ -41,6 +41,8 @@ share/python-wheels/
 MANIFEST
 data/processed/demand/_ALT
 data/processed/demand/demand_profiles_2022_mw.csv
+data/processed/generation/hydro_availability_2022.csv
+data/processed/generation/renewable_availability_2022.csv
 data/raw/generation/_alt
 data/raw/networks/_alt
 data/raw/networks/backups

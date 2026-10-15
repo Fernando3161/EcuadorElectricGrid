@@ -1,0 +1,68 @@
+plant_id,source_row,plant_name,caudal_id,assignment_basis,confidence,evidence_note
+ec2022_002_Coca_Codo_Sinclair,2,Coca Codo Sinclair,coca_codo_sinclair,direct_plant_series,high,Flow-series name directly identifies this plant.
+ec2022_003_Molino,3,Molino,ingreso_amaluza,same_hydrological_system,medium,Legacy assignment uses a flow series from the same named river or generating complex.
+ec2022_004_Sopladora,4,Sopladora,ingreso_amaluza,same_hydrological_system,medium,Legacy assignment uses a flow series from the same named river or generating complex.
+ec2022_005_Minas_San_Francisco,5,Minas San Francisco,agoyan,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_006_Marcel_Laniado,6,Marcel Laniado,daule_peripa,same_hydrological_system,medium,Legacy assignment uses a flow series from the same named river or generating complex.
+ec2022_007_San_Francisco,7,San Francisco,agoyan,same_hydrological_system,medium,Legacy assignment uses a flow series from the same named river or generating complex.
+ec2022_008_Delsitanisagua,8,Delsitanisagua,delsitanisagua,direct_plant_series,high,Flow-series name directly identifies this plant.
+ec2022_009_Mazar,9,Mazar,mazar,direct_plant_series,high,Flow-series name directly identifies this plant.
+ec2022_010_Agoyan,10,Agoyán,agoyan,direct_plant_series,high,Flow-series name directly identifies this plant.
+ec2022_023_Pucara,23,Pucará,agoyan,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_026_Manduriacu,26,Manduriacu,coca_codo_sinclair,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_027_Due,27,Due,coca_codo_sinclair,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_031_Hidrosanbartolo,31,Hidrosanbartolo,delsitanisagua,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_032_Hidronormandfa,32,Hidronormandfa,mazar,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_033_Sarapullo,33,Sarapullo,coca_codo_sinclair,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_037_Baba,37,Baba,daule_peripa,same_hydrological_system,medium,Legacy assignment uses a flow series from the same named river or generating complex.
+ec2022_040_Cumbaya,40,Cumbayá,coca_codo_sinclair,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_042_Pusuno,42,Pusuno,agoyan,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_043_Abanico,43,Abanico,mazar,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_051_Sabanilla,51,Sabanilla,delsitanisagua,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_052_Nayon,52,Nayón,coca_codo_sinclair,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_056_Topo,56,Topo,agoyan,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_059_Ocana,59,Ocaña,mazar,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_061_Saucay,61,Saucay,mazar,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_063_Guangopolo_H,63,Guangopolo_H,coca_codo_sinclair,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_070_Sigchos,70,Sigchos,agoyan,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_075_Saymirfn,75,Saymirfn,mazar,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_076_Calope,76,Calope,agoyan,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_078_Recuperadora,78,Recuperadora,coca_codo_sinclair,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_079_Sibimbe,79,Sibimbe,agoyan,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_094_Alao,94,Alao,agoyan,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_095_Palmira_Nanegal,95,"Palmira-
+Nanegal",coca_codo_sinclair,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_096_Rio_Verde_Chico,96,Rio Verde Chico,agoyan,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_099_Victoria,99,Victoria,coca_codo_sinclair,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_105_El_Carmen,105,El Carmen,coca_codo_sinclair,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_108_Chalpi,108,Chalpi,coca_codo_sinclair,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_109_San_Jose_de_Tambo,109,San José de Tambo,agoyan,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_113_Ambi,113,Ambi,coca_codo_sinclair,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_122_Alazan,122,Alazán,mazar,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_124_Papallacta,124,Papallacta,coca_codo_sinclair,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_126_San_Jose_de_Minas,126,San José de Minas,agoyan,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_128_Vindobona,128,Vindobona,coca_codo_sinclair,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_133_Illuchi_No_2,133,Illuchi No.2,agoyan,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_138_Pasochoa,138,Pasochoa,coca_codo_sinclair,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_144_Illuchi_No_1,144,Illuchi No.1,agoyan,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_159_Rfo_Blanco,159,Rfo Blanco,agoyan,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_161_Penfnsula,161,Penfnsula,agoyan,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_167_San_Miguel_de_Car,167,San Miguel de Car,agoyan,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_171_Perlabf,171,Perlabf,coca_codo_sinclair,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_172_Carlos_Mora,172,Carlos Mora,delsitanisagua,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_178_Loreto,178,Loreto,coca_codo_sinclair,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_185_La_Calera,185,La Calera,coca_codo_sinclair,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_199_Los_Chillos,199,Los Chillos,coca_codo_sinclair,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_204_Geppert,204,Geppert,coca_codo_sinclair,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_218_La_Playa,218,La Playa,coca_codo_sinclair,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_229_Ulba,229,Ulba,agoyan,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_245_El_Laurel,245,El Laurel,coca_codo_sinclair,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_251_Uravia,251,Uravia,coca_codo_sinclair,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_252_Corazon,252,Corazón,coca_codo_sinclair,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_255_Gualaceo,255,Gualaceo,mazar,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_258_Buenos_Aires,258,Buenos Aires,coca_codo_sinclair,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_260_Hidrocarolina,260,Hidrocarolina,coca_codo_sinclair,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_279_Fabrica_Imbabura,279,"Fábrica
+Imbabura",coca_codo_sinclair,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_290_Sillunchi_I,290,Sillunchi I,coca_codo_sinclair,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.
+ec2022_292_Tilivi,292,Tiliví,agoyan,legacy_regional_proxy,low,Legacy manual regional proxy retained to preserve prior work; not an observed plant-specific inflow.

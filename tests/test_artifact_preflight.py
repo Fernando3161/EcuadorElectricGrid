@@ -113,14 +113,14 @@ class PublishedManifestTests(unittest.TestCase):
         expected = {
             "00_preflight": 3,
             "01_demand": 3,
-            "02_generation": 0,
-            "03_profiles": 2,
+            "02_generation": 3,
+            "03_profiles": 8,
             "04_topology": 1,
-            "05_assembly": 6,
-            "06_validation": 6,
+            "05_assembly": 12,
+            "06_validation": 12,
             "07_planning": 0,
-            "08_scenario": 6,
-            "09_comparison": 6,
+            "08_scenario": 12,
+            "09_comparison": 12,
         }
         for stage, count in expected.items():
             self.assertEqual(count, len(required_artifact_ids(self.manifest, stage)), stage)
