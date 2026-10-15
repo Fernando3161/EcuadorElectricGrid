@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "planning_project.schema.json",
+  "title": "Normalized Master Plan project row",
+  "type": "object",
+  "required": [
+    "project_id",
+    "asset_type",
+    "official_name",
+    "commissioning_year",
+    "evidence_class",
+    "source_document",
+    "source_edition",
+    "source_chapter",
+    "source_page_or_table",
+    "original_value",
+    "original_unit",
+    "normalized_value",
+    "normalized_unit",
+    "transformation",
+    "confidence"
+  ],
+  "properties": {
+    "project_id": {"type": "string", "pattern": "^[A-Z0-9][A-Z0-9_-]+$"},
+    "asset_type": {"enum": ["generator", "line", "transformer", "substation"]},
+    "official_name": {"type": "string", "minLength": 1},
+    "commissioning_year": {"type": ["integer", "null"], "minimum": 2022},
+    "evidence_class": {"enum": ["official_fact", "modeling_assumption"]},
+    "source_document": {"type": "string", "minLength": 1},
+    "source_edition": {"type": "string", "minLength": 1},
+    "source_chapter": {"type": "string", "minLength": 1},
+    "source_page_or_table": {"type": "string", "minLength": 1},
+    "original_name": {"type": ["string", "null"]},
+    "original_value": {"type": ["number", "string", "null"]},
+    "original_unit": {"type": ["string", "null"]},
+    "normalized_value": {"type": ["number", "string", "null"]},
+    "normalized_unit": {"type": ["string", "null"]},
+    "transformation": {"type": "string", "minLength": 1},
+    "confidence": {"enum": ["high", "medium", "low", "unresolved"]},
+    "notes": {"type": "string"}
+  },
+  "additionalProperties": true
+}

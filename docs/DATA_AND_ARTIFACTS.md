@@ -40,9 +40,15 @@ The active 2022 notebooks load `solar.nc` and `onwind.nc` directly. They do not
 load the full ERA5/atlite cutout. These three files—not the cutout or an already
 cleaned Ecuador network—form the current minimum external NetCDF input set.
 
-No Zenodo DOI, exact download URL, or release checksum is currently recorded in
-this repository. Publication is therefore a Phase 2 owner action and automated
-retrieval cannot yet be considered complete.
+The three inputs are published in Zenodo record
+[`10.5281/zenodo.23392049`](https://doi.org/10.5281/zenodo.23392049), version
+1.0, under CC BY 4.0. Phase 1 downloaded each published file to temporary storage
+and verified that its byte size and SHA-256 exactly match the values above.
+
+The direct URLs and the safe Phase 2 retrieval-test procedure are recorded in
+`docs/ZENODO_HANDOFF.md`. Automated retrieval is not complete until Phase 2
+instantiates the manifest and tests missing, cached, invalid, and interrupted
+download behavior.
 
 ## Generated network products—not source artifacts
 

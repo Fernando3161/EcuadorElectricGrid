@@ -6,7 +6,7 @@
 - Branch: `refactor/v1-phase-00-diagnostic`
 - Starting revision: `b628b47`
 - Author: Codex, under repository-owner direction
-- Reviewer: repository owner; final review pending
+- Reviewer: repository owner; accepted before Phase 01 began
 - Date: 2026-10-15
 - Environment: existing `pypsa-earth-ec` Conda environment
 - Observed runtime: Python 3.11.14, PyPSA 0.30.3, pandas 2.3.3,
@@ -29,10 +29,9 @@ refactor. It does not clean the repository or change scientific behavior.
 | Required external NetCDF boundary is identified | Pass | `base.nc`, `solar.nc`, and `onwind.nc` only |
 | Processed networks are classified correctly | Pass | notebook writer tracing |
 | Phase and branch sequence is defined | Pass | Phases 00–10 in `docs/PROJECT_PLAN.md` |
-| Owner approves the complete Phase 00 package | Pending | requires review of this report and branch diff |
+| Owner approves the complete Phase 00 package | Pass | owner accepted Phase 00 and committed revision `cc6a929` |
 
-Phase 00 is implementation-complete and ready for owner review. It must not be
-reported as formally closed until that review occurs.
+Phase 00 is complete and owner-accepted.
 
 ## Inputs and provenance
 
@@ -219,11 +218,7 @@ handover. No heavy command is required for Phase 00 acceptance.
 
 ## Conclusion and next-phase recommendation
 
-Phase 00 implementation is complete and awaits owner review. The next phase must
-not begin until the owner accepts this report and the branch diff.
-
-After acceptance, the safe next step is Phase 01 on
-`refactor/v1-phase-01-structure`: inventory and classify every artifact, trace the
-two notebook chains in detail, preserve manual scientific evidence, define the
-target structure and schemas, and add the first cheap tests. Phase 01 must not yet
-delete the legacy material it is still investigating.
+Phase 00 was accepted by the owner and committed at `cc6a929`. Phase 01 therefore
+began on `refactor/v1-phase-01-structure` to classify artifacts, trace both
+notebook chains, preserve manual evidence, define the target structure and
+schemas, and add the first cheap tests.

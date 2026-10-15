@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "artifact_manifest.schema.json",
+  "title": "External artifact manifest",
+  "type": "object",
+  "required": ["manifest_version", "artifacts"],
+  "properties": {
+    "manifest_version": {"type": "integer", "minimum": 1},
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "description",
+          "stages",
+          "destination",
+          "role",
+          "source",
+          "persistent_uri",
+          "download_url",
+          "bytes",
+          "sha256",
+          "media_type",
+          "license",
+          "validation"
+        ],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_]*$"},
+          "description": {"type": "string", "minLength": 1},
+          "stages": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+          "destination": {"type": "string", "pattern": "^(?![A-Za-z]:|/|\\\\).+"},
+          "role": {"enum": ["source", "external_input", "generated_product"]},
+          "source": {"type": "object"},
+          "persistent_uri": {"type": "string"},
+          "download_url": {"type": "string"},
+          "bytes": {"type": "integer", "minimum": 1},
+          "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "media_type": {"type": "string", "minLength": 1},
+          "license": {"type": "string"},
+          "validation": {"type": "object"}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": false
+}

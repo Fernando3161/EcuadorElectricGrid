@@ -6,7 +6,7 @@ system, then using the validated model as the foundation for future-grid studies
 
 ## Current status
 
-The repository is in Phase 0 of a full refactor. It contains valuable working
+The repository is in Phase 1 of a full refactor. It contains valuable working
 2017/2018 studies, a partially completed 2022 notebook chain, manually prepared
 Master Plan tables, candidate network artifacts, and solved experiments. It does
 **not** yet contain a reproducible, scientifically validated 2022 baseline.
@@ -51,10 +51,10 @@ the repository. Do not run the scientific notebooks with the system Python.
 
 ## Large external data
 
-The required upstream NetCDF inputs—`base.nc`, `solar.nc`, and `onwind.nc`—will be
-published manually to Zenodo or a comparable persistent archive. Before the first
-workflow notebook runs, a preflight stage will check them, download only missing
-files, verify checksums, and place them at documented repository-relative paths.
+The required upstream NetCDF inputs—`base.nc`, `solar.nc`, and `onwind.nc`—are
+published in a versioned Zenodo record. Before the first workflow notebook runs,
+a preflight stage will check them, download only missing files, verify checksums,
+and place them at documented repository-relative paths.
 
 The full ERA5/atlite cutout is not required by the supported notebooks; it belongs
 to upstream renewable-profile regeneration in `EcuadorElectricGridData`.
@@ -62,16 +62,23 @@ to upstream renewable-profile regeneration in `EcuadorElectricGridData`.
 repository's cleaning and assembly notebooks and are not raw inputs. Their current
 unvalidated instances will not be published as source artifacts.
 
-The Phase 0 audit found the required historical files, but their public URIs and
-release checksums have not yet been assigned. See
-[`docs/DATA_AND_ARTIFACTS.md`](docs/DATA_AND_ARTIFACTS.md).
+The required upstream files are published in the versioned Zenodo record
+[`10.5281/zenodo.23392049`](https://doi.org/10.5281/zenodo.23392049). Phase 1
+verified the three direct downloads against the observed sizes and SHA-256
+checksums. See the
+[data contract](docs/DATA_AND_ARTIFACTS.md) and
+[Zenodo handoff](docs/ZENODO_HANDOFF.md).
 
 ## Documentation
 
 - [Project objectives](docs/PROJECT_OBJECTIVES.md)
 - [Phase 0 diagnostic](docs/PHASE_00_DIAGNOSTIC.md)
+- [Phase 1 inventory](docs/PHASE_01_INVENTORY.md)
+- [Repository architecture](docs/REPOSITORY_ARCHITECTURE.md)
+- [Notebook lineage](docs/NOTEBOOK_LINEAGE.md)
 - [Phased project plan](docs/PROJECT_PLAN.md)
 - [Data and artifact contract](docs/DATA_AND_ARTIFACTS.md)
+- [Zenodo handoff](docs/ZENODO_HANDOFF.md)
 - [Development workflow](docs/DEVELOPMENT_WORKFLOW.md)
 - [Technical report template](docs/TECHNICAL_REPORT_TEMPLATE.md)
 

@@ -1,0 +1,456 @@
+{
+  "schema_version": 1,
+  "phase": "01",
+  "purpose": "Evidence-preserving classification of the pre-refactor repository. Classification is not scientific validation.",
+  "classification_terms": {
+    "governance": "Project policy, documentation, reports, schemas, or tests.",
+    "candidate_active": "Candidate input, notebook, or code for reconstruction of the supported workflow; not yet canonical.",
+    "manual_evidence": "Manual repair, matching, or extraction evidence that must be migrated before cleanup.",
+    "generated_candidate": "Derived output whose writer is known but whose reproducibility or validity is not yet accepted.",
+    "legacy_evidence": "Historical implementation or result retained to recover scientific logic and provenance.",
+    "mixed_official_and_hypothetical": "Artifact combining official-plan candidates with modeling assumptions; quarantined from official use.",
+    "hypothetical_scenario": "Explicit non-official scenario material, excluded from the baseline and official plan tables.",
+    "experimental_result": "Non-canonical result retained as diagnostic evidence.",
+    "external_required": "Upstream artifact required by the supported workflow and destined for checksum-pinned retrieval.",
+    "external_optional": "External or local evidence not required by the supported student workflow."
+  },
+  "tracked_file_rules": [
+    {
+      "id": "root_governance",
+      "patterns": [".gitignore", "AGENTS.md", "LICENSE", "README.md"],
+      "classification": "governance",
+      "disposition": "retain"
+    },
+    {
+      "id": "phase_documents",
+      "patterns": ["docs/*.md", "reports/*.md"],
+      "classification": "governance",
+      "disposition": "retain"
+    },
+    {
+      "id": "phase_contracts",
+      "patterns": ["config/repository_inventory.json", "config/schemas/*.json"],
+      "classification": "governance",
+      "disposition": "retain"
+    },
+    {
+      "id": "legacy_runtime_configuration",
+      "patterns": ["config/config.yaml", "config/environment_ec.yaml"],
+      "classification": "legacy_evidence",
+      "disposition": "reconcile in Phase 2 before supported use"
+    },
+    {
+      "id": "current_2022_notebooks",
+      "patterns": ["notebooks/*.ipynb", "notebooks/*.py"],
+      "classification": "candidate_active",
+      "disposition": "rewrite into the staged notebook series after logic extraction"
+    },
+    {
+      "id": "notebook_directory_outputs",
+      "patterns": ["notebooks/*.csv", "notebooks/*.json"],
+      "classification": "generated_candidate",
+      "disposition": "map writers and migrate reproducible outputs out of notebooks; do not delete yet"
+    },
+    {
+      "id": "legacy_notebooks",
+      "patterns": ["notebooks/_alt/*"],
+      "classification": "legacy_evidence",
+      "disposition": "retain through migration; review for Phase 10 pruning"
+    },
+    {
+      "id": "candidate_source_modules",
+      "patterns": ["src/*.py"],
+      "classification": "candidate_active",
+      "disposition": "retain and extract tested functions incrementally"
+    },
+    {
+      "id": "premature_scenario_registry",
+      "patterns": ["src/scenario_registry.json"],
+      "classification": "legacy_evidence",
+      "disposition": "quarantine until the validated baseline and future-scenario contract exist"
+    },
+    {
+      "id": "legacy_source_modules",
+      "patterns": ["src/_old/*.py"],
+      "classification": "legacy_evidence",
+      "disposition": "retain through logic extraction; review for Phase 10 pruning"
+    },
+    {
+      "id": "current_raw_demand_tables",
+      "patterns": ["data/raw/demand/*.csv"],
+      "classification": "candidate_active",
+      "disposition": "verify source edition, units, and lineage in Phase 3"
+    },
+    {
+      "id": "legacy_raw_demand_tables",
+      "patterns": ["data/raw/demand/_alt/*.csv"],
+      "classification": "legacy_evidence",
+      "disposition": "retain as 2018-chain evidence"
+    },
+    {
+      "id": "current_raw_geography_tables",
+      "patterns": ["data/raw/gadm/*.csv"],
+      "classification": "candidate_active",
+      "disposition": "verify source and role before normalization"
+    },
+    {
+      "id": "current_raw_generation_tables",
+      "patterns": ["data/raw/generation/carriers.csv", "data/raw/generation/caudals.csv", "data/raw/generation/technology_cost.csv"],
+      "classification": "candidate_active",
+      "disposition": "verify source, units, and baseline applicability in Phases 3 and 4"
+    },
+    {
+      "id": "legacy_generation_mapping",
+      "patterns": ["data/raw/generation/_alt/*.json"],
+      "classification": "legacy_evidence",
+      "disposition": "retain until carrier mapping is migrated to the Phase 3 validation contract"
+    },
+    {
+      "id": "mixed_future_generation_table",
+      "patterns": ["data/raw/generation/generation_future_renewable_2022.csv"],
+      "classification": "mixed_official_and_hypothetical",
+      "disposition": "split official rows from nuclear assumptions before any Master Plan use"
+    },
+    {
+      "id": "mixed_master_plan_network_tables",
+      "patterns": ["data/raw/networks/EC_bus_expansion_check.csv", "data/raw/networks/EC_bus_expansion_masterplan_2022.csv", "data/raw/networks/EC_line_expansion_masterplan_2022.csv"],
+      "classification": "mixed_official_and_hypothetical",
+      "disposition": "quarantine; normalize cited official rows and separate auto-generated nuclear rows in Phase 8"
+    },
+    {
+      "id": "transformer_master_plan_candidate",
+      "patterns": ["data/raw/networks/EC_transformer_expansion_masterplan_2022.csv"],
+      "classification": "manual_evidence",
+      "disposition": "preserve and add row-level source provenance in Phase 8"
+    },
+    {
+      "id": "current_demand_products",
+      "patterns": ["data/processed/demand/*.csv"],
+      "classification": "generated_candidate",
+      "disposition": "reproduce and validate in Phase 3"
+    },
+    {
+      "id": "hydro_profile_products_and_audits",
+      "patterns": ["data/processed/generation/hidro_max_profiles/*.csv"],
+      "classification": "manual_evidence",
+      "disposition": "preserve aliases, match diagnostics, and generated profiles; normalize naming in Phase 4"
+    },
+    {
+      "id": "hypothetical_nuclear_layout",
+      "patterns": ["data/processed/generation/nuclear_layout.csv"],
+      "classification": "hypothetical_scenario",
+      "disposition": "exclude from baseline and official Master Plan; retain only as legacy evidence"
+    },
+    {
+      "id": "processed_generation_candidates",
+      "patterns": ["data/processed/generation/powerplants_existing.csv", "data/processed/generation/renewable_energy_generation.csv"],
+      "classification": "generated_candidate",
+      "disposition": "trace and reproduce in Phase 4"
+    },
+    {
+      "id": "mixed_processed_generation_candidates",
+      "patterns": ["data/processed/generation/powerplants_all.csv", "data/processed/generation/powerplants_future.csv"],
+      "classification": "mixed_official_and_hypothetical",
+      "disposition": "do not use as official planning tables; separate nuclear assumptions during reconstruction"
+    },
+    {
+      "id": "current_network_repairs",
+      "patterns": ["data/processed/networks/line_fix.csv"],
+      "classification": "manual_evidence",
+      "disposition": "migrate to tested repair rules with rationale in Phase 5"
+    },
+    {
+      "id": "legacy_network_repairs",
+      "patterns": ["data/processed/networks/_alt/*.csv"],
+      "classification": "legacy_evidence",
+      "disposition": "compare with current repairs before Phase 10"
+    },
+    {
+      "id": "legacy_scenario_design",
+      "patterns": ["literature/scenario_deve_documentation.md"],
+      "classification": "hypothetical_scenario",
+      "disposition": "retain as legacy design evidence; do not present as an official plan"
+    },
+    {
+      "id": "experimental_results",
+      "patterns": ["results/experiments/*.csv"],
+      "classification": "experimental_result",
+      "disposition": "retain as diagnostic evidence; not a canonical result"
+    },
+    {
+      "id": "phase_tests",
+      "patterns": ["tests/*.py"],
+      "classification": "governance",
+      "disposition": "retain"
+    }
+  ],
+  "ignored_artifact_rules": [
+    {
+      "id": "ignored_demand_scenario_products",
+      "patterns": ["data/processed/demand/_ALT/*.csv"],
+      "classification": "legacy_evidence",
+      "disposition": "retain until demand-scenario formulas and required examples are migrated"
+    },
+    {
+      "id": "ignored_generation_workbook_products",
+      "patterns": ["data/processed/generation/*.xlsx"],
+      "classification": "generated_candidate",
+      "disposition": "reproduce as normalized open tables in Phase 4"
+    },
+    {
+      "id": "ignored_current_generated_networks",
+      "patterns": ["data/processed/networks/ec_network_2022.nc", "data/processed/networks/network_base_filled.nc"],
+      "classification": "generated_candidate",
+      "disposition": "do not publish as inputs; reproduce in Phase 5"
+    },
+    {
+      "id": "ignored_untraced_network_original",
+      "patterns": ["data/processed/networks/network_original.nc"],
+      "classification": "legacy_evidence",
+      "disposition": "trace before Phase 10"
+    },
+    {
+      "id": "ignored_legacy_processed_networks",
+      "patterns": ["data/processed/networks/_alt/*.nc"],
+      "classification": "legacy_evidence",
+      "disposition": "retain until topology and scenario logic migrate"
+    },
+    {
+      "id": "ignored_required_renewable_profiles",
+      "patterns": ["data/raw/cutouts/solar.nc", "data/raw/cutouts/onwind.nc"],
+      "classification": "external_required",
+      "disposition": "published and verified; manifest and checksum-pin in Phase 2"
+    },
+    {
+      "id": "ignored_optional_full_cutout",
+      "patterns": ["data/raw/cutouts/cutout-2013-era5.nc"],
+      "classification": "external_optional",
+      "disposition": "exclude from student workflow; retain in companion data project"
+    },
+    {
+      "id": "ignored_geography_sources",
+      "patterns": ["data/raw/gadm/*.xlsx", "data/raw/gadm/*.gpkg"],
+      "classification": "external_optional",
+      "disposition": "record source/license and manifest if a supported stage requires it"
+    },
+    {
+      "id": "ignored_generation_source_workbooks",
+      "patterns": ["data/raw/generation/*.xlsx"],
+      "classification": "external_optional",
+      "disposition": "preserve and record source/license before Phase 4"
+    },
+    {
+      "id": "ignored_legacy_generation_material",
+      "patterns": ["data/raw/generation/_alt/*"],
+      "classification": "legacy_evidence",
+      "disposition": "retain until generation lineage and unique content are resolved"
+    },
+    {
+      "id": "ignored_required_base_network",
+      "patterns": ["data/raw/networks/base.nc"],
+      "classification": "external_required",
+      "disposition": "published and verified; manifest and checksum-pin in Phase 2"
+    },
+    {
+      "id": "ignored_other_raw_networks",
+      "patterns": ["data/raw/networks/elec*.nc"],
+      "classification": "legacy_evidence",
+      "disposition": "upstream/intermediate evidence; exclude from supported preflight unless provenance proves a need"
+    },
+    {
+      "id": "ignored_legacy_raw_network_tables",
+      "patterns": ["data/raw/networks/_alt/*.csv", "data/raw/networks/backups/*.csv"],
+      "classification": "legacy_evidence",
+      "disposition": "compare with current planning tables before Phase 10"
+    },
+    {
+      "id": "ignored_master_plan_sources",
+      "patterns": ["literature/PlanMaestroElectrifEc/*"],
+      "classification": "external_optional",
+      "disposition": "preserve; decide licensing/distribution and capture row-level citations"
+    },
+    {
+      "id": "ignored_legacy_source_editions",
+      "patterns": ["literature/_old/*.pdf"],
+      "classification": "legacy_evidence",
+      "disposition": "retain until its edition relationship is documented"
+    },
+    {
+      "id": "ignored_experimental_network_results",
+      "patterns": ["results/networks/*.nc"],
+      "classification": "experimental_result",
+      "disposition": "retain locally as non-canonical solve evidence; review for Phase 10"
+    },
+    {
+      "id": "ignored_generated_figures",
+      "patterns": ["results/graphs/*.png", "results/graphs/demand/*.png", "results/graphs/generation/*.png"],
+      "classification": "generated_candidate",
+      "disposition": "regenerate selected validation figures into reports/figures; review the remainder in Phase 10"
+    },
+    {
+      "id": "ignored_runtime_logs",
+      "patterns": ["logs.log", "results/scenario_runs.log"],
+      "classification": "experimental_result",
+      "disposition": "retain only while needed for forensic tracing; replace with run-scoped logs"
+    }
+  ],
+  "notebook_register": [
+    {"path": "notebooks/03_a_process_generation.ipynb", "lineage": "2022_candidate", "role": "parse existing and future generation workbooks", "disposition": "rewrite"},
+    {"path": "notebooks/03_b_generation_plots.ipynb", "lineage": "2022_candidate", "role": "generation diagnostics", "disposition": "merge into generation stage"},
+    {"path": "notebooks/03_c_hydro_profiles.ipynb", "lineage": "2022_candidate", "role": "hydro plant-flow matching and hourly profiles", "disposition": "rewrite around tested functions"},
+    {"path": "notebooks/04_EC_network_base.ipynb", "lineage": "2022_candidate", "role": "topology cleaning and manual repairs", "disposition": "rewrite and preserve every mutation"},
+    {"path": "notebooks/05_EC_network_base_run.ipynb", "lineage": "2022_candidate", "role": "network assembly and solve experiments", "disposition": "split assembly, smoke test, and validation"},
+    {"path": "notebooks/06_EC_network_expansion_run - Kopie.ipynb", "lineage": "2022_candidate", "role": "future expansion experiment", "disposition": "legacy evidence until Phase 8; saved error"},
+    {"path": "notebooks/06_EC_network_plots.ipynb", "lineage": "2022_candidate", "role": "topology plotting", "disposition": "extract reusable plotting and merge with validation stages"},
+    {"path": "notebooks/_alt/01_a_EC_year_demand_forecast.ipynb", "lineage": "2017_2018_legacy", "role": "multi-scenario demand projection", "disposition": "extract formulas"},
+    {"path": "notebooks/_alt/01_EC_year_demand_forecast.ipynb", "lineage": "2017_2018_legacy", "role": "single-scenario demand projection", "disposition": "compare then supersede"},
+    {"path": "notebooks/_alt/02_EC_profiles_forecast.ipynb", "lineage": "2017_2018_legacy", "role": "hourly demand scaling", "disposition": "extract checks and scaling logic"},
+    {"path": "notebooks/_alt/03_EC_generation.ipynb", "lineage": "2017_2018_legacy", "role": "plant preparation", "disposition": "extract mapping evidence; saved import error"},
+    {"path": "notebooks/_alt/04_EC_generation_plots.ipynb", "lineage": "2017_2018_legacy", "role": "plant diagnostics", "disposition": "retain until reporting logic is migrated"},
+    {"path": "notebooks/_alt/05_EC_network_eval.ipynb", "lineage": "2017_2018_legacy", "role": "network repair and expansion", "disposition": "extract repair rules; saved error"},
+    {"path": "notebooks/_alt/06_EC_network_plots.ipynb", "lineage": "2017_2018_legacy", "role": "network-variant plots", "disposition": "retain as visual evidence"},
+    {"path": "notebooks/_alt/07_EC_load_n_gen_match.ipynb", "lineage": "2017_2018_legacy", "role": "load and plant attachment", "disposition": "extract matching rules; saved error"},
+    {"path": "notebooks/_alt/07_EC_renewables_estimation.ipynb", "lineage": "2017_2018_legacy", "role": "renewable profile generation", "disposition": "upstream-only method; preserve provenance"},
+    {"path": "notebooks/_alt/07_EC_saved.ipynb", "lineage": "2017_2018_legacy", "role": "unexecuted mixed scratch workflow", "disposition": "retain until unique logic is ruled out"},
+    {"path": "notebooks/_alt/08_2017_Consistency_Check.ipynb", "lineage": "2017_2018_legacy", "role": "pruned consistency workflow", "disposition": "priority evidence; extract accounting and checks"},
+    {"path": "notebooks/_alt/08_EC_cluster_network copy.ipynb", "lineage": "2017_2018_legacy", "role": "reactance sensitivity experiment", "disposition": "retain with experiment table"},
+    {"path": "notebooks/_alt/09_2017_Consistency_Check_no_pruning.ipynb", "lineage": "2017_2018_legacy", "role": "executed no-pruning consistency workflow", "disposition": "priority evidence; extract accounting and checks"},
+    {"path": "notebooks/_alt/10_EC_Scenario_Building copy.ipynb", "lineage": "legacy_scenarios", "role": "scenario copy", "disposition": "compare with original before Phase 10"},
+    {"path": "notebooks/_alt/10_EC_Scenario_Building.ipynb", "lineage": "legacy_scenarios", "role": "scenario assembly and KPIs", "disposition": "extract generic reporting only; quarantine scenario assumptions"},
+    {"path": "notebooks/_alt/999_Vietnam.ipynb", "lineage": "unrelated_scratch", "role": "unrelated country scratch notebook", "disposition": "Phase 10 removal candidate"},
+    {"path": "notebooks/_alt/test.ipynb", "lineage": "scratch", "role": "empty test notebook", "disposition": "Phase 10 removal candidate"}
+  ],
+  "module_register": [
+    {"path": "notebooks/01_generate_demand_profiles_2022.py", "classification": "candidate_active", "disposition": "move reusable demand logic into a tested module and expose it through Stage 01"},
+    {"path": "notebooks/02_extend_demand_prognosis.py", "classification": "candidate_active", "disposition": "move forecast logic into a planning/demand module; future projection is not a baseline dependency"},
+    {"path": "notebooks/_alt/temp_demand.py", "classification": "legacy_evidence", "disposition": "compare with demand notebooks before Phase 10"},
+    {"path": "src/ec_network_eval.py", "classification": "candidate_active", "disposition": "retain high-value diagnostics and split into tested topology checks"},
+    {"path": "src/helpers.py", "classification": "candidate_active", "disposition": "extract focused functions; repair imports; do not preserve as one broad API"},
+    {"path": "src/paths.py", "classification": "candidate_active", "disposition": "retain repository-relative resolution and simplify around the target tree"},
+    {"path": "src/repository_inventory.py", "classification": "governance", "disposition": "retain as the Phase 1 classification validator"},
+    {"path": "src/scenario_registry.py", "classification": "legacy_evidence", "disposition": "quarantine until a validated baseline exists"},
+    {"path": "src/_old/scenario_pipeline.py", "classification": "legacy_evidence", "disposition": "extract only reusable mechanics after baseline validation"},
+    {"path": "src/_old/scenario_reg.py", "classification": "hypothetical_scenario", "disposition": "quarantine nuclear and other premature assumptions"},
+    {"path": "src/_old/scenario_run_template.py", "classification": "legacy_evidence", "disposition": "retain generic reporting/solve evidence for later migration"},
+    {"path": "src/_old/scenarios.py", "classification": "hypothetical_scenario", "disposition": "reconsider schema after baseline validation"}
+  ],
+  "source_document_register": [
+    {"path": "literature/PlanMaestroElectrifEc/cap_3_demanda.pdf", "kind": "official_source_candidate", "topic": "demand"},
+    {"path": "literature/PlanMaestroElectrifEc/cap_3_demanda_tabla_1.pdf", "kind": "source_excerpt_candidate", "topic": "demand"},
+    {"path": "literature/PlanMaestroElectrifEc/cap_3_demanda_tabla_1.xlsx", "kind": "manual_extract_candidate", "topic": "demand"},
+    {"path": "literature/PlanMaestroElectrifEc/cap_3_demanda_tabla_2.pdf", "kind": "source_excerpt_candidate", "topic": "demand"},
+    {"path": "literature/PlanMaestroElectrifEc/cap_3_demanda_tabla_2.xlsx", "kind": "manual_extract_candidate", "topic": "demand"},
+    {"path": "literature/PlanMaestroElectrifEc/cap_4_generacion.pdf", "kind": "official_source_candidate", "topic": "generation"},
+    {"path": "literature/PlanMaestroElectrifEc/cap_4_generacion_a_exp_generacion.pdf", "kind": "source_excerpt_candidate", "topic": "generation expansion"},
+    {"path": "literature/PlanMaestroElectrifEc/cap_4_generacion_a_exp_generacion.xlsx", "kind": "manual_extract_candidate", "topic": "generation expansion"},
+    {"path": "literature/PlanMaestroElectrifEc/cap_4_generacion_a_exp_generacion_0001.xlsx", "kind": "manual_extract_candidate", "topic": "generation expansion subset"},
+    {"path": "literature/PlanMaestroElectrifEc/cap_4_generacion_b_existente.pdf", "kind": "source_excerpt_candidate", "topic": "existing generation"},
+    {"path": "literature/PlanMaestroElectrifEc/cap_4_generacion_b_existente.xlsx", "kind": "manual_extract_candidate", "topic": "existing generation"},
+    {"path": "literature/PlanMaestroElectrifEc/cap_4_generacion_caudal.pdf", "kind": "source_excerpt_candidate", "topic": "hydrology"},
+    {"path": "literature/PlanMaestroElectrifEc/cap_5_transmision.pdf", "kind": "official_source_candidate", "topic": "transmission"},
+    {"path": "literature/_old/4.-EXPANSION-DE-LA-GENERACION (1).pdf", "kind": "legacy_source_version", "topic": "generation expansion"},
+    {"path": "literature/_old/5.-PLAN-DE-EXPANSION-DE-LA-TRANSMISION.pdf", "kind": "legacy_source_version", "topic": "transmission"}
+  ],
+  "external_artifacts": [
+    {
+      "id": "pypsa_earth_base_ec",
+      "path": "data/raw/networks/base.nc",
+      "classification": "external_required",
+      "bytes": 1346893,
+      "sha256": "376db45456d13049a9564947f1dac73bf96e6aff09fc5d0b30c07102ad1cf9af",
+      "remote_md5": "37789f94a65bf6b1c9ce7cc202240892",
+      "owner": "EcuadorElectricGridData",
+      "doi": "10.5281/zenodo.23392049",
+      "record_url": "https://doi.org/10.5281/zenodo.23392049",
+      "download_url": "https://zenodo.org/records/23392049/files/base.nc?download=1",
+      "license": "CC-BY-4.0",
+      "publication": "published and download-verified in Phase 1"
+    },
+    {
+      "id": "renewable_profile_solar_ec",
+      "path": "data/raw/cutouts/solar.nc",
+      "classification": "external_required",
+      "bytes": 1760868,
+      "sha256": "28c6ab3a6bd537869bf6811371d3bb76210fa744b4a11ef46205be91755578c1",
+      "remote_md5": "8823ec3349d78ea5cf6a14a411d6ee2c",
+      "owner": "EcuadorElectricGridData",
+      "doi": "10.5281/zenodo.23392049",
+      "record_url": "https://doi.org/10.5281/zenodo.23392049",
+      "download_url": "https://zenodo.org/records/23392049/files/solar.nc?download=1",
+      "license": "CC-BY-4.0",
+      "publication": "published and download-verified in Phase 1"
+    },
+    {
+      "id": "renewable_profile_onwind_ec",
+      "path": "data/raw/cutouts/onwind.nc",
+      "classification": "external_required",
+      "bytes": 1760868,
+      "sha256": "ace2b9524dec52f2235aabe1b398909f24f7c096f21a20d7f0dfb06c17922332",
+      "remote_md5": "59317e7e663e72c0c0dff7385eec4db1",
+      "owner": "EcuadorElectricGridData",
+      "doi": "10.5281/zenodo.23392049",
+      "record_url": "https://doi.org/10.5281/zenodo.23392049",
+      "download_url": "https://zenodo.org/records/23392049/files/onwind.nc?download=1",
+      "license": "CC-BY-4.0",
+      "publication": "published and download-verified in Phase 1"
+    },
+    {
+      "id": "era5_atlite_cutout_2013",
+      "path": "data/raw/cutouts/cutout-2013-era5.nc",
+      "classification": "external_optional",
+      "bytes": 18660559033,
+      "owner": "EcuadorElectricGridData",
+      "publication": "not part of the student preflight; retain upstream only"
+    },
+    {
+      "id": "candidate_cleaned_network_2022",
+      "path": "data/processed/networks/ec_network_2022.nc",
+      "classification": "generated_candidate",
+      "writer": "notebooks/04_EC_network_base.ipynb",
+      "publication": "do not upload as an input"
+    },
+    {
+      "id": "candidate_assembled_network_2022",
+      "path": "data/processed/networks/network_base_filled.nc",
+      "classification": "generated_candidate",
+      "writer": "notebooks/05_EC_network_base_run.ipynb",
+      "publication": "do not upload before Phase 6 validation"
+    },
+    {
+      "id": "master_plan_source_documents",
+      "path": "literature/PlanMaestroElectrifEc/*",
+      "classification": "external_optional",
+      "owner": "repository owner",
+      "publication": "preserve locally; determine licensing and archive policy before distribution"
+    },
+    {
+      "id": "generation_source_workbooks",
+      "path": "data/raw/generation/*.xlsx",
+      "classification": "external_optional",
+      "owner": "repository owner",
+      "publication": "preserve locally; record source and licensing in Phase 4"
+    }
+  ],
+  "critical_evidence": [
+    {
+      "paths": ["data/processed/networks/line_fix.csv", "data/processed/networks/_alt/line_fix.csv"],
+      "meaning": "manual topology corrections",
+      "migration_gate": "tested repair rules with before/after invariants"
+    },
+    {
+      "paths": ["data/processed/generation/hidro_max_profiles/aliases_central_to_caudal.csv", "data/processed/generation/hidro_max_profiles/match_report.csv", "data/processed/generation/hidro_max_profiles/anchors_used.csv"],
+      "meaning": "manual and algorithmic hydro-flow matching",
+      "migration_gate": "stable identifiers, cited method, and deterministic matching tests"
+    },
+    {
+      "paths": ["data/raw/networks/EC_bus_expansion_masterplan_2022.csv", "data/raw/networks/EC_line_expansion_masterplan_2022.csv", "data/raw/networks/EC_transformer_expansion_masterplan_2022.csv"],
+      "meaning": "manually parsed planning assets, currently incomplete or contaminated",
+      "migration_gate": "normalized row-level provenance and official-versus-assumption separation"
+    },
+    {
+      "paths": ["notebooks/_alt/08_2017_Consistency_Check.ipynb", "notebooks/_alt/09_2017_Consistency_Check_no_pruning.ipynb"],
+      "meaning": "most complete prior consistency and solve logic",
+      "migration_gate": "energy accounting, pruning, load-shedding, and solve checks reproduced in tested modules"
+    }
+  ]
+}
