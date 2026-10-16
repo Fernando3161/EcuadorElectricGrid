@@ -99,7 +99,7 @@ dedicated 138 kV bays. The audit carries location and connection sources.
 | Attachment | Count | Mean distance | Maximum distance |
 |---|---:|---:|---:|
 | Load source columns | 251 | 18.34 km | 106.62 km |
-| Existing generators | 133 | 15.67 km | 90.21 km |
+| Existing generators | 133 | 15.14 km | 90.21 km |
 
 Distance is evaluated together with materiality so a 100 km attachment for a
 small plant is not treated as equivalent to one for a system-scale plant. The

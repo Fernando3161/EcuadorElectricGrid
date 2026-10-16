@@ -138,6 +138,7 @@ Their supported open interfaces are checksum-pinned repository artifacts:
 |---|---|---|
 | `data/raw/generation/generation_existing_2022.csv` | raw | all 300 source rows with original values and row provenance |
 | `data/interim/generation/plant_location_evidence_2022.csv` | interim | one-to-one location evidence for the 133 SNI rows |
+| `data/raw/generation/plant_location_overrides_2022.csv` | raw | reviewed plant-specific mapped coordinates that supersede canton proxies |
 | `data/raw/generation/cenace_2022_commissioning_events.csv` | raw | official in-year operating dates retained separately from conflicting plant capacities |
 | `data/processed/generation/generators_2022.csv` | processed | normalized and reconciled model-facing fleet |
 | `data/raw/generation/caudals.csv` | raw | eight legacy monthly flow proxy series with unresolved primary provenance |
@@ -161,6 +162,12 @@ assumption. Every row records its rationale, notebook locator, confidence, and
 that it is not an official Master Plan fact. Deterministic mutation, connected-
 component, load-attachment, and generator-attachment audits are written beside
 it by the Stage 04 and 05 notebooks.
+
+`data/interim/network/generator_connection_evidence_2022.csv` is the reviewed
+interface for plant-specific physical connections that override geographic
+nearest-bus attachment. It currently records the official 138 kV S/E Esmeraldas
+connections for Termoesmeraldas I and II and the separately verified mapping to
+model bus 42.
 
 The Phase 5 topology figures use the checksum-pinned GADM 4.1 Ecuador
 GeoPackage at `data/raw/gadm/gadm41_ECU.gpkg`. Its license restricts use to the
