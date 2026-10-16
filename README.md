@@ -6,9 +6,10 @@ system, then using the validated model as the foundation for future-grid studies
 
 ## Current status
 
-The repository is in Phase 4 of a full refactor. It contains valuable working
-2017/2018 studies, a partially completed 2022 notebook chain, manually prepared
-Master Plan tables, candidate network artifacts, and solved experiments. It does
+The repository has an implementation-complete Phase 5 candidate network and is
+awaiting owner review before Phase 6. It contains valuable legacy studies,
+manually prepared Master Plan tables, an unsolved reproducible 2022 candidate
+network, and solved experiments. It does
 **not** yet contain a reproducible, scientifically validated 2022 baseline.
 
 The immediate target is a complete 2022 annual simulation whose energy supply by
@@ -24,8 +25,8 @@ reusable functions in `src/`:
 1. preflight and external-data retrieval;
 2. demand preparation and validation;
 3. existing-generation preparation and renewable/hydro profiles;
-4. transmission-network repair and validation;
-5. 2022 model assembly and short smoke run;
+4. transmission-network repair and validation (implemented);
+5. 2022 model assembly and serialization smoke test (implemented; no solve);
 6. full-year 2022 solve and statistical validation;
 7. Master Plan expansion-data preparation;
 8. student-authored future scenarios and reporting.
@@ -51,10 +52,12 @@ the repository. Do not run the scientific notebooks with the system Python.
 
 ## Large external data
 
-The required upstream NetCDF inputs—`base.nc`, `solar.nc`, and `onwind.nc`—are
-published in a versioned Zenodo record. Before the first workflow notebook runs,
-a preflight stage will check them, download only missing files, verify checksums,
-and place them at documented repository-relative paths.
+The required upstream model NetCDF inputs—`base.nc`, `solar.nc`, and `onwind.nc`—
+are published in a versioned Zenodo record. GADM 4.1 Ecuador boundaries are a
+separate checksum-pinned external input for topology evidence maps. Before each
+workflow notebook runs, preflight checks its complete dependency set, downloads
+only missing files, verifies checksums, and uses documented repository-relative
+paths.
 
 The full ERA5/atlite cutout is not required by the supported notebooks; it belongs
 to upstream renewable-profile regeneration in `EcuadorElectricGridData`.

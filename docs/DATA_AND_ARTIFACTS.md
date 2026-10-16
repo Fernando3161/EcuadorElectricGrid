@@ -153,6 +153,31 @@ products. They are recreated by the Stage 03 notebook and checked for 8,760-hour
 alignment, exact plant coverage, finite values, and `[0, 1]` bounds. See
 `GENERATION_AND_PROFILES_2022.md` for assumptions and evidence limitations.
 
+## Phase 5 topology and assembled-network products
+
+`data/interim/network/topology_repairs_2022.csv` is the reviewed small interface
+for the five legacy 138 kV corridor additions and the transformer-resistance
+assumption. Every row records its rationale, notebook locator, confidence, and
+that it is not an official Master Plan fact. Deterministic mutation, connected-
+component, load-attachment, and generator-attachment audits are written beside
+it by the Stage 04 and 05 notebooks.
+
+The Phase 5 topology figures use the checksum-pinned GADM 4.1 Ecuador
+GeoPackage at `data/raw/gadm/gadm41_ECU.gpkg`. Its license restricts use to the
+GADM terms; it remains an external input and is not committed as project data.
+
+The supported transmission boundary is 138/230/500 kV. The Stage 04 generated
+topology contains 110 buses, 111 lines, 19 transformers, and four connected
+components. The smaller components are reported rather than silently joined.
+
+Stage 05 regenerates `data/processed/networks/network_base_filled.nc` as an
+**unsolved candidate** containing 8,760 snapshots, 251 source-preserving loads,
+133 real generators, and 110 separately labeled emergency load-shedding
+generators. It conserves 27,561.62 GWh of annual demand and 7,489.65 MW of real
+nominal capacity. Its run-specific checksum and structural metadata are written
+beside the Phase 5 audits. It remains a generated product and must not be described or
+published as a validated network before the Phase 06 acceptance gate passes.
+
 ## Target data zones
 
 | Zone | Meaning | Hand edited? | Git policy |

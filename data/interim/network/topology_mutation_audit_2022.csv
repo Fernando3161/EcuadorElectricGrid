@@ -1,0 +1,240 @@
+mutation,component,name,before,after,rationale,evidence
+snap_voltage,Bus,6,46.0,48.0,nearest declared Ecuador nominal voltage,legacy topology method; reviewed Phase 5 boundary
+snap_voltage,Bus,69,145.0,138.0,nearest declared Ecuador nominal voltage,legacy topology method; reviewed Phase 5 boundary
+snap_voltage,Bus,70,46.0,48.0,nearest declared Ecuador nominal voltage,legacy topology method; reviewed Phase 5 boundary
+snap_voltage,Bus,72,46.0,48.0,nearest declared Ecuador nominal voltage,legacy topology method; reviewed Phase 5 boundary
+snap_voltage,Bus,152,46.0,48.0,nearest declared Ecuador nominal voltage,legacy topology method; reviewed Phase 5 boundary
+snap_voltage,Bus,154,46.0,48.0,nearest declared Ecuador nominal voltage,legacy topology method; reviewed Phase 5 boundary
+snap_voltage,Bus,258,46.0,48.0,nearest declared Ecuador nominal voltage,legacy topology method; reviewed Phase 5 boundary
+snap_voltage,Line,5,46.0,48.0,nearest declared Ecuador nominal voltage,legacy topology method; reviewed Phase 5 boundary
+snap_voltage,Line,11,46.0,48.0,nearest declared Ecuador nominal voltage,legacy topology method; reviewed Phase 5 boundary
+snap_voltage,Line,12,46.0,48.0,nearest declared Ecuador nominal voltage,legacy topology method; reviewed Phase 5 boundary
+snap_voltage,Line,92,46.0,48.0,nearest declared Ecuador nominal voltage,legacy topology method; reviewed Phase 5 boundary
+snap_voltage,Line,94,46.0,48.0,nearest declared Ecuador nominal voltage,legacy topology method; reviewed Phase 5 boundary
+remove_orphan_bus,Bus,109,present,removed,no component references the bus in the upstream network,computed all-component reference scan
+remove_orphan_bus,Bus,122,present,removed,no component references the bus in the upstream network,computed all-component reference scan
+remove_orphan_bus,Bus,134,present,removed,no component references the bus in the upstream network,computed all-component reference scan
+remove_orphan_bus,Bus,135,present,removed,no component references the bus in the upstream network,computed all-component reference scan
+remove_orphan_bus,Bus,168,present,removed,no component references the bus in the upstream network,computed all-component reference scan
+remove_orphan_bus,Bus,172,present,removed,no component references the bus in the upstream network,computed all-component reference scan
+remove_orphan_bus,Bus,180,present,removed,no component references the bus in the upstream network,computed all-component reference scan
+remove_orphan_bus,Bus,187,present,removed,no component references the bus in the upstream network,computed all-component reference scan
+remove_orphan_bus,Bus,193,present,removed,no component references the bus in the upstream network,computed all-component reference scan
+remove_orphan_bus,Bus,203,present,removed,no component references the bus in the upstream network,computed all-component reference scan
+remove_orphan_bus,Bus,206,present,removed,no component references the bus in the upstream network,computed all-component reference scan
+remove_orphan_bus,Bus,210,present,removed,no component references the bus in the upstream network,computed all-component reference scan
+remove_orphan_bus,Bus,226,present,removed,no component references the bus in the upstream network,computed all-component reference scan
+remove_orphan_bus,Bus,235,present,removed,no component references the bus in the upstream network,computed all-component reference scan
+remove_orphan_bus,Bus,238,present,removed,no component references the bus in the upstream network,computed all-component reference scan
+remove_orphan_bus,Bus,241,present,removed,no component references the bus in the upstream network,computed all-component reference scan
+remove_orphan_bus,Bus,253,present,removed,no component references the bus in the upstream network,computed all-component reference scan
+remove_orphan_bus,Bus,90,present,removed,no component references the bus in the upstream network,computed all-component reference scan
+remove_out_of_scope_bus,Bus,0,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,101,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,104,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,112,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,113,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,114,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,116,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,117,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,118,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,119,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,121,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,124,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,126,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,127,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,129,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,13,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,130,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,133,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,136,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,137,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,138,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,139,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,140,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,141,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,143,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,144,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,147,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,148,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,149,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,15,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,150,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,151,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,152,48.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,154,48.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,155,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,156,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,157,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,160,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,162,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,163,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,164,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,167,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,169,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,170,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,171,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,173,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,174,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,175,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,176,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,178,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,179,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,18,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,182,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,183,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,184,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,185,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,188,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,189,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,190,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,191,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,192,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,194,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,195,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,198,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,199,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,2,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,20,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,200,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,201,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,202,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,204,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,205,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,207,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,208,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,209,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,211,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,212,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,213,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,214,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,215,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,216,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,218,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,219,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,220,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,221,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,222,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,223,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,224,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,225,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,227,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,228,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,229,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,23,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,230,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,231,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,232,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,233,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,234,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,236,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,237,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,239,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,240,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,242,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,243,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,244,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,245,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,246,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,247,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,248,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,249,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,250,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,251,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,252,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,254,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,255,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,258,48.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,259,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,260,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,261,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,262,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,263,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,265,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,266,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,267,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,268,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,269,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,27,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,270,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,272,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,274,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,275,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,276,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,282,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,283,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,284,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,285,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,286,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,287,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,289,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,29,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,290,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,293,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,295,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,296,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,297,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,298,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,299,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,300,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,301,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,302,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,303,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,304,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,305,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,306,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,307,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,308,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,309,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,31,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,310,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,311,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,312,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,35,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,37,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,39,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,41,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,44,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,46,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,49,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,54,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,57,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,59,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,6,48.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,61,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,63,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,67,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,70,48.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,72,48.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,74,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,76,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,79,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,88,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,9,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,94,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,96,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+remove_out_of_scope_bus,Bus,98,69.0,removed,supported transmission boundary is 138/230/500 kV,Phase 5 scope decision; legacy threshold was 137 kV
+add_reviewed_line,Line,repair_line_181_277,absent,181-277,Close the incomplete eastern Guayas corridor retained by the legacy 2022 topology notebook.,repository_legacy_notebook; notebooks/04_EC_network_base.ipynb cell 8
+add_reviewed_line,Line,repair_line_280_91,absent,280-91,Close the Quito/Pichincha ring retained by the legacy 2022 topology notebook.,repository_legacy_notebook; notebooks/04_EC_network_base.ipynb cell 8
+add_reviewed_line,Line,repair_line_60_102,absent,60-102,Retain the 138 kV corridor whose 69 kV representation is removed by the supported voltage boundary.,repository_legacy_notebook; notebooks/04_EC_network_base.ipynb cell 8
+add_reviewed_line,Line,repair_line_278_256,absent,278-256,Close the ring near Quito retained by the legacy 2022 topology notebook.,repository_legacy_notebook; notebooks/04_EC_network_base.ipynb cell 8
+add_reviewed_line,Line,repair_line_24_64,absent,24-64,Retain the Bolivar 138 kV connection whose 69 kV representation is removed by the supported voltage boundary.,repository_legacy_notebook; notebooks/04_EC_network_base.ipynb cell 8
+patch_transformer_resistance,Transformer,transf_2_0,0.0,0.01,"Set zero transformer series resistance to 0.01 p.u. while retaining the upstream 0.10 p.u. reactance; this is a transparent numerical modeling assumption, not an equipment fact.",repository_legacy_notebook; notebooks/05_EC_network_base_run.ipynb cells 19 and 21
+patch_transformer_resistance,Transformer,transf_3_1,0.0,0.01,"Set zero transformer series resistance to 0.01 p.u. while retaining the upstream 0.10 p.u. reactance; this is a transparent numerical modeling assumption, not an equipment fact.",repository_legacy_notebook; notebooks/05_EC_network_base_run.ipynb cells 19 and 21
+patch_transformer_resistance,Transformer,transf_5_0,0.0,0.01,"Set zero transformer series resistance to 0.01 p.u. while retaining the upstream 0.10 p.u. reactance; this is a transparent numerical modeling assumption, not an equipment fact.",repository_legacy_notebook; notebooks/05_EC_network_base_run.ipynb cells 19 and 21
+patch_transformer_resistance,Transformer,transf_7_1,0.0,0.01,"Set zero transformer series resistance to 0.01 p.u. while retaining the upstream 0.10 p.u. reactance; this is a transparent numerical modeling assumption, not an equipment fact.",repository_legacy_notebook; notebooks/05_EC_network_base_run.ipynb cells 19 and 21
+patch_transformer_resistance,Transformer,transf_9_1,0.0,0.01,"Set zero transformer series resistance to 0.01 p.u. while retaining the upstream 0.10 p.u. reactance; this is a transparent numerical modeling assumption, not an equipment fact.",repository_legacy_notebook; notebooks/05_EC_network_base_run.ipynb cells 19 and 21
+patch_transformer_resistance,Transformer,transf_10_1,0.0,0.01,"Set zero transformer series resistance to 0.01 p.u. while retaining the upstream 0.10 p.u. reactance; this is a transparent numerical modeling assumption, not an equipment fact.",repository_legacy_notebook; notebooks/05_EC_network_base_run.ipynb cells 19 and 21
+patch_transformer_resistance,Transformer,transf_10_2,0.0,0.01,"Set zero transformer series resistance to 0.01 p.u. while retaining the upstream 0.10 p.u. reactance; this is a transparent numerical modeling assumption, not an equipment fact.",repository_legacy_notebook; notebooks/05_EC_network_base_run.ipynb cells 19 and 21
+patch_transformer_resistance,Transformer,transf_14_0,0.0,0.01,"Set zero transformer series resistance to 0.01 p.u. while retaining the upstream 0.10 p.u. reactance; this is a transparent numerical modeling assumption, not an equipment fact.",repository_legacy_notebook; notebooks/05_EC_network_base_run.ipynb cells 19 and 21
+patch_transformer_resistance,Transformer,transf_18_1,0.0,0.01,"Set zero transformer series resistance to 0.01 p.u. while retaining the upstream 0.10 p.u. reactance; this is a transparent numerical modeling assumption, not an equipment fact.",repository_legacy_notebook; notebooks/05_EC_network_base_run.ipynb cells 19 and 21
+patch_transformer_resistance,Transformer,transf_20_1,0.0,0.01,"Set zero transformer series resistance to 0.01 p.u. while retaining the upstream 0.10 p.u. reactance; this is a transparent numerical modeling assumption, not an equipment fact.",repository_legacy_notebook; notebooks/05_EC_network_base_run.ipynb cells 19 and 21
+patch_transformer_resistance,Transformer,transf_23_0,0.0,0.01,"Set zero transformer series resistance to 0.01 p.u. while retaining the upstream 0.10 p.u. reactance; this is a transparent numerical modeling assumption, not an equipment fact.",repository_legacy_notebook; notebooks/05_EC_network_base_run.ipynb cells 19 and 21
+patch_transformer_resistance,Transformer,transf_32_1,0.0,0.01,"Set zero transformer series resistance to 0.01 p.u. while retaining the upstream 0.10 p.u. reactance; this is a transparent numerical modeling assumption, not an equipment fact.",repository_legacy_notebook; notebooks/05_EC_network_base_run.ipynb cells 19 and 21
+patch_transformer_resistance,Transformer,transf_36_1,0.0,0.01,"Set zero transformer series resistance to 0.01 p.u. while retaining the upstream 0.10 p.u. reactance; this is a transparent numerical modeling assumption, not an equipment fact.",repository_legacy_notebook; notebooks/05_EC_network_base_run.ipynb cells 19 and 21
+patch_transformer_resistance,Transformer,transf_40_0,0.0,0.01,"Set zero transformer series resistance to 0.01 p.u. while retaining the upstream 0.10 p.u. reactance; this is a transparent numerical modeling assumption, not an equipment fact.",repository_legacy_notebook; notebooks/05_EC_network_base_run.ipynb cells 19 and 21
+patch_transformer_resistance,Transformer,transf_42_0,0.0,0.01,"Set zero transformer series resistance to 0.01 p.u. while retaining the upstream 0.10 p.u. reactance; this is a transparent numerical modeling assumption, not an equipment fact.",repository_legacy_notebook; notebooks/05_EC_network_base_run.ipynb cells 19 and 21
+patch_transformer_resistance,Transformer,transf_45_0,0.0,0.01,"Set zero transformer series resistance to 0.01 p.u. while retaining the upstream 0.10 p.u. reactance; this is a transparent numerical modeling assumption, not an equipment fact.",repository_legacy_notebook; notebooks/05_EC_network_base_run.ipynb cells 19 and 21
+patch_transformer_resistance,Transformer,transf_45_1,0.0,0.01,"Set zero transformer series resistance to 0.01 p.u. while retaining the upstream 0.10 p.u. reactance; this is a transparent numerical modeling assumption, not an equipment fact.",repository_legacy_notebook; notebooks/05_EC_network_base_run.ipynb cells 19 and 21
+patch_transformer_resistance,Transformer,transf_48_1,0.0,0.01,"Set zero transformer series resistance to 0.01 p.u. while retaining the upstream 0.10 p.u. reactance; this is a transparent numerical modeling assumption, not an equipment fact.",repository_legacy_notebook; notebooks/05_EC_network_base_run.ipynb cells 19 and 21
+patch_transformer_resistance,Transformer,transf_49_1,0.0,0.01,"Set zero transformer series resistance to 0.01 p.u. while retaining the upstream 0.10 p.u. reactance; this is a transparent numerical modeling assumption, not an equipment fact.",repository_legacy_notebook; notebooks/05_EC_network_base_run.ipynb cells 19 and 21

@@ -81,9 +81,9 @@ an upstream document or unversioned file.
 | `01_demand` | tracked hourly demand template, official monthly demand controls, official net-supply table |
 | `02_generation` | source-faithful existing fleet and one-to-one location evidence |
 | `03_profiles` | Stage 02 inputs, normalized fleet, monthly flow evidence, reviewed hydro assignments, solar and onshore-wind profiles |
-| `04_topology` | base network |
-| `05_assembly` | all three external inputs plus the three Stage 01 inputs through dependencies |
-| `06_validation` | all six through dependencies |
+| `04_topology` | base network, reviewed topology-repair table, and checksum-pinned GADM 4.1 Ecuador boundaries |
+| `05_assembly` | all prior baseline sources/products, reviewed topology repairs, availability tables, and cost/carrier assumptions |
+| `06_validation` | the complete Stage 05 source/product closure; the candidate network is rebuilt and checksummed per run |
 | `07_planning` | none currently; Phase 8 must register any distributed source document |
 | `08_scenario`, `09_comparison` | all six through dependencies |
 
@@ -96,7 +96,8 @@ Included:
 
 - `base.nc`;
 - `solar.nc`;
-- `onwind.nc`.
+- `onwind.nc`; and
+- GADM 4.1 Ecuador boundaries for the Phase 5 topology figures.
 
 Excluded deliberately:
 

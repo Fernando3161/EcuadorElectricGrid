@@ -102,7 +102,7 @@ class Phase04GenerationTests(unittest.TestCase):
         self.assertFalse(self.locations[["latitude", "longitude"]].isna().any().any())
         self.assertEqual(
             set(self.locations["location_method"]),
-            {"exact_2017", "manual_legacy", "capacity_proxy_2017"},
+            {"exact_2017", "manual_legacy", "capacity_proxy_2017", "verified_mapped_location"},
         )
 
     def test_normalized_rows_satisfy_json_schema(self) -> None:

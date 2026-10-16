@@ -114,7 +114,7 @@
     },
     {
       "id": "current_raw_generation_tables",
-      "patterns": ["data/raw/generation/carriers.csv", "data/raw/generation/caudals.csv", "data/raw/generation/technology_cost.csv", "data/raw/generation/generation_existing_2022.csv", "data/raw/generation/cenace_2022_commissioning_events.csv"],
+      "patterns": ["data/raw/generation/carriers.csv", "data/raw/generation/caudals.csv", "data/raw/generation/technology_cost.csv", "data/raw/generation/generation_existing_2022.csv", "data/raw/generation/cenace_2022_commissioning_events.csv", "data/raw/generation/plant_location_overrides_2022.csv"],
       "classification": "candidate_active",
       "disposition": "retain the Phase 4 source transcription and supporting parameter tables with explicit provenance status"
     },
@@ -123,6 +123,12 @@
       "patterns": ["data/interim/generation/*.csv"],
       "classification": "manual_evidence",
       "disposition": "retain selected one-to-one location and hydro assignment evidence used by the supported Phase 4 workflow"
+    },
+    {
+      "id": "network_interim_evidence",
+      "patterns": ["data/interim/network/*.csv", "data/interim/network/*.json"],
+      "classification": "generated_candidate",
+      "disposition": "retain Phase 5 repair, mutation, component, attachment, and fingerprint evidence until scientific validation and final pruning review"
     },
     {
       "id": "legacy_generation_mapping",
@@ -354,6 +360,8 @@
     {"path": "notebooks/01_prepare_2022_demand.ipynb", "lineage": "supported_refactor", "role": "prepare and validate 2022 SNI demand and statistical reference", "disposition": "retain as the supported Stage 01 entry point"},
     {"path": "notebooks/02_prepare_2022_generation.ipynb", "lineage": "supported_refactor", "role": "normalize and reconcile the 2022 SNI existing generator fleet", "disposition": "retain as the supported Stage 02 entry point"},
     {"path": "notebooks/03_prepare_renewable_and_hydro_profiles.ipynb", "lineage": "supported_refactor", "role": "prepare and validate hydro, solar, and onshore-wind availability", "disposition": "retain as the supported Stage 03 entry point"},
+    {"path": "notebooks/04_build_and_validate_2022_topology.ipynb", "lineage": "supported_refactor", "role": "rebuild and validate the supported 138/230/500 kV topology", "disposition": "retain as the supported Stage 04 entry point"},
+    {"path": "notebooks/05_assemble_and_smoke_test_2022_network.ipynb", "lineage": "supported_refactor", "role": "assemble and serialize the unsolved 2022 candidate network", "disposition": "retain as the supported Stage 05 entry point"},
     {"path": "notebooks/03_a_process_generation.ipynb", "lineage": "2022_candidate", "role": "parse existing and future generation workbooks", "disposition": "rewrite"},
     {"path": "notebooks/03_b_generation_plots.ipynb", "lineage": "2022_candidate", "role": "generation diagnostics", "disposition": "merge into generation stage"},
     {"path": "notebooks/03_c_hydro_profiles.ipynb", "lineage": "2022_candidate", "role": "hydro plant-flow matching and hourly profiles", "disposition": "rewrite around tested functions"},
@@ -386,6 +394,7 @@
     {"path": "src/ec_network_eval.py", "classification": "candidate_active", "disposition": "retain high-value diagnostics and split into tested topology checks"},
     {"path": "src/artifacts.py", "classification": "candidate_active", "disposition": "supported manifest validation and artifact retrieval logic"},
     {"path": "src/availability.py", "classification": "candidate_active", "disposition": "supported Phase 4 hydro and variable-renewable profile preparation logic"},
+    {"path": "src/assembly.py", "classification": "candidate_active", "disposition": "supported Phase 5 load/generator attachment, candidate assembly, and serialization validation logic"},
     {"path": "src/demand.py", "classification": "candidate_active", "disposition": "supported Phase 3 demand preparation and validation logic"},
     {"path": "src/environment.py", "classification": "candidate_active", "disposition": "supported approved-environment validation logic"},
     {"path": "src/helpers.py", "classification": "candidate_active", "disposition": "extract focused functions; repair imports; do not preserve as one broad API"},
@@ -396,6 +405,8 @@
     {"path": "src/validation.py", "classification": "candidate_active", "disposition": "supported 2022 statistical taxonomy and acceptance logic"},
     {"path": "src/repository_inventory.py", "classification": "governance", "disposition": "retain as the Phase 1 classification validator"},
     {"path": "src/scenario_registry.py", "classification": "legacy_evidence", "disposition": "quarantine until a validated baseline exists"},
+    {"path": "src/topology.py", "classification": "candidate_active", "disposition": "supported Phase 5 topology repair, boundary, audit, and invariant logic"},
+    {"path": "src/topology_plots.py", "classification": "candidate_active", "disposition": "supported Phase 5 combined and voltage-specific topology evidence maps"},
     {"path": "src/_old/scenario_pipeline.py", "classification": "legacy_evidence", "disposition": "extract only reusable mechanics after baseline validation"},
     {"path": "src/_old/scenario_reg.py", "classification": "hypothetical_scenario", "disposition": "quarantine nuclear and other premature assumptions"},
     {"path": "src/_old/scenario_run_template.py", "classification": "legacy_evidence", "disposition": "retain generic reporting/solve evidence for later migration"},
@@ -475,14 +486,14 @@
       "id": "candidate_cleaned_network_2022",
       "path": "data/processed/networks/ec_network_2022.nc",
       "classification": "generated_candidate",
-      "writer": "notebooks/04_EC_network_base.ipynb",
+      "writer": "notebooks/04_build_and_validate_2022_topology.ipynb",
       "publication": "do not upload as an input"
     },
     {
       "id": "candidate_assembled_network_2022",
       "path": "data/processed/networks/network_base_filled.nc",
       "classification": "generated_candidate",
-      "writer": "notebooks/05_EC_network_base_run.ipynb",
+      "writer": "notebooks/05_assemble_and_smoke_test_2022_network.ipynb",
       "publication": "do not upload before Phase 6 validation"
     },
     {

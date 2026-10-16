@@ -85,6 +85,7 @@ class PublishedManifestTests(unittest.TestCase):
                 "pypsa_earth_base_ec",
                 "renewable_profile_solar_ec",
                 "renewable_profile_onwind_ec",
+                "gadm_ecuador_41",
             },
             {
                 row["id"]
@@ -113,14 +114,14 @@ class PublishedManifestTests(unittest.TestCase):
         expected = {
             "00_preflight": 3,
             "01_demand": 3,
-            "02_generation": 3,
-            "03_profiles": 8,
-            "04_topology": 1,
-            "05_assembly": 12,
-            "06_validation": 12,
+            "02_generation": 4,
+            "03_profiles": 9,
+            "04_topology": 3,
+            "05_assembly": 21,
+            "06_validation": 21,
             "07_planning": 0,
-            "08_scenario": 12,
-            "09_comparison": 12,
+            "08_scenario": 21,
+            "09_comparison": 21,
         }
         for stage, count in expected.items():
             self.assertEqual(count, len(required_artifact_ids(self.manifest, stage)), stage)

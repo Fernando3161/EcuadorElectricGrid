@@ -53,6 +53,13 @@ verifying that their coordinates differ by no more than 0.01 degrees. The
 capacity proxies and manual mappings remain evidence limitations for Phase 5 bus
 attachment.
 
+Two reviewed exceptions replace canton coordinates: Termoesmeraldas I uses the
+representative OpenStreetMap facility feature `way/173912804`, and
+Termoesmeraldas II uses `way/413423622`. These are mapped facility locations, not
+surveyed generator terminals. Their physical 138 kV connection evidence and
+model-bus mapping are maintained separately in
+`data/interim/network/generator_connection_evidence_2022.csv`.
+
 The retained inventory does not provide complete row-level commissioning or
 retirement dates, so Phase 4 does not infer historical dates. CENACE Table 3.1
 does identify three additions during 2022: Sarapullo on 7 July, Sabanilla on 1

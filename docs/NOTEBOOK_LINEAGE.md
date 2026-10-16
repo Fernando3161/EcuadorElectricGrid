@@ -152,3 +152,19 @@ hydro fuzzy matching with a fixed reviewed assignment table and attaches the
 published 2013 solar/wind province profiles to the 2022 model calendar. Reusable
 logic is in `src/generation.py` and `src/availability.py`. The old notebooks and
 their generated outputs remain evidence until the Phase 10 pruning review.
+
+## Phase 5 migration result
+
+`notebooks/04_build_and_validate_2022_topology.ipynb` replaces the mutation cells
+in the current topology notebook. `src/topology.py` now snaps the two off-standard
+voltage groups, removes 18 true orphans, applies the 138/230/500 kV boundary,
+adds five reviewed legacy corridors, patches zero transformer resistance through
+an explicit modeling-assumption row, and reports four connected components.
+
+`notebooks/05_assemble_and_smoke_test_2022_network.ipynb` replaces the assembly
+portion of the current base-run notebook. `src/assembly.py` preserves all Stage 1
+demand rather than dropping lower-voltage load, attaches all 251 load series and
+133 existing generators with row-level distance audits, adds the Phase 4
+availability profiles and explicitly separated emergency load shedding, and
+verifies the unsolved candidate through a NetCDF round trip. Experimental solve
+and post-solve cells remain evidence for Phase 6 and are not executed in Phase 5.

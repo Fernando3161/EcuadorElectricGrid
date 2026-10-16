@@ -174,7 +174,7 @@ def location_table(raw_2022: pd.DataFrame, raw_2017: pd.DataFrame) -> pd.DataFra
         "manual_legacy": "Legacy notebook manual canton assignment retained as evidence; geographic source requires later source audit.",
         "capacity_proxy_2017": "Legacy same-province capacity proxy within 5 percent retained; low-confidence location evidence.",
     }
-    return pd.DataFrame(
+    result = pd.DataFrame(
         {
             "source_row": current["source_row"].astype(int),
             "plant_original": current["Central"],
@@ -187,6 +187,27 @@ def location_table(raw_2022: pd.DataFrame, raw_2017: pd.DataFrame) -> pd.DataFra
             "evidence_note": current["location_method"].map(notes),
         }
     ).sort_values("source_row")
+    override_path = RAW / "plant_location_overrides_2022.csv"
+    if override_path.is_file():
+        overrides = pd.read_csv(override_path).set_index("source_row")
+        required = {
+            "plant_original", "latitude", "longitude", "location_method",
+            "location_source", "evidence_note",
+        }
+        missing = required.difference(overrides.columns)
+        if missing:
+            raise ValueError(f"location overrides are missing columns: {sorted(missing)}")
+        result = result.set_index("source_row")
+        unknown = sorted(set(overrides.index) - set(result.index))
+        if unknown:
+            raise ValueError(f"location overrides reference unknown source rows: {unknown}")
+        for source_row, override in overrides.iterrows():
+            if result.at[source_row, "plant_original"] != override.plant_original:
+                raise ValueError(f"location override plant mismatch at source row {source_row}")
+            for column in required - {"plant_original"}:
+                result.at[source_row, column] = override[column]
+        result = result.reset_index()
+    return result.sort_values("source_row")
 
 
 def hydro_assignment_table(generators: pd.DataFrame) -> pd.DataFrame:

@@ -1,0 +1,18 @@
+{
+  "annual_demand_gwh": 27561.620000000003,
+  "bus_voltage_counts": {
+    "138.0": 64,
+    "230.0": 40,
+    "500.0": 6
+  },
+  "buses": 110,
+  "connected_components": 4,
+  "generators": 243,
+  "lines": 111,
+  "load_shedding_generators": 110,
+  "loads": 251,
+  "nominal_capacity_mw": 7489.65,
+  "real_generators": 133,
+  "snapshots": 8760,
+  "transformers": 19
+}
