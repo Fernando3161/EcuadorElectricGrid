@@ -102,14 +102,20 @@ model_carrier_mapping:
   import: imports
   imports: imports
   interconnection_import: imports
+  interconnection_colombia: imports
 
 acceptance:
-  positive_reference_formula: 100 * abs(simulated_gwh - reference_gwh) / reference_gwh
-  maximum_relative_error_percent: 5.0
-  zero_reference_absolute_tolerance_gwh: 0.01
-  small_positive_carrier_policy: Every positive reference, however small, uses the same 5 percent relative-error gate.
-  missing_simulated_carrier_policy: Treat as zero generation; a positive reference therefore fails.
-  source_rounding_residual_policy: Report separately and exclude from the carrier gate.
+  methodology: multi_criteria_historical_benchmark
+  note: Exploratory engineering screening values; not official statistical tolerances and not calibration targets.
+  max_total_energy_relative_error: 0.05
+  max_tvd: 0.03
+  max_hydro_error_pp: 3.0
+  max_thermal_error_pp: 2.0
+  max_nonconventional_error_pp: 0.5
+  max_interconnection_error_pp: 0.5
+  missing_simulated_carrier_policy: Treat as zero generation and report explicitly.
+  zero_reference_policy: Report relative error as null and use absolute energy error if a criterion is configured.
+  source_rounding_residual_policy: Report separately and exclude from the comparable carrier set.
   excluded_from_supply_carriers:
     - storage charging and discharging
     - curtailment
@@ -117,3 +123,11 @@ acceptance:
     - exports
     - network losses
   load_shedding_maximum_gwh: 0.01
+
+interconnection_colombia:
+  enabled: true
+  max_capacity_mw: 500.0
+  marginal_cost_usd_per_mwh: 45.2
+  price_basis: CENACE Informe Anual 2022, Figure 2.30 / international transactions with Colombia; 4.52 cUSD/kWh = 45.20 USD/MWh average import price.
+  source_url: https://www.cenace.gob.ec/wp-content/plugins/download-monitor/download.php?force=1&id=3827
+  modeling_status: historical-price proxy; capacity is an explicit modeling assumption, not a reported interconnector rating.

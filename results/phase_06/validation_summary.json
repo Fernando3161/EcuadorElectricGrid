@@ -1,0 +1,37 @@
+{
+  "status": "FAIL",
+  "metrics": {
+    "reference_total_gwh": 28684.610000000004,
+    "simulated_total_gwh": 26636.85628542264,
+    "total_energy_relative_error": 0.07138858483965317,
+    "tvd": 0.03740386688950843
+  },
+  "screening": {
+    "checks": {
+      "max_total_energy_relative_error": false,
+      "max_tvd": false,
+      "max_hydro_error_pp": true,
+      "max_thermal_error_pp": true,
+      "max_nonconventional_error_pp": true,
+      "max_interconnection_error_pp": true
+    },
+    "passed": false,
+    "status": "FAIL"
+  },
+  "comparability": {
+    "status": "COMPARABLE",
+    "reasons": []
+  },
+  "load_shedding_gwh": 924.7637145776099,
+  "solver_status": "ok",
+  "termination_condition": "optimal",
+  "reference_source": {
+    "organization": "Operador Nacional de Electricidad CENACE",
+    "title": "Informe Anual 2022 - Parte 1",
+    "edition": "2022",
+    "url": "https://www.cenace.gob.ec/wp-content/uploads/downloads/2023/04/Parte-1-Informe-Anual-2022.pdf",
+    "repository_path": "literature/CENACE/cenace_informe_anual_2022_parte_1.pdf",
+    "sha256": "88f13f0106a190464c8954babc7529f785783d4d4017633a8d5ed8ff554fbd88",
+    "locator": "Pages 23, 73-74; Table 2.4"
+  }
+}

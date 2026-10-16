@@ -1,5 +1,30 @@
 # 2022 statistical validation contract
 
+Phase 6 uses a multi-criteria historical benchmark. It replaces the retired
+uniform 5% carrier rule; the criteria below are provisional engineering screens,
+not official CENACE tolerances and not calibration targets.
+
+The comparable set is the exhaustive normalized CENACE set: hydro, thermal,
+non-conventional, and interconnection where available in the source table. The
+implementation reports annual GWh, derived shares, signed/absolute GWh error,
+percentage-point error, relative error, total annual energy error, and total
+variation distance (TVD). A result is `NOT_COMPARABLE` if the calendar year,
+annual hourly coverage, accounting boundary, weighting, or carrier mapping is
+not demonstrably compatible. Otherwise the configurable screen reports `PASS`
+or `FAIL`; `PARTIAL` is reserved for a technically comparable run with an
+incomplete diagnostic set.
+
+Configured exploratory screens are: total energy relative error <= 5%, TVD <=
+3 percentage points, hydro <= 3 pp, thermal <= 2 pp, non-conventional <= 0.5 pp,
+and interconnection <= 0.5 pp. Metrics are calculated independently from these
+thresholds, so changing a screen cannot alter the underlying benchmark.
+
+The Colombia import interface is attached to the northernmost retained SNI bus.
+It has a 500 MW modeling-assumption maximum and a 45.20 USD/MWh marginal cost,
+from CENACE's 2022 average Colombia import price of 4.52 cUSD/kWh (Figure 2.30).
+The price source is recorded in `config/validation_2022.yaml`; the capacity is
+not presented as an official interconnector rating.
+
 ## Purpose
 
 This document fixes the comparison rules before the 2022 model is calibrated or

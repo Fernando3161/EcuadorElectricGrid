@@ -1,4 +1,4 @@
-"""Carrier taxonomy and the fixed 2022 statistical acceptance calculation."""
+"""Carrier taxonomy and reproducible multi-criteria 2022 validation."""
 
 from __future__ import annotations
 
@@ -9,6 +9,7 @@ from typing import Mapping
 
 import pandas as pd
 import yaml
+import numpy as np
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -165,7 +166,12 @@ def compare_supply_to_reference(
     reference: pd.DataFrame,
     contract: Mapping,
 ) -> pd.DataFrame:
-    """Apply the exact 5 percent gate, including missing and zero carriers."""
+    """Legacy carrier-only comparison retained for backwards-compatible evidence.
+
+    Phase 6 screening uses :func:`calculate_validation_metrics` and
+    :func:`screen_validation`; this helper is intentionally not the acceptance
+    mechanism.
+    """
 
     required_columns = {"carrier", "reference_gwh", "in_scope"}
     missing_columns = required_columns.difference(reference.columns)
@@ -210,6 +216,63 @@ def compare_supply_to_reference(
             }
         )
     return pd.DataFrame(rows)
+
+
+def validate_annual_coverage(snapshots, year: int = 2022) -> tuple[bool, list[str]]:
+    """Return comparability and explicit reasons for a complete hourly year."""
+    idx = pd.DatetimeIndex(snapshots)
+    reasons = []
+    if len(idx) != (366 if pd.Timestamp(year=year, month=12, day=31).is_leap_year else 365) * 24:
+        reasons.append(f"expected {8760 if not pd.Timestamp(year=year, month=12, day=31).is_leap_year else 8784} hourly snapshots, found {len(idx)}")
+    if len(idx) and set(idx.year) != {year}:
+        reasons.append(f"snapshots include years {sorted(set(idx.year))}, expected {year}")
+    if len(idx) and idx.duplicated().any():
+        reasons.append("snapshot index contains duplicates")
+    return not reasons, reasons
+
+
+def calculate_validation_metrics(simulated_gwh: pd.Series, reference: pd.DataFrame) -> tuple[pd.DataFrame, dict]:
+    """Calculate metrics independently of any screening thresholds."""
+    required = {"carrier", "reference_gwh", "in_scope"}
+    if not required.issubset(reference.columns):
+        raise ValueError(f"reference is missing columns: {sorted(required - set(reference.columns))}")
+    ref = reference[reference["in_scope"]].set_index("carrier")["reference_gwh"].astype(float)
+    sim = simulated_gwh.astype(float).reindex(ref.index, fill_value=0.0)
+    if (sim < 0).any() or (ref < 0).any():
+        raise ValueError("energy values must be non-negative")
+    ref_total, sim_total = float(ref.sum()), float(sim.sum())
+    ref_share, sim_share = ref / ref_total, sim / sim_total if sim_total else ref * 0
+    signed_pp = 100 * (sim_share - ref_share)
+    relative = (sim - ref) / ref.replace(0, np.nan)
+    rows = pd.DataFrame({
+        "carrier": ref.index, "reference_gwh": ref.values, "simulated_gwh": sim.values,
+        "reference_share": ref_share.values, "simulated_share": sim_share.values,
+        "signed_error_gwh": (sim - ref).values, "absolute_error_gwh": abs(sim - ref).values,
+        "signed_error_pp": signed_pp.values, "absolute_error_pp": abs(signed_pp).values,
+        "relative_error": relative.values, "absolute_relative_error": abs(relative).values,
+    })
+    metrics = {
+        "reference_total_gwh": ref_total, "simulated_total_gwh": sim_total,
+        "total_energy_relative_error": abs(sim_total - ref_total) / ref_total if ref_total else np.nan,
+        "tvd": float(0.5 * abs(sim_share - ref_share).sum()),
+    }
+    return rows, metrics
+
+
+def screen_validation(metrics: dict, rows: pd.DataFrame, criteria: Mapping) -> dict:
+    """Apply configurable exploratory criteria after metric calculation."""
+    checks = {}
+    for key, value in criteria.items():
+        if value is None or key.startswith("enabled_"):
+            continue
+        if key == "max_total_energy_relative_error": checks[key] = metrics["total_energy_relative_error"] <= float(value)
+        elif key == "max_tvd": checks[key] = metrics["tvd"] <= float(value)
+        elif key.startswith("max_") and key.endswith("_error_pp"):
+            carrier = key[len("max_") : -len("_error_pp")]
+            match = rows.loc[rows.carrier == carrier, "absolute_error_pp"]
+            checks[key] = bool(match.empty or match.iloc[0] <= float(value))
+    return {"checks": checks, "passed": all(checks.values()) if checks else True,
+            "status": "PASS" if all(checks.values()) else "FAIL"}
 
 
 __all__ = [

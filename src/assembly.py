@@ -324,7 +324,7 @@ def summarize_attachment_screen(
 
 
 def _add_carriers(network, generators: pd.DataFrame, carrier_source: pd.DataFrame) -> None:
-    used = set(generators.carrier.astype(str)) | {"AC", "electricity", "load_shedding"}
+    used = set(generators.carrier.astype(str)) | {"AC", "electricity", "load_shedding", "interconnection_colombia"}
     carrier_source = carrier_source.copy()
     carrier_source.index = carrier_source.index.astype(str)
     defaults = {
@@ -332,6 +332,7 @@ def _add_carriers(network, generators: pd.DataFrame, carrier_source: pd.DataFram
         "electricity": {"co2_emissions": 0.0, "color": "#808080", "nice_name": "Electricity demand"},
         "load_shedding": {"co2_emissions": 0.0, "color": "#DD1818", "nice_name": "Emergency load shedding"},
         "biogas": {"co2_emissions": 0.0, "color": "#4d8f45", "nice_name": "Biogas"},
+        "interconnection_colombia": {"co2_emissions": 0.0, "color": "#6a3d9a", "nice_name": "Colombia import"},
     }
     for carrier in sorted(used):
         values = defaults.get(carrier, {})
@@ -407,6 +408,31 @@ def _add_emergency_load_shedding(network, cost: float = 1_000_000.0) -> None:
     )
 
 
+def _add_colombia_interconnection(
+    network, max_capacity_mw: float = 500.0, marginal_cost_usd_per_mwh: float = 45.2
+) -> dict[str, str | float]:
+    """Add a traceable import interface at the northernmost retained SNI bus.
+
+    The 500 MW rating is a modeling assumption. The 45.20 USD/MWh marginal cost
+    is the CENACE 2022 average Colombia import price (4.52 cUSD/kWh).
+    """
+    north_bus = network.buses["y"].astype(float).idxmax()
+    external_bus = "interconnection_colombia"
+    network.add("Bus", external_bus, x=float(network.buses.loc[north_bus, "x"]),
+                y=float(network.buses.loc[north_bus, "y"]), v_nom=float(network.buses.loc[north_bus, "v_nom"]),
+                carrier="AC")
+    network.add("Generator", "colombia_import_supply", bus=external_bus,
+                carrier="interconnection_colombia", p_nom=max_capacity_mw,
+                marginal_cost=marginal_cost_usd_per_mwh, capital_cost=0.0,
+                p_nom_extendable=False)
+    network.add("Link", "colombia_import_link", bus0=external_bus, bus1=str(north_bus),
+                carrier="interconnection_colombia", p_nom=max_capacity_mw,
+                efficiency=1.0, capital_cost=0.0, marginal_cost=0.0,
+                p_nom_extendable=False)
+    return {"internal_bus": str(north_bus), "external_bus": external_bus,
+            "max_capacity_mw": max_capacity_mw, "marginal_cost_usd_per_mwh": marginal_cost_usd_per_mwh}
+
+
 def _sha256(path: Path | str) -> str:
     digest = hashlib.sha256()
     with Path(path).open("rb") as handle:
@@ -427,7 +453,7 @@ def assert_assembly_invariants(
         raise AssertionError("Network snapshots do not match demand")
     if not np.isclose(network.loads_t.p_set.to_numpy().sum(), demand.to_numpy().sum()):
         raise AssertionError("Load attachment did not conserve annual demand")
-    real = network.generators.query("carrier != 'load_shedding'")
+    real = network.generators.query("~carrier.isin(['load_shedding', 'interconnection_colombia'])")
     if set(real.index) != set(generators.plant_id):
         raise AssertionError("Network generator IDs differ from the Phase 4 fleet")
     expected_capacity = generators.groupby("carrier").p_nom_mw.sum().sort_index()
@@ -455,6 +481,7 @@ def assemble_2022_network(
     connection_evidence: pd.DataFrame | None = None,
     load_connection_evidence: pd.DataFrame | None = None,
     provenance_paths: dict[str, Path | str] | None = None,
+    include_colombia_interconnection: bool = True,
 ) -> AssemblyResult:
     """Return a complete, unsolved candidate network and attachment audits."""
     network = topology.copy()
@@ -465,15 +492,22 @@ def assemble_2022_network(
     generator_attachments = build_generator_attachment_table(
         network, generators, connection_evidence
     )
-    _add_carriers(network, generators, carriers)
+    carrier_input = carriers.copy()
+    if "interconnection_colombia" not in carrier_input.index:
+        carrier_input.loc["interconnection_colombia", :] = np.nan
+    _add_carriers(network, generators, carrier_input)
     _add_loads(network, demand, load_attachments)
     _add_generators(network, generators, generator_attachments, hydro, renewable, costs)
+    interconnection = None
+    if include_colombia_interconnection:
+        interconnection = _add_colombia_interconnection(network)
     _add_emergency_load_shedding(network)
     network.meta = {
         "project": "EcuadorElectricGrid",
         "model_year": 2022,
         "system_boundary": "mainland Ecuador SNI",
         "status": "candidate unsolved Phase 5 product; not scientifically validated",
+        "colombia_interconnection": interconnection,
         "transformation": "src.topology + src.assembly",
         "input_sha256": {
             key: _sha256(path) for key, path in sorted((provenance_paths or {}).items())
