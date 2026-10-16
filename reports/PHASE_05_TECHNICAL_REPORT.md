@@ -208,7 +208,7 @@ metadata and future capacity are not imported.
 
 `data/processed/networks/network_base_filled.nc` is an unsolved generated product.
 The recorded Phase 5 run has SHA-256
-`1745acc76a894025d338f8e2511d795fa9bd380dc0755c26574fc4d6411d5e2a`;
+`5150176e7971cfa52be0e9ce3c4b0717d2c1e1aed245ac99e269d6e3444e3507`;
 the run-specific checksum sidecar is regenerated with the artifact.
 It contains 8,760 snapshots, 110 buses, 111 lines, 19 transformers, 251 loads,
 and 243 generators. Real nominal capacity is 7,489.65 MW and annual demand is

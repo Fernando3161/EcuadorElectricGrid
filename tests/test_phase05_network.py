@@ -117,8 +117,8 @@ class Phase05AssemblyTests(unittest.TestCase):
             renewable,
             costs,
             carriers,
-            connection_evidence,
-            load_connection_evidence,
+            connection_evidence=connection_evidence,
+            load_connection_evidence=load_connection_evidence,
         )
 
     def test_attachment_is_complete_and_demand_is_conserved(self) -> None:
