@@ -262,8 +262,8 @@ artifacts:
       migration_script: scripts/migrate_phase04_generation_sources.py
     persistent_uri: https://www.openstreetmap.org/
     download_url: null
-    bytes: 580
-    sha256: 62f3fbc2ccf9b979298695d4c2cad6224746abf2d034b168c29bfd1b96cb0815
+    bytes: 756
+    sha256: 7eb99412697d9c6fb7dc9f913edc45e651c53a54a28ffab6295a8a901b0c0e2c
     media_type: text/csv
     license: repository-license-review-required
     validation:
@@ -382,6 +382,26 @@ artifacts:
     sha256: af01b4455dca34f718c437931bd9b3125f4b9ae165109bb2add2d9cfa05b662e
     media_type: text/csv
     license: official-publication
+    validation:
+      kind: checksum_only
+
+  - id: load_connection_evidence_2022
+    description: Reviewed 69 kV load aggregation decisions, evidence, and unresolved fallback for the 2022 network.
+    stages: [05_assembly]
+    destination: data/interim/network/load_connection_evidence_2022.csv
+    role: source
+    availability: repository
+    source:
+      organization: EcuadorElectricGrid with EMELNORTE and CNEL EP evidence
+      record: Phase 5 load-connection investigation and reviewed model-bus decisions
+      data_year: 2022 modeling boundary
+      provenance_status: mixture of upstream-network inference, official route evidence, and one explicit low-confidence owner decision
+    persistent_uri: https://github.com/Fernando3161/EcuadorElectricGrid
+    download_url: null
+    bytes: 4735
+    sha256: c87380d50d3e30a54673e896256d8a3087fb46f492502dff371bb8e32b84bb37
+    media_type: text/csv
+    license: repository-license-review-required
     validation:
       kind: checksum_only
 

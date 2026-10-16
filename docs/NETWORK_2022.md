@@ -42,11 +42,12 @@ blue/brown/dark-blue palette and GADM provincial-boundary presentation. The GADM
 ## Attachments
 
 Stage 05 uses source coordinates from the upstream grid for all 251 Stage 1 load
-columns. A load at a retained bus keeps that bus; otherwise it is assigned to the
-nearest retained bus by great-circle distance. This preserves the complete
-27,561.62 GWh demand total instead of deleting lower-voltage demand. The audit
-records each source/target pair and distance. The longest load aggregation is
-106.62 km and requires scientific review.
+columns. It preserves an explicit reconstruction of the original nearest-bus
+rule as a before-fix audit. The assembled candidate then applies the reviewed
+decisions in `data/interim/network/load_connection_evidence_2022.csv`. Eleven
+flagged 69 kV locations are contracted to a retained boundary supported by an
+upstream electrical path or official utility-route evidence. This preserves the
+complete 27,561.62 GWh demand total instead of deleting lower-voltage demand.
 
 Generators without plant-specific connection evidence are assigned from their
 qualified coordinates to the nearest retained bus. Reviewed connection evidence
@@ -65,9 +66,26 @@ Stage 05 also performs a non-mutating materiality screen. Generator bands of
 and 25 km. Annual-load bands of <=25, >25-100, >100-250, >250-500, and >500
 GWh/year use the same descending limits. These are project QA conventions, not
 engineering interconnection standards. Rows beyond their limit are labeled
-`not acceptable - fix this bus`; 1 generator row (Villonaco, 16.50 MW) and 12
-load rows (2,492.96 GWh/year) are currently flagged. The screening tables preserve the
-selected buses and provide the review list for a later evidence-backed repair.
+`not acceptable - fix this bus`. The raw distance screen still flags 1 generator
+row (Villonaco, 16.50 MW) and 12 load rows (2,492.96 GWh/year); this rule is
+retained rather than relaxed after correction. The corrected audit additionally
+records whether a long-distance load is an accepted electrical aggregation or
+remains unresolved.
+
+The follow-up load investigation finds that all 12 flagged sources are 69 kV.
+Eight have an explicit path in the upstream graph to a retained bus. Four have a
+missing boundary link in that artifact, but CNEL/EMELNORTE evidence identifies
+their real subtransmission routes and the corresponding modeled interfaces:
+Palenque to Babahoyo (bus 64), Naranjal to Milagro (bus 102), La Carolina to
+Ibarra (bus 28), and San Lorenzo to Esmeraldas (bus 42). The supported approach
+is therefore evidence-backed contraction of the 69 kV network, not retention of
+disconnected medium-voltage islands. The investigation is recorded in
+`data/interim/network/load_connection_investigation_2022.csv`, and the reviewed
+targets are now applied in the assembled network. The exception is `load_262`:
+its upstream path reaches a modeled 500 kV node through an anomalous transformer,
+so the owner selected the nearest retained 138 kV node, bus 52, as a transparent
+fallback. Its 56.65 km distance exceeds the 50 km limit for 188.81 GWh/year, so
+it remains `not acceptable - fix this bus` pending physical substation evidence.
 
 Hydro, solar, and wind receive the complete Phase 4 hourly availability tables.
 Other generator availability remains unconstrained at one. Carrier-level cost
@@ -77,6 +95,27 @@ legacy carrier table are not imported.
 One high-cost `load_shedding` generator is added per retained bus so Phase 6 can
 measure infeasibility explicitly. These generators are not supply capacity and
 must always be excluded from official carrier comparisons.
+
+## Deferred selective 69 kV refinement
+
+The first candidate keeps the evidence-backed contraction described above and
+retains all raw distance warnings. This is a known reduced-network limitation,
+not a reason to weaken the screening rule and not evidence that the long-distance
+attachments are geographically correct.
+
+The preferred future correction is selective retention of only those 69 kV load
+paths needed by the flagged cases. Each retained path must include its required
+intermediate 69 kV buses and lines and an explicit, source-verified 69/138 kV
+boundary transformer. Loads would then attach to their actual 69 kV buses;
+electrical separation would be represented by branches and transformers rather
+than by a large artificial attachment distance. The refinement must validate
+voltage continuity, transformer data, connectedness, demand conservation,
+losses, congestion, and load shedding against the contracted baseline.
+
+The current `load_262` fallback to bus 52 must not be converted into a synthetic
+69 kV path without new evidence identifying its physical substation, route, and
+138 kV boundary transformer. Restoring the complete upstream sub-138 kV network
+is outside the present model boundary and is not the proposed solution.
 
 ## Candidate status
 

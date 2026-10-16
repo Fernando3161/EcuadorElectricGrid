@@ -162,6 +162,10 @@ Tasks:
 - define objective, constraints, snapshot weighting, solver configuration, and
   reproducibility metadata;
 - diagnose infeasibility/load shedding without concealing defects;
+- quantify whether the contracted 69 kV load paths materially affect feasibility,
+  congestion, losses, or load shedding; retain selective 69 kV restoration as a
+  documented future refinement unless the owner separately approves its
+  evidence-backed implementation;
 - implement annual energy balance and carrier comparison;
 - calibrate only through source-supported parameters and record each decision;
 - save solved network, summaries, logs, tables, and validation plots.
@@ -175,6 +179,12 @@ comparison. Full 8,760-hour solve remains a recorded manual scientific run.
 Acceptance: network runs; energy balance reconciles; all agreed carrier comparisons
 pass the fixed 5% rule; material load shedding and unexplained residuals are absent;
 artifacts and report are reproducible and checksummed.
+
+Future topology refinement: if the contracted-load comparison shows material
+effects, retain only the necessary problematic 69 kV paths and their explicit
+69/138 kV boundary transformers. Do not restore the complete medium-voltage
+network, invent missing transformer connections, or clear the attachment flags
+by weakening the distance thresholds.
 
 ## Phase 07 — Master Plan expansion data products
 

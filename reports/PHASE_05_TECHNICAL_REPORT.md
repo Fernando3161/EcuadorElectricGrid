@@ -79,10 +79,11 @@ their loads, supply, and load shedding during feasibility diagnosis.
 
 The legacy assembly first dropped load columns associated with lower-voltage
 islands and then remapped other missing bus labels. That silently reduced energy.
-The new Stage 05 preserves all 251 Stage 1 source columns. Exact retained bus IDs
-stay fixed; other locations are mapped to the nearest retained bus with source
-coordinates, target, great-circle distance, method, and rationale written to an
-audit table.
+The new Stage 05 preserves all 251 Stage 1 source columns. It first reconstructs
+the original nearest-retained-bus mapping for diagnosis. The final assembly then
+applies reviewed load decisions from a separate evidence table; every row keeps
+its source coordinates, target, great-circle distance, method, rationale,
+confidence, and review status in the audit.
 
 Generators use nearest-bus aggregation only when no reviewed physical-connection
 evidence exists. Termoesmeraldas I and II now use representative mapped facility
@@ -98,7 +99,7 @@ dedicated 138 kV bays. The audit carries location and connection sources.
 
 | Attachment | Count | Mean distance | Maximum distance |
 |---|---:|---:|---:|
-| Load source columns | 251 | 18.34 km | 106.62 km |
+| Load source columns | 251 | 18.59 km | 106.76 km |
 | Existing generators | 133 | 15.14 km | 90.21 km |
 
 Distance is evaluated together with materiality so a 100 km attachment for a
@@ -116,24 +117,87 @@ Phase 5 screening limits are:
 These limits are transparent QA conventions for this reduced-voltage model, not
 physical interconnection standards. A row at or below its band limit is
 `acceptable`; one above it is `not acceptable - fix this bus`. The classification
-does not mutate the network.
+does not itself mutate the network; the reviewed evidence table controls the
+separate reassignment step.
 
-![Attachment materiality screen](figures/phase_05/attachment_materiality_screen_2022.png)
+![Original attachment diagnosis](figures/phase_05/attachment_materiality_screen_original_2022.png)
 
-The corrected screen flags 1 of 133 generators: Villonaco (16.5 MW, 67.71 km).
+![Corrected assignments and remaining review](figures/phase_05/attachment_materiality_screen_corrected_2022.png)
+
+The original nearest-bus reconstruction flags 3 of 133 generators and 12 of 251
+loads. After applying reviewed evidence, the corrected screen flags 1 of 133
+generators: Villonaco (16.5 MW, 67.71 km).
 Termoesmeraldas I and II now map to the verified 138 kV bus 42 at respectively
-2.38 and 2.44 km and pass. The screen flags 12 of 251 load locations,
+2.38 and 2.44 km and pass. The unchanged raw distance screen still flags 12 of
+251 load locations,
 representing 2,492.96 GWh/year (9.04% of annual demand). The 1 MW Sabiango Solar
 attachment at 90.21 km passes its 100 km small-plant screen. Conversely, the
 largest 1,500 MW plant is not flagged, demonstrating that the diagnostic does
 not hide a high-impact long-distance assignment. Detailed, sortable results are
-stored in `generator_attachment_screen_2022.csv` and
-`load_attachment_screen_2022.csv`.
+stored in the original and corrected `generator_attachment_screen_*.csv` and
+`load_attachment_screen_*.csv` audits. Keeping the distance flags is deliberate:
+the correction changes the electrical aggregation basis, not the geographic
+separation created by omitting the 69 kV network.
 
-The raw distance tail remains visible: `load_179` maps 106.62 km to bus 43. The
-report does not reinterpret any nearest-bus choice as physical connection
-evidence. Flagged rows require bus-level correction or documented evidence in a
-later reviewed change; this Phase 5 analysis deliberately leaves them unchanged.
+The raw distance tail remains visible: after correction, `load_179` maps 106.62
+km to bus 42 through its modeled 69 kV path. Green rings in the corrected figure
+identify distance-flagged rows accepted as reviewed electrical contractions;
+they are not claims that load and bus are geographically close.
+
+### Investigation of flagged load attachments
+
+All 12 flagged load sources are 69 kV buses, confirming that the issue is tied
+to contraction of the sub-138 kV network rather than a random coordinate error.
+Eight sources already have a path in the upstream graph to a retained bus. Their
+recommended target is the first retained bus on that electrical path, not the
+geographically closest bus. This changes the recommended target for seven rows;
+`load_195` already matches its electrical target.
+
+The remaining four apparent islands were investigated against utility evidence:
+
+| Load | Identified 69 kV location | Annual / peak demand | Supported boundary interface |
+|---|---|---:|---|
+| `load_208` | S/E Palenque, through S/E Vinces | 519.15 GWh / 82.65 MW | Babahoyo interface, model bus 64 |
+| `load_241` | S/E Naranjal | 333.99 GWh / 53.17 MW | S/E Milagro 138 kV side, model bus 102 |
+| `load_127` | S/E La Carolina | 333.08 GWh / 53.03 MW | S/E Ibarra 138 kV side, model bus 28 |
+| `load_180` | S/E San Lorenzo | 27.15 GWh / 4.32 MW | S/E Esmeraldas 138 kV side, model bus 42 |
+
+CNEL's geospatial service locates Palenque, Vinces, Naranjal, and San Lorenzo and
+identifies them as 69/13.8 kV substations. CNEL records the Vinces-Palenque,
+San Juan-Vinces, and Nelson Mera-San Juan system; the Milagro-Puerto
+Inca-Naranjal corridor; and the San Lorenzo-Borbon-Rocafuerte-Winchele-
+Esmeraldas corridor. EMELNORTE's 2022-2025 plan records the Ibarra-Chota and
+Chota-La Carolina 69 kV lines. Thus, preserving isolated 69 kV islands is not
+recommended: the correct reduced-model operation is evidence-backed contraction
+to the relevant 138+ kV interface.
+
+Primary utility sources used for these route decisions are the
+[EMELNORTE 2022-2025 strategic plan](https://www.emelnorte.com/docs/lotaip/planificacion/PLAN_ESTRATEGICO_EMELNORTE_2022-2025-signed-signed.pdf),
+[CNEL Palenque/Vinces geospatial layer](https://geoportal.cnelep.gob.ec/arcgis/rest/services/REP/CNELEPN/FeatureServer/17),
+[CNEL Los Ríos maintenance record](https://www.cnelep.gob.ec/mas-de-60-profesionales-electricos-realizaron-mantenimiento-preventivo-en-los-rios/),
+[CNEL Naranjal terms of reference](https://www.cnelep.gob.ec/wp-content/uploads/2016/04/Termino-de-Referencia.pdf),
+and the [CNEL San Lorenzo procurement record](https://www.cnelep.gob.ec/wp-content/uploads/2020/05/literal_i-proceso_de_contrataciones-4.pdf).
+Where no official route document is cited, the evidence table identifies the
+exact graph path in the checksum-pinned upstream `base.nc`; those paths are model
+evidence, not official asset facts.
+
+The complete finding, including annual GWh, peak MW, graph route, evidence basis,
+recommended target, and review status, is retained in
+`data/interim/network/load_connection_investigation_2022.csv`. The applied,
+source-traceable decisions are separately stored in
+`data/interim/network/load_connection_evidence_2022.csv`. Eleven rows are now
+classified as acceptable electrical aggregations. This status does not waive or
+erase their raw distance flags.
+
+`load_262` requires different treatment. Its upstream 69 kV chain reaches a
+modeled 500 kV node through `transf_155_0`, which was rejected as an automatic
+load-aggregation rule. Following the owner's explicit decision, it is assigned
+to bus 52, the nearest retained 138 kV bus. The move changes the geographic
+distance from 50.65 km (bus 197 under the original nearest-any-retained rule) to
+56.65 km. At 188.81 GWh/year the applicable limit is 50 km, so the result remains
+`not acceptable - fix this bus`. The evidence table labels this as a low-confidence
+modeling assumption, not an official physical connection; source validation is
+still required.
 
 The assembled candidate contains 133 real generators and 110 emergency
 load-shedding generators. Load shedding has a marginal cost of 1,000,000 per MWh
@@ -144,7 +208,7 @@ metadata and future capacity are not imported.
 
 `data/processed/networks/network_base_filled.nc` is an unsolved generated product.
 The recorded Phase 5 run has SHA-256
-`c33d60526890dc1d19826855ea518767473420d84efbbdd8e21f90895a81eb16`;
+`1745acc76a894025d338f8e2511d795fa9bd380dc0755c26574fc4d6411d5e2a`;
 the run-specific checksum sidecar is regenerated with the artifact.
 It contains 8,760 snapshots, 110 buses, 111 lines, 19 transformers, 251 loads,
 and 243 generators. Real nominal capacity is 7,489.65 MW and annual demand is
@@ -188,13 +252,50 @@ Not run:
   as official grid facts.
 - Transformer resistance is a uniform numerical assumption, not nameplate data.
 - Four connected components remain and require explicit feasibility accounting.
-- The materiality screen marks 12 load and 1 generator attachment as
-  `not acceptable - fix this bus`; they remain unchanged pending substation or
-  connection evidence.
+- The raw materiality screen marks 12 load and 1 generator attachment as distance
+  flags. Eleven load rows have reviewed electrical-aggregation explanations;
+  `load_262` remains `not acceptable - fix this bus` pending physical substation
+  evidence. Villonaco remains an explicit 69 kV boundary exception for Phase 6.
 - Carrier costs retain incomplete legacy provenance and are calibration inputs
   only if Phase 6 documents a source-supported decision.
 - Emergency generators make infeasibility measurable; any material dispatch is a
   model defect/limitation to report, not ordinary generation.
+
+## Future work: selective 69 kV retention
+
+For the first 2022 candidate, the reviewed contraction approach is retained as a
+documented limitation. The remaining load-distance flags are not expected to
+disappear while the corresponding 69 kV locations are represented only by a
+remote 138 kV aggregate. They must therefore remain visible in the audit; they
+must not be cleared by increasing the thresholds or relabeling geographic
+distance as physical proximity. This is acceptance of a first-version modeling
+limitation, not acceptance of the network under the Phase 6 scientific gate.
+
+A later topology refinement should retain **only the 69 kV subnetworks required
+by the problematic loads**, rather than restoring every medium-voltage bus from
+the upstream artifact. For each retained path, the implementation should:
+
+1. identify the load bus, all necessary intermediate 69 kV buses and lines, and
+   the real boundary substation from official utility evidence;
+2. add or preserve an explicit 69/138 kV transformer at the boundary, with
+   source-traceable voltage, rating, impedance, and status—or clearly labeled
+   engineering assumptions where equipment data remain unavailable;
+3. attach the load to its actual retained 69 kV bus, making its artificial
+   load-to-bus distance zero while preserving the electrical distance through
+   lines and the transformer;
+4. reject paths that terminate at the wrong voltage, form an isolated component,
+   duplicate an existing corridor, or lack a complete route to the retained
+   138 kV network;
+5. rerun topology invariants, connected-component checks, demand conservation,
+   power-flow/optimization feasibility, losses, congestion, and load-shedding
+   comparisons against the contracted first-version network.
+
+`load_262` is the priority evidence gap. Its current bus-52 assignment is only a
+nearest-138-kV fallback; no 69 kV path should be introduced for it until the
+physical source substation, route, and 69/138 kV boundary transformer are
+verified. The other eleven reviewed cases provide the initial candidate list,
+but their upstream graph paths must still be checked against utility records
+before equipment-level 69 kV modeling is presented as factual.
 
 ## Conclusion
 

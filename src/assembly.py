@@ -64,29 +64,95 @@ def build_load_attachment_table(
     topology,
     source_buses: pd.DataFrame,
     demand_columns,
+    connection_evidence: pd.DataFrame | None = None,
 ) -> pd.DataFrame:
     """Map every source load to a retained bus and expose every decision."""
+    evidence = pd.DataFrame() if connection_evidence is None else connection_evidence.copy()
+    if not evidence.empty:
+        required = {
+            "load_id", "source_bus", "target_bus", "target_voltage_kv",
+            "attachment_method", "connection_basis", "official_fact",
+            "modeling_assumption", "confidence", "source_document",
+            "source_locator", "source_url", "rationale", "review_status",
+        }
+        missing = required.difference(evidence.columns)
+        if missing:
+            raise ValueError(f"Load connection evidence is missing columns: {sorted(missing)}")
+        if evidence.load_id.duplicated().any():
+            raise ValueError("Load connection evidence must have one row per load")
+        evidence = evidence.set_index("load_id")
     rows = []
     retained = topology.buses
     for source in map(str, demand_columns):
         if source not in source_buses.index:
             raise ValueError(f"Demand source bus {source} is absent from the upstream network")
         coordinates = source_buses.loc[source, ["x", "y"]].astype(float)
-        if source in retained.index:
+        load_id = f"load_{source}"
+        if load_id in evidence.index:
+            connection = evidence.loc[load_id]
+            if str(connection.source_bus) != source:
+                raise ValueError(f"Load evidence source bus does not match {load_id}")
+            target = str(connection.target_bus)
+            if target not in retained.index.astype(str):
+                raise ValueError(f"Load connection evidence for {load_id} references absent bus {target}")
+            actual_voltage = float(retained.loc[target, "v_nom"])
+            if not np.isclose(actual_voltage, float(connection.target_voltage_kv)):
+                raise ValueError(f"Load connection evidence voltage for {load_id} does not match bus {target}")
+            distance = haversine_km(
+                coordinates.y, coordinates.x,
+                float(retained.loc[target, "y"]), float(retained.loc[target, "x"]),
+            )
+            method = str(connection.attachment_method)
+            rationale = str(connection.rationale)
+            basis = str(connection.connection_basis)
+            source_document = str(connection.source_document)
+            source_locator = str(connection.source_locator)
+            source_url = str(connection.source_url)
+            official_fact = bool(connection.official_fact)
+            modeling_assumption = bool(connection.modeling_assumption)
+            confidence = str(connection.confidence)
+            review_status = str(connection.review_status)
+        elif source in retained.index:
             target, distance, method = source, 0.0, "exact_retained_bus"
+            rationale = "demand location is already a retained transmission bus"
+            basis = "exact retained bus"
+            source_document = pd.NA
+            source_locator = pd.NA
+            source_url = pd.NA
+            official_fact = False
+            modeling_assumption = False
+            confidence = "high"
+            review_status = "acceptable_exact_retained_bus"
         else:
             target, distance = _nearest_bus(retained, coordinates.x, coordinates.y)
             method = "nearest_retained_transmission_bus"
+            rationale = "preserve Stage 1 demand while aggregating distribution-level locations to the supported transmission boundary"
+            basis = "geographic proximity"
+            source_document = pd.NA
+            source_locator = pd.NA
+            source_url = pd.NA
+            official_fact = False
+            modeling_assumption = True
+            confidence = "low"
+            review_status = "unreviewed_geographic_fallback"
         rows.append(
             {
-                "load_id": f"load_{source}",
+                "load_id": load_id,
                 "source_bus": source,
                 "source_longitude": coordinates.x,
                 "source_latitude": coordinates.y,
                 "target_bus": target,
                 "distance_km": distance,
                 "attachment_method": method,
-                "rationale": "preserve Stage 1 demand while aggregating distribution-level locations to the supported transmission boundary",
+                "connection_basis": basis,
+                "connection_source": source_document,
+                "connection_locator": source_locator,
+                "connection_source_url": source_url,
+                "official_fact": official_fact,
+                "modeling_assumption": modeling_assumption,
+                "confidence": confidence,
+                "connection_review_status": review_status,
+                "rationale": rationale,
             }
         )
     result = pd.DataFrame(rows)
@@ -387,12 +453,15 @@ def assemble_2022_network(
     costs: pd.DataFrame,
     carriers: pd.DataFrame,
     connection_evidence: pd.DataFrame | None = None,
+    load_connection_evidence: pd.DataFrame | None = None,
     provenance_paths: dict[str, Path | str] | None = None,
 ) -> AssemblyResult:
     """Return a complete, unsolved candidate network and attachment audits."""
     network = topology.copy()
     network.set_snapshots(demand.index)
-    load_attachments = build_load_attachment_table(network, source_buses, demand.columns)
+    load_attachments = build_load_attachment_table(
+        network, source_buses, demand.columns, load_connection_evidence
+    )
     generator_attachments = build_generator_attachment_table(
         network, generators, connection_evidence
     )

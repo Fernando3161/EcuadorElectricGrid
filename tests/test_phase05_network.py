@@ -105,6 +105,9 @@ class Phase05AssemblyTests(unittest.TestCase):
         connection_evidence = pd.read_csv(
             ROOT / "data/interim/network/generator_connection_evidence_2022.csv"
         )
+        load_connection_evidence = pd.read_csv(
+            ROOT / "data/interim/network/load_connection_evidence_2022.csv"
+        )
         cls.result = assemble_2022_network(
             topology,
             base.buses,
@@ -115,6 +118,7 @@ class Phase05AssemblyTests(unittest.TestCase):
             costs,
             carriers,
             connection_evidence,
+            load_connection_evidence,
         )
 
     def test_attachment_is_complete_and_demand_is_conserved(self) -> None:
@@ -127,6 +131,50 @@ class Phase05AssemblyTests(unittest.TestCase):
             27561.62,
             places=6,
         )
+
+    def test_flagged_load_investigation_is_complete_and_non_mutating(self) -> None:
+        investigation = pd.read_csv(
+            ROOT / "data/interim/network/load_connection_investigation_2022.csv"
+        )
+        self.assertEqual(len(investigation), 12)
+        self.assertEqual(set(investigation.source_voltage_kv), {69})
+        self.assertEqual(investigation.load_id.nunique(), 12)
+        self.assertFalse(investigation.evidence_source.str.strip().eq("").any())
+        self.assertAlmostEqual(investigation.annual_consumption_gwh.sum(), 2492.96059, places=5)
+        self.assertEqual(
+            set(investigation.query("upstream_connectivity == 'orphan_in_upstream_model'").load_id),
+            {"load_180", "load_241"},
+        )
+        self.assertEqual(
+            dict(zip(investigation.load_id, investigation.recommended_target_bus))["load_241"],
+            102,
+        )
+        self.assertEqual(
+            dict(zip(investigation.load_id, investigation.recommended_target_bus))["load_262"],
+            52,
+        )
+
+    def test_reviewed_load_connections_are_applied_and_traceable(self) -> None:
+        attachments = self.result.load_attachments.set_index("load_id")
+        expected = {
+            "load_126": "42", "load_127": "28", "load_179": "42",
+            "load_180": "42", "load_194": "50", "load_195": "50",
+            "load_205": "38", "load_208": "64", "load_220": "24",
+            "load_241": "102", "load_262": "52", "load_287": "42",
+        }
+        self.assertEqual(
+            attachments.loc[list(expected), "target_bus"].astype(str).to_dict(), expected
+        )
+        self.assertAlmostEqual(attachments.loc["load_262", "distance_km"], 56.653993, places=5)
+        self.assertEqual(
+            attachments.loc["load_262", "connection_review_status"],
+            "not_acceptable_requires_source_validation",
+        )
+        self.assertEqual(
+            set(attachments.loc[list(expected), "connection_source"].isna()), {False}
+        )
+        self.assertTrue(attachments.loc[list(expected), "modeling_assumption"].all())
+        self.assertFalse(attachments.loc[list(expected), "official_fact"].any())
 
     def test_fleet_capacity_profiles_and_nuclear_exclusion(self) -> None:
         network = self.result.network

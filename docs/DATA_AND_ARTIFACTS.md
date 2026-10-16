@@ -169,6 +169,14 @@ nearest-bus attachment. It currently records the official 138 kV S/E Esmeraldas
 connections for Termoesmeraldas I and II and the separately verified mapping to
 model bus 42.
 
+`data/interim/network/load_connection_evidence_2022.csv` is the corresponding
+load-aggregation interface. It records all 12 reviewed 69 kV cases, the selected
+retained target bus, method, confidence, source locator, distinction between
+official evidence and modeling assumption, and final review status. Eleven rows
+are accepted electrical contractions. `load_262` is separately marked as a
+low-confidence owner-directed fallback to the nearest retained 138 kV bus (bus
+52) and remains subject to source validation.
+
 The Phase 5 topology figures use the checksum-pinned GADM 4.1 Ecuador
 GeoPackage at `data/raw/gadm/gadm41_ECU.gpkg`. Its license restricts use to the
 GADM terms; it remains an external input and is not committed as project data.
