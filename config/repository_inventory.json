@@ -131,6 +131,12 @@
       "disposition": "retain Phase 5 repair, mutation, component, attachment, and fingerprint evidence until scientific validation and final pruning review"
     },
     {
+      "id": "phase06c_interim_evidence",
+      "patterns": ["data/interim/availability/*.csv", "data/interim/provenance/*.csv"],
+      "classification": "manual_evidence",
+      "disposition": "retain Phase 06C availability and source-provenance evidence with locators and checksums"
+    },
+    {
       "id": "legacy_generation_mapping",
       "patterns": ["data/raw/generation/_alt/*.json"],
       "classification": "legacy_evidence",
@@ -215,6 +221,12 @@
       "disposition": "retain as checksum-recorded primary evidence for the 2022 validation contract"
     },
     {
+      "id": "official_arconel_reports",
+      "patterns": ["literature/ARCONEL/*.pdf"],
+      "classification": "authoritative_source",
+      "disposition": "retain as checksum-recorded primary evidence for availability and accounting review"
+    },
+    {
       "id": "experimental_results",
       "patterns": ["results/experiments/*.csv"],
       "classification": "experimental_result",
@@ -261,6 +273,12 @@
       "patterns": ["results/phase_06b/*.csv", "results/phase_06b/*.json"],
       "classification": "generated_candidate",
       "disposition": "retain as Phase 06B wind/biomass candidate diagnostics"
+    },
+    {
+      "id": "phase06c_results",
+      "patterns": ["results/phase_06c/*.csv", "results/phase_06c/*.json"],
+      "classification": "experimental_result",
+      "disposition": "retain reproducible Phase 06C diagnostics and executed notebook evidence"
     },
     {
       "id": "nlr_wind_site_inputs",
@@ -365,6 +383,12 @@
       "patterns": ["literature/PlanMaestroElectrifEc/*"],
       "classification": "external_optional",
       "disposition": "preserve; decide licensing/distribution and capture row-level citations"
+    },
+    {
+      "id": "ignored_arconel_sources",
+      "patterns": ["literature/ARCONEL/*.pdf"],
+      "classification": "authoritative_source",
+      "disposition": "preserve locally with checksum and provenance registry entry"
     },
     {
       "id": "ignored_legacy_source_editions",
