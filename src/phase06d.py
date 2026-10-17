@@ -57,9 +57,15 @@ def apply_monthly_thermal_derating(network, evidence_path: Path) -> pd.DataFrame
     # fleet-level scenario; this is a modeling assumption, not plant evidence.
     values = {m: float(row["unavailable_mw"]) for m in range(1, 13)}
     thermal = network.generators.index[network.generators.carrier.isin(["oil", "gas", "thermal", "oil_and_gas"])]
-    thermal = thermal.intersection(network.generators_t.p_max_pu.columns)
     if len(thermal) == 0:
         return pd.DataFrame(columns=["month", "unavailable_mw", "eligible_capacity_mw"])
+    # Static thermal availability is common in the assembled network. Promote
+    # it to a complete hourly table before applying the monthly fleet factor.
+    dynamic = network.generators_t.p_max_pu.reindex(index=network.snapshots, columns=network.generators.index)
+    static = network.generators.p_max_pu.reindex(network.generators.index).fillna(1.0)
+    network.generators_t.p_max_pu = dynamic.fillna(pd.DataFrame(
+        np.broadcast_to(static.to_numpy(), dynamic.shape), index=dynamic.index, columns=dynamic.columns
+    ))
     capacity = network.generators.loc[thermal, "p_nom"].astype(float)
     rows = []
     for month, unavailable in values.items():

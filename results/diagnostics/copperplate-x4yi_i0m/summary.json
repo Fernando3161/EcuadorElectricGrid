@@ -1,0 +1,63 @@
+{
+  "source": "C:\\Repositories\\Repos\\pypsa-earth-project\\EcuadorElectricGrid\\data\\processed\\networks\\network_base_filled.nc",
+  "source_sha256": "e6b32ab26223c7d999ad182a56236b4826bd801b2d31435bde21a0c656944b54",
+  "source_metadata": {
+    "project": "EcuadorElectricGrid",
+    "model_year": 2022,
+    "system_boundary": "mainland Ecuador SNI",
+    "status": "candidate unsolved Phase 5 product; not scientifically validated",
+    "colombia_interconnection": {
+      "internal_buses": [
+        "84",
+        "36"
+      ],
+      "external_bus": "interconnection_colombia",
+      "max_capacity_mw": 500.0,
+      "marginal_cost_usd_per_mwh": 45.2
+    },
+    "transformation": "src.topology + src.assembly",
+    "input_sha256": {
+      "costs": "de953548e43e7f9f957d1f00227028fe567d4415b206e9c4419f1db035a3e205",
+      "demand": "6d3eb09700b36da53f10c7ff852d4a8e36d89595f23a42250946ba6da37fe431",
+      "generator_connections": "af01b4455dca34f718c437931bd9b3125f4b9ae165109bb2add2d9cfa05b662e",
+      "generators": "3fc8b0be1fdf9802842e32074a2c07b81dae761585519be7e8a9af2acc00dbfa",
+      "hydro": "4fd9158009cfa5ba87df625aefe93512add1de5870815a2a9834bf67785c3165",
+      "load_connections": "c87380d50d3e30a54673e896256d8a3087fb46f492502dff371bb8e32b84bb37",
+      "location_overrides": "7eb99412697d9c6fb7dc9f913edc45e651c53a54a28ffab6295a8a901b0c0e2c",
+      "renewable": "56897d339fe78d1cc89740831bb62363aaad8e802ee2647ec32c29a78b4eae6e",
+      "repairs": "6ac48023f3bd153d3bb6afb3625edf1f400814d73e6e4f5e542e6eafe1395ce9"
+    }
+  },
+  "manifest_sha256": "840ede2485741d921c68152f7b1e6c468318e96eb1d4f69b7c43c3b0d76d80d3",
+  "diagnostic_code_sha256": "5579f80a914bcb57ef46b4652307f6d6a4a66df052ea3fe3cc83985293e18dd3",
+  "pypsa_version": "0.30.3",
+  "diagnostic": {
+    "status": "diagnostic_only_not_annual_validation",
+    "hours": 24,
+    "import_policy": "capacity-only; annual historical energy band not applied",
+    "relaxation": "all domestic AC buses including islands merged; passive branches removed"
+  },
+  "start": "2022-01-01 00:00:00",
+  "end": "2022-01-01 23:00:00",
+  "solver_status": "ok",
+  "termination_condition": "optimal",
+  "annual_comparable": false,
+  "hours": 24,
+  "generator_supply_mwh_by_raw_carrier": {
+    "biogas": 141.44,
+    "biomass": 82.76237002664999,
+    "hydro": 50583.05586998735,
+    "interconnection_colombia": 8901.21319287999,
+    "load_shedding": 0.0,
+    "oil": 14574.779153574462,
+    "onwind": 10.15081645650388,
+    "solar": 91.4540350850526
+  },
+  "load_withdrawal_mwh_by_raw_carrier": {
+    "electricity": 73871.40430838063,
+    "export": 513.4511296272309
+  },
+  "link_losses_mwh": 0.0,
+  "balance_residual_mwh": 2.1391315385699272e-09,
+  "source_unchanged": true
+}

@@ -9,9 +9,10 @@ run and extend without reconstructing its history.
 ## Primary scientific objective
 
 Produce a runnable Ecuador 2022 PyPSA network and validate annual simulated
-electricity supply by carrier against authoritative 2022 statistics. The target
-is agreement within 5% for each in-scope carrier under a documented comparison
-formula and common carrier taxonomy.
+electricity supply by carrier against authoritative 2022 statistics. The current
+contract uses a documented multi-criteria benchmark: TVD, carrier percentage-
+point screens, total-energy error, explicit balance closure, feasibility, and
+provenance. The retired uniform 5% carrier rule is historical context only.
 
 The statistical reference, carrier mapping, handling of imports/exports, storage,
 autoproducers, isolated systems, losses, and any residual category must be fixed

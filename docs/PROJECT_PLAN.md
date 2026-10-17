@@ -92,7 +92,7 @@ Tasks:
 - define system boundary and units;
 - freeze carrier taxonomy and mapping, including imports/exports, biomass,
   non-renewable thermal fuels, isolated systems, storage, and residuals;
-- define the precise 5% acceptance formula and zero/small-carrier treatment;
+- define the multi-criteria TVD acceptance model and zero/small-carrier treatment;
 - validate hourly totals, peak, annual energy, spatial allocation, and leap/time
   conventions.
 
@@ -177,7 +177,8 @@ Tests: tiny solve, energy accounting, KPI extraction, result schema, and statist
 comparison. Full 8,760-hour solve remains a recorded manual scientific run.
 
 Acceptance: network runs; energy balance reconciles; all agreed carrier comparisons
-pass the fixed 5% rule; material load shedding and unexplained residuals are absent;
+pass the configured TVD/carrier screens; material load shedding and unexplained
+residuals are absent;
 artifacts and report are reproducible and checksummed.
 
 Future topology refinement: if the contracted-load comparison shows material

@@ -119,4 +119,5 @@ ignored, reproducible tables:
 All profiles must contain exactly 8,760 timezone-naive Ecuador local-standard
 hours, cover every applicable plant exactly once, contain no missing values, and
 remain within `[0, 1]`. These checks do not validate annual generation; that
-requires the solved-network energy balance and 5% carrier comparison in Phase 6.
+requires the solved-network energy balance and the configured TVD/carrier
+percentage-point benchmark in Phase 6.
