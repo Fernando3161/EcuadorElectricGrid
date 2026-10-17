@@ -23,10 +23,11 @@ from src.demand import (
 from src.validation import (
     aggregate_model_supply,
     build_supply_reference,
-    compare_supply_to_reference,
+    calculate_validation_metrics,
     load_raw_supply_reference,
     load_validation_contract,
     map_model_carriers,
+    screen_validation,
 )
 
 
@@ -125,11 +126,9 @@ class StatisticalContractTests(unittest.TestCase):
     def test_official_reference_aggregates_and_reconciles(self) -> None:
         expected = {
             "hydro": 24499.54,
-            "wind": 57.00,
-            "bioenergy": 235.74,
-            "solar": 33.15,
-            "thermal_nonrenewable": 3393.35,
-            "imports": 465.83,
+            "nonconventional": 325.89,
+            "thermal": 3393.35,
+            "interconnection": 465.83,
         }
         actual = self.reference.set_index("carrier")["reference_gwh"].to_dict()
         for carrier, value in expected.items():
@@ -182,54 +181,52 @@ class StatisticalContractTests(unittest.TestCase):
         self.assertEqual(
             [
                 "hydro",
-                "wind",
-                "bioenergy",
-                "bioenergy",
-                "solar",
-                "thermal_nonrenewable",
-                "imports",
+                "nonconventional",
+                "nonconventional",
+                "nonconventional",
+                "nonconventional",
+                "thermal",
+                "interconnection",
             ],
             mapped.tolist(),
         )
         with self.assertRaisesRegex(ValueError, "unmapped model carriers"):
             map_model_carriers(["nuclear"], self.contract)
 
-    def test_model_supply_aggregation_combines_bioenergy(self) -> None:
+    def test_model_supply_aggregation_uses_official_categories(self) -> None:
         model = pd.Series(
             {"hydro": 10.0, "biomass": 2.0, "biogas": 1.0, "oil": 3.0}
         )
         aggregated = aggregate_model_supply(model, self.contract)
-        self.assertEqual(3.0, aggregated["bioenergy"])
-        self.assertEqual(3.0, aggregated["thermal_nonrenewable"])
+        self.assertEqual(3.0, aggregated["nonconventional"])
+        self.assertEqual(3.0, aggregated["thermal"])
 
-    def test_five_percent_gate_includes_boundary_and_rejects_excess(self) -> None:
+    def test_multi_criteria_screen_accepts_exact_reference(self) -> None:
         base = self.reference.loc[self.reference["in_scope"]].set_index("carrier")[
             "reference_gwh"
         ]
-        at_limit = base * 1.05
-        result = compare_supply_to_reference(at_limit, self.reference, self.contract)
-        self.assertTrue(result["passed"].all())
-        over_limit = base.copy()
-        over_limit.loc["solar"] *= 1.050001
-        result = compare_supply_to_reference(over_limit, self.reference, self.contract)
-        self.assertFalse(bool(result.set_index("carrier").loc["solar", "passed"]))
+        rows, metrics = calculate_validation_metrics(base, self.reference)
+        result = screen_validation(metrics, rows, self.contract["acceptance"])
+        self.assertTrue(result["passed"])
 
-    def test_missing_positive_carrier_is_zero_and_fails(self) -> None:
-        result = compare_supply_to_reference(
-            pd.Series({"hydro": 24499.54}), self.reference, self.contract
-        ).set_index("carrier")
-        self.assertEqual(0.0, result.loc["wind", "simulated_gwh"])
-        self.assertFalse(bool(result.loc["wind", "passed"]))
-
-    def test_zero_reference_uses_absolute_tolerance(self) -> None:
-        reference = pd.DataFrame(
-            [{"carrier": "zero_test", "reference_gwh": 0.0, "in_scope": True}]
+    def test_missing_positive_category_is_zero_and_fails(self) -> None:
+        rows, metrics = calculate_validation_metrics(
+            pd.Series({"hydro": 24499.54}), self.reference
         )
-        result = compare_supply_to_reference(
-            pd.Series({"zero_test": 0.01}), reference, self.contract
-        ).iloc[0]
-        self.assertTrue(bool(result["passed"]))
-        self.assertEqual("absolute_gwh", result["tolerance_type"])
+        indexed = rows.set_index("carrier")
+        self.assertEqual(0.0, indexed.loc["interconnection", "simulated_gwh"])
+        result = screen_validation(metrics, rows, self.contract["acceptance"])
+        self.assertFalse(result["passed"])
+
+    def test_metric_calculation_keeps_zero_reference_relative_error_null(self) -> None:
+        reference = pd.DataFrame([
+            {"carrier": "zero_test", "reference_gwh": 0.0, "in_scope": True},
+            {"carrier": "hydro", "reference_gwh": 1.0, "in_scope": True},
+        ])
+        rows, _ = calculate_validation_metrics(
+            pd.Series({"zero_test": 0.01, "hydro": 1.0}), reference
+        )
+        self.assertTrue(np.isnan(rows.set_index("carrier").loc["zero_test", "relative_error"]))
 
 
 class Stage01NotebookContractTests(unittest.TestCase):

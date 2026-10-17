@@ -1,28 +1,37 @@
 {
   "status": "FAIL",
   "metrics": {
-    "reference_total_gwh": 28684.610000000004,
-    "simulated_total_gwh": 26636.85628542264,
-    "total_energy_relative_error": 0.07138858483965317,
-    "tvd": 0.03740386688950843
+    "reference_total_gwh": 28684.61,
+    "simulated_total_gwh": 27692.059503032015,
+    "total_energy_relative_error": 0.03460219598481506,
+    "tvd": 0.03819452621828716
   },
   "screening": {
     "checks": {
-      "max_total_energy_relative_error": false,
       "max_tvd": false,
-      "max_hydro_error_pp": true,
-      "max_thermal_error_pp": true,
-      "max_nonconventional_error_pp": true,
+      "max_hydro_error_pp": false,
+      "max_thermal_error_pp": false,
+      "max_nonconventional_error_pp": false,
       "max_interconnection_error_pp": true
     },
     "passed": false,
     "status": "FAIL"
   },
   "comparability": {
-    "status": "COMPARABLE",
-    "reasons": []
+    "status": "PARTIAL",
+    "reasons": [
+      "CENACE production and demand totals retain an unresolved 931.43 GWh metering-boundary residual; total-energy screening is disabled and the run remains PARTIAL."
+    ]
   },
-  "load_shedding_gwh": 924.7637145776099,
+  "load_shedding_gwh": 61.13049696824398,
+  "domestic_demand_gwh": 27561.62,
+  "exports_gwh": 191.57000000000002,
+  "energy_balance_residual_gwh": 2.616218353068689e-10,
+  "unresolved_accounting_residual": {
+    "gwh": 931.43,
+    "treatment": "report_only_not_modeled",
+    "rationale": "Source tables have not yet established an equivalent metering boundary; do not encode this residual as losses."
+  },
   "solver_status": "ok",
   "termination_condition": "optimal",
   "reference_source": {

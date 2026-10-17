@@ -42,7 +42,7 @@ name. Plant-level carriers are:
 | Eolica | `onwind` |
 
 The source does not distinguish thermal fuels plant by plant. Stage 06 therefore
-uses the already frozen `thermal_nonrenewable` validation aggregation rather than
+uses the Phase 6 validation category `thermal` rather than
 claiming that every thermal plant burns oil.
 
 `data/interim/generation/plant_location_evidence_2022.csv` contains exactly one

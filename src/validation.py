@@ -270,18 +270,47 @@ def screen_validation(metrics: dict, rows: pd.DataFrame, criteria: Mapping) -> d
         elif key.startswith("max_") and key.endswith("_error_pp"):
             carrier = key[len("max_") : -len("_error_pp")]
             match = rows.loc[rows.carrier == carrier, "absolute_error_pp"]
-            checks[key] = bool(match.empty or match.iloc[0] <= float(value))
+            checks[key] = bool(not match.empty and match.iloc[0] <= float(value))
     return {"checks": checks, "passed": all(checks.values()) if checks else True,
             "status": "PASS" if all(checks.values()) else "FAIL"}
+
+
+def enforce_historical_import_energy(network, snapshots, contract: Mapping) -> None:
+    """PyPSA optimization callback for the configurable 2022 import-energy band."""
+    section = contract["interconnection_colombia"]
+    if not section.get("enforce_historical_energy_band", False):
+        return
+    import xarray as xr
+
+    target_mwh = float(section["historical_energy_gwh"]) * 1000.0
+    tolerance = float(section["historical_energy_tolerance_fraction"])
+    dispatch = network.model.variables["Generator-p"].sel(
+        Generator=["colombia_import_supply"]
+    )
+    weights = xr.DataArray(
+        network.snapshot_weightings.generators.reindex(snapshots).to_numpy(),
+        coords={"snapshot": snapshots}, dims=("snapshot",),
+    )
+    annual = (dispatch * weights).sum()
+    network.model.add_constraints(
+        annual >= target_mwh * (1.0 - tolerance), name="historical-import-energy-lower"
+    )
+    network.model.add_constraints(
+        annual <= target_mwh * (1.0 + tolerance), name="historical-import-energy-upper"
+    )
 
 
 __all__ = [
     "DEFAULT_CONTRACT",
     "aggregate_model_supply",
     "build_supply_reference",
+    "calculate_validation_metrics",
     "compare_supply_to_reference",
+    "enforce_historical_import_energy",
     "load_raw_supply_reference",
     "load_validation_contract",
     "map_model_carriers",
     "normalize_carrier_label",
+    "screen_validation",
+    "validate_annual_coverage",
 ]

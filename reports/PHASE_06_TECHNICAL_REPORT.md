@@ -3,8 +3,8 @@
 ## Scope
 
 This phase implements the requested multi-criteria historical benchmark against
-CENACE's 2022 supply statistics and adds a Colombia import interface at the
-northernmost retained SNI bus. It does not claim that the annual scientific
+CENACE's 2022 supply statistics and adds Colombia import interfaces at the
+modeled Pimampiro 230 kV and Tulcan 138 kV buses. It does not claim that the annual scientific
 acceptance gate has passed: the full-year solve remains an owner-authorized
 manual run.
 
@@ -23,25 +23,44 @@ evidence and is not the Phase 6 acceptance mechanism.
 
 ## Colombia interconnection
 
-`src.assembly._add_colombia_interconnection` creates an external bus, a
-500 MW supply generator, and a 500 MW link to the northernmost retained bus.
+`src.assembly._add_colombia_interconnection` creates an external market bus, a
+500 MW supply generator, and links to the documented Pimampiro and Tulcan interfaces.
 The marginal cost is 45.20 USD/MWh, derived from CENACE Informe Anual 2022
 Figure 2.30's 4.52 cUSD/kWh average Colombia import price. The rating is a
-clearly labeled modeling assumption, not an official interconnector rating.
+clearly labeled modeling assumption, not an official interconnector rating. The
+historical solve constrains annual imports to 465.83 GWh +/-5%; future scenarios
+disable this historical energy band. Colombia and Peru exports are separate
+fixed sinks totaling 191.57 GWh.
+
+## Phase 6a topology corrections
+
+The traceable topology repair table now restores the official La Concordia
+sectioning and Pedernales feeder and completes the Minas San Francisco-La
+Union-San Ildefonso 230 kV evacuation path. The repairs connect the former
+186/291 and 159/279 islands to the main SNI without changing plant capacities.
+The full upstream multi-voltage audit confirms these islands existed before
+48/69 kV pruning. The repaired topology has a 107-bus main component and one
+remaining three-bus component.
 
 ## Verification and handoff
 
-The student-facing workflow is `notebooks/06_run_and_validate_2022_full_year.ipynb`.
-It is restartable, starts with stage-06 preflight, writes the requested annual
+The student-facing rebuild sequence is notebooks 04, 05, and 06. Notebook 04
+regenerates the topology and writes the mutation, component, and pre-pruning
+low-voltage-bridge audits. Notebook 05 assembles the candidate with domestic
+demand, country-specific exports, and the two Colombia import interfaces.
+Notebook 06 is restartable, starts with stage-06 preflight, writes the requested annual
 CSV/JSON artifacts and three figures, and records the solved-network checksum.
 
-The focused Phase 6 unit tests pass. The existing Phase 5 assembly suite could
-not be used as a clean integration signal in the current shell because the
-loaded PyPSA version is 1.1.2 while the repository artifact was written by
-PyPSA 0.30.3; it fails before the new interconnection logic at the pre-existing
-`Network.madd` call. Re-run in the approved `pypsa-earth-ec` environment.
+The Phase 5/6 focused suite passes in the approved `pypsa-earth-ec` environment,
+including topology fingerprints, repaired connectivity, export accounting,
+four-category screening, and a tiny HiGHS solve proving the import-energy band.
 
-Manual handoff: execute the preflighted Phase 6 notebook for the complete 8,760
+The currently present files under `results/phase_06/` were generated before the
+Phase 6a topology and accounting changes. They are retained only as diagnostic
+evidence and must be overwritten by the manual rerun before review.
+
+Manual handoff: execute notebooks 04 and 05, inspect their topology and smoke-test
+outputs, then execute notebook 06 for the complete 8,760
 hour network, record solver termination, energy balance, load shedding,
 curtailment, imports/exports, validation CSV/JSON/report, plots, and checksums.
 Do not label the network validated until those outputs satisfy the documented

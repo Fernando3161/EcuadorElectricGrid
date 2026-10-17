@@ -21,6 +21,7 @@ class TopologyBuildResult:
     mutation_audit: pd.DataFrame
     component_summary: pd.DataFrame
     fingerprint: dict[str, object]
+    voltage_contraction_audit: pd.DataFrame
 
 
 def _nearest(values: pd.Series, choices: Iterable[float]) -> pd.Series:
@@ -139,8 +140,74 @@ def load_repair_table(path: Path | str) -> pd.DataFrame:
     return repairs
 
 
+def audit_low_voltage_bridges(network) -> pd.DataFrame:
+    """Report retained-bus components that are connected only through <138 kV paths."""
+    full_graph = nx.Graph(network.graph())
+    retained = set(
+        network.buses.index[network.buses.v_nom.astype(float).isin(SUPPORTED_VOLTAGES_KV)].astype(str)
+    )
+    retained_graph = full_graph.subgraph(retained)
+    retained_components = list(nx.connected_components(retained_graph))
+    if not retained_components:
+        return pd.DataFrame(columns=["component_buses", "main_path", "internal_low_voltage_buses"])
+    main = max(retained_components, key=len)
+    rows = []
+    for component in retained_components:
+        if component == main:
+            continue
+        best = None
+        for source in component:
+            for target in main:
+                try:
+                    path = nx.shortest_path(full_graph, source, target)
+                except nx.NetworkXNoPath:
+                    continue
+                internal = path[1:-1]
+                if internal and all(float(network.buses.at[bus, "v_nom"]) < 138 for bus in internal):
+                    candidate = (len(path), path, internal)
+                    if best is None or candidate[0] < best[0]:
+                        best = candidate
+        if best is not None:
+            rows.append({
+                "component_buses": "|".join(sorted(map(str, component))),
+                "main_path": "|".join(map(str, best[1])),
+                "internal_low_voltage_buses": "|".join(map(str, best[2])),
+            })
+    return pd.DataFrame(rows)
+
+
 def apply_reviewed_repairs(network, repairs: pd.DataFrame) -> pd.DataFrame:
     rows: list[dict[str, object]] = []
+    def component_id(value) -> str:
+        try:
+            number = float(value)
+            return str(int(number)) if number.is_integer() else str(value)
+        except (TypeError, ValueError):
+            return str(value)
+
+    for repair in repairs.query("component == 'Line' and action == 'remove'").itertuples(index=False):
+        source_id = component_id(repair.source_component_id)
+        if source_id not in network.lines.index:
+            raise ValueError(f"Repair {repair.repair_id} cannot remove missing line {source_id}")
+        before = f"{network.lines.at[source_id, 'bus0']}-{network.lines.at[source_id, 'bus1']}"
+        network.remove("Line", source_id)
+        rows.append({"mutation": "remove_reviewed_line", "component": "Line", "name": source_id,
+                     "before": before, "after": "removed", "rationale": repair.rationale,
+                     "evidence": f"{repair.evidence_source}; {repair.evidence_locator}"})
+
+    for repair in repairs.query("component == 'Line' and action == 'update'").itertuples(index=False):
+        source_id = component_id(repair.source_component_id)
+        if source_id not in network.lines.index:
+            raise ValueError(f"Repair {repair.repair_id} cannot update missing line {source_id}")
+        before = network.lines.loc[source_id, ["length", "s_nom", "num_parallel"]].to_dict()
+        network.lines.loc[source_id, ["length", "s_nom", "num_parallel"]] = [
+            float(repair.length_km), float(repair.s_nom_mva), float(repair.num_parallel)
+        ]
+        rows.append({"mutation": "update_reviewed_line", "component": "Line", "name": source_id,
+                     "before": str(before), "after": f"length={repair.length_km};s_nom={repair.s_nom_mva};circuits={repair.num_parallel}",
+                     "rationale": repair.rationale,
+                     "evidence": f"{repair.evidence_source}; {repair.evidence_locator}"})
+
     line_repairs = repairs.query("component == 'Line' and action == 'add'")
     for repair in line_repairs.itertuples(index=False):
         def bus_id(value) -> str:
@@ -157,7 +224,8 @@ def apply_reviewed_repairs(network, repairs: pd.DataFrame) -> pd.DataFrame:
             raise ValueError(f"Repair line already exists: {repair.repair_id}")
         lon0, lat0 = network.buses.loc[bus0, ["x", "y"]].astype(float)
         lon1, lat1 = network.buses.loc[bus1, ["x", "y"]].astype(float)
-        length = haversine_km(lat0, lon0, lat1, lon1)
+        configured_length = getattr(repair, "length_km", np.nan)
+        length = float(configured_length) if pd.notna(configured_length) else haversine_km(lat0, lon0, lat1, lon1)
         network.add(
             "Line",
             repair.repair_id,
@@ -272,6 +340,7 @@ def assert_topology_invariants(network) -> None:
 
 def build_2022_topology(base_network, repairs: pd.DataFrame) -> TopologyBuildResult:
     network = base_network.copy()
+    contraction_audit = audit_low_voltage_bridges(network)
     audits = [snap_nominal_voltages(network), remove_unreferenced_buses(network)]
     audits.append(prune_to_supported_voltage(network))
     audits.append(apply_reviewed_repairs(network, repairs))
@@ -285,4 +354,5 @@ def build_2022_topology(base_network, repairs: pd.DataFrame) -> TopologyBuildRes
         mutation_audit=pd.concat(audits, ignore_index=True),
         component_summary=connected_component_summary(network),
         fingerprint=structural_fingerprint(network),
+        voltage_contraction_audit=contraction_audit,
     )

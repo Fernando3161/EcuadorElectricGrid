@@ -5,9 +5,9 @@
     "500.0": 6
   },
   "buses": 110,
-  "connected_components": 4,
+  "connected_components": 2,
   "generators": 0,
-  "lines": 111,
+  "lines": 113,
   "loads": 0,
   "snapshots": 8760,
   "transformers": 19

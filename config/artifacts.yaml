@@ -347,19 +347,19 @@ artifacts:
       kind: checksum_only
 
   - id: topology_repairs_2022
-    description: Reviewed legacy topology mutations and numerical repair assumptions.
+    description: Reviewed legacy and Phase 6a topology mutations and numerical repair assumptions.
     stages: [04_topology]
     destination: data/interim/network/topology_repairs_2022.csv
     role: source
     availability: repository
     source:
       organization: EcuadorElectricGrid
-      record: Phase 5 migration of legacy topology notebook decisions
-      provenance_status: modeling decisions with evidence locator and confidence; not official Master Plan facts
+      record: Phase 5 migration plus Phase 6a La Concordia-Pedernales and Minas-San Ildefonso corrections
+      provenance_status: row-level official facts and modeling assumptions are distinguished by evidence locator, confidence, and official_fact
     persistent_uri: https://github.com/Fernando3161/EcuadorElectricGrid
     download_url: null
-    bytes: 1762
-    sha256: db49c40e0a05113dadae1c8b76e4854f65adfa2cb344518a200ad6125d4216b2
+    bytes: 4048
+    sha256: ea5f239d9d235871982f5455d941810253365881b19e4670c53018eaf72c40e6
     media_type: text/csv
     license: repository-license-review-required
     validation:

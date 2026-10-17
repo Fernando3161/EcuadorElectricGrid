@@ -1,8 +1,6 @@
 carrier,reference_gwh,source_components,source_ids,in_scope,evidence_class,notes
 hydro,24499.54,hydroelectric,CENACE_ANNUAL_2022,True,official_fact,
-wind,57.0,wind,CENACE_ANNUAL_2022,True,official_fact,
-bioenergy,235.74,biogas;biomass,CENACE_ANNUAL_2022,True,official_fact,
-solar,33.15,solar_photovoltaic,CENACE_ANNUAL_2022,True,official_fact,
-thermal_nonrenewable,3393.35,diesel;fuel_oil;natural_gas;naphtha;residue,CENACE_ANNUAL_2022,True,official_fact,
-imports,465.83,imports_colombia;imports_peru,CENACE_ANNUAL_2022,True,official_fact,
+thermal,3393.35,diesel;fuel_oil;natural_gas;naphtha;residue,CENACE_ANNUAL_2022,True,official_fact,
+nonconventional,325.89,wind;biogas;biomass;solar_photovoltaic,CENACE_ANNUAL_2022,True,official_fact,
+interconnection,465.83,imports_colombia;imports_peru,CENACE_ANNUAL_2022,True,official_fact,
 source_rounding_residual,0.01,reported_total_minus_displayed_rows,CENACE_ANNUAL_2022,False,derived_reconciliation,Displayed source rows are rounded to 0.01 GWh.

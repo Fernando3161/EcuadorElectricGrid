@@ -152,7 +152,8 @@ Not run:
   intraday chronology.
 - The current generation data collapses several thermal fuels to `oil`. Phase 4
   should retain finer fuel evidence where available, while the frozen acceptance
-  level remains `thermal_nonrenewable` unless a reviewed contract revision is made.
+  level was revised in Phase 6 to the official-category label `thermal`; the
+  underlying fuel-level source rows remain preserved.
 - Phase 5 must model imports explicitly or the positive 465.83 GWh import row will
   fail by design.
 - The generated MW profile is reproducible and intentionally not committed. A

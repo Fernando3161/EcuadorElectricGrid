@@ -221,6 +221,12 @@
       "disposition": "retain as diagnostic evidence; not a canonical result"
     },
     {
+      "id": "phase06_validation_results",
+      "patterns": ["results/phase_06/*.csv", "results/phase_06/*.json"],
+      "classification": "generated_candidate",
+      "disposition": "regenerate with notebook 06 after the Phase 6a candidate is rebuilt; do not treat pre-rerun files as validated"
+    },
+    {
       "id": "phase_tests",
       "patterns": ["tests/*.py"],
       "classification": "governance",
@@ -343,6 +349,12 @@
       "disposition": "retain locally as non-canonical solve evidence; review for Phase 10"
     },
     {
+      "id": "ignored_phase06_solved_network",
+      "patterns": ["results/phase_06/*.nc"],
+      "classification": "generated_candidate",
+      "disposition": "regenerate manually with notebook 06; retain locally until reviewed and checksum-recorded"
+    },
+    {
       "id": "ignored_generated_figures",
       "patterns": ["results/graphs/*.png", "results/graphs/demand/*.png", "results/graphs/generation/*.png"],
       "classification": "generated_candidate",
@@ -362,6 +374,7 @@
     {"path": "notebooks/03_prepare_renewable_and_hydro_profiles.ipynb", "lineage": "supported_refactor", "role": "prepare and validate hydro, solar, and onshore-wind availability", "disposition": "retain as the supported Stage 03 entry point"},
     {"path": "notebooks/04_build_and_validate_2022_topology.ipynb", "lineage": "supported_refactor", "role": "rebuild and validate the supported 138/230/500 kV topology", "disposition": "retain as the supported Stage 04 entry point"},
     {"path": "notebooks/05_assemble_and_smoke_test_2022_network.ipynb", "lineage": "supported_refactor", "role": "assemble and serialize the unsolved 2022 candidate network", "disposition": "retain as the supported Stage 05 entry point"},
+    {"path": "notebooks/06_run_and_validate_2022_full_year.ipynb", "lineage": "supported_refactor", "role": "solve, account, and validate the 2022 annual network", "disposition": "retain as the supported Stage 06 manual scientific run"},
     {"path": "notebooks/03_a_process_generation.ipynb", "lineage": "2022_candidate", "role": "parse existing and future generation workbooks", "disposition": "rewrite"},
     {"path": "notebooks/03_b_generation_plots.ipynb", "lineage": "2022_candidate", "role": "generation diagnostics", "disposition": "merge into generation stage"},
     {"path": "notebooks/03_c_hydro_profiles.ipynb", "lineage": "2022_candidate", "role": "hydro plant-flow matching and hourly profiles", "disposition": "rewrite around tested functions"},

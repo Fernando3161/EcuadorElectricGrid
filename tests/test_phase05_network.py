@@ -44,22 +44,22 @@ class Phase05TopologyTests(unittest.TestCase):
             {
                 "snapshots": 8760,
                 "buses": 110,
-                "lines": 111,
+                "lines": 113,
                 "transformers": 19,
                 "loads": 0,
                 "generators": 0,
                 "bus_voltage_counts": {"138.0": 64, "230.0": 40, "500.0": 6},
-                "connected_components": 4,
+                "connected_components": 2,
             },
         )
 
     def test_reviewed_repairs_are_explicit_and_complete(self) -> None:
-        self.assertEqual(len(self.repairs.query("component == 'Line'")), 5)
-        self.assertEqual(set(self.repairs.official_fact.astype(str).str.lower()), {"false"})
+        self.assertEqual(len(self.repairs.query("component == 'Line' and action == 'add'")), 8)
+        self.assertEqual(set(self.repairs.official_fact.astype(str).str.lower()), {"false", "true"})
         self.assertFalse(self.repairs.rationale.str.strip().eq("").any())
         self.assertFalse(self.repairs.evidence_locator.str.strip().eq("").any())
         added = self.result.mutation_audit.query("mutation == 'add_reviewed_line'")
-        self.assertEqual(set(added.name), set(self.repairs.query("component == 'Line'").repair_id))
+        self.assertEqual(set(added.name), set(self.repairs.query("component == 'Line' and action == 'add'").repair_id))
         patched = self.result.mutation_audit.query(
             "mutation == 'patch_transformer_resistance'"
         )
@@ -73,7 +73,13 @@ class Phase05TopologyTests(unittest.TestCase):
         self.assertEqual(counts["snap_voltage"], 12)
 
     def test_islands_are_reported_not_silently_bridged(self) -> None:
-        self.assertEqual(self.result.component_summary.n_buses.tolist(), [103, 3, 2, 2])
+        self.assertEqual(self.result.component_summary.n_buses.tolist(), [107, 3])
+
+    def test_official_island_repairs_join_main_sni(self) -> None:
+        main = set(self.result.component_summary.iloc[0].buses.split("|"))
+        self.assertTrue({"186", "291", "159", "279", "34"}.issubset(main))
+        self.assertNotIn("149", self.result.network.lines.index)
+        self.assertEqual(len(self.result.voltage_contraction_audit), 1)
 
 
 class Phase05AssemblyTests(unittest.TestCase):
@@ -126,10 +132,19 @@ class Phase05AssemblyTests(unittest.TestCase):
         self.assertEqual(len(self.result.generator_attachments), len(self.generators))
         self.assertTrue((self.result.load_attachments.distance_km >= 0).all())
         self.assertTrue((self.result.generator_attachments.distance_km >= 0).all())
+        domestic = self.result.network.loads.index[
+            self.result.network.loads.carrier.eq("electricity")
+        ]
+        exports = self.result.network.loads.index[
+            self.result.network.loads.carrier.eq("export")
+        ]
         self.assertAlmostEqual(
-            self.result.network.loads_t.p_set.to_numpy().sum() / 1000,
-            27561.62,
-            places=6,
+            self.result.network.loads_t.p_set.loc[:, domestic].to_numpy().sum() / 1000,
+            27561.62, places=6,
+        )
+        self.assertAlmostEqual(
+            self.result.network.loads_t.p_set.loc[:, exports].to_numpy().sum() / 1000,
+            191.57, places=6,
         )
 
     def test_flagged_load_investigation_is_complete_and_non_mutating(self) -> None:
@@ -176,9 +191,13 @@ class Phase05AssemblyTests(unittest.TestCase):
         self.assertTrue(attachments.loc[list(expected), "modeling_assumption"].all())
         self.assertFalse(attachments.loc[list(expected), "official_fact"].any())
 
+    def test_fingerprint_separates_domestic_demand_from_exports(self) -> None:
+        self.assertAlmostEqual(self.result.fingerprint["annual_demand_gwh"], 27561.62, places=6)
+        self.assertAlmostEqual(self.result.fingerprint["annual_exports_gwh"], 191.57, places=6)
+
     def test_fleet_capacity_profiles_and_nuclear_exclusion(self) -> None:
         network = self.result.network
-        real = network.generators.query("carrier != 'load_shedding'")
+        real = network.generators.query("~carrier.isin(['load_shedding', 'interconnection_colombia'])")
         self.assertEqual(len(real), 133)
         self.assertAlmostEqual(real.p_nom.sum(), 7489.65)
         self.assertNotIn("nuclear", set(network.generators.carrier))

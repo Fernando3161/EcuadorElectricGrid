@@ -14,13 +14,15 @@ not demonstrably compatible. Otherwise the configurable screen reports `PASS`
 or `FAIL`; `PARTIAL` is reserved for a technically comparable run with an
 incomplete diagnostic set.
 
-Configured exploratory screens are: total energy relative error <= 5%, TVD <=
-3 percentage points, hydro <= 3 pp, thermal <= 2 pp, non-conventional <= 0.5 pp,
-and interconnection <= 0.5 pp. Metrics are calculated independently from these
-thresholds, so changing a screen cannot alter the underlying benchmark.
+Configured exploratory screens are: TVD <= 3 percentage points, hydro <= 3 pp,
+thermal <= 2 pp, non-conventional <= 0.5 pp, and interconnection <= 0.5 pp.
+Total-energy relative error is calculated but not screened until the unresolved
+931.43 GWh source-boundary residual is reconciled. Metrics are calculated
+independently from thresholds, so changing a screen cannot alter the benchmark.
 
-The Colombia import interface is attached to the northernmost retained SNI bus.
-It has a 500 MW modeling-assumption maximum and a 45.20 USD/MWh marginal cost,
+The Colombia import interface is represented at the retained Pimampiro 230 kV
+and Tulcan 138 kV buses through a declared 80/20 capacity split. It has a 500 MW
+modeling-assumption maximum and a 45.20 USD/MWh marginal cost,
 from CENACE's 2022 average Colombia import price of 4.52 cUSD/kWh (Figure 2.30).
 The price source is recorded in `config/validation_2022.yaml`; the capacity is
 not presented as an official interconnector rating.
@@ -109,37 +111,35 @@ to know plant-level fuels that are not encoded.
 | Validation carrier | Official source rows | Reference (GWh) |
 |---|---|---:|
 | `hydro` | Hydroelectric | 24,499.54 |
-| `wind` | Wind | 57.00 |
-| `bioenergy` | Biomass + biogas | 235.74 |
-| `solar` | Photovoltaic | 33.15 |
-| `thermal_nonrenewable` | Diesel + fuel oil + natural gas + naphtha + residue | 3,393.35 |
-| `imports` | Colombia + Peru imports | 465.83 |
+| `thermal` | Diesel + fuel oil + natural gas + naphtha + residue | 3,393.35 |
+| `nonconventional` | Wind + biomass + biogas + photovoltaic | 325.89 |
+| `interconnection` | Colombia + Peru imports | 465.83 |
 
 The displayed component rows total 28,684.61 GWh. CENACE reports 28,684.62 GWh;
 the 0.01 GWh display-rounding residual is retained as an explicit, out-of-gate row.
 
-The legacy model carrier `oil` maps to `thermal_nonrenewable`. This mapping does
+The legacy model carrier `oil` maps to `thermal`. This mapping does
 not claim that all thermal generation burns oil. Phase 4 should preserve the
 official fuel detail where the plant data supports it, while the acceptance gate
-remains stable at the declared aggregate level. Biomass and biogas map to
-`bioenergy` because the current assembly already combines them.
+remains stable at the declared aggregate level. Wind, biomass, biogas, and solar
+map to the official non-conventional category.
 
 Storage discharge is not primary generation and cannot be counted as a supply
 carrier. Charging, discharging, and annual state-of-charge change belong in the
 energy balance. Load shedding is never counted as valid supply.
 
-## Five percent rule
+## Multi-criteria screening
 
-For every positive in-scope reference carrier:
+The retired uniform carrier 5% rule is not the Phase 6 acceptance mechanism.
+The workflow calculates total energy error, TVD, percentage-point errors, and
+relative errors independently, then applies the configurable exploratory screens.
+A missing category or threshold mapping fails rather than silently passing.
 
-```text
-relative_error_percent =
-    100 * abs(simulated_gwh - reference_gwh) / reference_gwh
-```
-
-A carrier passes when `relative_error_percent <= 5.0`. The same rule applies to
-small positive carriers such as solar and wind. A missing simulated carrier is
-treated as zero and therefore fails a positive reference.
+The total-energy criterion is temporarily disabled because the 931.43 GWh
+production-to-demand residual does not yet have a proven common metering boundary.
+It remains reported and may not be encoded as guessed losses. Historical imports
+are bounded to 465.83 GWh +/-5% as an input control, not as a validation tolerance;
+future scenarios explicitly disable that historical energy band.
 
 The official in-scope table has no zero reference. If a future version introduces
 one, relative error is undefined and the absolute simulated value must be no more

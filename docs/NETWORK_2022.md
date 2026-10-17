@@ -19,7 +19,14 @@ Stage 04 starts from the checksum-pinned `base.nc`. It removes 18 buses that hav
 no component reference, removes all out-of-scope buses and incident branches,
 then applies `data/interim/network/topology_repairs_2022.csv`.
 
-That table preserves five corridor additions from the legacy notebook. The
+That table preserves five corridor additions from the legacy notebook and adds
+reviewed Phase 6a repairs for two upstream extraction omissions. La Concordia
+sections the Quininde-Santo Domingo 138 kV corridor and retains the official
+La Concordia-Pedernales feeder. The Minas San Francisco-La Union corridor is
+completed to the 230 kV side of San Ildefonso. Source IDs, locators, official-fact
+flags, lengths, ratings, and assumptions are retained row by row.
+
+The legacy five additions retain their original evidence status. The
 available evidence is the notebook rationale, so the repairs are classified as
 low/medium-confidence modeling decisions rather than official asset facts. Line
 length is recomputed from endpoint coordinates; the reviewed legacy conductor
@@ -30,9 +37,11 @@ reactance. Stage 04 sets resistance to 0.01 p.u. as an explicit numerical
 assumption and retains the reactance. This prevents a hidden singularity repair
 but is not equipment-level validation.
 
-The candidate topology contains one 103-bus main component and three small
-components of 3, 2, and 2 buses. No unsupported line is added to hide these
-islands. Phase 6 must report their role in feasibility and any load shedding.
+The repaired candidate topology contains one 107-bus main component and one
+three-bus component. Read-only audits prove that the repaired two-bus islands
+were already disconnected in the full upstream multi-voltage graph; they were
+not created by deleting 48/69 kV buses. A saved low-voltage bridge audit guards
+against that failure mode elsewhere.
 
 Stage 04 saves a combined voltage-coded topology map and separate bus-labeled
 maps for the 500, 230, and 138 kV layers. They reuse the project's established
