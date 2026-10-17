@@ -13,9 +13,10 @@ the approved `pypsa-earth-ec` environment and the 8,760-hour HiGHS solve:
 terminated with solver status `ok` and termination condition `optimal`; all
 three internal annual energy balances close to numerical precision.
 
-The best retained candidate is `renewable-calibration`. It reduces TVD from
-0.039801 to 0.039082, reduces nonconventional signed error from -0.565 to
--0.481 percentage points, and reduces thermal signed error from 3.842 to 3.770
+The best retained candidate is `renewable-calibration`. With the corrected
+factor, its TVD is 0.039758; the corrected run remains internally balanced and
+does not reduce the carrier errors relative to baseline. The earlier candidate
+result using factor 11.56 is superseded and must not be used.
 percentage points without increasing load shedding. This is an improvement,
 not a validated-pass result. The strict Phase 06 screen still fails hydro,
 thermal, nonconventional generation, TVD, and the interconnection screen. Hydro
@@ -42,7 +43,7 @@ loss load, arbitrary outage history, or reservoir redesign was introduced.
 |---|---:|---:|---:|---:|---|
 | baseline | 0.039801 | 3.247% | 0.0078 | 2.54e-10 | optimal |
 | thermal-availability | 0.039392 | 3.297% | 14.2436 | 2.47e-10 | optimal |
-| renewable-calibration | **0.039082** | 3.247% | 0.0078 | 2.51e-10 | optimal |
+| renewable-calibration | **0.039758** | 3.247% | 0.0078 | 2.51e-10 | optimal |
 
 The thermal candidate improves TVD only marginally and materially worsens load
 shedding, so it is not selected as the final practical candidate. The renewable
@@ -60,9 +61,9 @@ The final practical candidate is `renewable-calibration`:
 
 | Carrier | Reference (GWh) | Simulated (GWh) | Signed error (percentage points) | Relative error |
 |---|---:|---:|---:|---:|
-| hydro | 24,499.54 | 22,752.80 | -3.427 | -7.13% |
-| thermal | 3,393.35 | 4,329.40 | +3.770 | +27.58% |
-| nonconventional | 325.89 | 181.86 | -0.481 | -44.20% |
+| hydro | 24,499.54 | 22,755.84 | -3.416 | -7.12% |
+| thermal | 3,393.35 | 4,348.17 | +3.837 | +28.14% |
+| nonconventional | 325.89 | 160.05 | -0.559 | -50.89% |
 | interconnection | 465.83 | 489.12 | +0.138 | +5.00% |
 
 The full row-level comparison is `results/phase_06d/renewable-calibration/validation_2022.csv`.
@@ -79,7 +80,7 @@ requirements are not all satisfied. The practical assessment is therefore
 - Final internal balance residual: approximately `2.51e-10` GWh.
 - Unresolved source-boundary residual: 931.43 GWh, report-only and unchanged.
 - Final solved-network SHA-256:
-  `4ca644e5433a44fb2eb930716ec38aa27a37d4fb64fabc593de7f674ecc5ec78`.
+  `eb231577e3fe73a3493d494f65fdb8187bb30c73687a6013b323a6e6e4ea98ff`.
 - Statistical reference: CENACE *Informe Anual 2022 — Parte 1*, Table 2.4,
   SHA-256 recorded in the existing validation summary and provenance registry.
 

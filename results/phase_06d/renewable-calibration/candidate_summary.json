@@ -2,16 +2,16 @@
   "status": "FAIL",
   "metrics": {
     "reference_total_gwh": 28684.61,
-    "simulated_total_gwh": 27753.182180738397,
-    "total_energy_relative_error": 0.032471343318302176,
-    "tvd": 0.039082143196005906
+    "simulated_total_gwh": 27753.182180738393,
+    "total_energy_relative_error": 0.03247134331830231,
+    "tvd": 0.03975846883943834
   },
   "screening": {
     "checks": {
       "max_tvd": false,
       "max_hydro_error_pp": false,
       "max_thermal_error_pp": false,
-      "max_nonconventional_error_pp": true,
+      "max_nonconventional_error_pp": false,
       "max_interconnection_error_pp": true
     },
     "passed": false,
@@ -45,5 +45,5 @@
   },
   "candidate": "renewable-calibration",
   "network": "results\\phase_06d\\renewable-calibration\\network_solved_2022.nc",
-  "sha256": "4ca644e5433a44fb2eb930716ec38aa27a37d4fb64fabc593de7f674ecc5ec78"
+  "sha256": "eb231577e3fe73a3493d494f65fdb8187bb30c73687a6013b323a6e6e4ea98ff"
 }

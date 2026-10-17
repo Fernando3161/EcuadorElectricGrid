@@ -2,16 +2,16 @@
   "status": "FAIL",
   "metrics": {
     "reference_total_gwh": 28684.61,
-    "simulated_total_gwh": 27753.182180738397,
-    "total_energy_relative_error": 0.032471343318302176,
-    "tvd": 0.039082143196005906
+    "simulated_total_gwh": 27753.182180738393,
+    "total_energy_relative_error": 0.03247134331830231,
+    "tvd": 0.03975846883943834
   },
   "screening": {
     "checks": {
       "max_tvd": false,
       "max_hydro_error_pp": false,
       "max_thermal_error_pp": false,
-      "max_nonconventional_error_pp": true,
+      "max_nonconventional_error_pp": false,
       "max_interconnection_error_pp": true
     },
     "passed": false,
