@@ -1,7 +1,10 @@
 {
+  "candidate": "renewable-calibration",
   "wind_policy": "nlr_sup3rwind_site_profiles",
   "wind_reference_gwh": 57.0,
+  "wind_factor": 1.3720156887563881,
   "biomass_shape_source": "ARCONEL Table 54",
   "biomass_annual_control_gwh": 195.68,
+  "biomass_factor": 1.0,
   "biomass_control_status": "calibration_input_not_independent_validation"
 }

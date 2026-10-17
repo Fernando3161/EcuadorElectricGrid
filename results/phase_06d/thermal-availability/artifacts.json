@@ -1,0 +1,6 @@
+{
+  "network": "results\\phase_06d\\thermal-availability\\network_solved_2022.nc",
+  "sha256": "b71f567d4c0c3f041f300757776b41ffb2996e87dffdb7823963118da293028c",
+  "validation_csv": "results\\phase_06d\\thermal-availability\\validation_2022.csv",
+  "status": "manual Phase 6 run output"
+}

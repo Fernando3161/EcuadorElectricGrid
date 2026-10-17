@@ -1,0 +1,46 @@
+{
+  "status": "FAIL",
+  "metrics": {
+    "reference_total_gwh": 28684.61,
+    "simulated_total_gwh": 27753.182180738397,
+    "total_energy_relative_error": 0.032471343318302176,
+    "tvd": 0.039082143196005906
+  },
+  "screening": {
+    "checks": {
+      "max_tvd": false,
+      "max_hydro_error_pp": false,
+      "max_thermal_error_pp": false,
+      "max_nonconventional_error_pp": true,
+      "max_interconnection_error_pp": true
+    },
+    "passed": false,
+    "status": "FAIL"
+  },
+  "comparability": {
+    "status": "PARTIAL",
+    "reasons": [
+      "CENACE production and demand totals retain an unresolved 931.43 GWh metering-boundary residual; total-energy screening is disabled and the run remains PARTIAL."
+    ]
+  },
+  "load_shedding_gwh": 0.007819261851312945,
+  "domestic_demand_gwh": 27561.62,
+  "exports_gwh": 191.57000000000002,
+  "energy_balance_residual_gwh": 2.5070789888559375e-10,
+  "unresolved_accounting_residual": {
+    "gwh": 931.43,
+    "treatment": "report_only_not_modeled",
+    "rationale": "Source tables have not yet established an equivalent metering boundary; do not encode this residual as losses."
+  },
+  "solver_status": "ok",
+  "termination_condition": "optimal",
+  "reference_source": {
+    "organization": "Operador Nacional de Electricidad CENACE",
+    "title": "Informe Anual 2022 - Parte 1",
+    "edition": "2022",
+    "url": "https://www.cenace.gob.ec/wp-content/uploads/downloads/2023/04/Parte-1-Informe-Anual-2022.pdf",
+    "repository_path": "literature/CENACE/cenace_informe_anual_2022_parte_1.pdf",
+    "sha256": "88f13f0106a190464c8954babc7529f785783d4d4017633a8d5ed8ff554fbd88",
+    "locator": "Pages 23, 73-74; Table 2.4"
+  }
+}
