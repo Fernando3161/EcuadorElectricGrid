@@ -1,0 +1,7 @@
+{
+  "candidate": "results\\phase_06\\network_solved_2022.nc",
+  "snapshots": 8760,
+  "status": "diagnostic_only",
+  "reservoir_refinement": "deferred",
+  "thresholds_changed": false
+}

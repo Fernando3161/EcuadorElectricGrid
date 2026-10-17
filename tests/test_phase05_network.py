@@ -44,7 +44,7 @@ class Phase05TopologyTests(unittest.TestCase):
             {
                 "snapshots": 8760,
                 "buses": 110,
-                "lines": 113,
+                "lines": 115,
                 "transformers": 19,
                 "loads": 0,
                 "generators": 0,
@@ -54,7 +54,7 @@ class Phase05TopologyTests(unittest.TestCase):
         )
 
     def test_reviewed_repairs_are_explicit_and_complete(self) -> None:
-        self.assertEqual(len(self.repairs.query("component == 'Line' and action == 'add'")), 8)
+        self.assertEqual(len(self.repairs.query("component == 'Line' and action == 'add'")), 10)
         self.assertEqual(set(self.repairs.official_fact.astype(str).str.lower()), {"false", "true"})
         self.assertFalse(self.repairs.rationale.str.strip().eq("").any())
         self.assertFalse(self.repairs.evidence_locator.str.strip().eq("").any())

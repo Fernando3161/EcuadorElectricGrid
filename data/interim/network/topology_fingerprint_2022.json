@@ -7,7 +7,7 @@
   "buses": 110,
   "connected_components": 2,
   "generators": 0,
-  "lines": 113,
+  "lines": 115,
   "loads": 0,
   "snapshots": 8760,
   "transformers": 19

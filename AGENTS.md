@@ -145,3 +145,30 @@ The final pruning phase must identify and remove files and artifacts that are no
 longer needed. Its deletions must be reviewed and recorded in a dedicated commit
 so the final branch contains only supported project material and intentional
 provenance.
+
+
+## Codex subagent routing and context budget
+
+Project-scoped specialist configurations live in `.codex/agents/`; `.codex/config.toml` sets a conservative concurrency cap and low-cost fallback for spawned agents. These instructions supplement, never override, the mission, scientific acceptance gate, environment policy, provenance rules, phase boundaries, and manual-execution restrictions above. The parent Codex model is selected in the Codex session; agent selection is instruction-guided rather than guaranteed.
+
+- **Trivial changes:** The parent should handle one-file typo fixes, simple renames, or formatting directly. Do not spawn agents merely because they exist.
+- **`research` (Luna):** Bounded read-only evidence search; 2022 CENACE reference data, carrier mapping, file lineage, checksum/source documentation, and discrepancies between datasets. Return compact findings with file/page, year, units, and citations.
+- **`documentation` (Luna):** README, phase-report structure, notebook explanations and Markdown based on already verified results. Never turn unvalidated results into scientific claims.
+- **`developer` (Sol, medium):** Small Python changes in `src/`, sequential notebook edits, data transformation functions, unit tests and tiny PyPSA fixtures. Scientific decisions must be clarified first.
+- **`scientific_reviewer` (Sol, high):** Read-only, higher-stakes examination of the 2022 energy balance, feasibility/solver diagnostics, data validity, validation metrics and new scientific interpretations. It must not relax the established 5% gate or alter carrier exclusions without owner approval.
+
+### Delegation and escalation
+
+1. Prefer one specialist for a bounded request; spawn multiple only for genuinely independent work or for a clearly staged handoff. Cap ordinary work at two subagents and complex work at three. These are upper bounds, not targets.
+2. For scientific writing with new conclusions: `research` gathers evidence, `scientific_reviewer` verifies interpretations, then `documentation` drafts from that **compact verified handoff**. For writing about already verified results, use only `documentation`.
+3. For ordinary implementation use `developer`. For algorithmic or physics-changing work, get acceptance criteria from `scientific_reviewer` first; then let `developer` implement and run targeted tests.
+4. Do not delegate duplicate repo-wide scans. Each subagent should receive a specific question, relevant path(s), expected deliverable and explicit exclusion of unrelated work.
+5. Escalate to a stronger agent only if a low-cost agent encounters substantive ambiguity, a failed check, or potential scientific impact. Do not repeatedly retry the same unresolved task at the same effort.
+6. Subagents may not make independent commits, push branches, relax data/validation requirements, install packages, or launch large calculations. The owner retains the Git and full-year-run approval gates above.
+
+### Context and execution economy
+
+- Keep the existing **Read before changing the project** document list as required for substantive changes, but satisfy it through focused heading/range inspection when sufficient rather than dumping entire files into every subagent's context. Include the active phase report and only relevant `src/`, `notebooks/`, `config/`, `docs/` and test files.
+- Reuse compact evidence summaries; do not make every agent independently reread the full project. Create a new Codex conversation for a distinct phase or large unrelated task after recording decisions in tracked phase docs.
+- Prefer deterministic scripts, existing tests and narrow calculations over repeated language-model arithmetic. Full-year Ecuador simulations remain manual, owner-authorized validation runs.
+- In each task summary, state agent(s) used when relevant, files changed, checks executed, checks skipped, provenance/assumptions affected, and any issue requiring owner resolution.

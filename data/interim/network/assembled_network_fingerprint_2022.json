@@ -9,7 +9,7 @@
   "buses": 111,
   "connected_components": 2,
   "generators": 245,
-  "lines": 113,
+  "lines": 115,
   "load_shedding_generators": 111,
   "loads": 253,
   "nominal_capacity_mw": 7989.65,
