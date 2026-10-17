@@ -487,7 +487,7 @@ def assert_assembly_invariants(
     profile_ids = set(hydro.columns) | set(renewable.columns)
     if not profile_ids.issubset(network.generators_t.p_max_pu.columns):
         raise AssertionError("Availability profiles are incomplete in the network")
-    if not bool(network.generators.loc[list(profile_ids), "carrier"].isin(["hydro", "solar", "onwind"]).all()):
+    if not bool(network.generators.loc[list(profile_ids), "carrier"].isin(["hydro", "solar", "onwind", "biomass"]).all()):
         raise AssertionError("Availability profile assigned to an unexpected carrier")
     if set(network.generators.carrier) - set(network.carriers.index):
         raise AssertionError("Every generator carrier must be defined")

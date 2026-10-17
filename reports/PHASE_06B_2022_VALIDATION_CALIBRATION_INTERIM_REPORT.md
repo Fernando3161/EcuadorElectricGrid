@@ -588,3 +588,49 @@ one-circuit ratings unless better 2022 operating evidence is found. Treat hydro
 reservoir/cascade enhancement as exploratory and lower priority. Do not perform
 the final annual solve until the owner reviews the new evidence tables and the
 short diagnostic/smoke results.
+
+## 12. Phase 06B profile-candidate implementation update
+
+The regenerated Stage 03 notebook now contains an explicit profile review before
+writing the processed availability product. It writes
+`results/phase_06b/wind_profile_source_comparison_2022.csv` and records the
+candidate decision in `profile_candidate_selection_2022.json`.
+
+For Villonaco and Huascachaca, the legacy `onwind.nc` values remain visibly
+implausible (1.873 GWh and 0.163 GWh respectively before dispatch). The notebook
+records the NLR Sup3rWind South America 60-minute single-location CSV URLs for
+both sites. Credentialed downloads completed successfully and are committed as
+`ec2022_030_Huascachaca_2022.csv` and `ec2022_074_Villonaco_2022.csv`. The NLR
+site profiles produce 37.96 GWh and 3.58 GWh respectively under the explicit
+diagnostic turbine curve, or 41.54 GWh combined versus the CENACE 57.00 GWh
+reference. The notebook therefore selects the direct NLR site profiles as the
+better resource candidate. This is a resource replacement, not an empirical
+rescaling to force 57 GWh; the remaining difference requires review of turbine
+parameters, plant capacity/commissioning scope, and CENACE/CNEL boundaries.
+
+Biomass now uses the ARCONEL Table 54 monthly shape as a shared monthly
+availability constraint. The profile is scaled to the CENACE Table 2.4 net
+biomass value of 195.68 GWh as a calibration control; ARCONEL's 288.49 GWh
+gross shape total remains recorded as source evidence and is not counted as an
+independent validation target. This distinction is recorded in
+`results/phase_06b/biomass_profile_diagnostics_2022.csv`.
+
+Stages 00, 01, 02, 03, 04, and 05 were rerun successfully in
+`pypsa-earth-ec` after these changes. Notebook 06 remains a manual owner run,
+and notebook 06a remains a manual diagnostic run; neither was executed here.
+The previously supplied solved-network comparison therefore remains the last
+annual result: optimal solve, zero load shedding, closed modeled energy balance,
+but FAIL/PARTIAL validation because hydro and nonconventional carriers remain
+outside the unchanged screening thresholds and the 931.43 GWh source-boundary
+residual remains report-only.
+
+### Recommended next actions
+
+1. Review the committed NLR site-level profiles against plant commissioning
+   dates and CENACE/CNEL annual production before accepting the resource.
+2. Rebuild Stage 05 from the selected wind candidate and run the owner-approved
+   full-year notebook 06.
+3. Re-run notebook 06a manually against that solved network and compare wind,
+   biomass, hydro, curtailment, and congestion diagnostics.
+4. Keep the 5% thresholds unchanged; do not treat the biomass calibration total
+   as an independent validation observation.

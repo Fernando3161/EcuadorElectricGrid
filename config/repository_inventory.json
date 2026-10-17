@@ -255,6 +255,18 @@
       "patterns": ["results/phase_06a/*.csv", "results/phase_06a/*.json"],
       "classification": "generated_candidate",
       "disposition": "retain as diagnostic-only Phase 06a output"
+    },
+    {
+      "id": "phase06b_profile_diagnostics",
+      "patterns": ["results/phase_06b/*.csv", "results/phase_06b/*.json"],
+      "classification": "generated_candidate",
+      "disposition": "retain as Phase 06B wind/biomass candidate diagnostics"
+    },
+    {
+      "id": "nlr_wind_site_inputs",
+      "patterns": ["data/raw/cutouts/nlr_sup3rwind/*.csv"],
+      "classification": "authoritative_source",
+      "disposition": "retain as checksum-pinned external wind inputs"
     }
   ],
   "ignored_artifact_rules": [

@@ -455,8 +455,8 @@ artifacts:
       writer: notebooks/03_prepare_renewable_and_hydro_profiles.ipynb
     persistent_uri: https://github.com/Fernando3161/EcuadorElectricGrid
     download_url: null
-    bytes: 2877864
-    sha256: fac41b528104987ea2153e8493d9a462ed3242fde3edddc801d21b9006eccbfe
+    bytes: 3158162
+    sha256: 2f8a200a774eee3a51454d93057675073bf49d4f1edfae69c3e91326233f3b52
     media_type: text/csv
     license: repository-license-review-required
     validation:
@@ -496,5 +496,47 @@ artifacts:
     sha256: 7c2399062f44c165477acc7d7aeecc0dfa080c01d88ff02af852b86ac3d94e63
     media_type: text/csv
     license: repository-license-review-required
+    validation:
+      kind: checksum_only
+
+  - id: nlr_sup3rwind_huascachaca_2022
+    description: NLR Sup3rWind South America 60-minute 2022 site profile for Huascachaca.
+    stages: [03_profiles]
+    destination: data/raw/cutouts/nlr_sup3rwind/ec2022_030_Huascachaca_2022.csv
+    role: external_input
+    availability: repository
+    source:
+      organization: National Laboratory of the Rockies
+      record: Sup3rWind South America v1.0.0 60-minute API
+      location: POINT(-79.2396 -3.6223)
+      data_year: 2022
+      hub_height_m: 100
+    persistent_uri: https://developer.nlr.gov/docs/wind/wind-toolkit/wtk-sup3rwind-south-america-v1-0-0-60min-download/
+    download_url: null
+    bytes: 2798499
+    sha256: d8bc2a909f22da295d8398d7c76bdf34366436a73692d5b0c222f940f8c85f5a
+    media_type: text/csv
+    license: NLR API terms; review before redistribution
+    validation:
+      kind: checksum_only
+
+  - id: nlr_sup3rwind_villonaco_2022
+    description: NLR Sup3rWind South America 60-minute 2022 site profile for Villonaco.
+    stages: [03_profiles]
+    destination: data/raw/cutouts/nlr_sup3rwind/ec2022_074_Villonaco_2022.csv
+    role: external_input
+    availability: repository
+    source:
+      organization: National Laboratory of the Rockies
+      record: Sup3rWind South America v1.0.0 60-minute API
+      location: POINT(-79.8053425 -4.0528506)
+      data_year: 2022
+      hub_height_m: 100
+    persistent_uri: https://developer.nlr.gov/docs/wind/wind-toolkit/wtk-sup3rwind-south-america-v1-0-0-60min-download/
+    download_url: null
+    bytes: 2822499
+    sha256: 1ba2ae570d48a5c30bf912e7b09b75b69c1e025ef7161845878e30470fe2d5a4
+    media_type: text/csv
+    license: NLR API terms; review before redistribution
     validation:
       kind: checksum_only
