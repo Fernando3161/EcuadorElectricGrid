@@ -258,3 +258,69 @@ closest share compositions, while their combination overcorrects hydro and
 reduces thermal too far. None is promoted to production because the profile
 parameters remain unsupported sensitivities and the nonconventional carrier
 screen still fails.
+
+## Decision comparison: baseline versus Q90 and RES6M
+
+For this decision comparison, the **total score** is defined as the sum of
+absolute carrier-share errors in percentage points:
+
+\[
+\text{total share score}=\sum_c |s_{model,c}-s_{reference,c}|
+                       = 200\times TVD.
+\]
+
+Lower is better. This is a composition score, so it is reported alongside
+total absolute GWh error, total-energy error, load shedding, and the individual
+carrier diagnostics rather than replacing them.
+
+| Case | Total absolute GWh error | Total-energy relative error | TVD | Total share score (pp) | Load shedding GWh |
+|---|---:|---:|---:|---:|---:|
+| `G06G_BASE` | 2,890.03 | 3.247% | 0.03980 | 7.960 | 0.0078 |
+| `G06G_ROR_Q90` | **931.42** | 3.247% | **0.00830** | **1.661** | **0.0000** |
+| `G06G_RES_6M` | **931.42** | 3.247% | 0.00950 | 1.900 | **0.0000** |
+
+The total absolute GWh error is the sum of absolute errors across hydro,
+thermal, nonconventional, and interconnection. For the two candidates it is
+approximately the unresolved 931.42 GWh total-boundary difference, while the
+baseline additionally contains a hydro/thermal composition mismatch.
+
+### Carrier-level errors
+
+| Case | Carrier | Model GWh | Reference GWh | Absolute GWh error | Signed share error (pp) | Relative GWh error |
+|---|---|---:|---:|---:|---:|---:|
+| BASE | Hydro | 22,756.12 | 24,499.54 | 1,743.42 | −3.415 | −7.12% |
+| BASE | Thermal | 4,372.65 | 3,393.35 | 979.30 | +3.926 | +28.86% |
+| BASE | Nonconventional | 158.58 | 325.89 | 167.31 | −0.565 | −51.34% |
+| BASE | Interconnection | 465.83 | 465.83 | 0.00 | +0.055 | 0.00% |
+| ROR-Q90 | Hydro | 23,919.36 | 24,499.54 | 580.18 | +0.776 | −2.37% |
+| ROR-Q90 | Thermal | 3,229.49 | 3,393.35 | 163.86 | −0.193 | −4.83% |
+| ROR-Q90 | Nonconventional | 138.51 | 325.89 | 187.38 | −0.637 | −57.50% |
+| ROR-Q90 | Interconnection | 465.83 | 465.83 | 0.00 | +0.055 | 0.00% |
+| RES-6M | Hydro | 23,952.56 | 24,499.54 | 546.98 | +0.896 | −2.23% |
+| RES-6M | Thermal | 3,193.87 | 3,393.35 | 199.48 | −0.322 | −5.88% |
+| RES-6M | Nonconventional | 140.93 | 325.89 | 184.96 | −0.628 | −56.76% |
+| RES-6M | Interconnection | 465.83 | 465.83 | 0.00 | +0.055 | 0.00% |
+
+### Winner
+
+On the declared total-share score, `G06G_ROR_Q90` is the winner:
+
+- lowest TVD: 0.00830 versus 0.00950 for RES-6M;
+- lowest total share score: 1.661 pp versus 1.900 pp;
+- hydro share error: +0.776 pp;
+- thermal share error: −0.193 pp;
+- zero modeled load shedding at the reported precision;
+- exact import/export controls.
+
+`G06G_RES_6M` is a close alternative and produces slightly more hydro GWh,
+but it has a larger hydro share overshoot and a higher TVD. Neither case passes
+the complete acceptance gate because the nonconventional share error remains
+about −0.63 pp, above the configured 0.5 pp screen. Therefore the decision is
+to advance **ROR-Q90 as the leading hydro sensitivity for further evidence and
+review**, not as a proven production correction. Keep RES-6M as a secondary
+diagnostic.
+
+Dedicated decision plots are:
+
+- `reports/figures/phase_06g/focus_energy_baseline_rorq90_res6m.png`;
+- `reports/figures/phase_06g/focus_share_error_baseline_rorq90_res6m.png`.

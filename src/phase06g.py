@@ -265,6 +265,11 @@ def execute(run: bool = False, only: str | None = None) -> None:
     heat = comparisons.pivot(index="carrier", columns="experiment_id", values="signed_error_pp")
     fig, ax = plt.subplots(figsize=(16, 5)); sns.heatmap(heat, annot=True, fmt=".2f", center=0, cmap="RdBu_r", ax=ax, cbar_kws={"label": "Share error (percentage points)"}); ax.set_xlabel(""); ax.set_ylabel(""); fig.tight_layout(); fig.savefig(FIGURES / "share_error_heatmap.png", dpi=180); plt.close(fig)
     fig, ax = plt.subplots(figsize=(14, 6)); sns.barplot(data=metrics, x="experiment_id", y="load_shedding_gwh", color="#d95f02", ax=ax); ax.axhline(0.01, color="black", ls="--", label="0.01 GWh screen"); ax.set_ylabel("Load shedding (GWh)"); ax.set_xlabel(""); ax.tick_params(axis="x", rotation=60); ax.legend(); fig.tight_layout(); fig.savefig(FIGURES / "load_shedding_by_experiment.png", dpi=180); plt.close(fig)
+    focus_ids = ["G06G_BASE", "G06G_ROR_Q90", "G06G_RES_6M"]
+    focus = comparisons[comparisons.experiment_id.isin(focus_ids)].copy()
+    focus_energy = focus.melt(id_vars=["experiment_id", "carrier"], value_vars=["simulated_gwh", "reference_gwh"], var_name="basis", value_name="gwh")
+    fig, ax = plt.subplots(figsize=(14, 7)); sns.barplot(data=focus_energy, x="carrier", y="gwh", hue="experiment_id", ax=ax, errorbar=None); ax.set_ylabel("Annual energy (GWh)"); ax.set_xlabel(""); fig.tight_layout(); fig.savefig(FIGURES / "focus_energy_baseline_rorq90_res6m.png", dpi=200); plt.close(fig)
+    fig, ax = plt.subplots(figsize=(14, 7)); sns.barplot(data=focus, x="carrier", y="signed_error_pp", hue="experiment_id", ax=ax, errorbar=None); ax.axhline(0, color="black", lw=1); ax.set_ylabel("Signed share error (percentage points)"); ax.set_xlabel(""); fig.tight_layout(); fig.savefig(FIGURES / "focus_share_error_baseline_rorq90_res6m.png", dpi=200); plt.close(fig)
     comparisons.to_csv(INTERIM / "carrier_share_comparison.csv", index=False)
 
 
