@@ -1,7 +1,7 @@
 {
-  "candidate": "results\\phase_06\\network_solved_2022.nc",
+  "network": "results\\phase_06\\network_solved_2022.nc",
+  "network_sha256": "d1da5cb55730ff75afdfb37aa2cb1af095ee7cea4f7bd55bd1609ccf36ae543c",
   "snapshots": 8760,
-  "status": "diagnostic_only",
-  "reservoir_refinement": "deferred",
-  "thresholds_changed": false
+  "solver_invoked": false,
+  "status": "read_only_diagnostic"
 }

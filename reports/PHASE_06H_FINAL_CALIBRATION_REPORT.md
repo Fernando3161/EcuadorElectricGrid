@@ -44,3 +44,21 @@ The retained limitations are material: eight legacy monthly hydro series have un
 
 Adopt **ROR-Q90** as the single provisional research baseline for exploratory Stage 07 scenarios, with the qualification that it is source-constrained and composition-improved, not independently validated. Do not present the baseline as passing the historical acceptance gate. Future work requiring a validated historical claim needs primary plant-level hydro observations/rated flows, plant-hour thermal availability, and a resolved CENACE metering boundary; further percentile tuning alone should not be treated as evidence.
 
+## Final addendum — diagnostic figures, pipeline, and Phase 07 decision
+
+The final 06a diagnostic was converted from a minimal dispatch summary into a read-only, full-year diagnostic interface. It verifies the canonical solved artifact and SHA-256, requires all 8,760 hourly 2022 snapshots, never falls back to the unsolved network, never calls a solver, displays figures inline in the executed notebook, and saves 300-DPI PNG plus SVG copies. A machine-readable figure manifest and concise diagnostic CSVs are written under results/phase_06a/.
+
+The geographic figures retain the Notebook 04 Ecuador cartographic identity: mainland GADM provinces, excluded Galápagos, fixed 138/230/500 kV colors, equal geographic aspect, and existing network coordinates. The maps include annual demand bubbles, annual dispatched domestic generation bubbles, installed domestic capacity bubbles, and net nodal energy balance. Demand uses log1p(GWh) bubble-area scaling; dispatch and capacity use log-scaled bubble areas; dominant technologies provide stable colors. Imports and load shedding are excluded from domestic generation and capacity maps.
+
+Hydro classification is joined from the processed fleet inventory, distinguishing 60 run-of-river Pasada plants and 5 reservoir Embalse plants. Diagnostic labels use ex_COL for the Colombian interface while preserving the canonical interconnection_colombia network carrier and validation taxonomy.
+
+The energy-boundary figure was corrected to calculate imports from the solved interconnection_colombia generator and exports from the two solved export loads. Verified values are 465.83 GWh imports, 159.15 GWh Colombia exports, and 32.42 GWh Peru exports, totaling 191.57 GWh. Numeric labels are included because these flows are much smaller than domestic generation and demand.
+
+The implemented diagnostic pipeline loads results/phase_06/network_solved_2022.nc; verifies identity, snapshots, and calendar; reads PyPSA dispatch, availability, loads, buses, lines, generators, and weights without mutation; applies the authoritative validation mapping; excludes artificial supply from domestic maps; calculates weighted annual/monthly GWh, shares, capacity factors, hydro offers, demand, imports, exports, and balance residuals; then generates the figures, inline displays, manifest, and derived tables. The executed notebook is results/phase_06h/notebooks/06a_diagnose_2022_validation.executed.ipynb and the reusable implementation is src/diagnostics_06a.py. The solved-network checksum remained unchanged and no optimization was executed during diagnostic revisions.
+
+### Phase 07 readiness
+
+**Ready with qualification:** the project is ready for an illustrative Phase 07 expansion notebook, not for claims of independently validated historical forecasting.
+
+Phase 07 may demonstrate a small complete workflow that forecasts demand under explicit assumptions, adds illustrative generation and transmission expansions, compares an unchanged 2022 reference topology with an expansion case, and visualizes investment, dispatch, congestion, imports/exports, and adequacy. The example must remain pedagogical and scenario-based: it must not silently recalibrate 2022, treat ROR-Q90 as observed hydrology, convert the 931.43 GWh statistical residual into losses, or present future additions as official Master Plan facts without source traceability. The nonconventional share gate remains failed, so Phase 07 must visibly label the starting point as a provisionally calibrated baseline and keep future assumptions separate from historical validation evidence.
+
