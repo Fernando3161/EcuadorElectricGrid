@@ -187,6 +187,111 @@ effects, retain only the necessary problematic 69 kV paths and their explicit
 network, invent missing transformer connections, or clear the attachment flags
 by weakening the distance thresholds.
 
+## Phase 06E — Historical transmission capacity audit
+
+Branch: `v1-phase-06e-topology-evaluation`
+
+Heavy execution: forbidden during the audit-only stage. Full-year execution
+requires explicit owner authorization after correction-registry review.
+
+Purpose: systematically extract the historical 2022 transmission lines and
+transformers documented by official Ecuadorian sources and reconcile them
+against every Line and Transformer in the Phase 06D network. This phase does
+not add infrastructure, alter topology, change generation or demand inputs,
+or apply capacity corrections before owner approval.
+
+Tasks:
+
+- register and checksum relevant Plan Maestro de Electricidad 2022, CENACE,
+  CELEC EP TRANSELECTRIC, and other official regulatory sources;
+- inspect indexes, transmission chapters, technical tables, annexes, and
+  substation descriptions, distinguishing existing 2022 assets from planned
+  infrastructure;
+- create complete official line and transformer inventories preserving source
+  wording, values, units, status, page, table, and conversion provenance;
+- independently extract every Phase 06D PyPSA Line and Transformer, including
+  endpoints, voltage evidence, `s_nom`, `s_max_pu`, effective rating, and
+  network checksum;
+- reconcile both inventories with `VERIFIED`, `PROBABLE`, `AMBIGUOUS`, and
+  `UNMATCHED` statuses, including official assets missing from PyPSA;
+- compare line and transformer ratings component by component while separating
+  physical thermal ratings from operational/security limits;
+- create the six required audit CSVs and a source register with mandatory
+  provenance fields;
+- implement automated completeness, uniqueness, unit, status, and provenance
+  checks;
+- prepare a correction registry for owner review without modifying the network;
+- after approval only, inspect Notebooks 04/05 for the reproducible integration
+  point, apply verified corrections, and preserve the Phase 06D baseline;
+- after separate owner authorization, rerun the sequential notebook workflow
+  and compare scientific metrics, energy balance, congestion, utilization, and
+  CENACE indicators before and after correction.
+
+Acceptance: documentary coverage is demonstrably comprehensive; every modeled
+Line and Transformer appears exactly once in the audit; every modeled component
+has a match status; missing/ambiguous ratings and official assets absent from
+PyPSA are explicit; every proposed correction is source-traceable and pending
+owner review; automated checks pass; and no network change occurs during the
+audit-only stage.
+
+Deliverables: `docs/PHASE_06E_ACTION_PLAN.md`, the six tables under
+`data/interim/topology_audit_2022/`, and
+`reports/PHASE_06E_TECHNICAL_REPORT.md` after the corresponding work is
+performed. The detailed methodology and later execution gates are defined in
+the action plan.
+
+## Phase 06F — Hydro resource and dispatch evaluation
+
+Branch: `v1-phase-06f-hydro-evaluation`
+
+Purpose: explain and, where supported by CENACE/CNEL evidence, correct the
+approximately 1,743.7 GWh hydroelectric shortfall remaining after Phase 06D/06E.
+This phase audits river-flow simplifications, plant factors, `p_max_pu`,
+commissioning masks, dispatch economics, plant attachments, congestion, and
+the distinction between nominal and available capacity.
+
+Starting evidence is recorded in
+`docs/PHASE_06F_HYDRO_EVALUATION_ACTION_PLAN.md`. The Phase 06D network
+dispatches 22,755.84 GWh of hydro against the CENACE reference of 24,499.54
+GWh. Copperplating raises hydro only to 23,116.08 GWh, so transmission is
+contributory but not the sole cause. All 65 modeled hydro plants reach their
+available limit at least once, and 61 do so for more than half the year.
+
+Tasks:
+
+- reconstruct complete hydro input lineage from source data through `p_max_pu`;
+- evaluate every plant's nominal capacity, hourly offer, annual available GWh,
+  dispatch, saturation, commissioning, and bus attachment;
+- separate resource-limited, power-saturated, economically displaced,
+  transmission-constrained, and unavailable behavior;
+- reconcile simplified river-flow and plant-factor assumptions with official
+  CENACE/CNEL/CELEC evidence;
+- test competing resource, commissioning, `p_max_pu`, hydro-price,
+  water-value, topology, plant-attachment, and accounting hypotheses;
+- check hydro marginal prices and opportunity-cost assumptions against available
+  source evidence and thermal/import merit order;
+- run controlled resource, mask, economic, and copperplate sensitivities;
+- rerun the complete sequential notebook workflow for the baseline and every
+  owner-approved candidate solution, retaining executed notebooks, logs,
+  checksums, solver outcomes, and validation comparisons;
+- prepare source-traceable hydro corrections without forced dispatch or circular
+  annual scaling;
+- after owner approval, implement corrections through the notebook pipeline and
+  rerun the full validation workflow;
+- report hydro, thermal, nonconventional, imports, balance residual, curtailment,
+  shedding, congestion, and TVD before and after.
+
+Acceptance: every hydro plant has input lineage and an offer/dispatch
+diagnostic; saturation is evaluated against nominal and available capacity;
+resource, economics, topology, and accounting effects are separated; official
+source evidence and exact locators are retained; corrections are reviewed and
+reproducible; and the report distinguishes explained from unresolved hydro
+discrepancy.
+
+Deliverables: the Phase 06F action plan, hydro interim tables and controlled-run
+outputs under `data/interim/hydro_evaluation_2022/` and `results/phase_06f/`,
+and `reports/PHASE_06F_HYDRO_EVALUATION_REPORT.md`.
+
 ## Phase 07 — Master Plan expansion data products
 
 Branch: `refactor/v1-phase-07-master-plan`

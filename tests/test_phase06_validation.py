@@ -53,7 +53,8 @@ class Phase06ValidationTests(unittest.TestCase):
         contract = {"interconnection_colombia": {
             "enforce_historical_energy_band": True,
             "historical_energy_gwh": 0.001,
-            "historical_energy_tolerance_fraction": 0.0,
+            "historical_energy_min_gwh": 0.001,
+            "historical_energy_max_gwh": 0.001,
         }}
         status, condition = network.optimize(
             solver_name="highs",

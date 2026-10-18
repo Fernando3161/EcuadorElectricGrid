@@ -104,8 +104,7 @@ model_carrier_mapping:
 
 acceptance:
   methodology: multi_criteria_historical_benchmark
-  note: Exploratory engineering screening values; not official statistical tolerances and not calibration targets.
-  max_total_energy_relative_error: null
+  note: TVD and carrier-share percentage-point screens are the sole acceptance criteria; relative energy errors remain descriptive diagnostics only.
   total_energy_criterion_disabled_reason: Production and demand tables do not yet share a proven metering boundary; the 931.43 GWh residual is reported, not modeled as guessed losses.
   max_tvd: 0.03
   max_hydro_error_pp: 3.0
@@ -127,7 +126,8 @@ interconnection_colombia:
   enabled: true
   max_capacity_mw: 500.0
   historical_energy_gwh: 465.83
-  historical_energy_tolerance_fraction: 0.05
+  historical_energy_min_gwh: 465.83
+  historical_energy_max_gwh: 465.83
   enforce_historical_energy_band: true
   future_scenarios_disable_historical_energy_band: true
   marginal_cost_usd_per_mwh: 45.2

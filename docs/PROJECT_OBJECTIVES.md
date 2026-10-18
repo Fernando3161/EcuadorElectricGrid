@@ -12,7 +12,8 @@ Produce a runnable Ecuador 2022 PyPSA network and validate annual simulated
 electricity supply by carrier against authoritative 2022 statistics. The current
 contract uses a documented multi-criteria benchmark: TVD, carrier percentage-
 point screens, total-energy error, explicit balance closure, feasibility, and
-provenance. The retired uniform 5% carrier rule is historical context only.
+provenance. TVD and carrier-share percentage-point screens are the governing
+validation approach; relative errors are reported as diagnostics only.
 
 The statistical reference, carrier mapping, handling of imports/exports, storage,
 autoproducers, isolated systems, losses, and any residual category must be fixed

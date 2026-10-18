@@ -1,0 +1,8 @@
+{
+  "lines": 115,
+  "transformers": 19,
+  "line_audit_unique": 115,
+  "transformer_audit_unique": 19,
+  "after_network": "results\\phase_06d\\renewable-calibration\\network_solved_2022.nc",
+  "after_network_sha256": "eb231577e3fe73a3493d494f65fdb8187bb30c73687a6013b323a6e6e4ea98ff"
+}

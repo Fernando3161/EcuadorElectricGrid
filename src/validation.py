@@ -166,12 +166,7 @@ def compare_supply_to_reference(
     reference: pd.DataFrame,
     contract: Mapping,
 ) -> pd.DataFrame:
-    """Legacy carrier-only comparison retained for backwards-compatible evidence.
-
-    Phase 6 screening uses :func:`calculate_validation_metrics` and
-    :func:`screen_validation`; this helper is intentionally not the acceptance
-    mechanism.
-    """
+    """Return carrier diagnostics; acceptance is handled by TVD and pp screens."""
 
     required_columns = {"carrier", "reference_gwh", "in_scope"}
     missing_columns = required_columns.difference(reference.columns)
@@ -185,8 +180,6 @@ def compare_supply_to_reference(
     if unknown:
         raise ValueError(f"simulated series contains out-of-contract carriers: {unknown}")
 
-    relative_limit = float(contract["acceptance"]["maximum_relative_error_percent"])
-    zero_limit = float(contract["acceptance"]["zero_reference_absolute_tolerance_gwh"])
     rows: list[dict[str, float | bool | str]] = []
     for row in reference.loc[reference["in_scope"]].itertuples(index=False):
         carrier = str(row.carrier)
@@ -195,14 +188,14 @@ def compare_supply_to_reference(
         absolute_error = abs(actual - target)
         if target > 0:
             relative_error = 100.0 * absolute_error / target
-            passed = relative_error <= relative_limit + 1e-12
-            tolerance_type = "relative_percent"
-            tolerance_value = relative_limit
+            passed = None
+            tolerance_type = "diagnostic_only"
+            tolerance_value = math.nan
         else:
             relative_error = math.nan
-            passed = absolute_error <= zero_limit + 1e-12
-            tolerance_type = "absolute_gwh"
-            tolerance_value = zero_limit
+            passed = None
+            tolerance_type = "diagnostic_only"
+            tolerance_value = math.nan
         rows.append(
             {
                 "carrier": carrier,
@@ -265,8 +258,7 @@ def screen_validation(metrics: dict, rows: pd.DataFrame, criteria: Mapping) -> d
     for key, value in criteria.items():
         if value is None or key.startswith("enabled_"):
             continue
-        if key == "max_total_energy_relative_error": checks[key] = metrics["total_energy_relative_error"] <= float(value)
-        elif key == "max_tvd": checks[key] = metrics["tvd"] <= float(value)
+        if key == "max_tvd": checks[key] = metrics["tvd"] <= float(value)
         elif key.startswith("max_") and key.endswith("_error_pp"):
             carrier = key[len("max_") : -len("_error_pp")]
             match = rows.loc[rows.carrier == carrier, "absolute_error_pp"]
@@ -282,8 +274,8 @@ def enforce_historical_import_energy(network, snapshots, contract: Mapping) -> N
         return
     import xarray as xr
 
-    target_mwh = float(section["historical_energy_gwh"]) * 1000.0
-    tolerance = float(section["historical_energy_tolerance_fraction"])
+    lower_mwh = float(section["historical_energy_min_gwh"]) * 1000.0
+    upper_mwh = float(section["historical_energy_max_gwh"]) * 1000.0
     dispatch = network.model.variables["Generator-p"].sel(
         Generator=["colombia_import_supply"]
     )
@@ -293,10 +285,10 @@ def enforce_historical_import_energy(network, snapshots, contract: Mapping) -> N
     )
     annual = (dispatch * weights).sum()
     network.model.add_constraints(
-        annual >= target_mwh * (1.0 - tolerance), name="historical-import-energy-lower"
+        annual >= lower_mwh, name="historical-import-energy-lower"
     )
     network.model.add_constraints(
-        annual <= target_mwh * (1.0 + tolerance), name="historical-import-energy-upper"
+        annual <= upper_mwh, name="historical-import-energy-upper"
     )
 
 

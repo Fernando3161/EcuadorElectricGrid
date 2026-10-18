@@ -1,7 +1,7 @@
 # 2022 statistical validation contract
 
-Phase 6 uses a multi-criteria historical benchmark. It replaces the retired
-uniform 5% carrier rule; the criteria below are provisional engineering screens,
+Phase 6 uses a multi-criteria historical benchmark. TVD and carrier-share
+percentage-point screens are the governing acceptance criteria; the criteria below are provisional engineering screens,
 not official CENACE tolerances and not calibration targets.
 
 The comparable set is the exhaustive normalized CENACE set: hydro, thermal,
@@ -130,23 +130,24 @@ energy balance. Load shedding is never counted as valid supply.
 
 ## Multi-criteria screening
 
-The retired uniform carrier 5% rule is not the Phase 6 acceptance mechanism.
 The workflow calculates total energy error, TVD, percentage-point errors, and
-relative errors independently, then applies the configurable exploratory screens.
+relative errors independently, then applies only the configurable TVD and
+percentage-point screens.
 A missing category or threshold mapping fails rather than silently passing.
 
 The total-energy criterion is temporarily disabled because the 931.43 GWh
 production-to-demand residual does not yet have a proven common metering boundary.
 It remains reported and may not be encoded as guessed losses. Historical imports
-are bounded to 465.83 GWh +/-5% as an input control, not as a validation tolerance;
-future scenarios explicitly disable that historical energy band.
+are constrained to the source value 465.83 GWh as a boundary condition, not as a
+validation tolerance; future scenarios explicitly disable that condition.
 
 The official in-scope table has no zero reference. If a future version introduces
 one, relative error is undefined and the absolute simulated value must be no more
 than 0.01 GWh. This zero-only numerical rule is not a relaxed tolerance for small
 positive carriers.
 
-The model passes the carrier gate only when every in-scope row passes. The complete
+The model passes the carrier screens only when every configured TVD and
+percentage-point check passes. The complete
 scientific acceptance gate in `AGENTS.md` additionally requires a successful
 optimization, explicit energy balance, recorded exclusions/residual, checksums,
 and provenance. A carrier table alone cannot validate the network.
