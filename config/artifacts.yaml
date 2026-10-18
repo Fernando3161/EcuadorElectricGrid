@@ -436,8 +436,8 @@ artifacts:
       writer: notebooks/03_prepare_renewable_and_hydro_profiles.ipynb
     persistent_uri: https://github.com/Fernando3161/EcuadorElectricGrid
     download_url: null
-    bytes: 10903643
-    sha256: 4fd9158009cfa5ba87df625aefe93512add1de5870815a2a9834bf67785c3165
+    bytes: 10610211
+    sha256: 22b6648a2a6d75d608ff5f5ebcacd8195833dffcc8538fb41de7c26ce2922ab7
     media_type: text/csv
     license: repository-license-review-required
     validation:
@@ -455,8 +455,8 @@ artifacts:
       writer: notebooks/03_prepare_renewable_and_hydro_profiles.ipynb
     persistent_uri: https://github.com/Fernando3161/EcuadorElectricGrid
     download_url: null
-    bytes: 3157404
-    sha256: 56897d339fe78d1cc89740831bb62363aaad8e802ee2647ec32c29a78b4eae6e
+    bytes: 3158162
+    sha256: 2f8a200a774eee3a51454d93057675073bf49d4f1edfae69c3e91326233f3b52
     media_type: text/csv
     license: repository-license-review-required
     validation:

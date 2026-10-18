@@ -1,6 +1,6 @@
 {
   "network": "results\\phase_06\\network_solved_2022.nc",
-  "sha256": "dfabf6827e5161a3947b61b35f34ad1c039387095183dc47865a83483045bd54",
+  "sha256": "d1da5cb55730ff75afdfb37aa2cb1af095ee7cea4f7bd55bd1609ccf36ae543c",
   "validation_csv": "results\\phase_06\\validation_2022.csv",
   "status": "manual Phase 6 run output"
 }

@@ -102,7 +102,9 @@ def build_hydro_availability(
             if is_reservoir
             else monthly_flow
         )
-        rated_flow = float(effective_flow.quantile(0.95))
+        # Phase 06H: normalize run-of-river flow by its empirical monthly
+        # 0.90 quantile; reservoir profiles retain the original 0.95 rule.
+        rated_flow = float(effective_flow.quantile(0.90 if not is_reservoir else 0.95))
         if not np.isfinite(rated_flow) or rated_flow <= 0:
             raise ValueError(f"invalid rated flow for {row.plant_id}")
         monthly_pu = (effective_flow / rated_flow).clip(0.0, 1.0)
