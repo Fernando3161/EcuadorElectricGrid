@@ -1,0 +1,14 @@
+experiment_id,hypothesis,changed_parameter,experimental_value,network_mode,full_year,diagnostic_only,expected_interpretation
+F06F_E00_BASELINE,baseline,none,retained Phase 06D network,baseline topology,True,False,separate resource/economic effect; not a correction
+F06F_P20,merit order,hydro marginal cost,20,baseline topology,True,True,separate resource/economic effect; not a correction
+F06F_P25,merit order,hydro marginal cost,25,baseline topology,True,True,separate resource/economic effect; not a correction
+F06F_P30,merit order,hydro marginal cost,30,baseline topology,True,True,separate resource/economic effect; not a correction
+F06F_P35,merit order,hydro marginal cost,35,baseline topology,True,True,separate resource/economic effect; not a correction
+F06F_P40,merit order,hydro marginal cost,40,baseline topology,True,True,separate resource/economic effect; not a correction
+F06F_P45,merit order,hydro marginal cost,45,baseline topology,True,False,separate resource/economic effect; not a correction
+F06F_P00,merit order diagnostic,hydro marginal cost,0,baseline topology,True,True,separate resource/economic effect; not a correction
+F06F_A105,availability,p_max_pu multiplier,1.05,baseline topology,True,True,separate resource/economic effect; not a correction
+F06F_A110,availability,p_max_pu multiplier,1.1,baseline topology,True,True,separate resource/economic effect; not a correction
+F06F_A120,availability,p_max_pu multiplier,1.2,baseline topology,True,True,separate resource/economic effect; not a correction
+F06F_A130,availability,p_max_pu multiplier,1.3,baseline topology,True,True,separate resource/economic effect; not a correction
+F06F_A100,availability relaxation,p_max_pu,1.0,baseline topology,True,True,separate resource/economic effect; not a correction

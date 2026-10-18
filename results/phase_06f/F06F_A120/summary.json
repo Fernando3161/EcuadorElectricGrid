@@ -1,0 +1,10 @@
+{
+  "experiment_id": "F06F_A120",
+  "solver_status": "ok",
+  "termination_condition": "optimal",
+  "network_sha256": "d7df272450c267d123394f830e8dc18389c946b01e82eb9d370a1bb541e4adcc",
+  "hydro_generation_gwh": 24504.004053767556,
+  "hydro_shortfall_gwh": -4.464053767555015,
+  "thermal_generation_gwh": 1837.8022892720144,
+  "snapshots": 8760
+}

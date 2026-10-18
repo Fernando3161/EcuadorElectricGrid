@@ -1,0 +1,2 @@
+correction_id,scope,original_value,proposed_value,unit,transformation,source_locator,confidence,owner_review_status,reason
+C06F_001,fleet,Phase 06D p_max_pu,none,pu,diagnostic scaling is not promoted,F06F_A105-A130 results,not a correction,pending owner decision,A120 matches annual reference but is an unsupported calibration multiplier
