@@ -1,0 +1,8 @@
+{
+  "experiment_id": "G06G_BASE",
+  "controlled_change": "none; retained Phase 06F baseline",
+  "solver_status": "ok",
+  "termination_condition": "optimal",
+  "snapshots": 8760,
+  "network_sha256": "b9b93e57c3e6bf91601b3b3b4769f0f8128d7ffec1b4601f54ab8ca3012f7d7e"
+}

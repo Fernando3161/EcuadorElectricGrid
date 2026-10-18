@@ -101,3 +101,42 @@ py -m src.phase06f --run-experiments
 
 The first command regenerated the audit tables and figures. The second command
 ran the full-year experiment registry. No packages were installed or upgraded.
+
+## Complete experiment comparison
+
+Metrics were recomputed from every saved full-year NetCDF using the four in-scope
+carriers: hydro, thermal, nonconventional, and interconnection. The complete
+row-level tables are `results/phase_06f/experiment_carrier_metrics.csv` and
+`results/phase_06f/experiment_total_metrics.csv`.
+
+| Experiment | Model total GWh | Reference total GWh | Absolute total error GWh | Relative total error % | TVD |
+|---|---:|---:|---:|---:|---:|
+| F06F_A100 | 27,753.190 | 28,684.610 | 931.420 | 3.247 | 0.114 |
+| F06F_A105 | 27,753.190 | 28,684.610 | 931.420 | 3.247 | 0.048 |
+| F06F_A110 | 27,753.190 | 28,684.610 | 931.420 | 3.247 | 0.043 |
+| F06F_A120 | 27,753.190 | 28,684.610 | 931.420 | 3.247 | 0.062 |
+| F06F_A130 | 27,753.190 | 28,684.610 | 931.420 | 3.247 | 0.077 |
+| F06F_P00/P20/P25/P30/P35/P40/P45 | 27,753.182 | 28,684.610 | 931.428 | 3.247 | 0.053 |
+
+CENACE carrier shares are hydro 85.41%, thermal 11.83%, nonconventional 1.14%,
+and interconnection 1.62%. The model shares for each experiment are:
+
+| Experiment | Hydro | Thermal | Nonconventional | Interconnection |
+|---|---:|---:|---:|---:|
+| F06F_A100 | 96.85 | 3.02 | 0.13 | 0.00 |
+| F06F_A105 | 83.82 | 9.38 | 0.42 | 6.38 |
+| F06F_A110 | 85.44 | 8.28 | 0.39 | 5.89 |
+| F06F_A120 | 88.29 | 6.43 | 0.33 | 4.95 |
+| F06F_A130 | 90.68 | 5.05 | 0.26 | 4.01 |
+| F06F_P00/P20/P25/P30 | 82.03 | 10.64 | 0.41 | 6.91 |
+| F06F_P35 | 82.01 | 10.64 | 0.44 | 6.91 |
+| F06F_P40/P45 | 81.99 | 10.64 | 0.46 | 6.91 |
+
+For each carrier, the detail CSV reports absolute GWh error, relative error
+percentage, simulated/reference share, signed and absolute share error in
+percentage points. The total metrics report total absolute/relative error and
+TVD. Under the requested closest-share rule, **F06F_A110 is the winner** with
+TVD 0.04295 and total absolute share error 8.589 percentage points. F06F_A105
+is second at TVD 0.04754; the baseline F06F_P45 is 0.05284. F06F_A120 is
+closest in absolute hydro GWh, but not in overall carrier shares. A110 remains
+an unsupported diagnostic multiplier and is not an approved correction.

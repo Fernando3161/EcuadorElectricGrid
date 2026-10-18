@@ -1,0 +1,8 @@
+{
+  "experiment_id": "G06G_COMB_ROR_Q90_RES6M",
+  "controlled_change": "run-of-river Q90 plus reservoir trailing 6-month mean",
+  "solver_status": "ok",
+  "termination_condition": "optimal",
+  "snapshots": 8760,
+  "network_sha256": "686d948fbbf3eb35ac18de39769d77b8a3a9dcbf840a1b4fe0ed39f49250700b"
+}

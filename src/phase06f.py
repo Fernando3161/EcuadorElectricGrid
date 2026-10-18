@@ -19,6 +19,7 @@ BASELINE = ROOT / "results/phase_06d/baseline/network_solved_2022.nc"
 OUT = ROOT / "data/interim/hydro_evaluation_2022"
 RESULTS = ROOT / "results/phase_06f"
 CENACE = 24499.54
+REFERENCE = pd.Series({"hydro":24499.54,"thermal":3393.35,"nonconventional":325.89,"interconnection":465.83}, dtype=float)
 
 def sha256(path: Path) -> str:
     h = hashlib.sha256()
@@ -97,6 +98,25 @@ def write_summary_and_figures():
     plt.figure(figsize=(8,4.5)); plt.bar(summary.experiment_id,summary.hydro_generation_gwh); plt.axhline(CENACE,color="black",ls="--",label="CENACE 2022"); plt.xticks(rotation=60,ha="right"); plt.ylabel("Hydro generation (GWh)"); plt.legend(); plt.tight_layout(); plt.savefig(fig/"hydro_experiment_generation.png",dpi=160); plt.close()
     offer=pd.read_csv(OUT/"hydro_offer_diagnostics.csv"); plt.figure(figsize=(7,4)); plt.hist(offer.mean_p_max_pu,bins=12); plt.xlabel("Annual mean p_max_pu"); plt.ylabel("Hydro plants"); plt.tight_layout(); plt.savefig(fig/"hydro_offer_mean_capacity_factor.png",dpi=160); plt.close()
 
+def carrier_metrics():
+    """Recompute absolute energy, shares, errors, and TVD from each solved run."""
+    mapping={"hydro":"hydro","oil":"thermal","biomass":"nonconventional","biogas":"nonconventional","solar":"nonconventional","onwind":"nonconventional","interconnection_colombia":"interconnection","interconnection_peru":"interconnection"}
+    rows=[]; totals=[]
+    for path in sorted(RESULTS.glob("F06F_*/network_solved_2022.nc")):
+        eid=path.parent.name; n=pypsa.Network(path); dispatch=n.generators_t.p.clip(lower=0)
+        raw=dispatch.groupby(n.generators.carrier.map(mapping)).sum().sum(axis=0) if False else None
+        by={c:0.0 for c in REFERENCE.index}
+        for gid, carrier in n.generators.carrier.items():
+            target=mapping.get(str(carrier))
+            if target: by[target]+=float(dispatch[gid].sum()/1000.0)
+        sim=pd.Series(by); total=float(sim.sum()); ref_total=float(REFERENCE.sum())
+        for carrier in REFERENCE.index:
+            ref=float(REFERENCE[carrier]); actual=float(sim[carrier]);
+            rows.append({"experiment_id":eid,"carrier":carrier,"simulated_gwh":actual,"reference_gwh":ref,"absolute_error_gwh":abs(actual-ref),"relative_error_percent":100*abs(actual-ref)/ref,"simulated_share_percent":100*actual/total if total else 0,"reference_share_percent":100*ref/ref_total,"signed_share_error_pp":100*(actual/total-ref/ref_total) if total else 0,"absolute_share_error_pp":abs(100*(actual/total-ref/ref_total)) if total else 0})
+        tvd=float(0.5*sum(abs(sim/total-REFERENCE/ref_total))) if total else np.nan
+        totals.append({"experiment_id":eid,"simulated_total_gwh":total,"reference_total_gwh":ref_total,"absolute_total_error_gwh":abs(total-ref_total),"relative_total_error_percent":100*abs(total-ref_total)/ref_total,"tvd":tvd,"total_absolute_share_error_pp":sum(abs(100*(sim/total-REFERENCE/ref_total))) if total else np.nan,"winner_score_tvd":tvd})
+    detail=pd.DataFrame(rows); total=pd.DataFrame(totals); detail.to_csv(RESULTS/"experiment_carrier_metrics.csv",index=False); total.to_csv(RESULTS/"experiment_total_metrics.csv",index=False); return detail,total
+
 def solve_experiment(base, row):
     eid=row.experiment_id; d=RESULTS/eid; d.mkdir(parents=True,exist_ok=True); n=pypsa.Network(BASELINE); ids=hydro_ids(n)
     if row.changed_parameter == "hydro marginal cost": n.generators.loc[ids,"marginal_cost"]=float(row.experimental_value)
@@ -111,7 +131,7 @@ def solve_experiment(base, row):
 def main(run=False):
     n=pypsa.Network(BASELINE); lineage=write_lineage(n); offer,av=write_offer(n); write_attribution(n,av); reg=registry()
     (OUT/"baseline_metadata.json").write_text(json.dumps({"network":str(BASELINE.relative_to(ROOT)),"network_sha256":sha256(BASELINE),"snapshots":len(n.snapshots),"hydro_plants":len(hydro_ids(n)),"hydro_nominal_mw":float(n.generators.loc[hydro_ids(n),"p_nom"].sum())},indent=2))
-    write_evidence_and_corrections(); write_summary_and_figures()
+    write_evidence_and_corrections(); write_summary_and_figures(); carrier_metrics()
     if run:
         records=[solve_experiment(n,row) for _,row in reg.iterrows() if row.experiment_id != "F06F_E00_BASELINE"]
         pd.DataFrame(records).to_csv(RESULTS/"experiment_summary.csv",index=False)

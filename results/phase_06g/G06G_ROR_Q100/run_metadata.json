@@ -1,0 +1,8 @@
+{
+  "experiment_id": "G06G_ROR_Q100",
+  "controlled_change": "all-flow rated quantile 1.00; bounded sensitivity",
+  "solver_status": "ok",
+  "termination_condition": "optimal",
+  "snapshots": 8760,
+  "network_sha256": "60a3ab4d34f7f00373e3f9c94917a78f8c9757f533c8f6f28b6f6393255e5880"
+}

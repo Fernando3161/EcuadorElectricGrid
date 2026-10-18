@@ -292,6 +292,38 @@ Deliverables: the Phase 06F action plan, hydro interim tables and controlled-run
 outputs under `data/interim/hydro_evaluation_2022/` and `results/phase_06f/`,
 and `reports/PHASE_06F_HYDRO_EVALUATION_REPORT.md`.
 
+## Phase 06G — Hydro profile and capacity reassessment
+
+Branch: `v1-phase-06g-hydro-profile-reassessment`
+
+Purpose: reassess hydro flow-to-availability profiles, plant factors, capacity
+definitions, commissioning eligibility, assignment confidence, outages,
+temporal processing, dispatch/network attribution, and accounting boundaries
+after the Phase 06F diagnostic matrix. This is a planning and evidence phase;
+it does not approve a hydro correction.
+
+Tasks:
+
+- verify the remote Phase 06F baseline and retained full-year artifacts;
+- audit 65 plant assignments, eight legacy flow series, capacity fields,
+  commissioning, profile lineage, and authoritative source locators;
+- define isolated, evidence-backed hypotheses and bounded sensitivities;
+- require a complete 8,760-snapshot sequential workflow for every hypothesis;
+- compare hydro and thermal shares with explicit denominators, boundaries,
+  percentage-point differences, relative errors, and the project-wide 5% gate;
+- separate offers, dispatch, curtailment, congestion, displacement, outages,
+  and unresolved cases;
+- retain `F06F_A120` as unsupported sensitivity context and `F06F_A100` as an
+  upper-bound diagnostic only;
+- obtain owner review before any implementation-phase correction.
+
+Acceptance: the action plan identifies evidence, missing inputs, controlled
+full-year runs, outputs, metrics, checksums, and stop/advance criteria for each
+testable hypothesis; no unsupported multiplier or forced dispatch is promoted;
+and the later execution phase has a reviewable handoff.
+
+Deliverable: `docs/PHASE_06G_HYDRO_PROFILE_REASSESSMENT_ACTION_PLAN.md`.
+
 ## Phase 07 — Master Plan expansion data products
 
 Branch: `refactor/v1-phase-07-master-plan`
