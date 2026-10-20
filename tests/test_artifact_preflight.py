@@ -86,6 +86,7 @@ class PublishedManifestTests(unittest.TestCase):
                 "renewable_profile_solar_ec",
                 "renewable_profile_onwind_ec",
                 "gadm_ecuador_41",
+                "planning_adjustment_pdf",
             },
             {
                 row["id"]
@@ -119,9 +120,9 @@ class PublishedManifestTests(unittest.TestCase):
             "04_topology": 3,
             "05_assembly": 24,
             "06_validation": 24,
-            "07_planning": 0,
-            "08_scenario": 24,
-            "09_comparison": 24,
+            "07_planning": 17,
+            "08_scenario": 39,
+            "09_comparison": 39,
         }
         for stage, count in expected.items():
             self.assertEqual(count, len(required_artifact_ids(self.manifest, stage)), stage)

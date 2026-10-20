@@ -193,6 +193,30 @@ nominal capacity. Its run-specific checksum and structural metadata are written
 beside the Phase 5 audits. It remains a generated product and must not be described or
 published as a validated network before the Phase 06 acceptance gate passes.
 
+## Phase 7 planning evidence interface
+
+The owner selected `literature/PlanMaestroElectrifEc/AJUSTE-PME-2026.pdf`;
+its actual title is *Anexos ajuste PME 2023-2032*. Three source transcriptions
+under `data/raw/planning/` retain all 50 generation rows, 73 grid-work rows and
+the printed totals with PDF page/annex citations. Stage 07 preflight verifies
+17 inputs, including the restored PDFs, sources, coordinate/baseline lookups,
+schema and default exercise configuration. The adjustment has a checksum-pinned
+official download URI; missing older owner-restored evidence fails clearly.
+
+`data/processed/planning/projects.csv` contains all 123 published rows; the four
+direct asset tables contain 77 of those rows. Compound systems, reactive/mobile
+equipment, storage and modernization remain in the complete inventory. The
+separate `exercise_schedule.csv` preserves published dates, adds the configurable
+seven-year delay, and labels coordinate/repeat assumptions. Unknown physical
+inputs remain explicit. The portfolio manifest fingerprints all inputs/outputs.
+
+All 198 legacy records remain preserved: 187 unverified candidates now live in
+`data/interim/planning/legacy_candidates/`, and 11 nuclear records remain in
+quarantine. The source CSVs are unchanged. The owner deferred missing physical
+definitions as later teaching assumptions; the complete source inventory is not
+a claim that a runnable expanded network exists. See [planning data](PLANNING_DATA.md)
+and the [Phase 7 report](../reports/PHASE_07_TECHNICAL_REPORT.md).
+
 ## Target data zones
 
 | Zone | Meaning | Hand edited? | Git policy |

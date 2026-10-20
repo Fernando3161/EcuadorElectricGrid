@@ -17,6 +17,12 @@
   },
   "tracked_file_rules": [
     {
+      "id": "phase07_planning_evidence",
+      "patterns": ["data/raw/planning/*.csv", "data/processed/planning/*.csv", "data/processed/planning/*.json", "data/interim/planning/*.csv", "data/interim/planning/*.json", "data/interim/planning/legacy_candidates/*.csv"],
+      "classification": "manual_evidence",
+      "disposition": "retain cited adjustment inventory, separate teaching assumptions, lossless legacy migration, fingerprints and nuclear quarantine"
+    },
+    {
       "id": "root_governance",
       "patterns": [".gitignore", "AGENTS.md", "LICENSE", "README.md"],
       "classification": "governance",
@@ -30,7 +36,7 @@
     },
     {
       "id": "phase_contracts",
-      "patterns": ["config/artifacts.yaml", "config/repository_inventory.json", "config/validation_2022.yaml", "config/schemas/*.json"],
+      "patterns": ["config/artifacts.yaml", "config/repository_inventory.json", "config/validation_2022.yaml", "config/planning.yaml", "config/schemas/*.json"],
       "classification": "governance",
       "disposition": "retain"
     },
@@ -289,6 +295,12 @@
   ],
   "ignored_artifact_rules": [
     {
+      "id": "ignored_phase07_audits",
+      "patterns": ["results/phase_07/*", "results/phase_07/__pycache__/*", "results/phase_07/pdf_audit/*", "results/phase_07/pdf_audit/rendered/*"],
+      "classification": "generated_candidate",
+      "disposition": "regenerate cheap no-solve planning evidence audits and executed notebook"
+    },
+    {
       "id": "ignored_supported_demand_product",
       "patterns": ["data/processed/demand/demand_profiles_2022_mw.csv"],
       "classification": "generated_candidate",
@@ -422,6 +434,7 @@
     }
   ],
   "notebook_register": [
+    {"path": "notebooks/07_prepare_master_plan_expansion.ipynb", "lineage": "supported_refactor", "role": "migrate and audit planning candidates; block uncited official publication", "disposition": "retain as the Stage 07 evidence preparation entry point"},
     {"path": "notebooks/00_preflight_and_data_inventory.ipynb", "lineage": "supported_refactor", "role": "mandatory environment and artifact preflight", "disposition": "retain as the supported Stage 00 entry point"},
     {"path": "notebooks/01_prepare_2022_demand.ipynb", "lineage": "supported_refactor", "role": "prepare and validate 2022 SNI demand and statistical reference", "disposition": "retain as the supported Stage 01 entry point"},
     {"path": "notebooks/02_prepare_2022_generation.ipynb", "lineage": "supported_refactor", "role": "normalize and reconcile the 2022 SNI existing generator fleet", "disposition": "retain as the supported Stage 02 entry point"},
@@ -456,6 +469,8 @@
     {"path": "notebooks/_alt/test.ipynb", "lineage": "scratch", "role": "empty test notebook", "disposition": "Phase 10 removal candidate"}
   ],
   "module_register": [
+    {"path": "src/planning_products.py", "classification": "candidate_active", "disposition": "retain source adjustment normalization and separate teaching schedule builder"},
+    {"path": "src/planning.py", "classification": "candidate_active", "disposition": "retain source-aware planning validation and strict year selection"},
     {"path": "notebooks/01_generate_demand_profiles_2022.py", "classification": "candidate_active", "disposition": "move reusable demand logic into a tested module and expose it through Stage 01"},
     {"path": "notebooks/02_extend_demand_prognosis.py", "classification": "candidate_active", "disposition": "move forecast logic into a planning/demand module; future projection is not a baseline dependency"},
     {"path": "notebooks/_alt/temp_demand.py", "classification": "legacy_evidence", "disposition": "compare with demand notebooks before Phase 10"},
@@ -482,6 +497,7 @@
     {"path": "src/_old/scenarios.py", "classification": "hypothetical_scenario", "disposition": "reconsider schema after baseline validation"}
   ],
   "source_document_register": [
+    {"path": "literature/PlanMaestroElectrifEc/AJUSTE-PME-2026.pdf", "kind": "official_source_candidate", "topic": "owner-selected PME2023-2032 adjustment annexes A/B/C; generation and grid schedules", "sha256": "3f131642a88e1923461529591d2ff5cc8417149b0a271b0bf19074c1f984c3e0"},
     {"path": "literature/CENACE/cenace_informe_anual_2022_parte_1.pdf", "kind": "authoritative_source", "topic": "2022 SNI demand, net supply, and in-year generator additions", "sha256": "88f13f0106a190464c8954babc7529f785783d4d4017633a8d5ed8ff554fbd88"},
     {"path": "literature/CENACE/cenace_informe_anual_2023_parte_1.pdf", "kind": "authoritative_source", "topic": "republished 2022 monthly SNI demand and peaks", "sha256": "194a10b71b95e65c067df88756d0dbfb52052cf4713af044fec952d662f1153f"},
     {"path": "literature/PlanMaestroElectrifEc/cap_3_demanda.pdf", "kind": "official_source_candidate", "topic": "demand"},

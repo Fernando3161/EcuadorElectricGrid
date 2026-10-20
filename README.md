@@ -6,11 +6,15 @@ system, then using the validated model as the foundation for future-grid studies
 
 ## Current status
 
-The repository has an implementation-complete Phase 5 candidate network and is
-awaiting owner review before Phase 6. It contains valuable legacy studies,
-manually prepared Master Plan tables, an unsolved reproducible 2022 candidate
-network, and solved experiments. It does
-**not** yet contain a reproducible, scientifically validated 2022 baseline.
+Phase 06H produced a reproducible, provisionally calibrated 2022 ROR-Q90
+baseline. Its historical scientific acceptance status remains **FAIL/PARTIAL**;
+see the [06H report](reports/PHASE_06H_FINAL_CALIBRATION_REPORT.md).
+Phase 07 now provides the cited 123-row inventory from the owner-selected PME
+adjustment, separate asset tables, a configurable seven-year teaching delay,
+coordinate assumptions and preserved legacy/nuclear evidence. The owner
+deferred missing physical definitions; full electrical model readiness remains
+unresolved. See [planning data](docs/PLANNING_DATA.md) and the
+[Phase 07 report](reports/PHASE_07_TECHNICAL_REPORT.md).
 
 The immediate target is a complete 2022 annual simulation whose energy supply by
 carrier agrees with authoritative Ecuador 2022 statistics within the agreed 5%

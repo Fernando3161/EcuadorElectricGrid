@@ -330,6 +330,18 @@ Branch: `refactor/v1-phase-07-master-plan`
 
 Heavy execution: forbidden except parsing verification.
 
+Status (2026-10-20): the owner-selected `AJUSTE-PME-2026.pdf` now governs the
+planning exercise. Its title is **Anexos ajuste PME 2023-2032**. The restored
+chapters 3-5 retain their older planning provenance. The complete 123-row source
+inventory, four direct asset interfaces, configurable seven-year schedule,
+coordinate assumptions, checksums, notebook and diagnostics are implemented.
+The owner explicitly deferred missing physical definitions as later teaching
+assumptions. Source-data and schedule delivery is complete under that scoped
+handoff; the original **fully model-ready portfolio acceptance gate remains
+unmet** until electrical mappings, parameters and dependencies are defined.
+See `docs/PLANNING_DATA.md` and `reports/PHASE_07_TECHNICAL_REPORT.md`.
+Phase 06H remains FAIL/PARTIAL. No future-scenario solve is authorized here.
+
 Tasks:
 
 - audit and reuse existing manual PDF-to-table work;

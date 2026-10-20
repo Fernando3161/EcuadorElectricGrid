@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "planning_project.schema.json",
-  "title": "Normalized Master Plan project row",
+  "title": "Planning project evidence row (official promotion requires verified provenance)",
   "type": "object",
   "required": [
     "project_id",
@@ -18,18 +18,34 @@
     "normalized_value",
     "normalized_unit",
     "transformation",
-    "confidence"
+    "confidence",
+    "original_name",
+    "source_artifact",
+    "source_sha256",
+    "source_row",
+    "official_timing",
+    "review_status",
+    "blockers",
+    "dependencies"
   ],
   "properties": {
     "project_id": {"type": "string", "pattern": "^[A-Z0-9][A-Z0-9_-]+$"},
     "asset_type": {"enum": ["generator", "line", "transformer", "substation"]},
     "official_name": {"type": "string", "minLength": 1},
-    "commissioning_year": {"type": ["integer", "null"], "minimum": 2022},
-    "evidence_class": {"enum": ["official_fact", "modeling_assumption"]},
+    "commissioning_year": {"type": ["integer", "null"], "minimum": 1900, "maximum": 2200},
+    "evidence_class": {"enum": ["official_fact", "modeling_assumption", "legacy_unverified"]},
     "source_document": {"type": "string", "minLength": 1},
-    "source_edition": {"type": "string", "minLength": 1},
-    "source_chapter": {"type": "string", "minLength": 1},
-    "source_page_or_table": {"type": "string", "minLength": 1},
+    "source_edition": {"type": ["string", "null"], "minLength": 1},
+    "source_chapter": {"type": ["string", "null"], "minLength": 1},
+    "source_page_or_table": {"type": ["string", "null"], "minLength": 1},
+    "source_artifact": {"type": "string", "minLength": 1, "pattern": "^(?![A-Za-z]:|/|\\\\).+"},
+    "source_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "source_row": {"type": "integer", "minimum": 1},
+    "official_timing": {"type": "string", "minLength": 1},
+    "review_status": {"enum": ["unverified", "verified", "quarantined"]},
+    "blockers": {"type": ["string", "null"]},
+    "dependencies": {"type": ["string", "null"]},
+    "quantity_status": {"enum": ["reported", "not_specified", "not_applicable", "not_normalized"]},
     "original_name": {"type": ["string", "null"]},
     "original_value": {"type": ["number", "string", "null"]},
     "original_unit": {"type": ["string", "null"]},
@@ -39,5 +55,32 @@
     "confidence": {"enum": ["high", "medium", "low", "unresolved"]},
     "notes": {"type": "string"}
   },
+  "allOf": [
+    {
+      "if": {"properties": {"evidence_class": {"const": "official_fact"}}},
+      "then": {
+        "properties": {
+          "source_edition": {"type": "string", "minLength": 1},
+          "source_chapter": {"type": "string", "minLength": 1},
+          "source_page_or_table": {"type": "string", "minLength": 1},
+          "original_unit": {"type": ["string", "null"], "minLength": 1},
+          "normalized_value": {"type": ["number", "null"], "minimum": 0},
+          "normalized_unit": {"type": ["string", "null"], "minLength": 1},
+          "review_status": {"const": "verified"},
+          "blockers": {"enum": ["", null]}
+        },
+        "allOf": [
+          {
+            "if": {"required": ["quantity_status"], "properties": {"quantity_status": {"enum": ["not_specified", "not_applicable", "not_normalized"]}}},
+            "else": {"properties": {
+              "original_unit": {"type": "string", "minLength": 1},
+              "normalized_value": {"type": "number", "minimum": 0},
+              "normalized_unit": {"type": "string", "minLength": 1}
+            }}
+          }
+        ]
+      }
+    }
+  ],
   "additionalProperties": true
 }

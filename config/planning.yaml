@@ -1,0 +1,17 @@
+planning_version: 1
+source_document: literature/PlanMaestroElectrifEc/AJUSTE-PME-2026.pdf
+source_edition: "Anexos ajuste PME 2023-2032 (owner-supplied AJUSTE-PME-2026)"
+source_status: "Published planning schedule; financing in management is not construction confirmation"
+scope: "Annex A generation and Annexes B/C grid works in the supplied adjustment only"
+exercise:
+  delay_years: 7
+  target_year: 2039
+  repeat_mode: true
+  baseline_year: 2022
+  coordinate_methods: [same_name_legacy, unique_canton]
+  # Explicit aliases identify legacy records; they do not establish physical sites.
+  name_aliases:
+    minasdehuascachaca: huascachaca
+    soldadosyanuncaycentralsoldados: soldadosyanuncay1
+    soldadosyanuncaycentralyanuncay: soldadosyanuncay2
+  note: "Owner-authorized pedagogical repeat with delayed dates; not a forecast or statement that projects remain unbuilt"

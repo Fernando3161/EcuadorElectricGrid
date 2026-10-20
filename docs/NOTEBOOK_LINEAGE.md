@@ -6,6 +6,16 @@ This document maps the two development histories that must be reconstructed. It
 records dependencies and reusable evidence; it does not declare either chain a
 supported or validated workflow.
 
+Stage 07 preserves the two legacy generation lists and three network expansion
+extracts through `scripts/migrate_phase07_planning.py`, writing 187 candidates
+under `data/interim/planning/legacy_candidates/` and 11 quarantined nuclear rows.
+`src/planning_products.py` separately normalizes all 123 cited records in the
+owner-selected adjustment and adds a configurable delayed teaching schedule.
+`notebooks/07_prepare_master_plan_expansion.ipynb` orchestrates both paths.
+The original 2017-era lineage and restored chapters remain older evidence;
+they are not relabeled as the latest adjustment. No legacy files were retired.
+See [planning data](PLANNING_DATA.md).
+
 ## Legacy 2017/2018 lineage
 
 ```mermaid

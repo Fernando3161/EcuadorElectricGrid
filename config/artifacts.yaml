@@ -43,6 +43,276 @@ stages:
     depends_on: [08_scenario]
 
 artifacts:
+  - id: planning_adjustment_totals_source
+    description: Verbatim printed Annex A totals; typography and energy discrepancy retained.
+    stages: [07_planning]
+    destination: data/raw/planning/adjustment_2026_totals.csv
+    role: source
+    availability: repository
+    source:
+      organization: Ministerio de Ambiente y Energia
+      record: Adjustment annex A PDF page 2 totals
+    persistent_uri: https://www.ambienteyenergia.gob.ec/plan-maestro-de-electricidad/
+    download_url: null
+    bytes: 333
+    sha256: effb1065cf11547a42ee5afb53d9946eed031a7a73c12e6eb519f9465659df6a
+    media_type: text/csv
+    license: official-publication-terms-review-required
+    validation:
+      kind: checksum_only
+
+  - id: planning_adjustment_pdf
+    description: Phase 07 owner-selected adjustment or retained older source evidence.
+    stages: [07_planning]
+    destination: literature/PlanMaestroElectrifEc/AJUSTE-PME-2026.pdf
+    role: external_input
+    availability: external
+    source:
+      organization: Ministerio de Ambiente y Energia / repository owner
+      record: Owner-selected adjustment, annexes A/B/C; older chapters remain legacy evidence
+    persistent_uri: https://www.ambienteyenergia.gob.ec/plan-maestro-de-electricidad/
+    download_url: https://www.ambienteyenergia.gob.ec/wp-content/uploads/2026/06/Anexos-A-B-y-C_ajuste_pme_20260611.pdf
+    bytes: 352609
+    sha256: 3f131642a88e1923461529591d2ff5cc8417149b0a271b0bf19074c1f984c3e0
+    media_type: application/pdf
+    license: official-publication-terms-review-required
+    validation:
+      kind: checksum_only
+
+  - id: planning_older_demand_pdf
+    description: Phase 07 owner-selected adjustment or retained older source evidence.
+    stages: [07_planning]
+    destination: literature/PlanMaestroElectrifEc/cap_3_demanda.pdf
+    role: external_input
+    availability: repository
+    source:
+      organization: Ministerio de Ambiente y Energia / repository owner
+      record: Owner-selected adjustment, annexes A/B/C; older chapters remain legacy evidence
+    persistent_uri: https://www.ambienteyenergia.gob.ec/plan-maestro-de-electricidad/
+    download_url: null
+    bytes: 12643931
+    sha256: 4a373f2058143d15dc1c1717f7869cefebb5b198dd16f33b06905369aee5c816
+    media_type: application/pdf
+    license: official-publication-terms-review-required
+    validation:
+      kind: checksum_only
+
+  - id: planning_older_generation_pdf
+    description: Phase 07 owner-selected adjustment or retained older source evidence.
+    stages: [07_planning]
+    destination: literature/PlanMaestroElectrifEc/cap_4_generacion.pdf
+    role: external_input
+    availability: repository
+    source:
+      organization: Ministerio de Ambiente y Energia / repository owner
+      record: Owner-selected adjustment, annexes A/B/C; older chapters remain legacy evidence
+    persistent_uri: https://www.ambienteyenergia.gob.ec/plan-maestro-de-electricidad/
+    download_url: null
+    bytes: 45250553
+    sha256: 009b7e855d92a67aa90ef53d8255b7eb3cfe8b49a07e5dd2a028e189b93cbf7b
+    media_type: application/pdf
+    license: official-publication-terms-review-required
+    validation:
+      kind: checksum_only
+
+  - id: planning_older_transmission_pdf
+    description: Phase 07 owner-selected adjustment or retained older source evidence.
+    stages: [07_planning]
+    destination: literature/PlanMaestroElectrifEc/cap_5_transmision.pdf
+    role: external_input
+    availability: repository
+    source:
+      organization: Ministerio de Ambiente y Energia / repository owner
+      record: Owner-selected adjustment, annexes A/B/C; older chapters remain legacy evidence
+    persistent_uri: https://www.ambienteyenergia.gob.ec/plan-maestro-de-electricidad/
+    download_url: null
+    bytes: 9539278
+    sha256: 7bdb3bb8bfdd66173935f8952477e8f17f2a6c0dc32267c72f574b57a2b91ceb
+    media_type: application/pdf
+    license: official-publication-terms-review-required
+    validation:
+      kind: checksum_only
+
+  - id: planning_adjustment_generation_source
+    description: Phase 07 owner-selected adjustment or retained older source evidence.
+    stages: [07_planning]
+    destination: data/raw/planning/adjustment_2026_generation.csv
+    role: source
+    availability: repository
+    source:
+      organization: Ministerio de Ambiente y Energia / repository owner
+      record: Owner-selected adjustment, annexes A/B/C; older chapters remain legacy evidence
+    persistent_uri: https://www.ambienteyenergia.gob.ec/plan-maestro-de-electricidad/
+    download_url: null
+    bytes: 6673
+    sha256: 2e93438b16971645fbfbeec751fd453d14f5764ace9dd886e2c655e75487c0e7
+    media_type: text/csv
+    license: official-publication-terms-review-required
+    validation:
+      kind: checksum_only
+
+  - id: planning_adjustment_grid_source
+    description: Phase 07 owner-selected adjustment or retained older source evidence.
+    stages: [07_planning]
+    destination: data/raw/planning/adjustment_2026_grid_projects.csv
+    role: source
+    availability: repository
+    source:
+      organization: Ministerio de Ambiente y Energia / repository owner
+      record: Owner-selected adjustment, annexes A/B/C; older chapters remain legacy evidence
+    persistent_uri: https://www.ambienteyenergia.gob.ec/plan-maestro-de-electricidad/
+    download_url: null
+    bytes: 8398
+    sha256: 5eeb79f8c8116211b0455e9b6327c7030f0ac5feb347b5f61af23187dd7cc9d0
+    media_type: text/csv
+    license: official-publication-terms-review-required
+    validation:
+      kind: checksum_only
+
+  - id: planning_exercise_config
+    description: Phase 07 owner-selected adjustment or retained older source evidence.
+    stages: [07_planning]
+    destination: config/planning.yaml
+    role: source
+    availability: repository
+    source:
+      organization: Ministerio de Ambiente y Energia / repository owner
+      record: Owner-selected adjustment, annexes A/B/C; older chapters remain legacy evidence
+    persistent_uri: https://www.ambienteyenergia.gob.ec/plan-maestro-de-electricidad/
+    download_url: null
+    bytes: 873
+    sha256: 5c2f4809fb457f0cb55b4005bf646205ebbf0b0f7c32a2e9900be09d13d38ce1
+    media_type: application/yaml
+    license: official-publication-terms-review-required
+    validation:
+      kind: checksum_only
+
+  - id: planning_legacy_generation
+    description: Phase 07 evidence input; checksum integrity does not establish official provenance.
+    stages: [07_planning]
+    destination: data/raw/generation/generation_future_renewable_2022.csv
+    role: source
+    availability: repository
+    source:
+      organization: EcuadorElectricGrid
+      record: Legacy evidence migration; official edition and source locators unresolved
+    persistent_uri: https://github.com/Fernando3161/EcuadorElectricGrid
+    download_url: null
+    bytes: 5448
+    sha256: 3764c5d37e8c1a7836878d5d6ff49c753670f6b5664a6ef1573373d4c755328f
+    media_type: text/csv
+    license: repository-license-review-required
+    validation:
+      kind: checksum_only
+
+  - id: planning_legacy_future_fleet
+    description: Phase 07 evidence input; checksum integrity does not establish official provenance.
+    stages: [07_planning]
+    destination: data/processed/generation/powerplants_future.csv
+    role: source
+    availability: repository
+    source:
+      organization: EcuadorElectricGrid
+      record: Legacy evidence migration; official edition and source locators unresolved
+    persistent_uri: https://github.com/Fernando3161/EcuadorElectricGrid
+    download_url: null
+    bytes: 2978
+    sha256: ec5dbd50cc2ba633302fa6bda33093b4ec357f4b2ba8c245210a8c21a9d19c5f
+    media_type: text/csv
+    license: repository-license-review-required
+    validation:
+      kind: checksum_only
+
+  - id: planning_legacy_substations
+    description: Phase 07 evidence input; checksum integrity does not establish official provenance.
+    stages: [07_planning]
+    destination: data/raw/networks/EC_bus_expansion_masterplan_2022.csv
+    role: source
+    availability: repository
+    source:
+      organization: EcuadorElectricGrid
+      record: Legacy evidence migration; official edition and source locators unresolved
+    persistent_uri: https://github.com/Fernando3161/EcuadorElectricGrid
+    download_url: null
+    bytes: 11814
+    sha256: f80eec848d14533c8308a81a7bacf1823d3b47c693bfa6c69ab38491afb932bd
+    media_type: text/csv
+    license: repository-license-review-required
+    validation:
+      kind: checksum_only
+
+  - id: planning_legacy_lines
+    description: Phase 07 evidence input; checksum integrity does not establish official provenance.
+    stages: [07_planning]
+    destination: data/raw/networks/EC_line_expansion_masterplan_2022.csv
+    role: source
+    availability: repository
+    source:
+      organization: EcuadorElectricGrid
+      record: Legacy evidence migration; official edition and source locators unresolved
+    persistent_uri: https://github.com/Fernando3161/EcuadorElectricGrid
+    download_url: null
+    bytes: 15822
+    sha256: 42b749d3ea33fe19891ebad1b2b9900821be492d68c6f97156434c12a622bad8
+    media_type: text/csv
+    license: repository-license-review-required
+    validation:
+      kind: checksum_only
+
+  - id: planning_legacy_transformers
+    description: Phase 07 evidence input; checksum integrity does not establish official provenance.
+    stages: [07_planning]
+    destination: data/raw/networks/EC_transformer_expansion_masterplan_2022.csv
+    role: source
+    availability: repository
+    source:
+      organization: EcuadorElectricGrid
+      record: Legacy evidence migration; official edition and source locators unresolved
+    persistent_uri: https://github.com/Fernando3161/EcuadorElectricGrid
+    download_url: null
+    bytes: 3404
+    sha256: 0a1c9d85007f823e212faca503afa268ed179f6d33fdb37424edc084f5b3bda8
+    media_type: text/csv
+    license: repository-license-review-required
+    validation:
+      kind: checksum_only
+
+  - id: planning_source_registry
+    description: Phase 07 evidence input; checksum integrity does not establish official provenance.
+    stages: [07_planning]
+    destination: data/interim/provenance/pdf_source_registry.csv
+    role: source
+    availability: repository
+    source:
+      organization: EcuadorElectricGrid
+      record: Legacy evidence migration; official edition and source locators unresolved
+    persistent_uri: https://github.com/Fernando3161/EcuadorElectricGrid
+    download_url: null
+    bytes: 4373
+    sha256: 265489d51b73875c4976de984f60e7f6ec7bcf9de214e335e5e87bd9aa1a79c7
+    media_type: text/csv
+    license: repository-license-review-required
+    validation:
+      kind: checksum_only
+
+  - id: planning_row_schema
+    description: Phase 07 evidence input; checksum integrity does not establish official provenance.
+    stages: [07_planning]
+    destination: config/schemas/planning_project.schema.json
+    role: source
+    availability: repository
+    source:
+      organization: EcuadorElectricGrid
+      record: Legacy evidence migration; official edition and source locators unresolved
+    persistent_uri: https://github.com/Fernando3161/EcuadorElectricGrid
+    download_url: null
+    bytes: 3667
+    sha256: f90170c8e63e4bf2e86d75fbb34d8ca3fca70314cf2e86e6df751d84f1a382a9
+    media_type: application/json
+    license: repository-license-review-required
+    validation:
+      kind: checksum_only
+
   - id: pypsa_earth_base_ec
     description: Upstream Ecuador PyPSA-Earth base transmission network.
     stages: [00_preflight, 04_topology]
@@ -232,7 +502,7 @@ artifacts:
 
   - id: generation_location_evidence_2022
     description: One-to-one canton and coordinate evidence for every 2022 SNI source row.
-    stages: [02_generation]
+    stages: [02_generation, 07_planning]
     destination: data/interim/generation/plant_location_evidence_2022.csv
     role: source
     availability: repository
@@ -242,8 +512,8 @@ artifacts:
       migration_script: scripts/migrate_phase04_generation_sources.py
     persistent_uri: https://github.com/Fernando3161/EcuadorElectricGrid
     download_url: null
-    bytes: 28719
-    sha256: 3f6af5b5d00454159d860d70bff270dbb9c2f86d725add12b8cb0d7653d5794d
+    bytes: 28724
+    sha256: 30a27bc9cb65cbd0a011861c5cd3b92c715406f0f31563c3a2189fa051854c37
     media_type: text/csv
     license: repository-license-review-required
     validation:
@@ -291,7 +561,7 @@ artifacts:
 
   - id: generation_fleet_2022_normalized
     description: Normalized, source-reconciled 2022 SNI generator fleet.
-    stages: [03_profiles]
+    stages: [03_profiles, 07_planning]
     destination: data/processed/generation/generators_2022.csv
     role: generated_product
     availability: repository
@@ -301,8 +571,8 @@ artifacts:
       writer: notebooks/02_prepare_2022_generation.ipynb
     persistent_uri: https://github.com/Fernando3161/EcuadorElectricGrid
     download_url: null
-    bytes: 42884
-    sha256: 3fc8b0be1fdf9802842e32074a2c07b81dae761585519be7e8a9af2acc00dbfa
+    bytes: 42900
+    sha256: 479705494b52d1eafcf90b48d5d41809fcdf56395d4d40d8aac85cee9327b518
     media_type: text/csv
     license: repository-license-review-required
     validation:

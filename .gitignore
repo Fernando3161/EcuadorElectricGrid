@@ -103,6 +103,7 @@ target/
 
 # Jupyter Notebook
 .ipynb_checkpoints
+results/phase_07/
 
 # IPython
 profile_default/

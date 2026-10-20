@@ -1,0 +1,69 @@
+{
+  "status": "BLOCKED_OFFICIAL_PUBLICATION",
+  "source_artifacts": [
+    {
+      "path": "data/raw/generation/generation_future_renewable_2022.csv",
+      "bytes": 5448,
+      "sha256": "3764c5d37e8c1a7836878d5d6ff49c753670f6b5664a6ef1573373d4c755328f"
+    },
+    {
+      "path": "data/processed/generation/powerplants_future.csv",
+      "bytes": 2978,
+      "sha256": "ec5dbd50cc2ba633302fa6bda33093b4ec357f4b2ba8c245210a8c21a9d19c5f"
+    },
+    {
+      "path": "data/raw/networks/EC_bus_expansion_masterplan_2022.csv",
+      "bytes": 11814,
+      "sha256": "f80eec848d14533c8308a81a7bacf1823d3b47c693bfa6c69ab38491afb932bd"
+    },
+    {
+      "path": "data/raw/networks/EC_line_expansion_masterplan_2022.csv",
+      "bytes": 15822,
+      "sha256": "42b749d3ea33fe19891ebad1b2b9900821be492d68c6f97156434c12a622bad8"
+    },
+    {
+      "path": "data/raw/networks/EC_transformer_expansion_masterplan_2022.csv",
+      "bytes": 3404,
+      "sha256": "0a1c9d85007f823e212faca503afa268ed179f6d33fdb37424edc084f5b3bda8"
+    }
+  ],
+  "output_artifacts": [
+    {
+      "path": "data/interim/planning/legacy_candidates/generation.csv",
+      "bytes": 59203,
+      "sha256": "45d651e4ed1a2f23ccd9034d0c3cf2dfef080e0a715790b9b7b57a43477cea79"
+    },
+    {
+      "path": "data/interim/planning/legacy_candidates/lines.csv",
+      "bytes": 64490,
+      "sha256": "7d5a134cd721ddf52e028873d2ae6c6a625dfbec9354f510ebc257ec22199cbb"
+    },
+    {
+      "path": "data/interim/planning/legacy_candidates/substations.csv",
+      "bytes": 94464,
+      "sha256": "6f8a9b22c560a770fc00387ad786499292992ecd36b4dcbd35065e08fe04612a"
+    },
+    {
+      "path": "data/interim/planning/legacy_candidates/transformers.csv",
+      "bytes": 22791,
+      "sha256": "08a2b7521840e0e80a86f8dd78885ae45e596ceaf3c8091ae955c527f56176a8"
+    },
+    {
+      "path": "data/interim/planning/nuclear_quarantine.csv",
+      "bytes": 14952,
+      "sha256": "3ecbf92b635ea16387c6ae63f55c3a3be623fdbe01bf2e49cbc83b332e19466b"
+    }
+  ],
+  "candidate_rows": {
+    "generation": 57,
+    "substations": 84,
+    "lines": 32,
+    "transformers": 14
+  },
+  "quarantined_rows": 11,
+  "official_rows": 0,
+  "writer": "scripts/migrate_phase07_planning.py",
+  "writer_sha256": "c071586ebb0b282a5e6f0d87e2fc81216948958f21f5861fe8889885cf19dbcd",
+  "validation_module_sha256": "d6527bc57ed2cb6f91e5cd872be6fd4f34026ff4082303e295f59ab3d38729f3",
+  "schema_sha256": "f90170c8e63e4bf2e86d75fbb34d8ca3fca70314cf2e86e6df751d84f1a382a9"
+}

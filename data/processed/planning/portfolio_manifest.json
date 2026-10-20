@@ -1,0 +1,193 @@
+{
+  "source_pdf": "literature/PlanMaestroElectrifEc/AJUSTE-PME-2026.pdf",
+  "source_pdf_sha256": "3f131642a88e1923461529591d2ff5cc8417149b0a271b0bf19074c1f984c3e0",
+  "source_edition": "Anexos ajuste PME 2023-2032 (owner-supplied AJUSTE-PME-2026)",
+  "source_scope": "Annex A generation and Annexes B/C grid works in the supplied adjustment only",
+  "source_rows": 123,
+  "generation_rows": 50,
+  "grid_rows": 73,
+  "published_evidence_status": "PASS",
+  "model_readiness_status": "UNRESOLVED",
+  "source_numeric_consistency": "WARN",
+  "energy_above_nameplate_rows": 1,
+  "exercise_delay_years": 7,
+  "repeat_mode": true,
+  "generator_mw": 8818.75,
+  "input_artifacts": [
+    {
+      "artifact_id": "planning_adjustment_totals_source",
+      "destination": "data/raw/planning/adjustment_2026_totals.csv",
+      "status": "valid",
+      "message": "cached file verified",
+      "bytes": 333,
+      "sha256": "effb1065cf11547a42ee5afb53d9946eed031a7a73c12e6eb519f9465659df6a"
+    },
+    {
+      "artifact_id": "planning_adjustment_pdf",
+      "destination": "literature/PlanMaestroElectrifEc/AJUSTE-PME-2026.pdf",
+      "status": "valid",
+      "message": "cached file verified",
+      "bytes": 352609,
+      "sha256": "3f131642a88e1923461529591d2ff5cc8417149b0a271b0bf19074c1f984c3e0"
+    },
+    {
+      "artifact_id": "planning_older_demand_pdf",
+      "destination": "literature/PlanMaestroElectrifEc/cap_3_demanda.pdf",
+      "status": "valid",
+      "message": "cached file verified",
+      "bytes": 12643931,
+      "sha256": "4a373f2058143d15dc1c1717f7869cefebb5b198dd16f33b06905369aee5c816"
+    },
+    {
+      "artifact_id": "planning_older_generation_pdf",
+      "destination": "literature/PlanMaestroElectrifEc/cap_4_generacion.pdf",
+      "status": "valid",
+      "message": "cached file verified",
+      "bytes": 45250553,
+      "sha256": "009b7e855d92a67aa90ef53d8255b7eb3cfe8b49a07e5dd2a028e189b93cbf7b"
+    },
+    {
+      "artifact_id": "planning_older_transmission_pdf",
+      "destination": "literature/PlanMaestroElectrifEc/cap_5_transmision.pdf",
+      "status": "valid",
+      "message": "cached file verified",
+      "bytes": 9539278,
+      "sha256": "7bdb3bb8bfdd66173935f8952477e8f17f2a6c0dc32267c72f574b57a2b91ceb"
+    },
+    {
+      "artifact_id": "planning_adjustment_generation_source",
+      "destination": "data/raw/planning/adjustment_2026_generation.csv",
+      "status": "valid",
+      "message": "cached file verified",
+      "bytes": 6673,
+      "sha256": "2e93438b16971645fbfbeec751fd453d14f5764ace9dd886e2c655e75487c0e7"
+    },
+    {
+      "artifact_id": "planning_adjustment_grid_source",
+      "destination": "data/raw/planning/adjustment_2026_grid_projects.csv",
+      "status": "valid",
+      "message": "cached file verified",
+      "bytes": 8398,
+      "sha256": "5eeb79f8c8116211b0455e9b6327c7030f0ac5feb347b5f61af23187dd7cc9d0"
+    },
+    {
+      "artifact_id": "planning_exercise_config",
+      "destination": "config/planning.yaml",
+      "status": "valid",
+      "message": "cached file verified",
+      "bytes": 873,
+      "sha256": "5c2f4809fb457f0cb55b4005bf646205ebbf0b0f7c32a2e9900be09d13d38ce1"
+    },
+    {
+      "artifact_id": "planning_legacy_generation",
+      "destination": "data/raw/generation/generation_future_renewable_2022.csv",
+      "status": "valid",
+      "message": "cached file verified",
+      "bytes": 5448,
+      "sha256": "3764c5d37e8c1a7836878d5d6ff49c753670f6b5664a6ef1573373d4c755328f"
+    },
+    {
+      "artifact_id": "planning_legacy_future_fleet",
+      "destination": "data/processed/generation/powerplants_future.csv",
+      "status": "valid",
+      "message": "cached file verified",
+      "bytes": 2978,
+      "sha256": "ec5dbd50cc2ba633302fa6bda33093b4ec357f4b2ba8c245210a8c21a9d19c5f"
+    },
+    {
+      "artifact_id": "planning_legacy_substations",
+      "destination": "data/raw/networks/EC_bus_expansion_masterplan_2022.csv",
+      "status": "valid",
+      "message": "cached file verified",
+      "bytes": 11814,
+      "sha256": "f80eec848d14533c8308a81a7bacf1823d3b47c693bfa6c69ab38491afb932bd"
+    },
+    {
+      "artifact_id": "planning_legacy_lines",
+      "destination": "data/raw/networks/EC_line_expansion_masterplan_2022.csv",
+      "status": "valid",
+      "message": "cached file verified",
+      "bytes": 15822,
+      "sha256": "42b749d3ea33fe19891ebad1b2b9900821be492d68c6f97156434c12a622bad8"
+    },
+    {
+      "artifact_id": "planning_legacy_transformers",
+      "destination": "data/raw/networks/EC_transformer_expansion_masterplan_2022.csv",
+      "status": "valid",
+      "message": "cached file verified",
+      "bytes": 3404,
+      "sha256": "0a1c9d85007f823e212faca503afa268ed179f6d33fdb37424edc084f5b3bda8"
+    },
+    {
+      "artifact_id": "planning_source_registry",
+      "destination": "data/interim/provenance/pdf_source_registry.csv",
+      "status": "valid",
+      "message": "cached file verified",
+      "bytes": 4373,
+      "sha256": "265489d51b73875c4976de984f60e7f6ec7bcf9de214e335e5e87bd9aa1a79c7"
+    },
+    {
+      "artifact_id": "planning_row_schema",
+      "destination": "config/schemas/planning_project.schema.json",
+      "status": "valid",
+      "message": "cached file verified",
+      "bytes": 3667,
+      "sha256": "f90170c8e63e4bf2e86d75fbb34d8ca3fca70314cf2e86e6df751d84f1a382a9"
+    },
+    {
+      "artifact_id": "generation_location_evidence_2022",
+      "destination": "data/interim/generation/plant_location_evidence_2022.csv",
+      "status": "valid",
+      "message": "cached file verified",
+      "bytes": 28724,
+      "sha256": "30a27bc9cb65cbd0a011861c5cd3b92c715406f0f31563c3a2189fa051854c37"
+    },
+    {
+      "artifact_id": "generation_fleet_2022_normalized",
+      "destination": "data/processed/generation/generators_2022.csv",
+      "status": "valid",
+      "message": "cached file verified",
+      "bytes": 42900,
+      "sha256": "479705494b52d1eafcf90b48d5d41809fcdf56395d4d40d8aac85cee9327b518"
+    }
+  ],
+  "output_artifacts": [
+    {
+      "path": "data/processed/planning/exercise_schedule.csv",
+      "bytes": 44785,
+      "sha256": "b2f11d4655a5df251f408107f5ff1901781c4f70e0d91720b3504629275b0f00"
+    },
+    {
+      "path": "data/processed/planning/generation.csv",
+      "bytes": 55905,
+      "sha256": "6253ff2ef1a0bc2b36eb864a4c2680ac3602d98636ce2cfce43c1ffc76f482b5"
+    },
+    {
+      "path": "data/processed/planning/lines.csv",
+      "bytes": 10021,
+      "sha256": "2e8dcb4a59c3b9c7147c9d060b281069d142d143cb7cc55a8af858f0d379f590"
+    },
+    {
+      "path": "data/processed/planning/project_relationships.csv",
+      "bytes": 449,
+      "sha256": "2f850ca7e206f4efbe898cf3556f334e3371275d270a83a7c0ff970e3b32c304"
+    },
+    {
+      "path": "data/processed/planning/projects.csv",
+      "bytes": 132398,
+      "sha256": "f8a306031909e02a7e65fe0c5a3d8e62267f2ceac3ab4506a4e41a3d1ab689c3"
+    },
+    {
+      "path": "data/processed/planning/substations.csv",
+      "bytes": 16942,
+      "sha256": "4ab6cfa66116702638374cf23e52cb143bd5e41d3eca77e76fd06fde8156eb4f"
+    },
+    {
+      "path": "data/processed/planning/transformers.csv",
+      "bytes": 2711,
+      "sha256": "5938b124fb9bf7e3f54b843534f35191bfbbaa64ea4f788370cb53ac9b5d71a2"
+    }
+  ],
+  "writer": "src/planning_products.py",
+  "writer_sha256": "ac073a37bed7ebe54023e0786bb7b00cd397d65ca65cfb632287363dca383e2a"
+}
