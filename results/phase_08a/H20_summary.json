@@ -1,0 +1,16 @@
+{
+  "scenario": "H20",
+  "caudal_reduction": 0.2,
+  "demand_gwh": 32650.66,
+  "solver_status": "ok",
+  "termination_condition": "optimal",
+  "load_shedding_gwh": 25.97229586947559,
+  "load_shedding_pct": 0.07954600571466425,
+  "biogas_gwh": 34.82710978373044,
+  "biomass_gwh": 488.3808129832193,
+  "hydro_gwh": 24446.010220147247,
+  "interconnection_colombia_gwh": 2328.3423332845086,
+  "oil_gwh": 4670.2846722144595,
+  "onwind_gwh": 442.3977557170385,
+  "solar_gwh": 214.4448
+}

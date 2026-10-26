@@ -1,0 +1,5 @@
+caudal_id,aggregate_p_nom_mw,aggregate_effective_capacity_mw,plants,minimum_confidence
+coca_codo_sinclair,1862.02,1836.71,29,high
+ingreso_amaluza,1562.0,1586.9,2,medium
+agoyan,905.74,872.66,20,high
+mazar,330.85,330.39,8,high
