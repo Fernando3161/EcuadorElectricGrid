@@ -1,0 +1,4 @@
+case,operational_co2_tonnes,factor_source,unmapped_carriers_assumed_zero
+2022 baseline (unsolved reference),1.0786409484907646,data/raw/generation/carriers.csv,True
+2030 Tendencial,2.0403321930021043,data/raw/generation/carriers.csv,True
+2030 Expansion,2.853675900385061,data/raw/generation/carriers.csv,True

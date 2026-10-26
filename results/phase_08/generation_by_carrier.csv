@@ -1,0 +1,17 @@
+case,carrier,gwh
+tendencial_2030,biogas,43.29177482092855
+tendencial_2030,biomass,29.76409292813029
+tendencial_2030,hydro,27005.82105904746
+tendencial_2030,interconnection_colombia,604.4280152882369
+tendencial_2030,load_shedding,124.98530615272294
+tendencial_2030,oil,8227.145939524613
+tendencial_2030,onwind,62.40269606867285
+tendencial_2030,solar,1944.1611161691349
+expansion_2030,biogas,54.77178819302124
+expansion_2030,biomass,79.5293983374152
+expansion_2030,hydro,29772.142874736033
+expansion_2030,interconnection_colombia,762.6208717163478
+expansion_2030,load_shedding,1894.7939245630216
+expansion_2030,oil,11506.757662842989
+expansion_2030,onwind,64.4131109387548
+expansion_2030,solar,1948.9703686728012
