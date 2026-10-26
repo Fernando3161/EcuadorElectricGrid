@@ -1,6 +1,6 @@
 {
   "source_pdf": "literature/PlanMaestroElectrifEc/AJUSTE-PME-2026.pdf",
-  "source_pdf_sha256": "3f131642a88e1923461529591d2ff5cc8417149b0a271b0bf19074c1f984c3e0",
+  "source_pdf_sha256": "4afeb548ec5f7c15670ba2cb4b19c1381a6c3faf1fd3494e9b540c744fba80b0",
   "source_edition": "Anexos ajuste PME 2023-2032 (owner-supplied AJUSTE-PME-2026)",
   "source_scope": "Annex A generation and Annexes B/C grid works in the supplied adjustment only",
   "source_rows": 123,
@@ -27,8 +27,8 @@
       "destination": "literature/PlanMaestroElectrifEc/AJUSTE-PME-2026.pdf",
       "status": "valid",
       "message": "cached file verified",
-      "bytes": 352609,
-      "sha256": "3f131642a88e1923461529591d2ff5cc8417149b0a271b0bf19074c1f984c3e0"
+      "bytes": 359628,
+      "sha256": "4afeb548ec5f7c15670ba2cb4b19c1381a6c3faf1fd3494e9b540c744fba80b0"
     },
     {
       "artifact_id": "planning_older_demand_pdf",
@@ -99,32 +99,32 @@
       "destination": "data/raw/networks/EC_bus_expansion_masterplan_2022.csv",
       "status": "valid",
       "message": "cached file verified",
-      "bytes": 11814,
-      "sha256": "f80eec848d14533c8308a81a7bacf1823d3b47c693bfa6c69ab38491afb932bd"
+      "bytes": 11726,
+      "sha256": "fda98e7a7a91e6a7f2cc19c5e5a58ea114cfcad00cded29362fecbbad45eeb52"
     },
     {
       "artifact_id": "planning_legacy_lines",
       "destination": "data/raw/networks/EC_line_expansion_masterplan_2022.csv",
       "status": "valid",
       "message": "cached file verified",
-      "bytes": 15822,
-      "sha256": "42b749d3ea33fe19891ebad1b2b9900821be492d68c6f97156434c12a622bad8"
+      "bytes": 15786,
+      "sha256": "ef54358d31a45ebba423e56c8746573226fd38555d5cb9dff9f9b4fc2fef8a61"
     },
     {
       "artifact_id": "planning_legacy_transformers",
       "destination": "data/raw/networks/EC_transformer_expansion_masterplan_2022.csv",
       "status": "valid",
       "message": "cached file verified",
-      "bytes": 3404,
-      "sha256": "0a1c9d85007f823e212faca503afa268ed179f6d33fdb37424edc084f5b3bda8"
+      "bytes": 3389,
+      "sha256": "deb9cc33ba8b708fe31f3c7b0ca7aad5022983e1f24e64582dce4601da813e33"
     },
     {
       "artifact_id": "planning_source_registry",
       "destination": "data/interim/provenance/pdf_source_registry.csv",
       "status": "valid",
       "message": "cached file verified",
-      "bytes": 4373,
-      "sha256": "265489d51b73875c4976de984f60e7f6ec7bcf9de214e335e5e87bd9aa1a79c7"
+      "bytes": 4361,
+      "sha256": "e585742e9732a7a4579481f8877bf3a137c94e62a75c3d9f5757d9cd0504ade0"
     },
     {
       "artifact_id": "planning_row_schema",
@@ -139,16 +139,16 @@
       "destination": "data/interim/generation/plant_location_evidence_2022.csv",
       "status": "valid",
       "message": "cached file verified",
-      "bytes": 28724,
-      "sha256": "30a27bc9cb65cbd0a011861c5cd3b92c715406f0f31563c3a2189fa051854c37"
+      "bytes": 28585,
+      "sha256": "d8da52e4970f8e0f38f2a942b796a743f3200c37c3b98a12499edd00c9627969"
     },
     {
       "artifact_id": "generation_fleet_2022_normalized",
       "destination": "data/processed/generation/generators_2022.csv",
       "status": "valid",
       "message": "cached file verified",
-      "bytes": 42900,
-      "sha256": "479705494b52d1eafcf90b48d5d41809fcdf56395d4d40d8aac85cee9327b518"
+      "bytes": 42750,
+      "sha256": "3791662ffb921015c84df66bd80baa657af38623397443e1200f538260f98ef8"
     }
   ],
   "output_artifacts": [
@@ -160,12 +160,12 @@
     {
       "path": "data/processed/planning/generation.csv",
       "bytes": 55905,
-      "sha256": "6253ff2ef1a0bc2b36eb864a4c2680ac3602d98636ce2cfce43c1ffc76f482b5"
+      "sha256": "c766907e4b42a329163968be768644683cf81cec2a4b025659bd84213c491a82"
     },
     {
       "path": "data/processed/planning/lines.csv",
       "bytes": 10021,
-      "sha256": "2e8dcb4a59c3b9c7147c9d060b281069d142d143cb7cc55a8af858f0d379f590"
+      "sha256": "b0f6fcaa1b3808d74ca2577b82cb4f23fb42eaae8f3abde8f5362f6bc2fed960"
     },
     {
       "path": "data/processed/planning/project_relationships.csv",
@@ -175,19 +175,19 @@
     {
       "path": "data/processed/planning/projects.csv",
       "bytes": 132398,
-      "sha256": "f8a306031909e02a7e65fe0c5a3d8e62267f2ceac3ab4506a4e41a3d1ab689c3"
+      "sha256": "be917dd5460d405aad3417cf531e9c6d2cb9a54538d06a37ff3ead09d05d6f11"
     },
     {
       "path": "data/processed/planning/substations.csv",
       "bytes": 16942,
-      "sha256": "4ab6cfa66116702638374cf23e52cb143bd5e41d3eca77e76fd06fde8156eb4f"
+      "sha256": "3fb90895a950afb41e1ce7e40d6f3efb1c0e6887ac23c060e220fb45b086fb46"
     },
     {
       "path": "data/processed/planning/transformers.csv",
       "bytes": 2711,
-      "sha256": "5938b124fb9bf7e3f54b843534f35191bfbbaa64ea4f788370cb53ac9b5d71a2"
+      "sha256": "df14a52b2ea14e257355415b4a5423aff9bf0137d974b1ee2d5235714486cfef"
     }
   ],
   "writer": "src/planning_products.py",
-  "writer_sha256": "ac073a37bed7ebe54023e0786bb7b00cd397d65ca65cfb632287363dca383e2a"
+  "writer_sha256": "15c78b4cb42d1082c77905ff9b66078b38c159d81a5066da1356f9cda887b859"
 }

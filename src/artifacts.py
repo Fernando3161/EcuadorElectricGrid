@@ -208,18 +208,34 @@ def sha256_file(path: Path, chunk_size: int = 1024 * 1024) -> str:
     return digest.hexdigest()
 
 
+def _canonical_text_bytes(path: Path) -> bytes:
+    """Read UTF-8 text with platform line endings canonicalized to LF."""
+
+    text = path.read_bytes().decode("utf-8")
+    return text.replace("\r\n", "\n").replace("\r", "\n").encode("utf-8")
+
+
+def _canonical_text_sha256(path: Path) -> tuple[int, str]:
+    payload = _canonical_text_bytes(path)
+    return len(payload), hashlib.sha256(payload).hexdigest()
+
+
 def validate_artifact(path: Path, artifact: dict[str, Any]) -> tuple[int, str]:
     """Validate existence, size, SHA-256, and configured structure."""
 
     if not path.is_file():
         raise ArtifactValidationError("file is missing")
-    actual_size = path.stat().st_size
+    text_normalization = artifact.get("validation", {}).get("normalize_newlines") == "lf"
+    if text_normalization:
+        actual_size, actual_sha256 = _canonical_text_sha256(path)
+    else:
+        actual_size = path.stat().st_size
+        actual_sha256 = sha256_file(path)
     expected_size = artifact["bytes"]
     if actual_size != expected_size:
         raise ArtifactValidationError(
             f"size mismatch: expected {expected_size}, found {actual_size}"
         )
-    actual_sha256 = sha256_file(path)
     if actual_sha256 != artifact["sha256"]:
         raise ArtifactValidationError(
             f"SHA-256 mismatch: expected {artifact['sha256']}, found {actual_sha256}"

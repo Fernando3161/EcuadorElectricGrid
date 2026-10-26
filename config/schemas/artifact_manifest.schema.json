@@ -79,6 +79,7 @@
             "required": ["kind"],
             "properties": {
               "kind": {"enum": ["checksum_only", "netcdf"]},
+              "normalize_newlines": {"enum": ["lf"]},
               "dimensions": {
                 "type": "object",
                 "additionalProperties": {"type": "integer", "minimum": 0}

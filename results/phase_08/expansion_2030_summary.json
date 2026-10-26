@@ -3,18 +3,18 @@
   "demand_gwh": 46084.0,
   "solver_status": "ok",
   "termination_condition": "optimal",
-  "load_shedding_gwh": 1894.7939245630218,
-  "load_shedding_pct": 4.111609071614924,
-  "colombia_import_gwh": 762.6208717163478,
+  "load_shedding_gwh": 1894.793925946088,
+  "load_shedding_pct": 4.111609074616109,
+  "colombia_import_gwh": 762.6716938590976,
   "planned_renewable_capacity_mw": 3666.5499999999997,
   "generation_by_carrier_gwh": {
-    "biogas": 54.77178819302124,
-    "biomass": 79.5293983374152,
-    "hydro": 29772.142874736033,
-    "interconnection_colombia": 762.6208717163478,
-    "load_shedding": 1894.7939245630216,
-    "oil": 11506.757662842989,
-    "onwind": 64.4131109387548,
-    "solar": 1948.9703686728012
+    "biogas": 54.77188949967676,
+    "biomass": 79.52946726819737,
+    "hydro": 29772.181041630844,
+    "interconnection_colombia": 762.6716938590976,
+    "load_shedding": 1894.793925946088,
+    "oil": 11506.758649217154,
+    "onwind": 64.35883172235614,
+    "solar": 1948.9345008565926
   }
 }

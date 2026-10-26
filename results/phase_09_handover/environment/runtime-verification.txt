@@ -1,0 +1,33 @@
+﻿{
+  "executable": "C:\\Users\\fpenaherrera_vaca\\.conda\\envs\\pypsa-earth-ec\\python.exe",
+  "prefix": "C:\\Users\\fpenaherrera_vaca\\.conda\\envs\\pypsa-earth-ec",
+  "python": "3.11.14 | packaged by conda-forge | (main, Oct 13 2025, 14:00:26) [MSC v.1944 64 bit (AMD64)]",
+  "packages": {
+    "pypsa": "0.30.3",
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "scipy": "1.15.2",
+    "xarray": "2025.1.2",
+    "h5netcdf": "1.7.3",
+    "netCDF4": "1.7.3",
+    "PyYAML": "6.0.3",
+    "requests": "2.32.5",
+    "jsonschema": "4.25.1",
+    "nbformat": "5.10.4",
+    "nbclient": "0.10.2",
+    "ipykernel": "6.31.0",
+    "linopy": "0.5.8",
+    "highspy": "1.11.0",
+    "geopandas": "1.1.1",
+    "matplotlib": "3.10.7",
+    "seaborn": "0.13.2",
+    "networkx": "3.6.1"
+  },
+  "highs_runtime": "1.11.0",
+  "available_solvers": [
+    "gurobi",
+    "highs",
+    "glpk",
+    "scip"
+  ]
+}

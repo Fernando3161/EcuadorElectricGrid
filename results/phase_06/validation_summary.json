@@ -2,9 +2,9 @@
   "status": "FAIL",
   "metrics": {
     "reference_total_gwh": 28684.61,
-    "simulated_total_gwh": 27753.19000000025,
-    "total_energy_relative_error": 0.03247107072397885,
-    "tvd": 0.008304520692729007
+    "simulated_total_gwh": 27753.190000000028,
+    "total_energy_relative_error": 0.032471070723986584,
+    "tvd": 0.008304520692742881
   },
   "screening": {
     "checks": {
@@ -26,7 +26,7 @@
   "load_shedding_gwh": 0.0,
   "domestic_demand_gwh": 27561.62,
   "exports_gwh": 191.57000000000002,
-  "energy_balance_residual_gwh": 2.5070789888559375e-10,
+  "energy_balance_residual_gwh": 2.879119165299926e-11,
   "unresolved_accounting_residual": {
     "gwh": 931.43,
     "treatment": "report_only_not_modeled",
