@@ -1,6 +1,6 @@
 """Preserve legacy planning evidence without promoting uncited project claims.
 
-Run with ``python -m scripts.migrate_phase07_planning`` in pypsa-earth-ec.
+Run with ``python -m src.planning_migration`` in pypsa-earth-ec.
 This migration performs no PDF retrieval, network mutation, or optimization.
 """
 

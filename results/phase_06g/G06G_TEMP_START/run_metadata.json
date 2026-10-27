@@ -1,8 +1,0 @@
-{
-  "experiment_id": "G06G_TEMP_START",
-  "controlled_change": "monthly anchors at month start",
-  "solver_status": "ok",
-  "termination_condition": "optimal",
-  "snapshots": 8760,
-  "network_sha256": "690fd0a8ab13831279c43c96baea0718c178d94955ef3bba0b58003d5d51a3b9"
-}

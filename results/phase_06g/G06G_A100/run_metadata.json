@@ -1,8 +1,0 @@
-{
-  "experiment_id": "G06G_A100",
-  "controlled_change": "all hydro p_max_pu=1 upper-bound diagnostic",
-  "solver_status": "ok",
-  "termination_condition": "optimal",
-  "snapshots": 8760,
-  "network_sha256": "4f7679f3087fc4133d5bc68d72b13082c7886492c0b1d5983276d52ca1965e64"
-}

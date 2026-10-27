@@ -1,3 +1,0 @@
-plant_id,legacy_onwind_gwh,nlr_sup3rwind_gwh,nlr_url_template,reference_total_gwh,candidate,pre_scaling_gwh,wind_factor
-ec2022_030_Huascachaca,0.16344618637376657,37.962352467780825,https://developer.nlr.gov/api/wind-toolkit/v2/wind/wtk-sup3rwind-south-america-v1-0-0-60min-download.csv?wkt=POINT%28-79.2396%20-3.6223%29&names=2022&interval=60&api_key=%3CNLR_API_KEY%3E&email=%3CNLR_EMAIL%3E,57.0,canonical_06h,37.962352467780825,1.0
-ec2022_074_Villonaco,1.8729489585169345,3.582361974708899,https://developer.nlr.gov/api/wind-toolkit/v2/wind/wtk-sup3rwind-south-america-v1-0-0-60min-download.csv?wkt=POINT%28-79.8053425%20-4.0528506%29&names=2022&interval=60&api_key=%3CNLR_API_KEY%3E&email=%3CNLR_EMAIL%3E,57.0,canonical_06h,3.582361974708899,1.0

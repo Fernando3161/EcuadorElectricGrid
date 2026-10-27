@@ -1,3 +1,0 @@
-evidence_id,component,bus0,bus1,circuit,length_km,rating_mva,source_document,source_locator,conductor,status,confidence,official_fact
-chongon_santa_elena_c1,Line,47,58,C1,40.0,230.0,PME 2023-2032,Chapter 5 Table 5-7,230 kV circuit,represented_at_138_kV_model_boundary,high,true
-chongon_santa_elena_c2,Line,47,58,C2,40.0,230.0,PME 2023-2032,Chapter 5 Table 5-7,230 kV circuit,represented_at_138_kV_model_boundary,high,true

@@ -1,7 +1,0 @@
-{
-  "network": "results\\phase_06d\\baseline\\network_solved_2022.nc",
-  "network_sha256": "c9be579b85cd5d544836e1d58efa58181c5999d6e25108d6a5f89132799a6359",
-  "snapshots": 8760,
-  "hydro_plants": 65,
-  "hydro_nominal_mw": 5184.1900000000005
-}

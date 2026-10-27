@@ -1,5 +1,0 @@
-evidence_id,topic,value,unit,source_document,source_locator,status,limitation
-E06F_01,annual hydro reference,24499.54,GWh,literature/CENACE/cenace_informe_anual_2022_parte_1.pdf,"Table 2.4, pp. 73-74",official fact,system boundary may differ from model
-E06F_02,hydro offers,65 plants; hourly p_max_pu,count / pu,data/processed/generation/hidro_max_profiles/p_max_pu_hydro_2022_hourly.csv,hourly profile table,model input,profile lineage includes regional proxies
-E06F_03,flow proxies,8 monthly legacy series,series,data/raw/generation/caudals.csv,header and rows,model input,primary provenance unresolved
-E06F_04,hydro price,45,USD/MWh,Phase 06D baseline network,generators.marginal_cost for carrier hydro,model assumption,uniform price

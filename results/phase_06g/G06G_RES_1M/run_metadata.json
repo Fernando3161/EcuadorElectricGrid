@@ -1,8 +1,0 @@
-{
-  "experiment_id": "G06G_RES_1M",
-  "controlled_change": "reservoir effective flow trailing 1 month",
-  "solver_status": "ok",
-  "termination_condition": "optimal",
-  "snapshots": 8760,
-  "network_sha256": "eceae05651e6b2448c00ef7ee3392924c50970f44f0ce9439a47b8157f170ecf"
-}

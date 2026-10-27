@@ -1,5 +1,0 @@
-Source URL:
-https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/GE/ExeGENBajarArchivoGeneral.cpe?Archivo=JnKh-gaCQ9zNXA4puqXl1MrgJcu3kgUy953HvOm4ZI4%2C&idPath=FfmWP6fB-wnd20gVTYELl8QfTSN_uwytR0GejxCFNHM%2C
-
-Download status: timed out after 20 seconds from the repository environment on 2026-10-26.
-The source URL is preserved because the attachment was not retrievable for local persistence.

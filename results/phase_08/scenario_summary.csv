@@ -1,2 +1,0 @@
-,case,demand_gwh,solver_status,termination_condition,load_shedding_gwh,load_shedding_pct,colombia_import_gwh,planned_renewable_capacity_mw,generation_by_carrier_gwh
-expansion_2030,expansion_2030,46084.0,ok,optimal,1894.793925946088,4.111609074616109,762.6716938590976,3666.5499999999997,"{""biogas"": 54.77188949967676, ""biomass"": 79.52946726819737, ""hydro"": 29772.181041630844, ""interconnection_colombia"": 762.6716938590976, ""load_shedding"": 1894.793925946088, ""oil"": 11506.758649217154, ""onwind"": 64.35883172235614, ""solar"": 1948.9345008565926}"

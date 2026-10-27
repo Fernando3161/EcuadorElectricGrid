@@ -1,8 +1,0 @@
-bridge_id,source,locator,quantity_gwh,basis,status,notes
-cenace_net_supply,CENACE Informe Anual 2022,Table 2.4,28684.62,net production plus imports,reported,CENACE validation boundary
-cenace_demand,CENACE Informe Anual 2022,Table 1.8,27561.62,national demand control,reported,not equivalent to ARCONEL final consumption
-cenace_exports,CENACE Informe Anual 2022,Figures 2.18 and 2.20,191.57,exports,reported,Colombia plus Peru
-unresolved_residual,EcuadorElectricGrid,Phase 06B bridge,931.43,net supply minus demand minus exports,derived,not modeled as losses
-arconel_sni_gross,ARCONEL Estadistica 2022,national balance,28863.00,gross production,reported,broader SNI boundary
-arconel_imports,ARCONEL Estadistica 2022,national balance,465.83,imports,reported,broader SNI boundary
-arconel_transmission_losses,ARCONEL Estadistica 2022,national balance,1292.73,transmission losses,reported,not inserted into PyPSA

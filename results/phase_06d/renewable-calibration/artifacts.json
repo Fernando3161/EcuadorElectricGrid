@@ -1,6 +1,0 @@
-{
-  "network": "results\\phase_06d\\renewable-calibration\\network_solved_2022.nc",
-  "sha256": "eb231577e3fe73a3493d494f65fdb8187bb30c73687a6013b323a6e6e4ea98ff",
-  "validation_csv": "results\\phase_06d\\renewable-calibration\\validation_2022.csv",
-  "status": "manual Phase 6 run output"
-}

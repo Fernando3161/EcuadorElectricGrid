@@ -1,8 +1,0 @@
-{
-  "experiment_id": "G06G_CAP_EFFECTIVE",
-  "controlled_change": "hydro p_nom replaced by source effective_capacity_mw",
-  "solver_status": "ok",
-  "termination_condition": "optimal",
-  "snapshots": 8760,
-  "network_sha256": "7bf67e5694adc33375dbc8b411ee48990e458d069fbb43c1c9238a1c273d3243"
-}

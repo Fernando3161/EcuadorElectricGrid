@@ -1,1 +1,0 @@
-﻿conda mock for installer checks
