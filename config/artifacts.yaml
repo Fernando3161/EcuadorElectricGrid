@@ -35,6 +35,9 @@ stages:
   07_planning:
     description: Normalize official Master Plan expansion projects.
     depends_on: []
+  planning_reference_audit:
+    description: Explicit integrity audit of locally retained historical chapter PDFs; not a simulation dependency.
+    depends_on: []
   08_scenario:
     description: Build a student future scenario.
     depends_on: [06_validation, 07_planning]
@@ -120,8 +123,8 @@ artifacts:
       kind: checksum_only
 
   - id: planning_older_demand_pdf
-    description: Phase 07 owner-selected adjustment or retained older source evidence.
-    stages: [07_planning]
+    description: Documentary legacy chapter retained for reference; no runtime extraction uses this PDF.
+    stages: [planning_reference_audit]
     destination: literature/PlanMaestroElectrifEc/cap_3_demanda.pdf
     role: external_input
     availability: repository
@@ -138,8 +141,8 @@ artifacts:
       kind: checksum_only
 
   - id: planning_older_generation_pdf
-    description: Phase 07 owner-selected adjustment or retained older source evidence.
-    stages: [07_planning]
+    description: Documentary legacy chapter retained for reference; no runtime extraction uses this PDF.
+    stages: [planning_reference_audit]
     destination: literature/PlanMaestroElectrifEc/cap_4_generacion.pdf
     role: external_input
     availability: repository
@@ -156,8 +159,8 @@ artifacts:
       kind: checksum_only
 
   - id: planning_older_transmission_pdf
-    description: Phase 07 owner-selected adjustment or retained older source evidence.
-    stages: [07_planning]
+    description: Documentary legacy chapter retained for reference; no runtime extraction uses this PDF.
+    stages: [planning_reference_audit]
     destination: literature/PlanMaestroElectrifEc/cap_5_transmision.pdf
     role: external_input
     availability: repository

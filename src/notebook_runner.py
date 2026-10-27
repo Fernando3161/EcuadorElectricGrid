@@ -38,9 +38,9 @@ def execute_notebook(
     *,
     output_path: Path | str | None = None,
     working_directory: Path | str = ROOT,
-    timeout: int = 600,
+    timeout: int = -1,
 ) -> nbformat.NotebookNode:
-    """Execute a notebook through ``sys.executable`` and optionally save a copy."""
+    """Execute through ``sys.executable``; -1 disables the cell execution limit."""
 
     environment = check_environment()
     if not environment.ok:
@@ -90,7 +90,10 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("notebook", type=Path)
     parser.add_argument("--output", type=Path)
     parser.add_argument("--working-directory", type=Path, default=ROOT)
-    parser.add_argument("--timeout", type=int, default=600)
+    parser.add_argument(
+        "--timeout", type=int, default=-1,
+        help="Optional per-cell time limit in seconds; default -1 means unlimited.",
+    )
     return parser
 
 

@@ -15,8 +15,8 @@ __pycache__/
 *.nc 
 *.gpkg
 *.pdf
-!literature/CENACE/
-!literature/CENACE/*.pdf
+!literature/PlanMaestroElectrifEc/AJUSTE-PME-2026.pdf
+
 # C extensions
 *.so
 .csv
@@ -311,3 +311,4 @@ results/phase_08a/*.solved.nc
 results/phase_08a/*_highs.log
 reports/PHASE_08A_RESULT_COMPARISON.md
 results/*
+tests/test_runtime_preflight.py

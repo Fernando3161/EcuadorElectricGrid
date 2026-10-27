@@ -42,7 +42,7 @@ status=success
 for notebook in "${sequence[@]}"; do
   name="$(basename "$notebook" .ipynb)"
   echo "=== RUN ${name} ==="
-  if python -m src.notebook_runner "$notebook" --output "$export_root/executed_notebooks/${name}.ipynb" --timeout "${RUN_TIMEOUT:-600}" >"$export_root/notebook_logs/${name}.log" 2>&1; then
+  if python -m src.notebook_runner "$notebook" --output "$export_root/executed_notebooks/${name}.ipynb" --timeout "${RUN_TIMEOUT:--1}" >"$export_root/notebook_logs/${name}.log" 2>&1; then
     echo "${name},success" >> "$export_root/notebook_status.csv"
   else
     rc=$?
