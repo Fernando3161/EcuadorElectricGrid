@@ -1,0 +1,7 @@
+# Repository data and source text use LF bytes on every platform so manifest
+# checksums describe the committed content rather than a checkout conversion.
+*.csv text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.py text eol=lf
+*.ipynb text eol=lf

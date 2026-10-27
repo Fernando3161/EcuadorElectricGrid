@@ -478,8 +478,8 @@ artifacts:
       provenance_status: exact numeric identity with the local PyPSA-Earth source network verified in Phase 3
     persistent_uri: https://github.com/Fernando3161/EcuadorElectricGrid
     download_url: null
-    bytes: 40686112
-    sha256: 13f2268d71f8a7dd8a69e382844571a1207a8c7e1eb750acb99f8b8b1154c1a0
+    bytes: 40677351
+    sha256: a2c80852700bc22dee422b16d7476a9e7741414b8c7d05edcf437d6354b8d412
     media_type: text/csv
     license: repository-license-review-required
     validation:
