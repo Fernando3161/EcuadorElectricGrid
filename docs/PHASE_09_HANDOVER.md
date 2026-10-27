@@ -34,12 +34,13 @@ the handover acceptance.
 
 ## Required inputs and generated outputs
 
-The complete file inventory is
-`results/phase_09_handover/required_files.txt`. It is generated from the
-documented notebook inputs, the artifact manifest, configuration, reusable
-source modules, and the environment evidence. Large solved NetCDF files remain
-runtime artifacts and are not copied into this inventory or committed by
-default.
+The student prerequisite list is
+`results/phase_09_handover/required_files.txt`. It contains only external/raw
+inputs and the execution contract. Notebook-generated CSVs, intermediate
+networks, solved NetCDFs, executed notebooks, runtime verification, reports,
+and Phase 08A utilities are deliberately excluded. The chain must create
+`results/phase_06/network_solved_2022.nc` in Notebook 06; Notebook 08 consumes
+that exact path.
 
 ## Student workflow boundary
 
