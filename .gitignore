@@ -281,3 +281,17 @@ results/phase_06a/national_demand_hourly_mw.csv
 
 *.png
 *.svg
+data/interim/planning/migration_manifest.json
+data/interim/planning/nuclear_quarantine.csv
+data/interim/planning/legacy_candidates/generation.csv
+data/interim/planning/legacy_candidates/lines.csv
+data/interim/planning/legacy_candidates/substations.csv
+data/interim/planning/legacy_candidates/transformers.csv
+data/processed/planning/exercise_schedule.csv
+data/processed/planning/generation.csv
+data/processed/planning/lines.csv
+data/processed/planning/portfolio_manifest.json
+data/processed/planning/project_relationships.csv
+data/processed/planning/projects.csv
+data/processed/planning/substations.csv
+data/processed/planning/transformers.csv
