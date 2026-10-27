@@ -192,10 +192,16 @@ def prepare_existing_generation(
         validate="one_to_one",
         suffixes=("", "_location"),
     )
+    # Evidence files may carry embedded line breaks with different newline
+    # conventions (LF versus CRLF).  Compare labels using the same
+    # provenance-tolerant key used for technology and system labels, while
+    # retaining the source-faithful values in the output.
     if not (
-        joined["plant_original"] == joined["plant_original_location"]
+        joined["plant_original"].map(comparison_key)
+        == joined["plant_original_location"].map(comparison_key)
     ).all() or not (
-        joined["province_original"] == joined["province_original_location"]
+        joined["province_original"].map(comparison_key)
+        == joined["province_original_location"].map(comparison_key)
     ).all():
         raise ValueError("location evidence plant/province labels do not match source rows")
 
@@ -206,9 +212,9 @@ def prepare_existing_generation(
             raise ValueError(
                 f"commissioning events reference non-SNI source rows: {unknown_rows}"
             )
-        labels = sni.set_index("source_row")["plant_original"]
+        labels = sni.set_index("source_row")["plant_original"].map(comparison_key)
         for row in commissioning_events.itertuples(index=False):
-            if row.plant_original != labels.loc[row.source_row]:
+            if comparison_key(row.plant_original) != labels.loc[row.source_row]:
                 raise ValueError(
                     f"commissioning event plant label does not match source row {row.source_row}"
                 )
