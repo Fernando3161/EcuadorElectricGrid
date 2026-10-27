@@ -415,11 +415,11 @@ def _add_colombia_interconnection(
 ) -> dict[str, object]:
     """Add the documented Pimampiro and Tulcan Colombia interfaces.
 
-    The 500 MW rating is a modeling assumption. The 45.20 USD/MWh marginal cost
+    The 450 MW rating is a modeling assumption. The 45.20 USD/MWh marginal cost
     is the CENACE 2022 average Colombia import price (4.52 cUSD/kWh).
     """
     config = dict(config or {})
-    max_capacity_mw = float(config.get("max_capacity_mw", 500.0))
+    max_capacity_mw = float(config.get("max_capacity_mw", 450.0))
     marginal_cost_usd_per_mwh = float(config.get("marginal_cost_usd_per_mwh", 45.2))
     interfaces = config.get("interfaces", {})
     buses = [str(interfaces.get("pimampiro_230_bus", "84")), str(interfaces.get("tulcan_138_bus", "36"))]

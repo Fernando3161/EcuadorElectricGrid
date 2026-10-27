@@ -124,7 +124,7 @@ acceptance:
 
 interconnection_colombia:
   enabled: true
-  max_capacity_mw: 500.0
+  max_capacity_mw: 450.0
   historical_energy_gwh: 465.83
   historical_energy_min_gwh: 465.83
   historical_energy_max_gwh: 465.83

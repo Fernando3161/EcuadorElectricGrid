@@ -21,6 +21,7 @@ REFERENCE_NETWORK = ROOT / "results/phase_06d/baseline/network_solved_2022.nc"
 DEMAND_2025_GWH = 32650.66
 DEMAND_2022_GWH = 27561.62
 STRESS_MONTHS = (9, 10, 11, 12)
+COLOMBIA_EXPORT_CAP_MW = 450.0
 
 
 def sha256(path: Path) -> str:
@@ -95,8 +96,16 @@ def build_scenario_network(
     if missing:
         raise ValueError(f"Rebuilt hydro profiles missing network generators: {missing}")
     n.generators_t.p_max_pu.loc[:, hydro_ids] = hydro_profiles.loc[snapshots, hydro_ids]
+    colombia_ids = n.generators.index[n.generators.carrier.eq("interconnection_colombia")]
+    if len(colombia_ids):
+        n.generators.loc[colombia_ids, "p_nom"] = COLOMBIA_EXPORT_CAP_MW
+    colombia_link_ids = n.links.index[n.links.carrier.eq("interconnection_colombia")]
+    if len(colombia_link_ids):
+        link_total = float(n.links.loc[colombia_link_ids, "p_nom"].sum())
+        if link_total > 0:
+            n.links.loc[colombia_link_ids, "p_nom"] *= COLOMBIA_EXPORT_CAP_MW / link_total
     n.meta = dict(n.meta or {})
-    n.meta.update({"phase": "08A", "year": year, "hydro_profile_method": "caudal_first_build_hydro_availability", "reference_network": str(REFERENCE_NETWORK.relative_to(ROOT))})
+    n.meta.update({"phase": "08A", "year": year, "hydro_profile_method": "caudal_first_build_hydro_availability", "reference_network": str(REFERENCE_NETWORK.relative_to(ROOT)), "colombia_export_cap_mw": COLOMBIA_EXPORT_CAP_MW})
     return n
 
 
