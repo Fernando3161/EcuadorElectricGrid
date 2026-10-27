@@ -310,3 +310,4 @@ results/phase_08a/shedding_by_month.csv
 results/phase_08a/*.solved.nc
 results/phase_08a/*_highs.log
 reports/PHASE_08A_RESULT_COMPARISON.md
+results/*

@@ -184,8 +184,8 @@ artifacts:
       record: Owner-selected adjustment, annexes A/B/C; older chapters remain legacy evidence
     persistent_uri: https://www.ambienteyenergia.gob.ec/plan-maestro-de-electricidad/
     download_url: null
-    bytes: 6673
-    sha256: 2e93438b16971645fbfbeec751fd453d14f5764ace9dd886e2c655e75487c0e7
+    bytes: 6622
+    sha256: 7636582685549652d57476c3127b0dee6c30195e87250b60420ada5838c785c3
     media_type: text/csv
     license: official-publication-terms-review-required
     validation:
@@ -202,8 +202,8 @@ artifacts:
       record: Owner-selected adjustment, annexes A/B/C; older chapters remain legacy evidence
     persistent_uri: https://www.ambienteyenergia.gob.ec/plan-maestro-de-electricidad/
     download_url: null
-    bytes: 8398
-    sha256: 5eeb79f8c8116211b0455e9b6327c7030f0ac5feb347b5f61af23187dd7cc9d0
+    bytes: 8324
+    sha256: d37ab84a6f612b22ee3826a523f484a181208d6f565a74edbb461b03de7e3908
     media_type: text/csv
     license: official-publication-terms-review-required
     validation:
@@ -239,8 +239,8 @@ artifacts:
       record: Legacy evidence migration; official edition and source locators unresolved
     persistent_uri: https://github.com/Fernando3161/EcuadorElectricGrid
     download_url: null
-    bytes: 5448
-    sha256: 3764c5d37e8c1a7836878d5d6ff49c753670f6b5664a6ef1573373d4c755328f
+    bytes: 5415
+    sha256: abb0a30aa05220a89588ce6ef97a45b0c7c5dad2b8aafcdb5d13c627724b3d55
     media_type: text/csv
     license: repository-license-review-required
     validation:
@@ -257,8 +257,8 @@ artifacts:
       record: Legacy evidence migration; official edition and source locators unresolved
     persistent_uri: https://github.com/Fernando3161/EcuadorElectricGrid
     download_url: null
-    bytes: 2978
-    sha256: ec5dbd50cc2ba633302fa6bda33093b4ec357f4b2ba8c245210a8c21a9d19c5f
+    bytes: 2947
+    sha256: 39da2d849cd884eb0964097c8d277450a5698be5ffbf9bfd5a4f689e2c8801de
     media_type: text/csv
     license: repository-license-review-required
     validation:
@@ -351,8 +351,8 @@ artifacts:
       record: Legacy evidence migration; official edition and source locators unresolved
     persistent_uri: https://github.com/Fernando3161/EcuadorElectricGrid
     download_url: null
-    bytes: 3667
-    sha256: f90170c8e63e4bf2e86d75fbb34d8ca3fca70314cf2e86e6df751d84f1a382a9
+    bytes: 3581
+    sha256: e24bca9ea7a8b11ed7f8da642e79dc5f3e66a1f3a9cbb2b6309608f2a9e32eab
     media_type: application/json
     license: repository-license-review-required
     validation:
@@ -538,8 +538,8 @@ artifacts:
       migration_script: scripts/migrate_phase04_generation_sources.py
     persistent_uri: https://www.recursosyenergia.gob.ec/wp-content/uploads/2020/01/4.-EXPANSION-DE-LA-GENERACION.pdf
     download_url: null
-    bytes: 68939
-    sha256: 69d62b23d74c1981a5ec7ff57c8387d1006f89e9aa6f8b6c208e7ce66246709b
+    bytes: 68638
+    sha256: 5e327737ab248eb616fe3a2ae70f30a5470b6ae004401425403e04be8cab1d39
     media_type: text/csv
     license: official-publication
     validation:
@@ -656,8 +656,8 @@ artifacts:
       migration_script: scripts/migrate_phase04_generation_sources.py
     persistent_uri: https://github.com/Fernando3161/EcuadorElectricGrid
     download_url: null
-    bytes: 11293
-    sha256: 34850f6484e45a1f79e4ac979bfc540d28f139d761e8cd655c9b2d09aa22a5e9
+    bytes: 11227
+    sha256: 97f268a8ff455bbc5f76e1e6e588893aa31fdaa548f94c70b6d2a4f6ba646f03
     media_type: text/csv
     license: repository-license-review-required
     validation:
@@ -811,8 +811,8 @@ artifacts:
       record: Legacy carrier metadata; only baseline-used rows are imported
     persistent_uri: https://github.com/Fernando3161/EcuadorElectricGrid
     download_url: null
-    bytes: 660
-    sha256: 7c2399062f44c165477acc7d7aeecc0dfa080c01d88ff02af852b86ac3d94e63
+    bytes: 645
+    sha256: ac6a3c0867c85ec62dd58e00e6d0933fb3a95ffefa53c99745594a37ac65aba5
     media_type: text/csv
     license: repository-license-review-required
     validation:
