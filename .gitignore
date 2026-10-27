@@ -302,3 +302,8 @@ results/phase_08/generation_by_carrier.csv
 results/phase_08/indicators.csv
 results/phase_08/scenario_summary.csv
 results/phase_08/tendencial_2030_summary.json
+results/phase_08a/caudal_scenarios.csv
+results/phase_08a/hydro_scope.csv
+results/phase_08a/generation_by_carrier.csv
+results/phase_08a/scenario_summary.csv
+results/phase_08a/shedding_by_month.csv
