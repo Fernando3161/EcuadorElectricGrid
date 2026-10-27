@@ -248,3 +248,11 @@ results/phase_06b/wind_profile_source_comparison_2022_canonical.csv
 data/interim/generation/hydro_profile_assignments_2022.csv
 data/processed/generation/generators_2022.csv
 data/interim/generation/hydro_profile_assignments_2022.csv
+reports/figures/phase_05/candidate_topology_138kv_2022.png
+reports/figures/phase_05/candidate_topology_230kv_2022.png
+reports/figures/phase_05/candidate_topology_500kv_2022.png
+reports/figures/phase_05/candidate_topology_by_voltage_2022.png
+data/interim/network/low_voltage_bridge_audit_2022.csv
+data/interim/network/topology_components_2022.csv
+data/interim/network/topology_fingerprint_2022.json
+data/interim/network/topology_mutation_audit_2022.csv
