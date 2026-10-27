@@ -15,15 +15,15 @@ From the repository root, use PowerShell and the existing Conda installation:
 
 Run the canonical notebooks sequentially, using a fresh Conda process for
 each notebook. Notebook 08 is a full-year scenario screen and must not be run
-concurrently with another annual solve. Notebook 08A is a separate experiment
-and is excluded from the Phase 09 chain.
+concurrently with another annual solve. Notebook 08A is included as the final,
+separate hydro-shortage experiment and must also run in its own fresh process.
 
 ## Execution evidence
 
-The following Phase 09 copies completed and are retained:
+The Phase 09 handover set retains:
 
-- notebooks 00 through 07, including the full-year notebook 06;
-- notebook 08 for both the tendencial and expansion 2030 cases;
+- notebooks 00 through 08, including the full-year notebook 06;
+- notebook 08A, using the validated Phase 06d baseline as its reference;
 - environment creation and runtime verification evidence;
 - solver logs and scenario summaries produced by the full-year runs.
 
@@ -38,7 +38,7 @@ The student prerequisite list is
 `results/phase_09_handover/required_files.txt`. It contains only external/raw
 inputs and the execution contract. Notebook-generated CSVs, intermediate
 networks, solved NetCDFs, executed notebooks, runtime verification, reports,
-and Phase 08A utilities are deliberately excluded. The chain must create
+and Phase 08A generated results are deliberately excluded. The chain must create
 `results/phase_06/network_solved_2022.nc` in Notebook 06; Notebook 08 consumes
 that exact path.
 
@@ -55,8 +55,9 @@ legacy material.
 ## Handover conclusion
 
 The documented Phase 09 notebook chain is complete for the approved runtime:
-00, 01, 02, 03, 04, 05, 06, 07, and 08. Notebook 08A remains a separate
-experiment and is intentionally excluded. The full-year runs were performed in
+00, 01, 02, 03, 04, 05, 06, 07, 08, and 08A. Notebook 08A remains a separate
+experiment within the handover run and is intentionally placed after Notebook
+08. The full-year runs were performed in
 isolated Conda processes, with the solver model released before NetCDF export;
 the expansion case additionally used IPM without crossover to control memory.
 

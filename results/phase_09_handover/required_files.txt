@@ -1,6 +1,6 @@
 # Student-chain prerequisites only.
 # Generated notebook outputs, solved networks, executed notebooks, runtime
-# evidence, reports, and Phase 08A tools are intentionally excluded.
+# evidence, reports, and Phase 08A generated results are intentionally excluded.
 
 # Environment and execution contract
 config/environment_ec.yaml
@@ -19,6 +19,13 @@ notebooks/05_assemble_and_smoke_test_2022_network.ipynb
 notebooks/06_run_and_validate_2022_full_year.ipynb
 notebooks/07_prepare_master_plan_expansion.ipynb
 notebooks/08_future_masterplan_screening.ipynb
+notebooks/08a_hydro_shortage_2026.ipynb
+
+# Minimal local module closure required by Notebook 08A.
+src/phase08a.py
+src/availability.py
+src/demand.py
+src/generation.py
 
 # External/raw inputs resolved by the artifact manifest
 data/raw/networks/base.nc
