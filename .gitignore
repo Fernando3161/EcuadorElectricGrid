@@ -270,3 +270,14 @@ data/interim/network/load_attachment_screen_original_2022.csv
 data/interim/network/load_attachments_2022.csv
 data/interim/network/load_connection_evidence_2022.csv
 data/interim/network/generator_connection_evidence_2022.csv
+results/phase_06/artifacts.json
+results/phase_06/validation_2022.csv
+results/phase_06/validation_summary.json
+results/phase_06a/annual_dispatch_by_technology.csv
+results/phase_06a/carrier_validation_diagnostics.csv
+results/phase_06a/diagnostic_metadata.json
+results/phase_06a/figure_manifest.json
+results/phase_06a/national_demand_hourly_mw.csv
+
+*.png
+*.svg
