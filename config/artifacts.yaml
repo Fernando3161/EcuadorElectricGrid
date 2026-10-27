@@ -662,6 +662,7 @@ artifacts:
     license: official-publication
     validation:
       kind: checksum_only
+      normalize_newlines: lf
 
   - id: load_connection_evidence_2022
     description: Reviewed 69 kV load aggregation decisions, evidence, and unresolved fallback for the 2022 network.
@@ -682,6 +683,7 @@ artifacts:
     license: repository-license-review-required
     validation:
       kind: checksum_only
+      normalize_newlines: lf
 
   - id: demand_profiles_2022_mw
     description: Stage 1 hourly 2022 bus-level SNI demand in MW.
