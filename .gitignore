@@ -256,3 +256,17 @@ data/interim/network/low_voltage_bridge_audit_2022.csv
 data/interim/network/topology_components_2022.csv
 data/interim/network/topology_fingerprint_2022.json
 data/interim/network/topology_mutation_audit_2022.csv
+reports/figures/phase_05/attachment_distances_2022.png
+reports/figures/phase_05/attachment_materiality_screen_corrected_2022.png
+reports/figures/phase_05/attachment_materiality_screen_original_2022.png
+data/interim/network/assembled_network_artifact_2022.json
+data/interim/network/assembled_network_fingerprint_2022.json
+data/interim/network/generator_attachment_screen_2022.csv
+data/interim/network/generator_attachment_screen_original_2022.csv
+data/interim/network/generator_attachments_2022.csv
+data/interim/network/generator_connection_evidence_2022.csv
+data/interim/network/load_attachment_screen_2022.csv
+data/interim/network/load_attachment_screen_original_2022.csv
+data/interim/network/load_attachments_2022.csv
+data/interim/network/load_connection_evidence_2022.csv
+data/interim/network/generator_connection_evidence_2022.csv
