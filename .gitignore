@@ -297,3 +297,8 @@ data/processed/planning/substations.csv
 data/processed/planning/transformers.csv
 data/processed/demand/demand_prognosis_2022_2050.csv
 tests/test_demand_prognosis.py
+results/phase_08/expansion_2030_summary.json
+results/phase_08/generation_by_carrier.csv
+results/phase_08/indicators.csv
+results/phase_08/scenario_summary.csv
+results/phase_08/tendencial_2030_summary.json
