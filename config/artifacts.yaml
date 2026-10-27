@@ -43,6 +43,45 @@ stages:
     depends_on: [08_scenario]
 
 artifacts:
+  - id: legacy_demand_month_2022
+    description: Legacy monthly demand table used only to reproduce the Phase 08 prognosis's 2022 baseline; not the Phase 01 SNI boundary.
+    stages: [08_scenario]
+    destination: data/raw/demand/demand_month.csv
+    role: source
+    availability: repository
+    source:
+      organization: EcuadorElectricGrid legacy evidence
+      record: Legacy 2021–2022 monthly demand transcription; underlying page and metering boundary unverified
+      data_year: 2022
+    persistent_uri: https://github.com/Fernando3161/EcuadorElectricGrid
+    download_url: null
+    bytes: 225
+    sha256: b1106594551354c0f01d0087d2c606ecf815ee4ccc8fe7ef8b400dfc97742ad7
+    media_type: text/csv
+    license: repository-license-review-required
+    validation:
+      kind: checksum_only
+      normalize_newlines: lf
+
+  - id: legacy_demand_year_prognosis
+    description: Legacy 2023–2032 Tendencial and Expansion demand prognosis; original table/page attribution unverified.
+    stages: [08_scenario]
+    destination: data/raw/demand/demand_year_prognosis.csv
+    role: source
+    availability: repository
+    source:
+      organization: EcuadorElectricGrid legacy evidence
+      record: Legacy 2023–2032 prognosis transcription; underlying page unverified
+    persistent_uri: https://github.com/Fernando3161/EcuadorElectricGrid
+    download_url: null
+    bytes: 199
+    sha256: 2d636ab5bc1028364184c0732adc7a921bf0478d702e02c2e17934a5d7005c3a
+    media_type: text/csv
+    license: repository-license-review-required
+    validation:
+      kind: checksum_only
+      normalize_newlines: lf
+
   - id: planning_adjustment_totals_source
     description: Verbatim printed Annex A totals; typography and energy discrepancy retained.
     stages: [07_planning]

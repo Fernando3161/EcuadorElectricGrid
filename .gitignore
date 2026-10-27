@@ -295,3 +295,5 @@ data/processed/planning/project_relationships.csv
 data/processed/planning/projects.csv
 data/processed/planning/substations.csv
 data/processed/planning/transformers.csv
+data/processed/demand/demand_prognosis_2022_2050.csv
+tests/test_demand_prognosis.py
