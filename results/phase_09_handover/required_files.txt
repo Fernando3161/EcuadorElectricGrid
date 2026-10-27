@@ -2,6 +2,9 @@
 # Generated notebook outputs, solved networks, executed notebooks, runtime
 # evidence, reports, and Phase 08A generated results are intentionally excluded.
 
+#Literature Sources for Transparency, not required to run the simulation
+literature\PROVENANCE_CATALOG.md
+
 # Environment and execution contract
 config/environment_ec.yaml
 config/artifacts.yaml
