@@ -59,3 +59,35 @@ The documented Phase 09 notebook chain is complete for the approved runtime:
 experiment and is intentionally excluded. The full-year runs were performed in
 isolated Conda processes, with the solver model released before NetCDF export;
 the expansion case additionally used IPM without crossover to control memory.
+
+## Archival provenance and generated evidence
+
+The generated files remain available as audit evidence, but are no longer
+presented as student prerequisites. They are produced by the notebook chain
+and may be retained in the repository's evidence area or in the release
+archive.
+
+One important consequence: the previously executed Notebook 08 copies were
+produced before the final Phase 06 output-path correction. They should be
+rerun once more so the retained execution evidence matches the final chain.
+
+For long-term source traceability, create a Zenodo record through the GitHub
+release integration and upload a complete archival bundle containing:
+
+1. repository source at the release commit;
+2. raw source tables;
+3. permitted source PDFs;
+4. `config/artifacts.yaml`;
+5. a provenance and checksum manifest;
+6. the environment specification and lock/evidence files.
+
+Preserve the government URL, retrieval date, edition, document title,
+page/table locator, license status, and SHA-256 for every source. Use the
+Zenodo concept DOI in project documentation; each release receives its own
+version DOI.
+
+Do not redistribute PDFs whose licensing is unclear. For those sources,
+archive the metadata, checksum, and source URL, and let preflight download the
+file. This preserves durable provenance if a government website disappears,
+without incorrectly treating generated results or audit evidence as
+installation inputs.

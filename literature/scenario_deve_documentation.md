@@ -236,3 +236,33 @@ This structure makes it straightforward to build a dashboard or API layer later.
 1) Implement the scenario registry table in a repository-managed file.
 2) Implement builders that map demand_case, generation_case, network_case, nuclear_case into PyPSA modifications.
 3) Run a first batch on the minimal scenario set, validate outputs, then expand the registry.
+
+## Archival provenance and student prerequisites
+
+The generated files remain available as audit evidence, but are no longer
+presented as student prerequisites. Students generate intermediate tables,
+networks, and solved outputs by running the canonical notebooks in order.
+
+The previously executed Notebook 08 copies were produced before the final
+Phase 06 output-path correction. They should be rerun once more so the
+retained execution evidence matches the final chain.
+
+For long-term source traceability, create a Zenodo record through the GitHub
+release integration. The archival bundle should contain:
+
+1. repository source at the release commit;
+2. raw source tables;
+3. permitted source PDFs;
+4. `config/artifacts.yaml`;
+5. a provenance/checksum manifest;
+6. environment specification and lock/evidence files.
+
+For every source, preserve the government URL, retrieval date, edition,
+document title, page/table locator, license status, and SHA-256. Use the
+Zenodo concept DOI in project documentation; each release receives a
+version-specific DOI.
+
+Do not redistribute PDFs whose licensing is unclear. Archive their metadata,
+checksum, and source URL instead, and let preflight download them. This keeps
+the evidence traceable if a government URL disappears without confusing
+generated results or audit evidence with installation inputs.
