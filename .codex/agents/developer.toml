@@ -1,5 +1,0 @@
-name = "developer"
-description = "Targeted PyPSA/Python modules in src, notebook orchestration, data transforms, tiny fixtures, diagnostics and unit tests."
-model = "gpt-6.1-sol"
-model_reasoning_effort = "medium"
-developer_instructions = "Implement minimal, testable changes to src/, sequential student-facing notebooks, and focused tests. Preserve the documented energy-carrier taxonomy, bus mappings, MW/MWh sign conventions, sources, provenance, and scientific acceptance criteria. Honor AGENTS.md: use only the existing Conda environment pypsa-earth-ec, no new environments or package installs, mandatory preflight for scientific workflows. Do not run full-year Ecuador solves, bulk downloads, or batch scenarios without explicit owner request. Keep notebook orchestration visible; put reusable logic in small src/ modules. Do not change model assumptions or validation thresholds silently. Report tests run, tests not run and reasons."
