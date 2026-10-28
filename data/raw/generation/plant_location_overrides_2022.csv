@@ -1,0 +1,3 @@
+source_row,plant_original,latitude,longitude,location_method,location_source,evidence_note,superseded_latitude,superseded_longitude,superseded_location_method
+15,Esmeraldas I,0.92603,-79.68927,verified_mapped_location,OpenStreetMap way 173912804; Mapcarta W173912804,"Representative mapped facility location, not a surveyed generator or transformer terminal; supplied and reviewed by repository owner.",0.7343619,-79.3858867,canton_proxy_used_before_review
+20,Esmeraldas II,0.92602,-79.69123,verified_mapped_location,OpenStreetMap way 413423622; Mapcarta W413423622,"Representative mapped facility location, not a surveyed generator or transformer terminal; supplied and reviewed by repository owner.",0.7343619,-79.3858867,canton_proxy_used_before_review

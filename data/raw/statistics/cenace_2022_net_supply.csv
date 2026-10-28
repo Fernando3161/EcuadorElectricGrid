@@ -1,0 +1,13 @@
+source_carrier,reference_gwh,source_class,source_id,source_page,source_table,evidence_class
+hydroelectric,24499.54,conventional,CENACE_ANNUAL_2022,73-74,Table 2.4,official_fact
+wind,57.00,non_conventional,CENACE_ANNUAL_2022,73-74,Table 2.4,official_fact
+biogas,40.06,non_conventional,CENACE_ANNUAL_2022,73-74,Table 2.4,official_fact
+biomass,195.68,non_conventional,CENACE_ANNUAL_2022,73-74,Table 2.4,official_fact
+solar_photovoltaic,33.15,non_conventional,CENACE_ANNUAL_2022,73-74,Table 2.4,official_fact
+diesel,239.80,conventional,CENACE_ANNUAL_2022,73-74,Table 2.4,official_fact
+fuel_oil,1379.66,conventional,CENACE_ANNUAL_2022,73-74,Table 2.4,official_fact
+natural_gas,528.42,conventional,CENACE_ANNUAL_2022,73-74,Table 2.4,official_fact
+naphtha,0.00,conventional,CENACE_ANNUAL_2022,73-74,Table 2.4,official_fact
+residue,1245.47,conventional,CENACE_ANNUAL_2022,73-74,Table 2.4,official_fact
+imports_colombia,465.30,international_interconnection,CENACE_ANNUAL_2022,73-74,Table 2.4,official_fact
+imports_peru,0.53,international_interconnection,CENACE_ANNUAL_2022,73-74,Table 2.4,official_fact

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/ecuador-electric-grid/hydro-assignment.schema.json",
+  "title": "Hydro plant flow-proxy assignment",
+  "type": "object",
+  "required": [
+    "plant_id",
+    "source_row",
+    "plant_name",
+    "caudal_id",
+    "assignment_basis",
+    "confidence",
+    "evidence_note"
+  ],
+  "properties": {
+    "plant_id": {"type": "string", "pattern": "^ec2022_[0-9]{3}_"},
+    "source_row": {"type": "integer", "minimum": 2},
+    "plant_name": {"type": "string", "minLength": 1},
+    "caudal_id": {"type": "string", "minLength": 1},
+    "assignment_basis": {"enum": ["direct_plant_series", "same_hydrological_system", "legacy_regional_proxy"]},
+    "confidence": {"enum": ["high", "medium", "low"]},
+    "evidence_note": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": false
+}

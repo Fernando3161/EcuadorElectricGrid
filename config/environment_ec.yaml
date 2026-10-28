@@ -1,86 +1,42 @@
-# SPDX-FileCopyrightText:  PyPSA-Earth and PyPSA-Eur Authors
-#
+# SPDX-FileCopyrightText: PyPSA-Earth and PyPSA-Eur Authors
 # SPDX-License-Identifier: AGPL-3.0-or-later
-
+# Runtime for the canonical Phase 06H notebooks 00 through 06a.
+# Historical pins: docs/ENVIRONMENT.md and Phase 06H executed preflight.
+# Reconstruction decisions and excluded legacy tools: docs/ENVIRONMENT_CREATION.md.
+# Direct-dependency specification; creation also exports exact resolved builds.
 name: pypsa-earth-ec
 channels:
-- conda-forge
-- bioconda
-- gurobi
+  - conda-forge
+  - nodefaults
 dependencies:
-- python>=3.10, <3.12  # 3.12 has weird issues with snakemake https://github.com/snakemake/snakemake/issues/2480
-- pip
-
-- pypsa>=0.25, <=0.30.3
-- atlite>=0.4.1
-- dask
-- powerplantmatching>=0.5.19  # due to this https://github.com/PyPSA/powerplantmatching/pull/202
-- earth-osm>=2.3.post1
-
-# Dependencies of the workflow itself
-- xlrd
-- openpyxl
-- seaborn
-- snakemake-minimal<8
-- memory_profiler
-- ruamel.yaml<=0.17.26
-- pytables
-- pyscipopt
-- lxml
-- numpy<2
-- pandas
-- geoplot
-- geopandas>=1
-- fiona>=1.10
-- xarray>=2023.11.0, <=2025.01.2
-- netcdf4
-- libgdal-netcdf
-- networkx
-- scipy<1.16
-- pydoe2
-- shapely!=2.0.4
-- ploty=6.3.1
-- 
-- pre-commit
-- matplotlib
-- reverse-geocode
-- country_converter
-- pyogrio
-- numba
-- py7zr
-- tsam>=1.1.0
-- fake-useragent
-- chaospy
-- geopy
-- tqdm
-- pytz
-
-# Cloud download
-# - googledrivedownloader  # Commented until https://github.com/conda-forge/googledrivedownloader-feedstock/pull/7 is merged
-
-# Jupyter notebook requirement
-- ipykernel
-- ipython
-- jupyterlab
-
-# GIS dependencies:
-- cartopy
-- rasterio
-- rioxarray
-
-# Plotting
-- geoviews
-- hvplot
-- graphviz
-- contextily
-
-# Default solver for tests (required for CI)
-- glpk
-- gurobi
-
-# Command Line Interface
-- rich
-
-- pip:
-  - currencyconverter
-  - googledrivedownloader>=1.1
+  - python=3.11.14
+  - pip
+  # Scientific stack observed on the original working laptop.
+  - pypsa=0.30.3
+  - numpy=1.26.4
+  - pandas=2.3.3
+  - scipy=1.15.2
+  - xarray=2025.1.2
+  - h5netcdf=1.7.3
+  - netcdf4=1.7.3
+  - matplotlib=3.10.7
+  - plotly=6.3.1
+  - geopandas=1.1.1
+  - networkx>=3,<4
+  - seaborn>=0.13,<0.14
+  # Explicit solver and modeling layer; Linopy is a reconstruction choice.
+  - linopy=0.5.8
+  - highspy=1.11.0
+  # Artifact manifest, schemas, downloads and environment checks.
+  - pyyaml=6.0.3
+  - requests=2.32.5
+  - jsonschema=4.25.1
+  - packaging>=24,<26
+  # Notebook execution and VS Code kernel/debugger support.
+  - ipykernel>=6.29,<7
+  - ipython>=8.26,<9
+  - jupyterlab>=4,<5
+  - jupyter_client>=8,<9
+  - nbclient=0.10.2
+  - nbformat=5.10.4
+  - debugpy>=1.8,<2

@@ -1,0 +1,14 @@
+# The image contains only the runner entrypoint. The scientific repository is
+# cloned inside the container, so local outputs and workstation state must not
+# be sent to the Docker daemon as build context.
+.git/
+.codex/
+results/
+data/processed/
+data/interim/
+__pycache__/
+.pytest_cache/
+.env
+.env.*
+*.py[cod]
+*.log

@@ -3,20 +3,28 @@ __pycache__/
 *.py[codz]
 *$py.class
 
-*.csv
-*.png 
+#*.csv
+*.png
+!reports/figures/**/*.png
 *.jpg
-*.jpeg  
+*.jpeg
 *.gif
 *.tiff
 *.bmp
 *.xlsx
-*.nc 
+*.nc
 *.gpkg
+*.pdf
+!literature/PlanMaestroElectrifEc/AJUSTE-PME-2026.pdf
 
 # C extensions
 *.so
-
+.csv
+.env.local
+.env.*
+!.env.example
+!data/raw/cutouts/nlr_sup3rwind/
+!data/raw/cutouts/nlr_sup3rwind/*.csv
 # Distribution / packaging
 .Python
 build/
@@ -36,6 +44,13 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+data/processed/demand/_ALT
+data/processed/demand/demand_profiles_2022_mw.csv
+data/processed/generation/hydro_availability_2022.csv
+data/processed/generation/renewable_availability_2022.csv
+data/raw/generation/_alt
+data/raw/networks/_alt
+data/raw/networks/backups
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -88,6 +103,7 @@ target/
 
 # Jupyter Notebook
 .ipynb_checkpoints
+results/phase_07/
 
 # IPython
 profile_default/
@@ -193,9 +209,9 @@ cython_debug/
 .abstra/
 
 # Visual Studio Code
-#  Visual Studio Code specific template is maintained in a separate VisualStudioCode.gitignore 
+#  Visual Studio Code specific template is maintained in a separate VisualStudioCode.gitignore
 #  that can be found at https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
-#  and can be added to the global gitignore or merged into this file. However, if you prefer, 
+#  and can be added to the global gitignore or merged into this file. However, if you prefer,
 #  you could uncomment the following to ignore the entire vscode folder
 # .vscode/
 
@@ -217,3 +233,81 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 notebooks/999_Vietnam.ipynb
+data/processed/statistics/ecuador_sni_2022_supply_reference.csv
+reports/figures/phase_03/demand_duration_curve.png
+reports/figures/phase_03/demand_monthly_validation.png
+data/interim/generation/hydro_profile_assignments_2022.csv
+reports/figures/phase_04/availability_duration_curves.png
+reports/figures/phase_04/generation_capacity_by_carrier.png
+reports/figures/phase_04/generation_location_evidence.png
+reports/figures/phase_04/hydro_assignment_confidence.png
+reports/figures/phase_04/weekly_example_availability_profiles.png
+results/phase_06b/biomass_profile_diagnostics_2022.csv
+results/phase_06b/profile_canonical_selection_2022.json
+results/phase_06b/wind_profile_source_comparison_2022_canonical.csv
+data/interim/generation/hydro_profile_assignments_2022.csv
+data/processed/generation/generators_2022.csv
+data/interim/generation/hydro_profile_assignments_2022.csv
+reports/figures/phase_05/candidate_topology_138kv_2022.png
+reports/figures/phase_05/candidate_topology_230kv_2022.png
+reports/figures/phase_05/candidate_topology_500kv_2022.png
+reports/figures/phase_05/candidate_topology_by_voltage_2022.png
+data/interim/network/low_voltage_bridge_audit_2022.csv
+data/interim/network/topology_components_2022.csv
+data/interim/network/topology_fingerprint_2022.json
+data/interim/network/topology_mutation_audit_2022.csv
+reports/figures/phase_05/attachment_distances_2022.png
+reports/figures/phase_05/attachment_materiality_screen_corrected_2022.png
+reports/figures/phase_05/attachment_materiality_screen_original_2022.png
+data/interim/network/assembled_network_artifact_2022.json
+data/interim/network/assembled_network_fingerprint_2022.json
+data/interim/network/generator_attachment_screen_2022.csv
+data/interim/network/generator_attachment_screen_original_2022.csv
+data/interim/network/generator_attachments_2022.csv
+data/interim/network/generator_connection_evidence_2022.csv
+data/interim/network/load_attachment_screen_2022.csv
+data/interim/network/load_attachment_screen_original_2022.csv
+data/interim/network/load_attachments_2022.csv
+data/interim/network/load_connection_evidence_2022.csv
+data/interim/network/generator_connection_evidence_2022.csv
+results/phase_06/artifacts.json
+results/phase_06/validation_2022.csv
+results/phase_06/validation_summary.json
+results/phase_06a/annual_dispatch_by_technology.csv
+results/phase_06a/carrier_validation_diagnostics.csv
+results/phase_06a/diagnostic_metadata.json
+results/phase_06a/figure_manifest.json
+results/phase_06a/national_demand_hourly_mw.csv
+
+*.png
+*.svg
+data/interim/planning/migration_manifest.json
+data/interim/planning/nuclear_quarantine.csv
+data/interim/planning/legacy_candidates/generation.csv
+data/interim/planning/legacy_candidates/lines.csv
+data/interim/planning/legacy_candidates/substations.csv
+data/interim/planning/legacy_candidates/transformers.csv
+data/processed/planning/exercise_schedule.csv
+data/processed/planning/generation.csv
+data/processed/planning/lines.csv
+data/processed/planning/portfolio_manifest.json
+data/processed/planning/project_relationships.csv
+data/processed/planning/projects.csv
+data/processed/planning/substations.csv
+data/processed/planning/transformers.csv
+data/processed/demand/demand_prognosis_2022_2050.csv
+results/phase_08/expansion_2030_summary.json
+results/phase_08/generation_by_carrier.csv
+results/phase_08/indicators.csv
+results/phase_08/scenario_summary.csv
+results/phase_08/tendencial_2030_summary.json
+results/phase_08a/caudal_scenarios.csv
+results/phase_08a/hydro_scope.csv
+results/phase_08a/generation_by_carrier.csv
+results/phase_08a/scenario_summary.csv
+results/phase_08a/shedding_by_month.csv
+results/phase_08a/*.solved.nc
+results/phase_08a/*_highs.log
+reports/PHASE_08A_RESULT_COMPARISON.md
+results/*
+!docs/figures/**/*.png

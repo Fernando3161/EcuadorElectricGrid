@@ -1,0 +1,494 @@
+source_row,operator_original,plant_original,province_original,system_original,technology_original,subtechnology_original,nominal_capacity_mw_original,effective_capacity_mw_original,source_document_id,source_locator,source_workbook,transcription_status
+2,"CELEC-Coca Codo
+Sinclair",Coca Codo Sinclair,Napo,S.N.I.,Hidráulica,Pasada,1500,1476,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 2",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+3,CELEC-Sur,Molino,Azuay,S.N.I.,Hidráulica,Embalse,1075,1100,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 3",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+4,CELEC-Sur,Sopladora,Azuay,S.N.I.,Hidráulica,Pasada,487,486.9,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 4",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+5,CELEC-Sur,Minas San Francisco,Azuay,S.N.I.,Hidráulica,Pasada,270,270,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 5",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+6,CELEC-Hidronación,Marcel Laniado,Guayas,S.N.I.,Hidráulica,Embalse,213,213,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 6",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+7,CELEC-Hidroagoyán,San Francisco,Tungurahua,S.N.I.,Hidráulica,Pasada,230,212,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 7",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+8,CELEC-Gensur,Delsitanisagua,Zamora Chinchipe,S.N.I.,Hidráulica,Pasada,180,180,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 8",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+9,CELEC-Sur,Mazar,Azuay,S.N.I.,Hidráulica,Embalse,170,170,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 9",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+10,CELEC-Hidroagoyán,Agoyán,Tungurahua,S.N.I.,Hidráulica,Pasada,160,154,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 10",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+11,"CELEC-
+Electroguayas","Gonzalo
+Zevallos (Vapor)",Guayas,S.N.I.,Térmica,Turbovapor,146,140,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 11",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+12,"CELEC-
+Electroguayas",Trinitaria,Guayas,S.N.I.,Térmica,Turbovapor,133,133,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 12",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+13,"CELEC-Termogas
+Machala","Termogas
+Machala I",El Oro,S.N.I.,Térmica,Turbogás,138.56,130.6,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 13",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+14,CELEC-TermoManabi,Jaramijó,Manabi,S.N.I.,Térmica,MCI,149.22,128.88,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 14",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+15,"CELEC-
+Termoesmeraldas",Esmeraldas I,Esmeraldas,S.N.I.,Térmica,Turbovapor,132.5,125,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 15",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+16,"CELEC-Termogas
+Machala",Termogas Machala II,El Oro,S.N.I.,Térmica,Turbogás,136.8,119,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 16",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+17,Intervisa Trade,Victoria II,Guayas,S.N.I.,Térmica,Turbogás,115,102,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 17",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+18,CNEL-Guayaquil,Anfbal Santos (Gas),Guayas,S.N.I.,Térmica,Turbogás,113.27,97,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 18",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+19,"CELEC-
+Electroguayas",Enrique Garcfa,Guayas,S.N.I.,Térmica,Turbogás,102,96,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 19",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+20,"CELEC-
+Termoesmeraldas",Esmeraldas II,Esmeraldas,S.N.I.,Térmica,MCI,100.2,84,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 20",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+21,Petroecuador,EPF-Eden Yuturi,Orellana,"No
+Incorporado",Térmica,MCI,114.22,81.19,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 21",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+22,San Carlos,San Carlos,Guayas,S.N.I.,Biomasa,Turbovapor,78,73.6,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 22",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+23,CELEC-Hidroagoyán,Pucará,Tungurahua,S.N.I.,Hidráulica,Embalse,73,70.6,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 23",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+24,Andes Petro,TPP,Sucumbios,"No
+Incorporado",Térmica,MCI,75.83,65.4,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 24",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+25,"CELEC-
+Electroguayas",Santa Elena II,Santa Elena,S.N.I.,Térmica,MCI,90.1,65.03,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 25",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+26,"CELEC-Coca Codo
+Sinclair",Manduriacu,Imbabura,S.N.I.,Hidráulica,Pasada,63.36,65,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 26",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+27,Hidroalto,Due,Sucumbios,S.N.I.,Hidráulica,Pasada,64.3,64.3,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 27",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+28,CNEL-Guayaquil,Álvaro Tinajero,Guayas,S.N.I.,Térmica,Turbogás,94.8,64,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 28",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+29,CELEC-Termopichincha,Santa Rosa,Pichincha,S.N.I.,Térmica,Turbogás,71.1,51,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 29",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+30,Elecaustro,Huascachaca,Loja,S.N.I.,Eólica,Eólica,49.98,49.98,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 30",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+31,Hidrosanbartolo,Hidrosanbartolo,Morona Santiago,S.N.I.,Hidráulica,Pasada,49.98,49.95,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 31",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+32,Hidronormandfa,Hidronormandfa,Morona Santiago,S.N.I.,Hidráulica,Pasada,49.58,49.58,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 32",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+33,CELEC-Hidrotoapi,Sarapullo,Pichincha,S.N.I.,Hidráulica,Pasada,48.45,48.45,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 33",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+34,CELEC-Termopichincha,Guangopolo2,Pichincha,S.N.I.,Térmica,MCI,52.2,48,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 34",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+35,Petroecuador,"Repsol YPF-
+SPF-3",Orellana,"No
+Incorporado",Térmica,MCI,45.23,44.3,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 35",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+36,CELEC-Termopichincha,Jivino III,Sucumbios,S.N.I.,Térmica,MCI,44,42,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 36",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+37,CELEC-Hidronación,Baba,Los Rios,S.N.I.,Hidráulica,Embalse,42.2,42,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 37",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+38,CELEC-Termopichincha,Quevedo II,Los Rios,S.N.I.,Térmica,MCI,47.6,40.5,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 38",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+39,CELEC-Electroguayas,Santa Elena III,Santa Elena,S.N.I.,Térmica,MCI,41.7,40,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 39",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+40,E.E. Quito,Cumbayá,Pichincha,S.N.I.,Hidráulica,Pasada,40,40,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 40",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+41,CELEC-TermoManabi,Miraflores,Manabi,S.N.I.,Térmica,MCI,49,39.4,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 41",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+42,ElitEnergy,Pusuno,Napo,S.N.I.,Hidráulica,Pasada,38.25,38.25,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 42",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+43,Hidroabanico,Abanico,Morona Santiago,S.N.I.,Hidráulica,Pasada,38.45,37.99,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 43",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+44,Pluspetrol,CPF,Pastaza,"No
+Incorporado",Térmica,MCI,40.34,36.23,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 44",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+45,Ecoelectric,Ecoelectric,Guayas,S.N.I.,Biomasa,Turbovapor,36.5,35.2,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 45",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+46,Petroecuador,"Repsol YPF-
+NPF-1",Orellana,"No
+Incorporado",Térmica,Turbogás,42.9,35,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 46",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+47,Generoca,Generoca,Guayas,S.N.I.,Térmica,MCI,38.12,34.4,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 47",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+48,Petroecuador,Palo Azul PGE,Orellana,"No
+Incorporado",Térmica,Turbovapor,38.9,33.18,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 48",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+49,Petroecuador,Sacha,Orellana,"No
+Incorporado",Térmica,MCI,38.91,31.95,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 49",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+50,E.E. Quito,G. Hernández,Pichincha,S.N.I.,Térmica,MCI,34.32,31.2,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 50",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+51,Fideicomiso Titularización PHS,Sabanilla,Zamora Chinchipe,S.N.I.,Hidráulica,Pasada,36,30.6,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 51",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+52,E.E. Quito,Nayón,Pichincha,S.N.I.,Hidráulica,Pasada,29.7,29.7,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 52",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+53,Petroecuador,CPT Crudo Diesel CELEC,Orellana,"No
+Incorporado",Térmica,MCI,33.56,29.5,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 53",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+54,Petroecuador,Oso,Napo,"No
+Incorporado",Térmica,MCI,39.46,29.13,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 54",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+55,Agroazucar,Ecudos A-G,Cañar,S.N.I.,Biomasa,Turbovapor,29.8,27.6,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 55",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+56,Ecuagesa,Topo,Tungurahua,S.N.I.,Hidráulica,Pasada,29.2,27,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 56",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+57,Petroecuador,CPF,Sucumbios,"No
+Incorporado",Térmica,MCI,38.59,26.59,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 57",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+58,Petroecuador,Secoya,Sucumbios,"No
+Incorporado",Térmica,MCI,29.75,26.27,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 58",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+59,Elecaustro,Ocaña,Cañar,S.N.I.,Hidráulica,Pasada,26.1,26.1,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 59",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+60,UNACEM,Selva Alegre,Imbabura,S.N.I.,Térmica,MCI,29.28,24.3,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 60",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+61,Elecaustro,Saucay,Azuay,S.N.I.,Hidráulica,Pasada,24,24,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 61",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+62,CELEC-Termopichincha,Guangopolo_T,Pichincha,S.N.I.,Térmica,MCI,22.5,21.8,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 62",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+63,E.E. Quito,Guangopolo_H,Pichincha,S.N.I.,Hidráulica,Pasada,20.92,20.92,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 63",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+64,Petroecuador,Cuyabeno Crudo Diesel CELEC,Sucumbios,"No
+Incorporado",Térmica,MCI,25.6,20.74,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 64",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+65,CNEL-Guayaquil,Anfbal Santos (Vapor),Guayas,S.N.I.,Térmica,Turbovapor,34.5,20,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 65",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+66,CELEC-Electroguayas,Gonzalo Zevallos (Gas),Guayas,S.N.I.,Térmica,Turbogás,26.27,20,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 66",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+67,Petroecuador,Tiputini A-1,Orellana,"No
+Incorporado",Térmica,MCI,24.52,19.4,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 67",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+68,Petroecuador,"Repsol YPF-
+SPF-1",Orellana,"No
+Incorporado",Térmica,Turbogás,30.1,19,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 68",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+69,Petroecuador,Auca Sur,Orellana,"No
+Incorporado",Térmica,MCI,22.72,18.98,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 69",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+70,Hidrosigchos,Sigchos,Cotopaxi,S.N.I.,Hidráulica,Pasada,18.6,18.39,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 70",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+71,CELEC-TermoManabi,Manta II,Manabi,S.N.I.,Térmica,MCI,20.4,17.34,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 71",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+72,Elecaustro,El Descanso,Cañar,S.N.I.,Térmica,MCI,19.2,17.2,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 72",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+73,E.E. Sur,Catamayo,Loja,S.N.I.,Térmica,MCI,19.74,17.17,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 73",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+74,CELEC-Gensur,Villonaco,Loja,S.N.I.,Eólica,Eólica,16.5,16.5,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 74",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+75,Elecaustro,Saymirfn,Azuay,S.N.I.,Hidráulica,Pasada,15.52,15.52,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 75",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+76,Enermax,Calope,Cotopaxi,S.N.I.,Hidráulica,Pasada,16.6,15,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 76",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+77,Petroecuador,Shushufindi - CG - Gas (CELEC EP),Sucumbios,"No
+Incorporado",Térmica,Turbogás,22.8,15,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 77",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+78,EPMAPS,Recuperadora,Pichincha,S.N.I.,Hidráulica,Pasada,14.7,14.5,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 78",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+79,Hidrosibimbe,Sibimbe,Los Rios,S.N.I.,Hidráulica,Pasada,15.37,14.2,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 79",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+80,Petroecuador,Cuyabeno,Sucumbios,"No
+Incorporado",Térmica,MCI,23.15,14.09,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 80",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+81,Petroecuador,"Repsol YPF-
+SPF-2",Orellana,"No
+Incorporado",Térmica,MCI,16.12,13.63,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 81",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+82,Petroecuador,Tiputini C-1,Orellana,"No
+Incorporado",Térmica,MCI,14.91,13.46,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 82",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+83,CELEC-Termopichincha,Santa Cruz,Galápagos,"No
+Incorporado",Térmica,MCI,14.81,13.42,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 83",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+84,Petroecuador,Shushufindi Estación Sur- oeste,Sucumbios,"No
+Incorporado",Térmica,MCI,18.2,12.77,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 84",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+85,Petroecuador,Sacha Norte 2,Orellana,"No
+Incorporado",Térmica,MCI,15.33,11.49,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 85",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+86,Petroecuador,Auca,Orellana,"No
+Incorporado",Térmica,MCI,15.23,11.39,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 86",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+87,Petroecuador,Celec Sacha,Orellana,"No
+Incorporado",Térmica,MCI,14.4,11.2,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 87",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+88,Petroecuador,Tiputini C-2,Orellana,"No
+Incorporado",Térmica,MCI,12.76,11.16,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 88",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+89,Petroecuador,Lago Agrio,Sucumbios,"No
+Incorporado",Térmica,MCI,13.8,11.12,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 89",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+90,Petroecuador,Payamino,Orellana,"No
+Incorporado",Térmica,MCI,16.72,10.98,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 90",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+91,CELEC-Termopichincha,"Sistemas
+Menores",Sucumbios,"No
+Incorporado",Térmica,MCI,11,10.8,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 91",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+92,Petroecuador,Aguarico,Sucumbios,"No
+Incorporado",Térmica,MCI,14.62,10.7,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 92",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+93,Petroecuador,Cononaco,Pastaza,"No
+Incorporado",Térmica,MCI,15.04,10.53,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 93",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+94,E.E. Riobamba,Alao,Chimborazo,S.N.I.,Hidráulica,Pasada,10.5,10.44,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 94",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+95,IPNEGAL,"Palmira-
+Nanegal",Pichincha,S.N.I.,Hidráulica,Pasada,10.44,10.36,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 95",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+96,Hidrosierra,Rio Verde Chico,Tungurahua,S.N.I.,Hidráulica,Pasada,10,10.2,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 96",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+97,Petroecuador,Shushufindi,Sucumbios,"No
+Incorporado",Térmica,Turbogás,11.75,10,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 97",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+98,CELEC-Termopichincha,Jivino II,Sucumbios,S.N.I.,Térmica,MCI,11,10,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 98",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+99,Hidrovictoria,Victoria,Napo,S.N.I.,Hidráulica,Pasada,10.32,10,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 99",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+100,Petroecuador,Guanta,Sucumbios,"No
+Incorporado",Térmica,MCI,12.41,9.77,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 100",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+101,Sipec,MDC-CPF,Orellana,"No
+Incorporado",Térmica,MCI,12.7,9.7,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 101",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+102,Petroecuador,Yuralpa,Napo,"No
+Incorporado",Térmica,MCI,18.6,9.21,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 102",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+103,Petroecuador,VHR,Sucumbios,"No
+Incorporado",Térmica,MCI,12.32,8.7,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 103",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+104,"CELEC-
+Termoesmeraldas",La Propicia,Esmeraldas,S.N.I.,Térmica,MCI,10.5,8.5,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 104",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+105,EPMAPS,El Carmen,Pichincha,S.N.I.,Hidráulica,Pasada,8.4,8.2,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 105",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+106,Andes Petro,Tapir A,Orellana,"No
+Incorporado",Térmica,MCI,9.19,8.17,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 106",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+107,Petroecuador,Arcolands Shushufindi,Sucumbios,"No
+Incorporado",Térmica,MCI,10.15,8.14,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 107",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+108,EPMAPS,Chalpi,Napo,S.N.I.,Hidráulica,Pasada,8.1,8.1,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 108",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+109,Hidrotambo,San José de Tambo,Bolivar,S.N.I.,Hidráulica,Pasada,8,8,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 109",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+110,Petroecuador,"Repsol YPF-
+NPF-2",Orellana,"No
+Incorporado",Térmica,MCI,9.28,7.99,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 110",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+111,Petroecuador,CPT Diesel Rentada,Orellana,"No
+Incorporado",Térmica,MCI,11.76,7.98,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 111",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+112,Petroecuador,Bermejo,Sucumbios,"No
+Incorporado",Térmica,MCI,9.32,7.92,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 112",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+113,E.E. Norte,Ambi,Imbabura,S.N.I.,Hidráulica,Pasada,8,7.85,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 113",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+114,Andes Petro,Hormiguero C,Orellana,"No
+Incorporado",Térmica,MCI,9.61,7.85,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 114",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+115,Pluspetrol,Sarayacu,Napo,"No
+Incorporado",Térmica,MCI,9,7.78,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 115",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+116,Andes Petro,Dorine Battery,Sucumbios,"No
+Incorporado",Térmica,MCI,12.33,7.75,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 116",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+117,Petroecuador,Coca,Orellana,"No
+Incorporado",Térmica,MCI,10.83,7.67,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 117",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+118,Petroecuador,Limoncocha,Sucumbios,"No
+Incorporado",Térmica,MCI,15.95,7.47,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 118",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+119,CELEC-Termopichincha,"Celso
+Castellanos",Sucumbios,S.N.I.,Térmica,MCI,10,7.2,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 119",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+120,Petroecuador,"Repsol YPF-
+SSFD",Sucumbios,"No
+Incorporado",Térmica,MCI,9.09,6.75,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 120",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+121,Petroecuador,Sansahuari,Sucumbios,"No
+Incorporado",Térmica,MCI,10.28,6.49,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 121",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+122,CELEC-Hidroazogues,Alazán,Cañar,S.N.I.,Hidráulica,Pasada,6.23,6.23,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 122",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+123,Petroecuador,Tiputi A-2,Orellana,"No
+Incorporado",Térmica,MCI,7.78,6.22,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 123",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+124,Ecoluz,Papallacta,Napo,S.N.I.,Hidráulica,Pasada,6.63,6.2,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 124",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+125,OCP Ecuador,Amazonas,Sucumbios,"No
+Incorporado",Térmica,MCI,6.66,6.14,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 125",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+126,San José de Minas,San José de Minas,Pichincha,S.N.I.,Hidráulica,Pasada,6.75,5.95,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 126",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+127,CELEC-Termopichincha,San Cristóbal,Galápagos,"No
+Incorporado",Térmica,MCI,7.41,5.91,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 127",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+128,Vicunha,Vindobona,Pichincha,S.N.I.,Hidráulica,Pasada,6.09,5.86,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 128",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+129,Gasgreen,El Inga,Pichincha,S.N.I.,Biogás,MCI,6.2,5.5,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 129",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+130,Petroecuador,Yuca,Orellana,"No
+Incorporado",Térmica,MCI,6.95,5.48,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 130",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+131,CELEC-Termopichincha,Jivino I,Sucumbios,S.N.I.,Térmica,MCI,7.5,5.4,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 131",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+132,OCP Ecuador,Sardinas,Napo,"No
+Incorporado",Térmica,MCI,6.66,5.33,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 132",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+133,E.E. Cotopaxi,Illuchi No.2,Cotopaxi,S.N.I.,Hidráulica,Pasada,5.2,5.2,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 133",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+134,Petroecuador,RS Roth Shushufindi Drago 2,Sucumbios,"No
+Incorporado",Térmica,MCI,7.16,4.79,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 134",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+135,Petroecuador,Paka Sur,Orellana,"No
+Incorporado",Térmica,MCI,8.74,4.75,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 135",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+136,Petroecuador,Tiputini Gas,Orellana,"No
+Incorporado",Térmica,MCI,5.25,4.75,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 136",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+137,Andes Petro,Nantu B,Orellana,"No
+Incorporado",Térmica,MCI,5.34,4.6,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 137",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+138,E.E. Quito,Pasochoa,Pichincha,S.N.I.,Hidráulica,Pasada,4.5,4.5,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 138",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+139,Andes Petro,Nantu D,Orellana,"No
+Incorporado",Térmica,MCI,5.8,4.48,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 139",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+140,Andes Petro,CDP,Orellana,"No
+Incorporado",Térmica,MCI,4.88,4.31,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 140",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+141,Petroecuador,Auca 51,Orellana,"No
+Incorporado",Térmica,MCI,8.05,4.23,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 141",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+142,Pluspetrol,Villano A,Pastaza,"No
+Incorporado",Térmica,MCI,5.72,4.2,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 142",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+143,Petroecuador,Palmar Oeste,Sucumbios,"No
+Incorporado",Térmica,MCI,6.62,4.15,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 143",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+144,E.E. Cotopaxi,Illuchi No.1,Cotopaxi,S.N.I.,Hidráulica,Pasada,4.19,4,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 144",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+145,CELEC-Termopichincha,Macas,Morona Santiago,S.N.I.,Térmica,MCI,4.5,4,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 145",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+146,Petroecuador,Tapi,Sucumbios,"No
+Incorporado",Térmica,MCI,5.21,3.92,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 146",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+147,CELEC-TermoManabi,Pedernales,Manabi,S.N.I.,Térmica,MCI,5,3.9,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 147",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+148,Sipec,PBHI-Inchi CPF,Orellana,"No
+Incorporado",Térmica,MCI,4.65,3.9,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 148",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+149,Andes Petro,Wanke A,Orellana,"No
+Incorporado",Térmica,MCI,4.87,3.87,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 149",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+150,Petroecuador,Gacela,Orellana,"No
+Incorporado",Térmica,MCI,5.26,3.82,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 150",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+151,E.E. Ambato,Lligua,Tungurahua,S.N.I.,Térmica,MCI,5,3.6,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 151",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+152,Petroecuador,Sacha Sur GAS Wakesha,Orellana,"No
+Incorporado",Térmica,MCI,4.2,3.6,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 152",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+153,Andes Petro,Kupi E,Orellana,"No
+Incorporado",Térmica,MCI,4.08,3.38,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 153",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+154,OCP Ecuador,Cayagama,Sucumbios,"No
+Incorporado",Térmica,MCI,3.36,3.36,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 154",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+155,Petroecuador,"Procesos
+Tiputini",Orellana,"No
+Incorporado",Térmica,MCI,4.14,3.31,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 155",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+156,Petroecuador,Sacha Norte 1,Orellana,"No
+Incorporado",Térmica,MCI,17.45,3.26,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 156",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+157,Andes Petro,Mariann Vieja,Sucumbios,"No
+Incorporado",Térmica,MCI,3.82,3,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 157",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+158,Andes Petro,Hormiguero D,Orellana,"No
+Incorporado",Térmica,MCI,3.73,3,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 158",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+159,E.E. Riobamba,Rfo Blanco,Chimborazo,S.N.I.,Hidráulica,Pasada,3.03,2.95,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 159",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+160,Petroecuador,Tetete,Sucumbios,"No
+Incorporado",Térmica,MCI,4.61,2.91,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 160",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+161,E.E. Ambato,Penfnsula,Tungurahua,S.N.I.,Hidráulica,Pasada,3,2.9,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 161",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+162,Sipec,PBH-PAR12,Orellana,"No
+Incorporado",Térmica,MCI,3.42,2.85,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 162",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+163,Petroecuador,Cuyabeno E,Sucumbios,"No
+Incorporado",Térmica,MCI,3.65,2.74,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 163",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+164,Petroecuador,Vinita,Sucumbios,"No
+Incorporado",Térmica,MCI,3.51,2.64,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 164",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+165,Petroecuador,Dumbique,Orellana,"No
+Incorporado",Térmica,MCI,2.9,2.6,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 165",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+166,OCP Ecuador,Páramo,Napo,"No
+Incorporado",Térmica,MCI,3.36,2.56,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 166",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+167,E.E. Norte,San Miguel de Car,Carchi,S.N.I.,Hidráulica,Pasada,2.95,2.52,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 167",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+168,Andes Petro,Nantu C,Orellana,"No
+Incorporado",Térmica,MCI,3.14,2.51,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 168",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+169,UCEM,Planta Guapán,Cañar,"No
+Incorporado",Térmica,Turbovapor,3.63,2.5,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 169",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+170,Andes Petro,Hormiguero Sur,Orellana,"No
+Incorporado",Térmica,MCI,2.72,2.46,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 170",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+171,Perlabf,Perlabf,Pichincha,S.N.I.,Hidráulica,Pasada,2.7,2.46,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 171",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+172,E.E. Sur,Carlos Mora,Zamora Chinchipe,S.N.I.,Hidráulica,Pasada,2.4,2.4,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 172",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+173,E.E. Galápagos,San Cristäbal Eälico,Galápagos,"No
+Incorporado",Eälica,Eälica,2.4,2.4,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 173",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+174,Petroecuador,Shushufindi Norte,Sucumbios,"No
+Incorporado",Térmica,MCI,3.15,2.37,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 174",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+175,Andes Petro,Sunka 1,Orellana,"No
+Incorporado",Térmica,MCI,2.76,2.3,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 175",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+176,Petroecuador,Indillana,Orellana,"No
+Incorporado",Térmica,MCI,4.71,2.28,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 176",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+177,E.E. Galápagos,Baltra Eälico,Galápagos,"No
+Incorporado",Eälica,Eälica,2.25,2.25,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 177",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+178,Ecoluz,Loreto,Napo,S.N.I.,Hidráulica,Pasada,2.3,2.2,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 178",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+179,Andes Petro,CPH,Orellana,"No
+Incorporado",Térmica,MCI,2.59,2.07,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 179",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+180,Petroecuador,Auca Central,Orellana,"No
+Incorporado",Térmica,MCI,2.66,2.04,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 180",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+181,CELEC-Termopichincha,Puná Nueva,Guayas,"No
+Incorporado",Térmica,MCI,2.25,2.03,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 181",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+182,Petroecuador,Aguajal,Orellana,"No
+Incorporado",Térmica,MCI,5.8,2.02,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 182",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+183,Petroecuador,Sacha Sur,Orellana,"No
+Incorporado",Térmica,MCI,2.54,2.01,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 183",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+184,Gransolar,Salinas,Imbabura,S.N.I.,Solar,Solar,2,2,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 184",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+185,I.M. Mejfa,La Calera,Pichincha,S.N.I.,Hidráulica,Pasada,2.5,1.98,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 185",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+186,Andes Petro,Aurora,Orellana,"No
+Incorporado",Térmica,MCI,2.43,1.95,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 186",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+187,UCEM,Planta Chimborazo,Chimborazo,"No
+Incorporado",Hidráulica,Pasada,2,1.9,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 187",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+188,Sipec,MDC-LOC40,Orellana,"No
+Incorporado",Térmica,MCI,2.35,1.85,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 188",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+189,Petroecuador,Pakay,Orellana,"No
+Incorporado",Térmica,MCI,3.25,1.85,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 189",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+190,Petroecuador,Tambococha A,Orellana,"No
+Incorporado",Térmica,MCI,2.13,1.84,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 190",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+191,Andes Petro,Kupi A,Orellana,"No
+Incorporado",Térmica,MCI,2.18,1.83,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 191",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+192,CELEC-Termopichincha,Payamino,Orellana,S.N.I.,Térmica,MCI,2.5,1.8,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 192",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+193,CELEC-Termopichincha,Loreto,Orellana,S.N.I.,Térmica,MCI,2.25,1.8,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 193",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+194,CELEC-Termopichincha,Dayuma,Orellana,S.N.I.,Térmica,MCI,2.25,1.8,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 194",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+195,Orion,Estaciän ENO,Sucumbios,"No
+Incorporado",Térmica,MCI,2,1.8,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 195",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+196,Andes Petro,Mariann 5-8,Sucumbios,"No
+Incorporado",Térmica,MCI,2.2,1.78,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 196",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+197,Andes Petro,Penke B,Orellana,"No
+Incorporado",Térmica,MCI,2.09,1.77,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 197",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+198,Petroecuador,Frontera,Sucumbios,"No
+Incorporado",Térmica,MCI,2.46,1.76,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 198",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+199,E.E. Quito,Los Chillos,Pichincha,S.N.I.,Hidráulica,Pasada,1.76,1.76,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 199",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+200,Petroecuador,Mono,Orellana,"No
+Incorporado",Térmica,MCI,2.6,1.74,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 200",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+201,OCP Ecuador,"Terminal
+Marftimo",Esmeraldas,"No
+Incorporado",Térmica,MCI,1.72,1.72,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 201",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+202,EMAC-BGP,Pichacay,Azuay,S.N.I.,Biogás,MCI,2.12,1.7,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 202",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+203,E.E. Cotopaxi,El Estado,Cotopaxi,"No
+Incorporado",Hidráulica,Pasada,1.7,1.66,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 203",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+204,Moderna Alimentos,Geppert,Pichincha,S.N.I.,Hidráulica,Pasada,1.65,1.65,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 204",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+205,E.E. Galápagos,Santa Cruz Solar Puerto Ayora,Galápagos,"No
+Incorporado",Solar,Solar,1.52,1.52,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 205",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+206,CELEC-Termopichincha,Isabela,Galápagos,"No
+Incorporado",Térmica,MCI,1.63,1.5,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 206",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+207,Orion,Estación Ron,Sucumbios,"No
+Incorporado",Térmica,MCI,1.5,1.5,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 207",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+208,Petroecuador,Pucuna,Orellana,"No
+Incorporado",Térmica,MCI,1.88,1.46,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 208",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+209,Andes Petro,Pindo,Orellana,"No
+Incorporado",Térmica,MCI,1.82,1.45,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 209",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+210,Petroecuador,Itaya A,Sucumbios,"No
+Incorporado",Térmica,MCI,2.53,1.35,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 210",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+211,Petroecuador,Santa Elena,Sucumbios,"No
+Incorporado",Térmica,MCI,2.5,1.31,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 211",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+212,Andes Petro,Nantu E,Orellana,"No
+Incorporado",Térmica,MCI,1.5,1.3,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 212",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+213,Andes Petro,Tapir B,Orellana,"No
+Incorporado",Térmica,MCI,1.52,1.3,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 213",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+214,Andes Petro,Lago Agrio LTF,Sucumbios,"No
+Incorporado",Térmica,MCI,1.64,1.28,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 214",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+215,Andes Petro,Tarapuy,Sucumbios,"No
+Incorporado",Térmica,MCI,1.59,1.27,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 215",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+216,Andes Petro,Mariann 4A,Sucumbios,"No
+Incorporado",Térmica,MCI,1.49,1.25,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 216",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+217,Andes Petro,Hormiguero B,Orellana,"No
+Incorporado",Térmica,MCI,1.66,1.23,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 217",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+218,E.E. Norte,La Playa,Carchi,S.N.I.,Hidráulica,Pasada,1.43,1.23,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 218",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+219,Petroecuador,Yamanunka,Sucumbios,"No
+Incorporado",Térmica,MCI,2.19,1.2,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 219",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+220,Petroecuador,Yanaq Oeste,Orellana,"No
+Incorporado",Térmica,MCI,1.64,1.15,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 220",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+221,Orion,Estación Ocano,Sucumbios,"No
+Incorporado",Térmica,MCI,1.41,1.14,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 221",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+222,Petroecuador,Tipishca,Sucumbios,"No
+Incorporado",Térmica,MCI,1.43,1.12,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 222",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+223,Petroecuador,Itaya B,Sucumbios,"No
+Incorporado",Térmica,MCI,2.55,1.1,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 223",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+224,Petroecuador,Lobo,Orellana,"No
+Incorporado",Térmica,MCI,1.41,1.09,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 224",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+225,Petroecuador,Zemi,Orellana,"No
+Incorporado",Térmica,MCI,1.36,1.07,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 225",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+226,Petroecuador,Tumali,Orellana,"No
+Incorporado",Térmica,MCI,1.55,1.07,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 226",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+227,Andes Petro,Dorine 5,Sucumbíos,"No
+Incorporado",Térmica,MCI,1.2,1,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 227",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+228,Petroecuador,RS Roth Shushufindi Drago N1,Sucumbíos,"No
+Incorporado",Térmica,MCI,1.36,1,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 228",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+229,Hidroulba,Ulba,Tungurahua,S.N.I.,Hidráulica,Pasada,1,1,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 229",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+230,E.E. Galápagos,San Cristóbal Solar,Galápagos,"No
+Incorporado",Solar,Solar,1,1,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 230",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+231,Gransolar,Tren Salinas,Imbabura,S.N.I.,Solar,Solar,1,1,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 231",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+232,Brineforcorp,Brineforcorp,Manabí,S.N.I.,Solar,Solar,1,1,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 232",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+233,Solsantros,Solsantros,El Oro,S.N.I.,Solar,Solar,1,1,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 233",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+234,Saracaysol,Saracaysol,El Oro,S.N.I.,Solar,Solar,1,1,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 234",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+235,Sanersol,Sanersol,El Oro,S.N.I.,Solar,Solar,1,1,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 235",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+236,San Pedro,San Pedro,Loja,S.N.I.,Solar,Solar,1,1,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 236",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+237,Gonzanergy,Gonzanergy,Loja,S.N.I.,Solar,Solar,1,1,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 237",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+238,Surenergy,Surenergy,Loja,S.N.I.,Solar,Solar,1,1,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 238",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+239,Solsantonio,Solsantonio,El Oro,S.N.I.,Solar,Solar,1,1,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 239",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+240,Solhuaqui,Solhuaqui,El Oro,S.N.I.,Solar,Solar,1,1,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 240",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+241,Solchacras,Solchacras,El Oro,S.N.I.,Solar,Solar,1,1,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 241",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+242,Electrisol,Electrisol,Pichincha,S.N.I.,Solar,Solar,1,1,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 242",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+243,Epfotovoltaica,Mulaló,Cotopaxi,S.N.I.,Solar,Solar,1,1,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 243",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+244,Epfotovoltaica,Pastocalle,Cotopaxi,S.N.I.,Solar,Solar,1,1,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 244",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+245,Cbsenergy,El Laurel,Carchi,S.N.I.,Hidráulica,Pasada,1,1,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 245",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+246,Valsolar,Paragachi,Imbabura,S.N.I.,Solar,Solar,1,1,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 246",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+247,Wildtecsa,Wildtecsa,Guayas,S.N.I.,Solar,Solar,1,1,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 247",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+248,Sansau,Sansau,Guayas,S.N.I.,Solar,Solar,1,1,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 248",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+249,Genrenotec,Genrenotec,Guayas,S.N.I.,Solar,Solar,0.99,0.99,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 249",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+250,Altgenotec,Altgenotec,Guayas,S.N.I.,Solar,Solar,0.99,0.99,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 250",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+251,Hidrosibimbe,Uravia,Pichincha,S.N.I.,Hidráulica,Pasada,0.99,0.98,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 251",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+252,Hidrosibimbe,Corazón,Pichincha,S.N.I.,Hidráulica,Pasada,0.99,0.98,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 252",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+253,Petroecuador,Anaconda,Orellana,"No
+Incorporado",Térmica,MCI,2.35,0.98,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 253",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+254,Andes Petro,Mariann 9,Sucumbíos,"No
+Incorporado",Térmica,MCI,1.27,0.97,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 254",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+255,Elecaustro,Gualaceo,Azuay,S.N.I.,Hidráulica,Pasada,0.97,0.97,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 255",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+256,Orion,Estación Peña Blanca,Sucumbíos,"No
+Incorporado",Térmica,MCI,1.37,0.96,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 256",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+257,E.E. Galápagos,Isabela Solar,Galápagos,"No
+Incorporado",Solar,Solar,0.95,0.95,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 257",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+258,E.E. Norte,Buenos Aires,Imbabura,S.N.I.,Hidráulica,Pasada,0.98,0.95,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 258",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+259,Petroecuador,Tambococha D,Orellana,"No
+Incorporado",Térmica,MCI,1.07,0.92,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 259",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+260,Hidroimbabura,Hidrocarolina,Imbabura,S.N.I.,Hidráulica,Pasada,0.92,0.88,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 260",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+261,Petroecuador,Arazá,Sucumbios,"No
+Incorporado",Térmica,MCI,1.05,0.82,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 261",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+262,Andes Petro,Mariann Battery,Sucumbios,"No
+Incorporado",Térmica,MCI,1.09,0.8,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 262",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+263,Andes Petro,Shiripuno,Orellana,"No
+Incorporado",Térmica,MCI,0.9,0.8,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 263",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+264,Andes Petro,Campamento Base,Orellana,"No
+Incorporado",Térmica,MCI,1.09,0.8,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 264",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+265,Andes Petro,Mariann 30,Sucumbios,"No
+Incorporado",Térmica,MCI,1.09,0.8,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 265",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+266,Andes Petro,Hormiguero A,Orellana,"No
+Incorporado",Térmica,MCI,1.07,0.77,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 266",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+267,E.E. Cotopaxi,Catazacón,Cotopaxi,"No
+Incorporado",Hidráulica,Pasada,0.8,0.76,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 267",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+268,Petroecuador,Jivino A,Sucumbios,"No
+Incorporado",Térmica,MCI,1.96,0.76,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 268",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+269,E.E. Riobamba,Nizag,Chimborazo,"No
+Incorporado",Hidráulica,Pasada,0.8,0.75,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 269",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+270,Andes Petro,Dorine H,Sucumbios,"No
+Incorporado",Térmica,MCI,1,0.75,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 270",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+271,Sipec,PBHI-InchiC,Orellana,"No
+Incorporado",Térmica,MCI,0.84,0.75,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 271",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+272,Sabiangosolar,Sabiango Solar,Loja,S.N.I.,Solar,Solar,1,0.73,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 272",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+273,Renova Loja,Renova Loja,Loja,S.N.I.,Solar,Solar,1,0.7,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 273",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+274,Lojaenergy,Lojaenergy,Loja,S.N.I.,Solar,Solar,1,0.7,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 274",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+275,Sipec,PBH-HUA02,Orellana,"No
+Incorporado",Térmica,MCI,0.72,0.7,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 275",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+276,Sipec,PBH-PSO24,Orellana,"No
+Incorporado",Térmica,MCI,0.82,0.7,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 276",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+277,Andes Petro,MAHOGANNY B,Sucumbios,"No
+Incorporado",Térmica,MCI,0.73,0.65,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 277",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+278,Sipec,MDC-LOC16,Orellana,"No
+Incorporado",Térmica,MCI,0.9,0.65,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 278",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+279,SERMAA EP,"Fábrica
+Imbabura",Imbabura,S.N.I.,Hidráulica,Pasada,0.79,0.61,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 279",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+280,Petroecuador,Pacayacu,Sucumbios,"No
+Incorporado",Térmica,MCI,0.67,0.55,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 280",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+281,Andes Petro,Fanny 50,Sucumbios,"No
+Incorporado",Térmica,MCI,0.7,0.5,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 281",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+282,Andes Petro,Dorine G,Sucumbios,"No
+Incorporado",Térmica,MCI,0.6,0.5,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 282",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+283,Andes Petro,Hormiguero E,Orellana,"No
+Incorporado",Térmica,MCI,0.75,0.5,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 283",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+284,Petroecuador,Paka Norte,Orellana,"No
+Incorporado",Térmica,MCI,2.73,0.5,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 284",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+285,Enersol,Enersol,Manabi,S.N.I.,Solar,Solar,0.5,0.49,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 285",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+286,Petroecuador,Cedros,Orellana,"No
+Incorporado",Térmica,MCI,0.73,0.45,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 286",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+287,Petroecuador,Laguna,Sucumbios,"No
+Incorporado",Térmica,MCI,0.82,0.44,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 287",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+288,Andes Petro,"Estación
+Dayuma",Orellana,"No
+Incorporado",Térmica,MCI,0.25,0.13,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 288",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+289,Petroecuador,PCC-Tierras Orientales,Orellana,"No
+Incorporado",Térmica,MCI,0.15,0.11,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 289",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+290,Agua y Gas de Sillunchi,Sillunchi I,Pichincha,S.N.I.,Hidráulica,Pasada,0.1,0.09,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 290",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+291,E.E. Galápagos,Baltra Solar,Galápagos,"No
+Incorporado",Solar,Solar,0.07,0.07,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 291",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+292,Consejo Provincial De Tungurahua,Tiliví,Tungurahua,S.N.I.,Hidráulica,Pasada,0.1,0.06,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 292",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+293,EPMAPS,Carcelén,Pichincha,"No
+Incorporado",Hidráulica,Pasada,0.06,0.06,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 293",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+294,Andes Petro,Cami,Orellana,"No
+Incorporado",Térmica,MCI,0.05,0.04,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 294",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+295,E.E. Galápagos,San Cristóbal Solar Eolicsa,Galápagos,"No
+Incorporado",Solar,Solar,0.04,0.04,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 295",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+296,E.E. Galápagos,Floreana Perla Solar,Galápagos,"No
+Incorporado",Solar,Solar,0.02,0.02,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 296",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+297,E.E. Galápagos,Santa Cruz Solar Aislados,Galápagos,"No
+Incorporado",Solar,Solar,0.01,0.01,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 297",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+298,E.E. Galápagos,Isabela Solar Aislados,Galápagos,"No
+Incorporado",Solar,Solar,0.01,0.01,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 298",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+299,E.E. Galápagos,Floreana Solar Aislados,Galápagos,"No
+Incorporado",Solar,Solar,0.01,0.01,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 299",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+300,Petroecuador,Puerto Nuevo,Orellana,"No
+Incorporado",Térmica,MCI,0,0,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 300",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf
+301,Petroecuador,Pañacocha,Orellana,"No
+Incorporado",Térmica,MCI,0,0,PME_2022_CH4,"Chapter 4, section 4.11.1, Annex 1; workbook row 301",data/raw/generation/generation_existing_2022.xlsx,owner_transcribed_from_official_pdf

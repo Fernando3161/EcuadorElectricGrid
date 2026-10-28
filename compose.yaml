@@ -1,0 +1,12 @@
+services:
+  reproducibility:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      REPOSITORY_URL: ${REPOSITORY_URL:-https://github.com/Fernando3161/EcuadorElectricGrid.git}
+      REPOSITORY_REF: ${REPOSITORY_REF:-refactor/v1-phase-10-runtime-prune}
+      RUN_ID: ${RUN_ID:-}
+      RUN_TIMEOUT: ${RUN_TIMEOUT:--1}
+    volumes:
+      - "${DOCKER_RUN_OUTPUT:-./results/docker_runs}:/export"

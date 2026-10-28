@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "statistical_reference.schema.json",
+  "title": "Normalized 2022 SNI supply reference row",
+  "type": "object",
+  "required": [
+    "carrier",
+    "reference_gwh",
+    "source_components",
+    "source_ids",
+    "in_scope",
+    "evidence_class",
+    "notes"
+  ],
+  "properties": {
+    "carrier": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"},
+    "reference_gwh": {"type": "number", "minimum": 0},
+    "source_components": {"type": "string", "minLength": 1},
+    "source_ids": {"type": "string", "minLength": 1},
+    "in_scope": {"type": "boolean"},
+    "evidence_class": {
+      "enum": ["official_fact", "derived_reconciliation"]
+    },
+    "notes": {"type": "string"}
+  },
+  "additionalProperties": false
+}

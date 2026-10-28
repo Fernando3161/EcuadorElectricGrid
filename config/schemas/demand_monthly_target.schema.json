@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "demand_monthly_target.schema.json",
+  "title": "Monthly 2022 SNI demand control row",
+  "type": "object",
+  "required": ["month_number", "month", "energy_gwh", "peak_mw", "source_id"],
+  "properties": {
+    "month_number": {"type": "integer", "minimum": 1, "maximum": 12},
+    "month": {"type": "string", "minLength": 3},
+    "energy_gwh": {"type": "number", "exclusiveMinimum": 0},
+    "peak_mw": {"type": "number", "exclusiveMinimum": 0},
+    "source_id": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": false
+}

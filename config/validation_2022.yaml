@@ -1,0 +1,155 @@
+contract_version: 1
+year: 2022
+
+boundary:
+  name: Ecuador mainland Sistema Nacional Interconectado (SNI)
+  includes:
+    - generators participating in CENACE block transactions
+    - Colombia and Peru electricity imports
+    - Colombia and Peru electricity exports in the energy balance
+  excludes:
+    - Galapagos and other non-incorporated isolated systems
+    - distribution-grid topology
+  accounting_basis: Net electrical energy delivered to the SNI, plus imports.
+  time_basis: 8760 hourly snapshots in Ecuador mainland local standard time (UTC-05:00), stored as timezone-naive timestamps; Ecuador does not observe daylight saving time.
+
+sources:
+  CENACE_ANNUAL_2022:
+    organization: Operador Nacional de Electricidad CENACE
+    title: Informe Anual 2022 - Parte 1
+    edition: "2022"
+    url: https://www.cenace.gob.ec/wp-content/uploads/downloads/2023/04/Parte-1-Informe-Anual-2022.pdf
+    repository_path: literature/CENACE/cenace_informe_anual_2022_parte_1.pdf
+    sha256: 88f13f0106a190464c8954babc7529f785783d4d4017633a8d5ed8ff554fbd88
+    locator: Pages 23, 73-74; Table 2.4
+  CENACE_2023_TABLE_1_8:
+    organization: Operador Nacional de Electricidad CENACE
+    title: Informe Anual 2023 - Parte 1
+    edition: "2023"
+    url: https://www.cenace.gob.ec/wp-content/uploads/downloads/2024/04/Parte-1-Informe-Anual-CENACE-2023.pdf
+    repository_path: literature/CENACE/cenace_informe_anual_2023_parte_1.pdf
+    sha256: 194a10b71b95e65c067df88756d0dbfb52052cf4713af044fec952d662f1153f
+    locator: Page 42; Table 1.8 republishes monthly 2022 demand and peak values
+  PME_2022_CHAPTER_3:
+    organization: Ministerio de Energia y Minas
+    title: Plan Maestro de Electricidad - Capitulo 3 Demanda
+    edition: "2022"
+    locator: Tables 3-1 and 3-2
+    note: The rounded monthly energy values sum to 28180 GWh while the printed annual total is 28181 GWh; this legacy series is retained as planning evidence but is not the baseline demand control.
+
+demand:
+  monthly_targets: data/raw/demand/cenace_sni_2022_monthly_demand.csv
+  template: data/raw/demand/demand_profiles_EC.csv
+  output: data/processed/demand/demand_profiles_2022_mw.csv
+  output_unit: MW
+  annual_energy_gwh: 27561.62
+  annual_peak_mw: 4388.06
+  monthly_rounding_policy: Scale all published monthly energy values by one common factor so their sum equals the published annual total; preserve every monthly peak exactly.
+  spatial_policy: Preserve the historical template's bus shares at every hour while reshaping only the national profile.
+  template_status: PyPSA-Earth 0.7.0 modeling template exported from elec.nc loads_t.p_set; its 2013 shape and spatial allocation are not official 2022 observations.
+
+supply_reference:
+  raw_table: data/raw/statistics/cenace_2022_net_supply.csv
+  normalized_table: data/processed/statistics/ecuador_sni_2022_supply_reference.csv
+  reported_total_gwh: 28684.62
+  reported_domestic_generation_gwh: 28218.79
+  exports_gwh: 191.57
+  national_demand_gwh: 27561.62
+  raw_to_validation_carrier:
+    hydroelectric: hydro
+    wind: nonconventional
+    biogas: nonconventional
+    biomass: nonconventional
+    solar_photovoltaic: nonconventional
+    diesel: thermal
+    fuel_oil: thermal
+    natural_gas: thermal
+    naphtha: thermal
+    residue: thermal
+    imports_colombia: interconnection
+    imports_peru: interconnection
+  validation_carriers:
+    - hydro
+    - thermal
+    - nonconventional
+    - interconnection
+
+model_carrier_mapping:
+  hydro: hydro
+  hydroelectric: hydro
+  hidraulica: hydro
+  onwind: nonconventional
+  wind: nonconventional
+  eolica: nonconventional
+  biomass: nonconventional
+  biomasa: nonconventional
+  biogas: nonconventional
+  solar: nonconventional
+  photovoltaic: nonconventional
+  fotovoltaica: nonconventional
+  oil: thermal
+  thermal: thermal
+  termica: thermal
+  diesel: thermal
+  fuel_oil: thermal
+  natural_gas: thermal
+  residue: thermal
+  residuo: thermal
+  naphtha: thermal
+  nafta: thermal
+  import: interconnection
+  imports: interconnection
+  interconnection_import: interconnection
+  interconnection_colombia: interconnection
+
+acceptance:
+  methodology: multi_criteria_historical_benchmark
+  note: TVD and carrier-share percentage-point screens are the sole acceptance criteria; relative energy errors remain descriptive diagnostics only.
+  total_energy_criterion_disabled_reason: Production and demand tables do not yet share a proven metering boundary; the 931.43 GWh residual is reported, not modeled as guessed losses.
+  max_tvd: 0.03
+  max_hydro_error_pp: 3.0
+  max_thermal_error_pp: 2.0
+  max_nonconventional_error_pp: 0.5
+  max_interconnection_error_pp: 0.5
+  missing_simulated_carrier_policy: Treat as zero generation and report explicitly.
+  zero_reference_policy: Report relative error as null and use absolute energy error if a criterion is configured.
+  source_rounding_residual_policy: Report separately and exclude from the comparable carrier set.
+  excluded_from_supply_carriers:
+    - storage charging and discharging
+    - curtailment
+    - load shedding
+    - exports
+    - network losses
+  load_shedding_maximum_gwh: 0.01
+
+interconnection_colombia:
+  enabled: true
+  max_capacity_mw: 450.0
+  historical_energy_gwh: 465.83
+  historical_energy_min_gwh: 465.83
+  historical_energy_max_gwh: 465.83
+  enforce_historical_energy_band: true
+  future_scenarios_disable_historical_energy_band: true
+  marginal_cost_usd_per_mwh: 45.2
+  price_basis: CENACE Informe Anual 2022, Figure 2.30 / international transactions with Colombia; 4.52 cUSD/kWh = 45.20 USD/MWh average import price.
+  source_url: https://www.cenace.gob.ec/wp-content/plugins/download-monitor/download.php?force=1&id=3827
+  modeling_status: historical-price proxy; capacity is an explicit modeling assumption, not a reported interconnector rating.
+  interfaces:
+    pimampiro_230_bus: "84"
+    tulcan_138_bus: "36"
+    representative_power_split: [0.8, 0.2]
+    split_status: modeling assumption based on four documented 230 kV circuits and one documented 138 kV circuit, not circuit ratings.
+
+exports_2022:
+  colombia_gwh: 159.15
+  colombia_bus: "84"
+  peru_gwh: 32.42
+  peru_bus: "123"
+  temporal_profile: proportional_to_national_hourly_demand
+  source: CENACE Informe Anual 2022, Figures 2.18 and 2.20.
+  bus_mapping_status: Pimampiro is coordinate-supported; the southern 230 kV transfer at bus 123 is a reviewed modeling interface pending a named 2022 one-line diagram.
+
+accounting_residual:
+  gwh: 931.43
+  treatment: report_only_not_modeled
+  rationale: Source tables have not yet established an equivalent metering boundary; do not encode this residual as losses.
