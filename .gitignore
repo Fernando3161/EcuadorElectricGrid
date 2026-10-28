@@ -4,15 +4,15 @@ __pycache__/
 *$py.class
 
 #*.csv
-*.png 
+*.png
 !reports/figures/**/*.png
 *.jpg
-*.jpeg  
+*.jpeg
 *.gif
 *.tiff
 *.bmp
 *.xlsx
-*.nc 
+*.nc
 *.gpkg
 *.pdf
 !literature/PlanMaestroElectrifEc/AJUSTE-PME-2026.pdf
@@ -209,9 +209,9 @@ cython_debug/
 .abstra/
 
 # Visual Studio Code
-#  Visual Studio Code specific template is maintained in a separate VisualStudioCode.gitignore 
+#  Visual Studio Code specific template is maintained in a separate VisualStudioCode.gitignore
 #  that can be found at https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
-#  and can be added to the global gitignore or merged into this file. However, if you prefer, 
+#  and can be added to the global gitignore or merged into this file. However, if you prefer,
 #  you could uncomment the following to ignore the entire vscode folder
 # .vscode/
 
@@ -296,7 +296,6 @@ data/processed/planning/projects.csv
 data/processed/planning/substations.csv
 data/processed/planning/transformers.csv
 data/processed/demand/demand_prognosis_2022_2050.csv
-tests/test_demand_prognosis.py
 results/phase_08/expansion_2030_summary.json
 results/phase_08/generation_by_carrier.csv
 results/phase_08/indicators.csv
@@ -311,4 +310,4 @@ results/phase_08a/*.solved.nc
 results/phase_08a/*_highs.log
 reports/PHASE_08A_RESULT_COMPARISON.md
 results/*
-tests/test_runtime_preflight.py
+!docs/figures/**/*.png

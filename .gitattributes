@@ -5,3 +5,6 @@
 *.yml text eol=lf
 *.py text eol=lf
 *.ipynb text eol=lf
+*.md text eol=lf
+.gitignore text eol=lf
+.dockerignore text eol=lf
